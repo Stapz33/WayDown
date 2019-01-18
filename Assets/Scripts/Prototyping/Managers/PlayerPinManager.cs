@@ -27,7 +27,7 @@ public class PlayerPinManager : MonoBehaviour
     {
         if (b_IsFollowingMouse)
         {
-            Vector3 newPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x + 30, Input.mousePosition.y + 30, Mathf.Abs(Camera.main.transform.position.z - transform.position.z)));
+            Vector3 newPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x + 35, Input.mousePosition.y + 35, Mathf.Abs(Camera.main.transform.position.z - transform.position.z)));
             newPos.z = transform.position.z;
             transform.position = newPos;
         } 
