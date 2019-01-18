@@ -8,6 +8,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Singleton { get; private set; }
     private List<Tuple<Vector3, float>> l_CameraInfos = new List<Tuple<Vector3, float>>() ;
 
+    //Instance Documents
+
+    public List<Transform> SpawnPoints;
+    public List<GameObject> Documents;
+    public GameObject DocumentsButtons;
+    public GameObject ParentWhereSpawn;
+
     public void Awake()
     {
         if (Singleton != null)
@@ -38,5 +45,13 @@ public class GameManager : MonoBehaviour
     public void SetupDialog()
     {
 
+    }
+
+    public void InstanceJournal()
+    {
+        var newJournal = Instantiate(Documents[0], new Vector3(SpawnPoints[0].position.x, SpawnPoints[0].position.y, 0), Quaternion.identity);
+        newJournal.transform.parent = ParentWhereSpawn.transform;
+
+        DocumentsButtons.SetActive(false);
     }
 }
