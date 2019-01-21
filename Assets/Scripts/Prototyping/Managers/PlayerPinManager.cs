@@ -47,14 +47,13 @@ public class PlayerPinManager : MonoBehaviour
 
     public void ExamineAdress()
     {
-        Debug.Log("Examine");
-        //GameManager.Singleton.SetupDialog();
+        MainUIManager.Singleton.SetupDialogueSystem();
         UpdatePlayerPinUI(false);
     }
 
     public void MoveToAdress()
     {
-        UIManager.Singleton.SetupAdressesState(true);
+        BoardUIManager.Singleton.SetupAdressesState(true);
         b_IsFollowingMouse = true;
         transform.GetComponent<Button>().enabled = false;
         UpdatePlayerPinUI(false);
@@ -62,7 +61,7 @@ public class PlayerPinManager : MonoBehaviour
 
     public void GoToAdress(Vector3 Pos)
     {
-        UIManager.Singleton.SetupAdressesState(false);
+        BoardUIManager.Singleton.SetupAdressesState(false);
         b_IsFollowingMouse = false;
         transform.position = Pos;
         transform.GetComponent<Button>().enabled = true;

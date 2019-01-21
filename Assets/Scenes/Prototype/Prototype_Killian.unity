@@ -129,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 582833616437265200, guid: fc2bcb461034ba64b9f161b9b4fe7b3e,
         type: 3}
       propertyPath: m_Name
-      value: UI_OnCamera
+      value: MainUIManager
       objectReference: {fileID: 0}
     - target: {fileID: 582833616437265196, guid: fc2bcb461034ba64b9f161b9b4fe7b3e,
         type: 3}

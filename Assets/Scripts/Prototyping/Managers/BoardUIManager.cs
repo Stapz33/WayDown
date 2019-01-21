@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class BoardUIManager : MonoBehaviour
 {
-    public static UIManager Singleton { get; private set; }
+    public static BoardUIManager Singleton { get; private set; }
     private List<Button> l_AdressesList = new List<Button>();
     public Transform AdressesParent;
 
@@ -24,11 +24,6 @@ public class UIManager : MonoBehaviour
         {
             l_AdressesList.Add(AdressesParent.GetChild(i).GetComponent<Button>());
         }
-    }
-
-    public void SetupDialogUI()
-    {
-
     }
 
     public void SetupAdressesState(bool Active)
