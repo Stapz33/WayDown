@@ -49,7 +49,7 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.Adress:
                 PlayerPinManager.Singleton.GoToAdress(transform.position);
-                Story_Integrator.Singleton.SetupNewStory(GetComponent<Address_data>().GetActualStory());
+                MainUIManager.Singleton.SetupNewStory(GetComponent<Address_data>().GetActualStory());
                 break;
             default:
                 break;
