@@ -10,6 +10,7 @@ public class MainUIManager : MonoBehaviour
 
     [Header("Dialogue System")]
     public GameObject DialogueSystem;
+    private Story_Integrator cs_ScriptIntegrator = new Story_Integrator();
 
     #endregion
 
@@ -23,6 +24,8 @@ public class MainUIManager : MonoBehaviour
         {
             Singleton = this;
         }
+
+        cs_ScriptIntegrator = GetComponent<Story_Integrator>();
     }
 
     #region DIALOGUE_SYSTEM
@@ -30,17 +33,13 @@ public class MainUIManager : MonoBehaviour
     public void SetupDialogueSystem()
     {
         DialogueSystem.SetActive(true);
-        LaunchDialogueSequence();
+        cs_ScriptIntegrator.OpenDialogue();
     }
 
     public void CloseDialogueSystem()
     {
         DialogueSystem.SetActive(false);
-    }
-
-    public void LaunchDialogueSequence()
-    {
-
+        cs_ScriptIntegrator.CloseDialogue();
     }
 
     #endregion
