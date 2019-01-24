@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Ink.Runtime;
 using UnityEngine.UI;
 
 public class Story_Integrator : MonoBehaviour {
 
+    public static Story_Integrator Singleton { get; private set; }
     #region DIALOGUE_SYSTEM_SETUP_DATA
 
     // Prefabs & Assets
@@ -14,7 +16,7 @@ public class Story_Integrator : MonoBehaviour {
     [SerializeField] private Button ChoiceButton;
 
     // Story
-    [SerializeField] private TextAsset inkAsset;
+    private TextAsset Story;
     private Story _inkStory;
 
     // Variables
@@ -27,8 +29,36 @@ public class Story_Integrator : MonoBehaviour {
     private float OtherPlayerTimeElapsed = 0f;
     #endregion
 
-	// Update is called once per frame
-	void Update () {
+    #region STORY_SETUP_DATA
+    [SerializeField] private StoryDataBase StartingStories;
+    [SerializeField] private TextAsset DefaultStory;
+    private List<Address_data> AddressesList = new List<Address_data>();
+    #endregion
+    
+
+
+    private void Awake()
+    {
+        if (Singleton != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Singleton = this;
+        }
+
+        Transform AddressParent = BoardUIManager.Singleton.GetAddressList();
+        for (int y = 0; y < AddressParent.childCount; y++)
+        {
+            AddressesList.Add(AddressParent.GetChild(y).GetComponent<Address_data>());
+        }
+        UpdateAddressesStory(StartingStories.StoryData);
+    }
+
+
+    // Update is called once per frame
+    void Update () {
         if (b_StoryStarted)
         {
             if (Input.GetMouseButtonDown(0))
@@ -96,9 +126,10 @@ public class Story_Integrator : MonoBehaviour {
 
     public void OpenDialogue ()
     {
-        _inkStory = new Story(inkAsset.text);
         PlayerText.text = "";
+        s_PlayerFullText = "";
         OtherCharacterText.text = "";
+        s_OtherCharacterFullText = "";
         UpdateVisualText(_inkStory.Continue());
         b_StoryStarted = true;
     }
@@ -106,6 +137,7 @@ public class Story_Integrator : MonoBehaviour {
     public void CloseDialogue()
     {
         b_StoryStarted = false;
+        PlayStory();
     }
 
     public void UpdateVisualText(string ContinueText)
@@ -114,18 +146,38 @@ public class Story_Integrator : MonoBehaviour {
         {
             if (_inkStory.currentTags[0] == "player")
             {
-                Debug.Log("player");
                 s_PlayerFullText = ContinueText;
                 PlayerText.text = "";
                 PlayerTimeElapsed = 0f;
             }
             else if (_inkStory.currentTags[0] == "otherCharacter")
             {
-                Debug.Log("OtherCharacter");
                 s_OtherCharacterFullText = ContinueText;
                 OtherCharacterText.text = "";
                 OtherPlayerTimeElapsed = 0f;
             }
+        }
+    }
+
+    public void SetupNewStory(TextAsset newStory)
+    {
+        Story = newStory;
+        PlayStory();
+    }
+
+    public void PlayStory()
+    {
+        _inkStory = new Story(Story.text);
+    }
+
+    public void UpdateAddressesStory(List<TextAsset> newStories)
+    {
+        for (int x = 0; x < AddressesList.Count;x++)
+        {
+            if (newStories[x] != null)
+            AddressesList[x].SetActualStory(newStories[x]);
+            else
+            AddressesList[x].SetActualStory(DefaultStory);
         }
     }
 }

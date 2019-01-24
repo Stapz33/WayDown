@@ -23,7 +23,6 @@ public class Evenement_Interaction : MonoBehaviour
     void OnMouseEnter()
     {
         infos.SetActive(true);
-        Debug.Log("test");
     }
 
     void OnMouseExit()
