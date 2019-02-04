@@ -8,6 +8,16 @@ public class MainUIManager : MonoBehaviour {
 
     public static MainUIManager Singleton { get; private set; }
 
+    private List<Button> l_AddressesList = new List<Button>();
+    public Transform AddressesParent;
+
+
+    #region LOADING_SCREEN
+
+    [SerializeField] private Animator a_LoadingScreenAnimator;
+
+    #endregion
+
     #region DIALOGUE_SYSTEM_SETUP_DATA
 
     // Prefabs & Assets
@@ -55,11 +65,13 @@ public class MainUIManager : MonoBehaviour {
         {
             Singleton = this;
         }
-
-        Transform AddressParent = BoardUIManager.Singleton.GetAddressList();
-        for (int y = 0; y < AddressParent.childCount; y++)
+        for (int i = 0; i < AddressesParent.childCount;i++)
         {
-            AddressesList.Add(AddressParent.GetChild(y).GetComponent<Address_data>());
+            l_AddressesList.Add(AddressesParent.GetChild(i).GetComponent<Button>());
+        }
+        for (int y = 0; y < l_AddressesList.Count; y++)
+        {
+            AddressesList.Add(l_AddressesList[y].GetComponent<Address_data>());
         }
         UpdateAddressesStory(StartingStories.StoryData);
         _inkStory = new Story(Story.text);
@@ -212,5 +224,26 @@ public class MainUIManager : MonoBehaviour {
     public void ReactivateOtherCharacterDialogue()
     {
         OtherCharacterSection.SetActive(true);
+    }
+
+    public void SetupAdressesState(bool Active)
+    {
+        foreach (Button AdressButton in l_AddressesList)
+        {
+            if (Active)
+                AdressButton.interactable = true;
+            else
+                AdressButton.interactable = false;
+        }
+    }
+
+    public Transform GetAddressList()
+    {
+        return AddressesParent;
+    }
+
+    public void LoadScreen()
+    {
+        a_LoadingScreenAnimator.SetTrigger("Loading");
     }
 }
