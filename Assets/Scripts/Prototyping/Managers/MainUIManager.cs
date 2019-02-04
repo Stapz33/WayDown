@@ -4,12 +4,23 @@ using System.Collections.Generic;
 using Ink.Runtime;
 using UnityEngine.UI;
 
+public enum TabType {Map, AddressBook, Documents}
+
 public class MainUIManager : MonoBehaviour {
 
     public static MainUIManager Singleton { get; private set; }
 
     private List<Button> l_AddressesList = new List<Button>();
     public Transform AddressesParent;
+
+    #region TABS
+
+    [SerializeField] private GameObject MapTab;
+    [SerializeField] private GameObject AddressBookTab;
+    [SerializeField] private GameObject DocumentsTab;
+    private GameObject ActualTab;
+
+    #endregion
 
 
     #region LOADING_SCREEN
@@ -90,7 +101,8 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (!_inkStory.canContinue && _inkStory.currentChoices.Count == 0)
                 {
-                    CloseDialogueSystem();
+                    LoadScreen();
+                    CloseDialogue();
                 }
             }
             if (_inkStory.currentChoices.Count > 0 && ChoiceNeeded == false)
@@ -208,6 +220,7 @@ public class MainUIManager : MonoBehaviour {
     {
         DialogueSystem.SetActive(true);
         OpenDialogue();
+        ActualTab = DialogueSystem;
     }
 
     public void CloseDialogueSystem()
@@ -242,8 +255,42 @@ public class MainUIManager : MonoBehaviour {
         return AddressesParent;
     }
 
+    public void LoadScreen(string method)
+    {
+        a_LoadingScreenAnimator.SetTrigger("Loading");
+        Invoke("DeactivateTab", 1f);
+        Invoke(method, 1f);
+    }
+
     public void LoadScreen()
     {
         a_LoadingScreenAnimator.SetTrigger("Loading");
+        Invoke("DeactivateTab", 1f);
+    }
+
+    public void ActivateTab(TabType tab)
+    { 
+        switch (tab)
+        {
+            case TabType.Map:
+                MapTab.SetActive(true);
+                ActualTab = MapTab;
+                break;
+            case TabType.AddressBook:
+                AddressBookTab.SetActive(true);
+                ActualTab = AddressBookTab;
+                break;
+            case TabType.Documents:
+                DocumentsTab.SetActive(true);
+                ActualTab = DocumentsTab;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void DeactivateTab()
+    {
+        ActualTab.SetActive(false);
     }
 }

@@ -56,15 +56,4 @@ public class PlayerCameraManager : MonoBehaviour
         }
 
     }
-
-    public void SetPlayerTab (int Idx)
-    {
-        if (Idx != i_ActualTab)
-        {
-            i_ActualTab = Idx;
-            v_PositionToMoveTo = GameManager.Singleton.GetCameraInfo(Idx).Item1;
-            i_CameraSizeToReach = GameManager.Singleton.GetCameraInfo(Idx).Item2;
-            b_CameraNeedToMove = true;
-        }
-    }
 }

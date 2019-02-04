@@ -21,11 +21,11 @@ public class ButtonCallEditor : Editor
 
         switch (cs_Script.TypeOfButton)
         {
-            case ButtonType.Tab:
-                cs_Script.ButtonIndex = EditorGUILayout.IntField("Button Index", cs_Script.ButtonIndex);
+            case ButtonType.OpenTab:
+                cs_Script.TypeOfTab = (TabType)EditorGUILayout.EnumPopup("Tab To Open", cs_Script.TypeOfTab);
                 break;
             case ButtonType.AddressBookNote:
-                cs_Script.ButtonIndex = EditorGUILayout.IntField("Page Index", cs_Script.ButtonIndex);
+                cs_Script.PagIdx = EditorGUILayout.IntField("Page Index", cs_Script.PagIdx);
                 break;
             default:
                 break;
@@ -34,19 +34,23 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { Tab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi }
 public class ButtonCall : MonoBehaviour
 {
 
     public ButtonType TypeOfButton;
-    public int ButtonIndex;
+    public TabType TypeOfTab;
+    public int PagIdx;
 
     public void OnClick()
     {
         switch (TypeOfButton)
         {
-            case ButtonType.Tab:
-                PlayerCameraManager.Singleton.SetPlayerTab(ButtonIndex);
+            case ButtonType.OpenTab:
+                MainUIManager.Singleton.ActivateTab(TypeOfTab);
+                break;
+            case ButtonType.CloseTab:
+                MainUIManager.Singleton.DeactivateTab();
                 break;
             case ButtonType.Adress:
                 PlayerPinManager.Singleton.GoToAdress(transform.position);
@@ -59,10 +63,13 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.PreviousPage();
                 break;
             case ButtonType.AddressBookNote:
-                AddressBookManager.Singleton.JumpToPage(ButtonIndex);
+                AddressBookManager.Singleton.JumpToPage(PagIdx);
                 break;
             case ButtonType.AddressBookAddress:
                 AddressBookManager.Singleton.SetValidationText(transform.GetComponentInChildren<UnityEngine.UI.Text>().text);
+                break;
+            case ButtonType.CallTaxi:
+                MainUIManager.Singleton.LoadScreen("SetupDialogueSystem");
                 break;
             default:
                 break;
