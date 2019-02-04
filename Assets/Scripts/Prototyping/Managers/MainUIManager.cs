@@ -20,7 +20,7 @@ public class MainUIManager : MonoBehaviour {
     public Button ChoiceButton;
 
     // Story
-    private TextAsset Story;
+    [SerializeField]private TextAsset Story;
     private Story _inkStory;
 
     // Variables
@@ -38,7 +38,7 @@ public class MainUIManager : MonoBehaviour {
 
     [Header("Story")]
     public StoryDataBase StartingStories;
-    public TextAsset DefaultStory;
+    public string DefaultKnot;
     private List<Address_data> AddressesList = new List<Address_data>();
 
     #endregion
@@ -62,6 +62,7 @@ public class MainUIManager : MonoBehaviour {
             AddressesList.Add(AddressParent.GetChild(y).GetComponent<Address_data>());
         }
         UpdateAddressesStory(StartingStories.StoryData);
+        _inkStory = new Story(Story.text);
     }
 
 
@@ -145,7 +146,7 @@ public class MainUIManager : MonoBehaviour {
     public void CloseDialogue()
     {
         b_StoryStarted = false;
-        PlayStory();
+
     }
 
     public void UpdateVisualText(string ContinueText)
@@ -167,10 +168,10 @@ public class MainUIManager : MonoBehaviour {
         }
     }
 
-    public void SetupNewStory(TextAsset newStory)
+    public void SetupNewStory(string newStory)
     {
-        Story = newStory;
-        if (Story == DefaultStory)
+        _inkStory.ChoosePathString(newStory);
+        if (newStory == DefaultKnot)
         {
             DeactivateOtherCharacterDialogue();
         }
@@ -178,22 +179,16 @@ public class MainUIManager : MonoBehaviour {
         {
             ReactivateOtherCharacterDialogue();
         }
-        PlayStory();
     }
 
-    public void PlayStory()
-    {
-        _inkStory = new Story(Story.text);
-    }
-
-    public void UpdateAddressesStory(List<TextAsset> newStories)
+    public void UpdateAddressesStory(List<string> newStories)
     {
         for (int x = 0; x < AddressesList.Count;x++)
         {
             if (newStories[x] != null)
             AddressesList[x].SetActualStory(newStories[x]);
             else
-            AddressesList[x].SetActualStory(DefaultStory);
+            AddressesList[x].SetActualStory(DefaultKnot);
         }
     }
 

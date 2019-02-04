@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Address_data : MonoBehaviour
 {
-    private TextAsset ActualStory;
+    private string ActualKnot;
     // Start is called before the first frame update
-    public TextAsset GetActualStory()
+    public string GetActualStory()
     {
-        return ActualStory;
+        return ActualKnot;
     }
 
-    public void SetActualStory(TextAsset newStory)
+    public void SetActualStory(string newStory)
     {
-        ActualStory = newStory;
+        ActualKnot = newStory;
     }
 }

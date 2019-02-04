@@ -24,7 +24,8 @@ public class ButtonCallEditor : Editor
             case ButtonType.Tab:
                 cs_Script.ButtonIndex = EditorGUILayout.IntField("Button Index", cs_Script.ButtonIndex);
                 break;
-            case ButtonType.Adress:
+            case ButtonType.AddressBookNote:
+                cs_Script.ButtonIndex = EditorGUILayout.IntField("Page Index", cs_Script.ButtonIndex);
                 break;
             default:
                 break;
@@ -33,7 +34,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { Tab, Adress }
+public enum ButtonType { Tab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -50,6 +51,18 @@ public class ButtonCall : MonoBehaviour
             case ButtonType.Adress:
                 PlayerPinManager.Singleton.GoToAdress(transform.position);
                 MainUIManager.Singleton.SetupNewStory(GetComponent<Address_data>().GetActualStory());
+                break;
+            case ButtonType.AdressBookNext:
+                AddressBookManager.Singleton.NextPage();
+                break;
+            case ButtonType.AdressBookPrevious:
+                AddressBookManager.Singleton.PreviousPage();
+                break;
+            case ButtonType.AddressBookNote:
+                AddressBookManager.Singleton.JumpToPage(ButtonIndex);
+                break;
+            case ButtonType.AddressBookAddress:
+                AddressBookManager.Singleton.SetValidationText(transform.GetComponentInChildren<UnityEngine.UI.Text>().text);
                 break;
             default:
                 break;

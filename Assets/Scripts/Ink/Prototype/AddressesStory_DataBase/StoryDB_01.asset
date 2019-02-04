@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: StoryDB_01
   m_EditorClassIdentifier: 
   StoryData:
-  - {fileID: 4900000, guid: cfc1afdf236c02e4e8f19629657d3916, type: 3}
-  - {fileID: 4900000, guid: cada871687f46704c994b44e4b211f45, type: 3}
-  - {fileID: 4900000, guid: 751c41de4495069419c775106a48bcc1, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - FirstStory
+  - 
+  - 
+  - 
+  - 
