@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -27,6 +28,12 @@ public class ButtonCallEditor : Editor
             case ButtonType.AddressBookNote:
                 cs_Script.PagIdx = EditorGUILayout.IntField("Page Index", cs_Script.PagIdx);
                 break;
+            case ButtonType.OpenDocumentPanel:
+                cs_Script.TypeOfDocument = (DocumentType)EditorGUILayout.EnumPopup("Document Panel To Open", cs_Script.TypeOfDocument);
+                break;
+            case ButtonType.OpenLargeDocument:
+                cs_Script.DocumentInfo = EditorGUILayout.TextField("DocumentText", cs_Script.DocumentInfo);
+                break;
             default:
                 break;
         }
@@ -34,23 +41,25 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument}
 public class ButtonCall : MonoBehaviour
 {
 
     public ButtonType TypeOfButton;
     public TabType TypeOfTab;
+    public DocumentType TypeOfDocument;
     public int PagIdx;
+    public string DocumentInfo;
 
     public void OnClick()
     {
         switch (TypeOfButton)
         {
             case ButtonType.OpenTab:
-                MainUIManager.Singleton.ActivateTab(TypeOfTab);
+                MainUIManager.Singleton.OpenTab(TypeOfTab);
                 break;
             case ButtonType.CloseTab:
-                MainUIManager.Singleton.DeactivateTab();
+                MainUIManager.Singleton.CloseTab();
                 break;
             case ButtonType.Adress:
                 PlayerPinManager.Singleton.GoToAdress(transform.position);
@@ -71,8 +80,31 @@ public class ButtonCall : MonoBehaviour
             case ButtonType.CallTaxi:
                 MainUIManager.Singleton.LoadScreen("SetupDialogueSystem");
                 break;
+            case ButtonType.OpenDocumentPanel:
+                MainUIManager.Singleton.OpenDocumentPanel(TypeOfDocument);
+                break;
+            case ButtonType.CloseDocumentPanel:
+                MainUIManager.Singleton.CloseDocumentPanel();
+                break;
+            case ButtonType.OpenLargeDocument:
+                MainUIManager.Singleton.OpenLargeDocument(GetComponent<Image>().sprite);
+                break;
+            case ButtonType.CloseLargeDocument:
+                MainUIManager.Singleton.CloseLargeDocument();
+                break;
             default:
                 break;
         }
+    }
+
+
+    public void Enter()
+    {
+            MainUIManager.Singleton.ActivateDocumentInfo(DocumentInfo);
+    }
+
+    public void Exit()
+    {
+            MainUIManager.Singleton.DeactivateDocumentInfo();
     }
 }

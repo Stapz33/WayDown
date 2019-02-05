@@ -53,7 +53,6 @@ public class PlayerPinManager : MonoBehaviour
 
     public void MoveToAdress()
     {
-        BoardUIManager.Singleton.SetupAdressesState(true);
         b_IsFollowingMouse = true;
         transform.GetComponent<Button>().enabled = false;
         UpdatePlayerPinUI(false);
@@ -61,7 +60,6 @@ public class PlayerPinManager : MonoBehaviour
 
     public void GoToAdress(Vector3 Pos)
     {
-        BoardUIManager.Singleton.SetupAdressesState(false);
         b_IsFollowingMouse = false;
         transform.position = Pos;
         transform.GetComponent<Button>().enabled = true;
