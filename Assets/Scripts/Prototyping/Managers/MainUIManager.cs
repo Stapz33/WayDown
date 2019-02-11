@@ -88,6 +88,8 @@ public class MainUIManager : MonoBehaviour {
     private int i_investigationIndex = 0;
     private bool b_isGoodAddress = false;
 
+    [SerializeField] private GameObject PoliceOffice;
+
     private void Awake()
     {
         if (Singleton != null)
@@ -121,7 +123,7 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (!_inkStory.canContinue && _inkStory.currentChoices.Count == 0)
                 {
-                    LoadScreen();
+                    LoadScreen(true);
                     CloseDialogue();
                 }
             }
@@ -290,19 +292,24 @@ public class MainUIManager : MonoBehaviour {
 
     #region LOADING_SCREEN
 
-    public void LoadScreen(string method)
+    public void LoadScreen(string method, bool NeedToCloseTab)
     {
         a_LoadingScreenAnimator.SetTrigger("Loading");
-        Invoke("CloseTab", 1f);
+        if (NeedToCloseTab)
+        {
+            Invoke("CloseTab", 1f);
+        }
         Invoke(method, 1f);
     }
 
-    public void LoadScreen()
+    public void LoadScreen(bool NeedToCloseTab)
     {
         a_LoadingScreenAnimator.SetTrigger("Loading");
-        Invoke("CloseTab", 1f);
+        if (NeedToCloseTab)
+        {
+            Invoke("CloseTab", 1f);
+        }
     }
-
     #endregion
 
     #region TABS
@@ -425,6 +432,7 @@ public class MainUIManager : MonoBehaviour {
     {
         if (b_isGoodAddress)
         {
+            LaunchNewInvestigation();
             SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover].GetActualStory());
             b_isGoodAddress = false;
             DiscoverNewAddress();
@@ -438,7 +446,27 @@ public class MainUIManager : MonoBehaviour {
 
     public void GoToAddres(string s)
     {
-        LoadScreen("SetupDialogueSystem");
+        LoadScreen("SetupDialogueSystem",true);
         SetupNewStory(s);
+    }
+
+    public string GetActualName()
+    {
+        if (ActualStoryDataBase.CriminalName != null)
+        {
+            return ActualStoryDataBase.CriminalName;
+        }
+        return null;
+    }
+
+    public void OpenPoliceOffice()
+    {
+        PoliceOffice.SetActive(true);
+        PoliceOffice.GetComponent<PoliceOffice>().UpdateNormalInspector();
+    }
+
+    public void ClosePoliceOffice()
+    {
+        PoliceOffice.SetActive(false);
     }
 }

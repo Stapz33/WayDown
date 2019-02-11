@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument}
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation}
 public class ButtonCall : MonoBehaviour
 {
 
@@ -77,7 +77,7 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.SetValidationText(transform.GetComponentInChildren<UnityEngine.UI.Text>().text);
                 break;
             case ButtonType.CallTaxi:
-                MainUIManager.Singleton.LoadScreen("CallTaxi");
+                MainUIManager.Singleton.LoadScreen("CallTaxi",true);
                 break;
             case ButtonType.OpenDocumentPanel:
                 MainUIManager.Singleton.OpenDocumentPanel(TypeOfDocument);
@@ -90,6 +90,25 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.CloseLargeDocument:
                 MainUIManager.Singleton.CloseLargeDocument();
+                break;
+            case ButtonType.ClosePoliceOffice:
+                MainUIManager.Singleton.LoadScreen("ClosePoliceOffice",false);
+                break;
+            case ButtonType.ClosePoliceFace:
+                break;
+            case ButtonType.ClosePoliceName:
+                PoliceOffice.Singleton.CloseNameTab();
+                break;
+            case ButtonType.OpenPoliceOffice:
+                MainUIManager.Singleton.LoadScreen("OpenPoliceOffice",false);
+                break;
+            case ButtonType.OpenPoliceFace:
+                break;
+            case ButtonType.OpenPoliceName:
+                PoliceOffice.Singleton.OpenNameTab();
+                break;
+            case ButtonType.PoliceOfficeNameValidation:
+                PoliceOffice.Singleton.NameValidation();
                 break;
             default:
                 break;

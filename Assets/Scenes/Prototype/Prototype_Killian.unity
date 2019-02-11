@@ -113,6 +113,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1109741654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2284290704474852117, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    type: 3}
+  m_PrefabInstance: {fileID: 4711738336229313565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2823339989537466024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,68 +395,43 @@ PrefabInstance:
     - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: StoryDataBase.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: StoryDataBase.Array.data[0]
+      propertyPath: StoryDataBase.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 08e9dc2b28cd12842ab904ff3d616f5c,
+      objectReference: {fileID: 11400000, guid: 6ffb80026f0b3e143893aa2d50f36a48,
         type: 2}
     - target: {fileID: 4711738336830892966, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 383557878688790553, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 2284290704474852117, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_FontData.m_BestFit
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4569753754827351409, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 2284290704474852117, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284290704474852117, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809247885175527720, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: PlayerText
+      value: 
+      objectReference: {fileID: 1109741654}
+    - target: {fileID: 262223273729016728, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988475791857646385, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7467778092953264088, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166949197880549313, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1584541432529525993, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3991645954488711168, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292472426941638716, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292472426941638719, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695007661481463780, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
