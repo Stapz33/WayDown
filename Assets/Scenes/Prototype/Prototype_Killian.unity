@@ -380,81 +380,71 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1292472427410201644, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 0.5019608
+      propertyPath: StoryDataBase.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5534265935178810753, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_addressDescription
-      value: Debug4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292472427452090048, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534265934985928557, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_addressDescription
-      value: Debug2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292472427614302178, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534265934841820751, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_addressDescription
-      value: Debug1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292472428404436094, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534265934026192339, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_addressDescription
-      value: Debug3
-      objectReference: {fileID: 0}
-    - target: {fileID: 305593482263568534, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_addressDescription
-      value: 4th Avenue
-      objectReference: {fileID: 0}
-    - target: {fileID: 305593482263568534, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_addressImage
+      propertyPath: StoryDataBase.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: d516d136fa457244da8b9462919db05a,
+      objectReference: {fileID: 11400000, guid: 08e9dc2b28cd12842ab904ff3d616f5c,
+        type: 2}
+    - target: {fileID: 4711738336830892966, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-    - target: {fileID: 383557878688790554, guid: 7e30d4add22b7f1438f20fef1cb40309,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 383557878688790553, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569753754827351409, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988475791857646385, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467778092953264088, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166949197880549313, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584541432529525993, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991645954488711168, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292472426941638716, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292472426941638719, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 383557878688790554, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 4695007661481463780, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569753754827351410, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988475791857646386, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.00012207031
-      objectReference: {fileID: 0}
-    - target: {fileID: 7467778092953264091, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      propertyPath: TypeOfButton
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}

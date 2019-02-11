@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: StoryDB_01
   m_EditorClassIdentifier: 
   StoryData:
-  - FirstStory
+  - first_story
   - 
   - 
   - 
   - 
+  investigationType: 0
+  criminalRecordType: 0
+  CriminalName: 
+  CriminalBool: 
+  CriminalRecord: {fileID: 0}
+  AddressInfos: Athena    14 rue des messages    Restaurant Grec
+  AddressIndexToDiscover: 0

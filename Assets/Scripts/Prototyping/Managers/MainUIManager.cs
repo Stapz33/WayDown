@@ -61,7 +61,6 @@ public class MainUIManager : MonoBehaviour {
     #region STORY_SETUP_DATA
 
     [Header("Story")]
-    public StoryDataBase StartingStories;
     public string DefaultKnot;
     private List<Address_data> AddressesList = new List<Address_data>();
 
@@ -84,6 +83,11 @@ public class MainUIManager : MonoBehaviour {
 
     #endregion
 
+    [SerializeField] private List<StoryDataBase> StoryDataBase;
+    private StoryDataBase ActualStoryDataBase;
+    private int i_investigationIndex = 0;
+    private bool b_isGoodAddress = false;
+
     private void Awake()
     {
         if (Singleton != null)
@@ -102,7 +106,7 @@ public class MainUIManager : MonoBehaviour {
         {
             AddressesList.Add(l_AddressesList[y].GetComponent<Address_data>());
         }
-        UpdateAddressesStory(StartingStories.StoryData);
+        LaunchNewInvestigation();
         _inkStory = new Story(Story.text);
     }
 
@@ -157,6 +161,11 @@ public class MainUIManager : MonoBehaviour {
     public Transform GetAddressList()
     {
         return AddressesParent;
+    }
+
+    public void DiscoverNewAddress()
+    {
+        AddressesList[ActualStoryDataBase.AddressIndexToDiscover].gameObject.SetActive(true);
     }
 
     #endregion
@@ -389,4 +398,47 @@ public class MainUIManager : MonoBehaviour {
     }
 
     #endregion
+
+    public void LaunchNewInvestigation()
+    {
+        ActualStoryDataBase = StoryDataBase[i_investigationIndex];
+        UpdateAddressesStory(ActualStoryDataBase.StoryData);
+        i_investigationIndex++;
+    }
+
+    public void TestGoodAddress(string AddressToTest)
+    {
+        if (ActualStoryDataBase.AddressInfos != null)
+        {
+            if (AddressToTest == ActualStoryDataBase.AddressInfos)
+            {
+                b_isGoodAddress = true;
+            }
+            else
+            {
+                b_isGoodAddress = false;
+            }
+        }
+    }
+
+    public void CallTaxi()
+    {
+        if (b_isGoodAddress)
+        {
+            SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover].GetActualStory());
+            b_isGoodAddress = false;
+            DiscoverNewAddress();
+        }
+        else
+        {
+            SetupNewStory(DefaultKnot);
+        }
+        SetupDialogueSystem();
+    }
+
+    public void GoToAddres(string s)
+    {
+        LoadScreen("SetupDialogueSystem");
+        SetupNewStory(s);
+    }
 }

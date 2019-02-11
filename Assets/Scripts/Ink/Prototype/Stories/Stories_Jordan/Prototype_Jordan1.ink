@@ -7,10 +7,10 @@ Hello Borletti, I was looking for you # player
 Still annoying me Rosenthal... What do you want? # otherCharacter
 ->first_discussion
 = first_discussion
-+Just wanted to check on you[], see what you were up to. # player
+	+Just wanted to check on you[], see what you were up to. # player
 	{Ain't nothing to hide man.|Mind your own business.|You're getting on my nerves...} # otherCharacter
 	->first_discussion
-*Do you know where Capone is? # player
+	*Do you know where Capone is? # player
 	Can't say that I know, that man is a weasel. You should not hunt him. # otherCharacter
 	Maybe Spaghetti know where he is. He's probably drunk at the Fisherman's Wharf. # otherCharacter
 	~knowledge_Spaghetti = true //unlock Spaghetti discussion

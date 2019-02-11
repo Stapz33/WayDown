@@ -13,6 +13,8 @@ public class AddressBookManager : MonoBehaviour
 
     [SerializeField] private Text ValidationText;
 
+    [Header("Good Addresses")]
+
     public int LastPageIdx;
     private int PageIdx = 0;
 
@@ -69,5 +71,6 @@ public class AddressBookManager : MonoBehaviour
     public void SetValidationText(string TextToSet)
     {
         ValidationText.text = TextToSet;
+        MainUIManager.Singleton.TestGoodAddress(TextToSet);
     }
 }

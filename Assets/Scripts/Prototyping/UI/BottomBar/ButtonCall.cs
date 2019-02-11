@@ -62,8 +62,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseTab();
                 break;
             case ButtonType.Adress:
-                PlayerPinManager.Singleton.GoToAdress(transform.position);
-                MainUIManager.Singleton.SetupNewStory(GetComponent<Address_data>().GetActualStory());
+                MainUIManager.Singleton.GoToAddres(GetComponent<Address_data>().GetActualStory());
                 break;
             case ButtonType.AdressBookNext:
                 AddressBookManager.Singleton.NextPage();
@@ -78,7 +77,7 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.SetValidationText(transform.GetComponentInChildren<UnityEngine.UI.Text>().text);
                 break;
             case ButtonType.CallTaxi:
-                MainUIManager.Singleton.LoadScreen("SetupDialogueSystem");
+                MainUIManager.Singleton.LoadScreen("CallTaxi");
                 break;
             case ButtonType.OpenDocumentPanel:
                 MainUIManager.Singleton.OpenDocumentPanel(TypeOfDocument);
