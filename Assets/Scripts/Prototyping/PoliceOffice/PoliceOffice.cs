@@ -19,6 +19,14 @@ public class PoliceOffice : MonoBehaviour
             Singleton = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("return") && NameInput.activeSelf)
+        {
+            NameValidation();
+        }
+    }
+
     public void OpenNameTab()
     {
         Inspector.NameTextLaunch();
@@ -34,28 +42,34 @@ public class PoliceOffice : MonoBehaviour
     public void CloseNameTab()
     {
         Inspector.NormalTextLaunch();
+        NameInput.transform.GetChild(0).GetComponent<UnityEngine.UI.InputField>().text = "";
         NameInput.SetActive(false);
         BlackBackground.SetActive(false);
-    }
-
-    public void NameValidation()
-    {
-        string GoodName = MainUIManager.Singleton.GetActualName();
-        if (GoodName != null)
-        {
-            if (InputField.text == GoodName)
-            {
-                Inspector.PeopleTextLaunch();
-            }
-            else
-            {
-                Inspector.NoPeopleTextLaunch();
-            }
-        }
     }
 
     public void FaceTextLaunch()
     {
         Inspector.FaceTextLaunch();
     }
+
+    public void GoodName()
+    {
+        Inspector.PeopleTextLaunch();
+    }
+
+    public void WrongName()
+    {
+        Inspector.NoPeopleTextLaunch();
+    }
+
+    public void AlreadyGood()
+    {
+        Inspector.AlreadyPeopleTextLaunch();
+    }
+
+    public void NameValidation()
+    {
+        MainUIManager.Singleton.NameValidation(InputField.text);
+    }
+
 }

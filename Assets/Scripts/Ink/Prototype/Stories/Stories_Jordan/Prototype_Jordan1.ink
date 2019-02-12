@@ -12,8 +12,9 @@ Still annoying me Rosenthal... What do you want? # otherCharacter
 	->first_discussion
 	*Do you know where Capone is? # player
 	Can't say that I know, that man is a weasel. You should not hunt him. # otherCharacter
-	Maybe Spaghetti know where he is. He's probably drunk at the Fisherman's Wharf. # otherCharacter
+	Maybe Spaghetti know where he is. He's probably drunk at the Fisherman's Wharf. # otherCharacter # NewInvestigation
 	~knowledge_Spaghetti = true //unlock Spaghetti discussion
+
 	-> end_first_discussion
 
 =end_first_discussion

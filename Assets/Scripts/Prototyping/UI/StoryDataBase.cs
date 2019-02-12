@@ -19,7 +19,7 @@ public class StoryDataBaseEditor : Editor
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressIndexToDiscover"), true);
                 break;
             case 1:
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalRecord"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalRecordIdx"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalBool"), true);
                 var CriminalType = serializedObject.FindProperty("criminalRecordType");
                 EditorGUILayout.PropertyField(CriminalType, true);
@@ -50,8 +50,9 @@ public class StoryDataBase : ScriptableObject
     public string CriminalName;
     public string CriminalBool;
     // Criminal Sketch;
-    public GameObject CriminalRecord;
+    public int CriminalRecordIdx;
 
     public string AddressInfos;
     public int AddressIndexToDiscover;
+
 }

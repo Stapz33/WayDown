@@ -86,7 +86,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseDocumentPanel();
                 break;
             case ButtonType.OpenLargeDocument:
-                MainUIManager.Singleton.OpenLargeDocument(GetComponent<Image>().sprite);
+                MainUIManager.Singleton.ShowLargeDocument(GetComponent<Image>().sprite);
                 break;
             case ButtonType.CloseLargeDocument:
                 MainUIManager.Singleton.CloseLargeDocument();

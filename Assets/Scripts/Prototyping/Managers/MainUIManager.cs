@@ -87,8 +87,11 @@ public class MainUIManager : MonoBehaviour {
     private StoryDataBase ActualStoryDataBase;
     private int i_investigationIndex = 0;
     private bool b_isGoodAddress = false;
+    private bool m_IsCriminalKnown = false;
 
-    [SerializeField] private GameObject PoliceOffice;
+    [SerializeField] private GameObject PoliceOfficeObject;
+
+    [SerializeField] private DocumentScriptable DocumentDataBase;
 
     private void Awake()
     {
@@ -224,7 +227,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void UpdateVisualText(string ContinueText)
     {
-        if (_inkStory.currentTags.Count == 1)
+        if (_inkStory.currentTags.Count >= 1)
         {
             if (_inkStory.currentTags[0] == "player")
             {
@@ -237,6 +240,15 @@ public class MainUIManager : MonoBehaviour {
                 s_OtherCharacterFullText = ContinueText;
                 OtherCharacterText.text = "";
                 OtherPlayerTimeElapsed = 0f;
+            }
+            if (_inkStory.currentTags.Count > 1)
+            {
+                Debug.Log("2tags");
+                if (_inkStory.currentTags[1] == "NewInvestigation")
+                {
+                    Debug.Log("NewInv");
+                    LaunchNewInvestigation();
+                }
             }
         }
     }
@@ -380,7 +392,31 @@ public class MainUIManager : MonoBehaviour {
     }
 
     // Large Document
-    public void OpenLargeDocument(Sprite sprite)
+    public void AddNewDocumentAndShowIt(int DocumentIdx,DocumentType Type)
+    {
+        GameObject Document = null;
+        switch (Type)
+        {
+            case DocumentType.NewsPaper:
+                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], NewsPapers.transform.GetChild(0));
+                break;
+            case DocumentType.WritingNote:
+                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], WritingNotes.transform.GetChild(0));
+                break;
+            case DocumentType.Object:
+                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], Objects.transform.GetChild(0));
+                break;
+            case DocumentType.PoliceRecord:
+                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], PoliceRecord.transform.GetChild(0));
+                m_IsCriminalKnown = true;
+                break;
+            default:
+                break;
+        }
+        ShowLargeDocument(Document.GetComponent<Image>().sprite);
+    }
+
+    public void ShowLargeDocument(Sprite sprite)
     {
         LargeDocument.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
         LargeDocument.SetActive(true);
@@ -408,9 +444,11 @@ public class MainUIManager : MonoBehaviour {
 
     public void LaunchNewInvestigation()
     {
+        Debug.Log("Investigation");
         ActualStoryDataBase = StoryDataBase[i_investigationIndex];
         UpdateAddressesStory(ActualStoryDataBase.StoryData);
         i_investigationIndex++;
+        m_IsCriminalKnown = false;
     }
 
     public void TestGoodAddress(string AddressToTest)
@@ -432,7 +470,6 @@ public class MainUIManager : MonoBehaviour {
     {
         if (b_isGoodAddress)
         {
-            LaunchNewInvestigation();
             SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover].GetActualStory());
             b_isGoodAddress = false;
             DiscoverNewAddress();
@@ -461,12 +498,42 @@ public class MainUIManager : MonoBehaviour {
 
     public void OpenPoliceOffice()
     {
-        PoliceOffice.SetActive(true);
-        PoliceOffice.GetComponent<PoliceOffice>().UpdateNormalInspector();
+        PoliceOfficeObject.SetActive(true);
+        PoliceOffice.Singleton.UpdateNormalInspector();
     }
 
     public void ClosePoliceOffice()
     {
-        PoliceOffice.SetActive(false);
+        PoliceOfficeObject.SetActive(false);
+    }
+
+    public void NameValidation(string name)
+    {
+        string GoodName = GetActualName();
+        if (GoodName != "")
+        {
+            if (name == GoodName && !m_IsCriminalKnown)
+            {
+                PoliceOffice.Singleton.GoodName();
+                Invoke("AddNewCriminalRecord", 1.5f);
+            }
+            else if (name == GoodName && m_IsCriminalKnown)
+            {
+                PoliceOffice.Singleton.AlreadyGood();
+            }
+            else 
+            {
+                PoliceOffice.Singleton.WrongName();
+            }
+        }
+        else
+        {
+            PoliceOffice.Singleton.WrongName();
+        }
+    }
+
+    public void AddNewCriminalRecord()
+    {
+        AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentType.PoliceRecord);
     }
 }

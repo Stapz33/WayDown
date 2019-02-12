@@ -76,4 +76,11 @@ public class TextWPW : MonoBehaviour
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
     }
+
+    public void AlreadyPeopleTextLaunch()
+    {
+        PlayerTimeElapsed = 0f;
+        PlayerText.text = "";
+        s_PlayerFullText = "You already asked me for this record huh ?";
+    }
 }
