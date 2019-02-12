@@ -10,6 +10,7 @@ public class StoryDataBaseEditor : Editor
     {
         serializedObject.Update();
         EditorGUILayout.PropertyField(serializedObject.FindProperty("StoryData"),true);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("m_LaunchNewInvestigation"), true);
         var InvType = serializedObject.FindProperty("investigationType");
         EditorGUILayout.PropertyField(InvType, true);
         switch(InvType.enumValueIndex)
@@ -29,6 +30,15 @@ public class StoryDataBaseEditor : Editor
                 }
                 else
                 {
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("HintNeeded"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Corpulence"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Height"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("SexType"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Ethnicity"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("HairType"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("HairColor"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("EyeColor"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("TattooPiercing"), true);
                 }
                 break;
         }
@@ -38,6 +48,15 @@ public class StoryDataBaseEditor : Editor
 
 public enum InvestigationType {Address, CriminalRecord}
 public enum CriminalRecordType {Name, CompositeSketch}
+
+public enum Corpulence { Null, Slim, Fat, Normal, Stocky, Muscular }
+public enum Height { Null, Small, Medium, Large }
+public enum SexType { Null, Male, Female }
+public enum Ethnicity { Null, Italian, Russian, Irish, African, Asian, Arabian, Indian, Caucasian }
+public enum HairType { Null, Long, Medium, Short, Bald, Curly, Straight, Coily }
+public enum HairColor { Null, Blond, Red, Brown, White, Black, Grey }
+public enum EyeColor { Null, Blue, Green, Brown, Black }
+public enum TattooPiercing { Null, None, Tattoo, EarPiercing, NosePiercing, LipsPiercing }
 
 [CreateAssetMenu(fileName = "StoryDB_", menuName = "Story Data Base")]
 public class StoryDataBase : ScriptableObject
@@ -49,10 +68,24 @@ public class StoryDataBase : ScriptableObject
 
     public string CriminalName;
     public string CriminalBool;
+
+    public bool m_LaunchNewInvestigation = false;
+
+
     // Criminal Sketch;
     public int CriminalRecordIdx;
 
     public string AddressInfos;
     public int AddressIndexToDiscover;
 
+    public Corpulence Corpulence;
+    public Height Height;
+    public SexType SexType;
+    public Ethnicity Ethnicity;
+    public HairType HairType;
+    public HairColor HairColor;
+    public EyeColor EyeColor;
+    public TattooPiercing TattooPiercing;
+
+    public int HintNeeded;
 }

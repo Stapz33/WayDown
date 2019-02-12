@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation}
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -95,6 +95,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.LoadScreen("ClosePoliceOffice",false);
                 break;
             case ButtonType.ClosePoliceFace:
+                PoliceOffice.Singleton.CloseCSTab();
                 break;
             case ButtonType.ClosePoliceName:
                 PoliceOffice.Singleton.CloseNameTab();
@@ -103,6 +104,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.LoadScreen("OpenPoliceOffice",false);
                 break;
             case ButtonType.OpenPoliceFace:
+                PoliceOffice.Singleton.OpenCSTab();
                 break;
             case ButtonType.OpenPoliceName:
                 PoliceOffice.Singleton.OpenNameTab();
@@ -110,6 +112,10 @@ public class ButtonCall : MonoBehaviour
             case ButtonType.PoliceOfficeNameValidation:
                 PoliceOffice.Singleton.NameValidation();
                 break;
+            case ButtonType.PoliceOfficeCSValidation:
+                MainUIManager.Singleton.TestCS();
+                break;
+                
             default:
                 break;
         }

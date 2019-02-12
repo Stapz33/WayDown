@@ -93,6 +93,9 @@ public class MainUIManager : MonoBehaviour {
 
     [SerializeField] private DocumentScriptable DocumentDataBase;
 
+    [SerializeField] private Transform PoliceDropdownParent;
+    private List<Dropdown> m_PoliceDropdown = new List<Dropdown>();
+
     private void Awake()
     {
         if (Singleton != null)
@@ -110,6 +113,10 @@ public class MainUIManager : MonoBehaviour {
         for (int y = 0; y < l_AddressesList.Count; y++)
         {
             AddressesList.Add(l_AddressesList[y].GetComponent<Address_data>());
+        }
+        for (int x = 0; x < PoliceDropdownParent.childCount;x++)
+        {
+            m_PoliceDropdown.Add(PoliceDropdownParent.GetChild(x).GetComponent<Dropdown>());
         }
         LaunchNewInvestigation();
         _inkStory = new Story(Story.text);
@@ -243,10 +250,8 @@ public class MainUIManager : MonoBehaviour {
             }
             if (_inkStory.currentTags.Count > 1)
             {
-                Debug.Log("2tags");
                 if (_inkStory.currentTags[1] == "NewInvestigation")
                 {
-                    Debug.Log("NewInv");
                     LaunchNewInvestigation();
                 }
             }
@@ -470,6 +475,10 @@ public class MainUIManager : MonoBehaviour {
     {
         if (b_isGoodAddress)
         {
+            if (ActualStoryDataBase.m_LaunchNewInvestigation)
+            {
+                LaunchNewInvestigation();
+            }
             SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover].GetActualStory());
             b_isGoodAddress = false;
             DiscoverNewAddress();
@@ -535,5 +544,96 @@ public class MainUIManager : MonoBehaviour {
     public void AddNewCriminalRecord()
     {
         AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentType.PoliceRecord);
+        if (ActualStoryDataBase.m_LaunchNewInvestigation)
+        {
+            LaunchNewInvestigation();
+        }
+    }
+
+    /// Police Record
+    /// 
+    /// Composite Sketch
+    /// 
+
+    public void ResetDropdownValue()
+    {
+        foreach(Dropdown x in m_PoliceDropdown)
+        {
+            x.value = 0;
+        }
+    }
+
+    public void TestCS()
+    {
+        int nb = 0;
+        if (ActualStoryDataBase.Corpulence != Corpulence.Null)
+        {
+            if ((int)ActualStoryDataBase.Corpulence == m_PoliceDropdown[0].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.Height != Height.Null)
+        {
+            if ((int)ActualStoryDataBase.Height == m_PoliceDropdown[1].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.SexType != SexType.Null)
+        {
+            if ((int)ActualStoryDataBase.SexType == m_PoliceDropdown[2].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.Ethnicity != Ethnicity.Null)
+        {
+            if ((int)ActualStoryDataBase.Ethnicity == m_PoliceDropdown[3].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.HairType != HairType.Null)
+        {
+            if ((int)ActualStoryDataBase.HairType == m_PoliceDropdown[4].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.HairColor != HairColor.Null)
+        {
+            if ((int)ActualStoryDataBase.HairColor == m_PoliceDropdown[5].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.EyeColor != EyeColor.Null)
+        {
+            if ((int)ActualStoryDataBase.EyeColor == m_PoliceDropdown[6].value)
+            {
+                nb++;
+            }
+        }
+        if (ActualStoryDataBase.TattooPiercing != TattooPiercing.Null)
+        {
+            if ((int)ActualStoryDataBase.TattooPiercing == m_PoliceDropdown[7].value)
+            {
+                nb++;
+            }
+        }
+        if (nb == ActualStoryDataBase.HintNeeded && !m_IsCriminalKnown)
+        {
+            PoliceOffice.Singleton.GoodName();
+            Invoke("AddNewCriminalRecord", 1.5f);
+        }
+        else if (nb == ActualStoryDataBase.HintNeeded && m_IsCriminalKnown)
+        {
+            PoliceOffice.Singleton.AlreadyGood();
+        }
+        else
+        {
+            PoliceOffice.Singleton.WrongCS();
+        }
     }
 }

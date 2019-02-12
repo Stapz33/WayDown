@@ -70,6 +70,13 @@ public class TextWPW : MonoBehaviour
         s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
     }
 
+    public void NoCSTextLaunch()
+    {
+        PlayerTimeElapsed = 0f;
+        PlayerText.text = "";
+        s_PlayerFullText = "Wait a second, there are too many possible profiles";
+    }
+
     public void PeopleTextLaunch()
     {
         PlayerTimeElapsed = 0f;
