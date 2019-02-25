@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Ink.Runtime;
 using UnityEngine.UI;
+using System;
 
 public enum TabType {Map, AddressBook, Documents}
-public enum DocumentType { NewsPaper, WritingNote, Object, PoliceRecord }
+public enum DocumentFolder { AddressD01, AddressD02, AddressD03, AddressD04 }
 
 public class MainUIManager : MonoBehaviour {
 
@@ -47,7 +48,7 @@ public class MainUIManager : MonoBehaviour {
     // Story
     [SerializeField]private TextAsset Story;
     private Story _inkStory;
-
+    
     // Variables
     public float wordsPerSecond = 10f; // speed of typewriter
     private bool ChoiceNeeded = false;
@@ -66,17 +67,53 @@ public class MainUIManager : MonoBehaviour {
 
     #endregion
 
+    #region SAVE_SYSTEM_DATA
+    [Serializable]
+    public class Data
+    {
+        public int i_investigationIndex = 0;
+        public bool m_IsCriminalKnown = false;
+        public string s_Story = "";
+        public List<bool> AddressState = new List<bool>();
+
+
+        //variables
+        public int knowledgeSpaghetty = 0;
+
+    }
+
+    [Serializable]
+    public class DocumentDatas
+    {
+        [Serializable]
+        public struct DocumentStruct
+        {
+            public int doc;
+            public DocumentFolder doctype;
+        }
+
+        public List<DocumentStruct> doclist = new List<DocumentStruct>();
+    }
+    private Data ActualDatas;
+    private DocumentDatas DocDatas;
+    
+    [Header("Save/Load")]
+    public GameObject SaveState;
+
+
+    #endregion
+
     #region DOCUMENTS_DATA
 
     [Header("Documents")]
-    [SerializeField] private GameObject NewsPapers;
-    [SerializeField] private GameObject WritingNotes;
-    [SerializeField] private GameObject Objects;
-    [SerializeField] private GameObject PoliceRecord;
+    private List<Transform> l_DocumentsDrawer = new List<Transform>();
+    private List<int> l_DocumentsDrawerDocNB = new List<int>();
     [SerializeField] private GameObject DocumentTypeButtons;
+    [SerializeField] private Transform DocumentsDrawerParent;
+    [SerializeField] private Transform DocumentsDrawerButtonsParent;
     [SerializeField] private GameObject CloseDocumentPanelButton;
 
-    private GameObject ActualDocumentPanel;
+    private int ActualDocumentPanel;
 
     [SerializeField] private GameObject LargeDocument;
     [SerializeField] private GameObject DocumentInfo;
@@ -85,9 +122,7 @@ public class MainUIManager : MonoBehaviour {
 
     [SerializeField] private List<StoryDataBase> StoryDataBase;
     private StoryDataBase ActualStoryDataBase;
-    private int i_investigationIndex = 0;
     private bool b_isGoodAddress = false;
-    private bool m_IsCriminalKnown = false;
 
     [SerializeField] private GameObject PoliceOfficeObject;
 
@@ -106,7 +141,12 @@ public class MainUIManager : MonoBehaviour {
         {
             Singleton = this;
         }
-        for (int i = 0; i < AddressesParent.childCount;i++)
+        
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < AddressesParent.childCount; i++)
         {
             l_AddressesList.Add(AddressesParent.GetChild(i).GetComponent<Button>());
         }
@@ -114,12 +154,33 @@ public class MainUIManager : MonoBehaviour {
         {
             AddressesList.Add(l_AddressesList[y].GetComponent<Address_data>());
         }
-        for (int x = 0; x < PoliceDropdownParent.childCount;x++)
+        for (int x = 0; x < PoliceDropdownParent.childCount; x++)
         {
             m_PoliceDropdown.Add(PoliceDropdownParent.GetChild(x).GetComponent<Dropdown>());
         }
-        LaunchNewInvestigation();
+        for (int h = 0; h < DocumentsDrawerParent.childCount - 1; h++)
+        {
+            l_DocumentsDrawer.Add(DocumentsDrawerParent.GetChild(h));
+            l_DocumentsDrawerDocNB.Add(0);
+        }
         _inkStory = new Story(Story.text);
+        if (SaveManager.Singleton.LoadStoryPath() != null)
+        {
+            LoadGame();
+            Debug.Log("Loading");
+        }
+        else
+        {
+            ActualDatas = new Data();
+            DocDatas = new DocumentDatas();
+            DocDatas.doclist = new List<DocumentDatas.DocumentStruct>();
+            for (int y = 0; y < AddressesList.Count; y++)
+            {
+                ActualDatas.AddressState.Add(AddressesList[y].gameObject.activeSelf);
+            }
+            LaunchNewInvestigation();
+            Debug.Log("New Game");
+        }
     }
 
     void Update () {
@@ -178,6 +239,14 @@ public class MainUIManager : MonoBehaviour {
     public void DiscoverNewAddress()
     {
         AddressesList[ActualStoryDataBase.AddressIndexToDiscover].gameObject.SetActive(true);
+    }
+
+    public void UpdateDiscoveredAdress()
+    {
+        for (int j = 0; j < AddressesList.Count; j++)
+        {
+            AddressesList[j].gameObject.SetActive(ActualDatas.AddressState[j]);
+        }
     }
 
     #endregion
@@ -362,64 +431,72 @@ public class MainUIManager : MonoBehaviour {
     #region DOCUMENTS
 
     // Documents Panels
-    public void OpenDocumentPanel(DocumentType Type)
+    public void OpenDocumentPanel(DocumentFolder Type)
     {
         DocumentTypeButtons.SetActive(false);
         CloseDocumentPanelButton.SetActive(true);
-        switch (Type)
-        {
-            case DocumentType.NewsPaper:
-                NewsPapers.SetActive(true);
-                ActualDocumentPanel = NewsPapers;
-                break;
-            case DocumentType.WritingNote:
-                WritingNotes.SetActive(true);
-                ActualDocumentPanel = WritingNotes;
-                break;
-            case DocumentType.Object:
-                Objects.SetActive(true);
-                ActualDocumentPanel = Objects;
-                break;
-            case DocumentType.PoliceRecord:
-                PoliceRecord.SetActive(true);
-                ActualDocumentPanel = PoliceRecord;
-                break;
-            default:
-                break;
-        }
+        DocumentsDrawerParent.gameObject.SetActive(true);
+        l_DocumentsDrawer[(int)Type].gameObject.SetActive(true);
+        ActualDocumentPanel = (int)Type;
     }
 
     public void CloseDocumentPanel()
     {
-        ActualDocumentPanel.SetActive(false);
+        DocumentsDrawerParent.gameObject.SetActive(false);
+        l_DocumentsDrawer[ActualDocumentPanel].gameObject.SetActive(false);
         DocumentTypeButtons.SetActive(true);
         CloseDocumentPanelButton.SetActive(false);
     }
 
     // Large Document
-    public void AddNewDocumentAndShowIt(int DocumentIdx,DocumentType Type)
+    
+
+    public void AddNewDocumentAndShowIt(int DocumentIdx, DocumentFolder Type, bool isCriminalRecord)
+    {
+        DocumentDatas.DocumentStruct yes = new DocumentDatas.DocumentStruct();
+        yes.doc = DocumentIdx;
+        yes.doctype = Type;
+        DocDatas.doclist.Add(yes);
+        SaveManager.Singleton.SaveDocumentPath(DocDatas);
+        if (!DocumentsDrawerButtonsParent.GetChild((int)Type).gameObject.activeSelf)
+        {
+            DocumentsDrawerButtonsParent.GetChild((int)Type).gameObject.SetActive(true);
+        }
+        if (isCriminalRecord)
+        {
+            ActualDatas.m_IsCriminalKnown = true;
+        }
+        InstantiateDocument(DocumentIdx, (int)Type,true);
+    }
+
+    public void InstantiateDocument(int DocumentIdx, int DrawerIdx,bool needToShow)
     {
         GameObject Document = null;
-        switch (Type)
+        if (l_DocumentsDrawerDocNB[DrawerIdx] >= 24)
         {
-            case DocumentType.NewsPaper:
-                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], NewsPapers.transform.GetChild(0));
-                break;
-            case DocumentType.WritingNote:
-                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], WritingNotes.transform.GetChild(0));
-                break;
-            case DocumentType.Object:
-                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], Objects.transform.GetChild(0));
-                break;
-            case DocumentType.PoliceRecord:
-                Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], PoliceRecord.transform.GetChild(0));
-                m_IsCriminalKnown = true;
-                break;
-            default:
-                break;
+            l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(3);
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(3));
         }
+        else if (l_DocumentsDrawerDocNB[DrawerIdx] >= 16)
+        {
+            l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(2);
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(2));
+        }
+        else if (l_DocumentsDrawerDocNB[DrawerIdx] >= 8)
+        {
+            l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(1);
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(1));
+        }
+        else
+        {
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0));
+        }
+        l_DocumentsDrawerDocNB[DrawerIdx]++;
+        if (needToShow)
         ShowLargeDocument(Document.GetComponent<Image>().sprite);
     }
+
+
 
     public void ShowLargeDocument(Sprite sprite)
     {
@@ -449,11 +526,17 @@ public class MainUIManager : MonoBehaviour {
 
     public void LaunchNewInvestigation()
     {
-        Debug.Log("Investigation");
-        ActualStoryDataBase = StoryDataBase[i_investigationIndex];
+        ActualStoryDataBase = StoryDataBase[ActualDatas.i_investigationIndex];
         UpdateAddressesStory(ActualStoryDataBase.StoryData);
-        i_investigationIndex++;
-        m_IsCriminalKnown = false;
+        ActualDatas.m_IsCriminalKnown = false;
+        ActualDatas.i_investigationIndex++;
+        SaveGame();
+    }
+
+    public void LoadInvestigation()
+    {
+        ActualStoryDataBase = StoryDataBase[ActualDatas.i_investigationIndex - 1];
+        UpdateAddressesStory(ActualStoryDataBase.StoryData);
     }
 
     public void TestGoodAddress(string AddressToTest)
@@ -521,12 +604,12 @@ public class MainUIManager : MonoBehaviour {
         string GoodName = GetActualName();
         if (GoodName != "")
         {
-            if (name == GoodName && !m_IsCriminalKnown)
+            if (name == GoodName && !ActualDatas.m_IsCriminalKnown)
             {
                 PoliceOffice.Singleton.GoodName();
                 Invoke("AddNewCriminalRecord", 1.5f);
             }
-            else if (name == GoodName && m_IsCriminalKnown)
+            else if (name == GoodName && ActualDatas.m_IsCriminalKnown)
             {
                 PoliceOffice.Singleton.AlreadyGood();
             }
@@ -543,10 +626,14 @@ public class MainUIManager : MonoBehaviour {
 
     public void AddNewCriminalRecord()
     {
-        AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentType.PoliceRecord);
+        AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentFolder.AddressD04, true);
         if (ActualStoryDataBase.m_LaunchNewInvestigation)
         {
             LaunchNewInvestigation();
+        }
+        else
+        {
+            SaveGame();
         }
     }
 
@@ -573,12 +660,20 @@ public class MainUIManager : MonoBehaviour {
                 nb++;
             }
         }
+        else if (ActualStoryDataBase.Corpulence == Corpulence.Null && m_PoliceDropdown[0].value != 0)
+        {
+            nb = -100;
+        }
         if (ActualStoryDataBase.Height != Height.Null)
         {
             if ((int)ActualStoryDataBase.Height == m_PoliceDropdown[1].value)
             {
                 nb++;
             }
+        }
+        else if (ActualStoryDataBase.Height == Height.Null && m_PoliceDropdown[1].value != 0)
+        {
+            nb = -100;
         }
         if (ActualStoryDataBase.SexType != SexType.Null)
         {
@@ -587,12 +682,20 @@ public class MainUIManager : MonoBehaviour {
                 nb++;
             }
         }
+        else if (ActualStoryDataBase.SexType == SexType.Null && m_PoliceDropdown[2].value != 0)
+        {
+            nb = -100;
+        }
         if (ActualStoryDataBase.Ethnicity != Ethnicity.Null)
         {
             if ((int)ActualStoryDataBase.Ethnicity == m_PoliceDropdown[3].value)
             {
                 nb++;
             }
+        }
+        else if (ActualStoryDataBase.Ethnicity == Ethnicity.Null && m_PoliceDropdown[3].value != 0)
+        {
+            nb = -100;
         }
         if (ActualStoryDataBase.HairType != HairType.Null)
         {
@@ -601,12 +704,20 @@ public class MainUIManager : MonoBehaviour {
                 nb++;
             }
         }
+        else if (ActualStoryDataBase.HairType == HairType.Null && m_PoliceDropdown[4].value != 0)
+        {
+            nb = -100;
+        }
         if (ActualStoryDataBase.HairColor != HairColor.Null)
         {
             if ((int)ActualStoryDataBase.HairColor == m_PoliceDropdown[5].value)
             {
                 nb++;
             }
+        }
+        else if (ActualStoryDataBase.HairColor == HairColor.Null && m_PoliceDropdown[5].value != 0)
+        {
+            nb = -100;
         }
         if (ActualStoryDataBase.EyeColor != EyeColor.Null)
         {
@@ -615,6 +726,10 @@ public class MainUIManager : MonoBehaviour {
                 nb++;
             }
         }
+        else if (ActualStoryDataBase.EyeColor == EyeColor.Null && m_PoliceDropdown[6].value != 0)
+        {
+            nb = -100;
+        }
         if (ActualStoryDataBase.TattooPiercing != TattooPiercing.Null)
         {
             if ((int)ActualStoryDataBase.TattooPiercing == m_PoliceDropdown[7].value)
@@ -622,12 +737,16 @@ public class MainUIManager : MonoBehaviour {
                 nb++;
             }
         }
-        if (nb == ActualStoryDataBase.HintNeeded && !m_IsCriminalKnown)
+        else if (ActualStoryDataBase.TattooPiercing == TattooPiercing.Null && m_PoliceDropdown[7].value != 0)
+        {
+            nb = -100;
+        }
+        if (nb == ActualStoryDataBase.HintNeeded && !ActualDatas.m_IsCriminalKnown)
         {
             PoliceOffice.Singleton.GoodName();
             Invoke("AddNewCriminalRecord", 1.5f);
         }
-        else if (nb == ActualStoryDataBase.HintNeeded && m_IsCriminalKnown)
+        else if (nb == ActualStoryDataBase.HintNeeded && ActualDatas.m_IsCriminalKnown)
         {
             PoliceOffice.Singleton.AlreadyGood();
         }
@@ -635,5 +754,59 @@ public class MainUIManager : MonoBehaviour {
         {
             PoliceOffice.Singleton.WrongCS();
         }
+    }
+
+    public void SaveGame()
+    {
+        SaveState.SetActive(true);
+        Invoke("DeactivateSaveState", 4f);
+        SaveStoryVar();
+        ActualDatas.s_Story = _inkStory.state.ToJson();
+        for (int a = 0; a < AddressesList.Count; a++)
+        {
+            ActualDatas.AddressState[a] = AddressesList[a].gameObject.activeSelf;
+        }
+        SaveManager.Singleton.SaveStoryPath(ActualDatas);
+    }
+
+    public void LoadGame()
+    {
+        ActualDatas = SaveManager.Singleton.LoadStoryPath();
+        DocDatas = SaveManager.Singleton.LoadDocumentPath();
+        UpdateDocumentState();
+        UpdateDiscoveredAdress();
+        _inkStory.state.LoadJson(ActualDatas.s_Story);
+        LoadStoryVar();
+        LoadInvestigation();
+    }
+
+    public void UpdateDocumentState()
+    {
+        if (DocDatas != null)
+        {
+            foreach (DocumentDatas.DocumentStruct doc in DocDatas.doclist)
+            {
+                InstantiateDocument(doc.doc, (int)doc.doctype,false);
+                if (!DocumentsDrawerButtonsParent.GetChild((int)doc.doctype).gameObject.activeSelf)
+                {
+                    DocumentsDrawerButtonsParent.GetChild((int)doc.doctype).gameObject.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void DeactivateSaveState()
+    {
+        SaveState.SetActive(false);
+    }
+
+    public void SaveStoryVar()
+    {
+        ActualDatas.knowledgeSpaghetty = (int)_inkStory.variablesState["knowledge_Spaghetti"];
+    }
+
+    public void LoadStoryVar()
+    {
+        _inkStory.variablesState["knowledge_Spaghetti"] = ActualDatas.knowledgeSpaghetty;
     }
 }

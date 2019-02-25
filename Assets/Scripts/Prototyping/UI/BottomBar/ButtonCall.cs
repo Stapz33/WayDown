@@ -9,47 +9,48 @@ using UnityEditor;
 [CustomEditor(typeof(ButtonCall))]
 public class ButtonCallEditor : Editor
 {
-    ButtonCall cs_Script;
-    private void OnEnable()
-    {
-        cs_Script = (ButtonCall)target;
-    }
-
     public override void OnInspectorGUI()
     {
-        Undo.RecordObject(target, "ButtonCall");
-        cs_Script.TypeOfButton = (ButtonType)EditorGUILayout.EnumPopup("Button Type", cs_Script.TypeOfButton);
-
-        switch (cs_Script.TypeOfButton)
+        serializedObject.Update();
+        var InvType = serializedObject.FindProperty("TypeOfButton");
+        EditorGUILayout.PropertyField(InvType, true);
+        switch (InvType.enumValueIndex)
         {
-            case ButtonType.OpenTab:
-                cs_Script.TypeOfTab = (TabType)EditorGUILayout.EnumPopup("Tab To Open", cs_Script.TypeOfTab);
+            case (int)ButtonType.OpenTab:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("TypeOfTab"), true);
                 break;
-            case ButtonType.AddressBookNote:
-                cs_Script.PagIdx = EditorGUILayout.IntField("Page Index", cs_Script.PagIdx);
+            case (int)ButtonType.AddressBookNote:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("PagIdx"), true);
                 break;
-            case ButtonType.OpenDocumentPanel:
-                cs_Script.TypeOfDocument = (DocumentType)EditorGUILayout.EnumPopup("Document Panel To Open", cs_Script.TypeOfDocument);
+            case (int)ButtonType.OpenDocumentPanel:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("TypeOfDocument"), true);
                 break;
-            case ButtonType.OpenLargeDocument:
-                cs_Script.DocumentInfo = EditorGUILayout.TextField("DocumentText", cs_Script.DocumentInfo);
+            case (int)ButtonType.OpenLargeDocument:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("DocumentInfo"), true);
+                break;
+            case (int)ButtonType.SwitchDrawerTab:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("PagIdx"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("parent"), true);
                 break;
             default:
                 break;
         }
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab }
 public class ButtonCall : MonoBehaviour
 {
 
     public ButtonType TypeOfButton;
     public TabType TypeOfTab;
-    public DocumentType TypeOfDocument;
+    public DocumentFolder TypeOfDocument;
     public int PagIdx;
     public string DocumentInfo;
+    public Transform parent;
 
     public void OnClick()
     {
@@ -115,7 +116,12 @@ public class ButtonCall : MonoBehaviour
             case ButtonType.PoliceOfficeCSValidation:
                 MainUIManager.Singleton.TestCS();
                 break;
-                
+            case ButtonType.SwitchDrawerTab:
+                Debug.Log("Yes");
+                parent.GetComponent<DocumentFolderManager>().SetupTab(PagIdx);
+                break;
+
+
             default:
                 break;
         }
