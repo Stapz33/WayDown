@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -117,10 +117,11 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.TestCS();
                 break;
             case ButtonType.SwitchDrawerTab:
-                Debug.Log("Yes");
                 parent.GetComponent<DocumentFolderManager>().SetupTab(PagIdx);
                 break;
-
+            case ButtonType.AlphabeticalButton:
+                AddressBookManager.Singleton.GoToAlphabetical();
+                break;
 
             default:
                 break;

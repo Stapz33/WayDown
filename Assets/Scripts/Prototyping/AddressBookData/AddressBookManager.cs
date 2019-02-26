@@ -9,9 +9,12 @@ public class AddressBookManager : MonoBehaviour
     
     private List<Text> AddressesList = new List<Text>();
 
-    public Transform AddressesButtonParent;
+    [SerializeField] private Transform AddressesButtonParent;
+    [SerializeField] private GameObject AddressesAlphabeticalButtonParent;
+    [SerializeField] private GameObject AlphabeticalButton;
 
     [SerializeField] private Text ValidationText;
+
 
     [Header("Good Addresses")]
 
@@ -66,11 +69,21 @@ public class AddressBookManager : MonoBehaviour
     {
         PageIdx = idx;
         RefreshPage();
+        AddressesAlphabeticalButtonParent.SetActive(false);
+        AddressesButtonParent.gameObject.SetActive(true);
+        AlphabeticalButton.SetActive(true);
     }
 
     public void SetValidationText(string TextToSet)
     {
         ValidationText.text = TextToSet;
         MainUIManager.Singleton.TestGoodAddress(TextToSet);
+    }
+
+    public void GoToAlphabetical()
+    {
+        AlphabeticalButton.SetActive(false);
+        AddressesButtonParent.gameObject.SetActive(false);
+        AddressesAlphabeticalButtonParent.SetActive(true);
     }
 }
