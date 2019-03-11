@@ -31,7 +31,7 @@ Still annoying me Rosenthal... What do you want? # otherCharacter
 	-> end_first_discussion
 
 =end_first_discussion
-Now get the hell out of here old man. # otherCharacter # NewInvestigation
+Now get the hell out of here old man. # otherCharacter # NewInvestigation # NewDocument #3
 -> END
 
 =end_normal_discussion

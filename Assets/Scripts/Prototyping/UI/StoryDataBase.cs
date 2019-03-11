@@ -61,6 +61,7 @@ public enum TattooPiercing { Null, None, Tattoo, EarPiercing, NosePiercing, Lips
 [CreateAssetMenu(fileName = "StoryDB_", menuName = "Story Data Base")]
 public class StoryDataBase : ScriptableObject
 {
+
     public List<string> StoryData;
 
     public InvestigationType investigationType;

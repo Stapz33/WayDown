@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -63,7 +63,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseTab();
                 break;
             case ButtonType.Adress:
-                MainUIManager.Singleton.GoToAddres(GetComponent<Address_data>().GetActualStory());
+                MainUIManager.Singleton.GoToAddres(GetComponent<Address_data>().GetActualStory(),GetComponent<Address_data>().GetDocumentFolder());
                 break;
             case ButtonType.AdressBookNext:
                 AddressBookManager.Singleton.NextPage();
@@ -87,7 +87,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseDocumentPanel();
                 break;
             case ButtonType.OpenLargeDocument:
-                MainUIManager.Singleton.ShowLargeDocument(GetComponent<Image>().sprite);
+                MainUIManager.Singleton.ShowLargeDocumentMulti(GetComponent<Image>().sprite);
                 break;
             case ButtonType.CloseLargeDocument:
                 MainUIManager.Singleton.CloseLargeDocument();
@@ -122,7 +122,9 @@ public class ButtonCall : MonoBehaviour
             case ButtonType.AlphabeticalButton:
                 AddressBookManager.Singleton.GoToAlphabetical();
                 break;
+            case ButtonType.AddNewDocumentToComparison:
 
+                break;
             default:
                 break;
         }

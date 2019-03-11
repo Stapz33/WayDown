@@ -8,6 +8,7 @@ public class Address_data : MonoBehaviour
     private string ActualKnot;
     [SerializeField] private string m_addressDescription;
     [SerializeField] private Sprite m_addressImage;
+    [SerializeField] private DocumentFolder m_MyAddresDoc;
 
     [SerializeField] private GameObject m_infosPanel;
 
@@ -36,5 +37,10 @@ public class Address_data : MonoBehaviour
     public void PointerExit()
     {
         m_infosPanel.SetActive(false);
+    }
+
+    public DocumentFolder GetDocumentFolder ()
+    {
+        return m_MyAddresDoc;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System;
 
 public enum TabType {Map, AddressBook, Documents}
-public enum DocumentFolder { AddressD01, AddressD02, AddressD03, AddressD04 }
+public enum DocumentFolder {CriminalRecord, AddressD01, AddressD02, AddressD03, AddressD04, AddressD05 }
 
 public class MainUIManager : MonoBehaviour {
 
@@ -96,6 +96,7 @@ public class MainUIManager : MonoBehaviour {
     }
     private Data ActualDatas;
     private DocumentDatas DocDatas;
+    private DocumentFolder AddressActualFolder;
     
     [Header("Save/Load")]
     public GameObject SaveState;
@@ -115,8 +116,9 @@ public class MainUIManager : MonoBehaviour {
 
     private int ActualDocumentPanel;
 
-    [SerializeField] private GameObject LargeDocument;
+    [SerializeField] private LargeDocumentManager m_LargeDocument;
     [SerializeField] private GameObject DocumentInfo;
+    private bool b_isAddDocNavigation = false;
 
     #endregion
 
@@ -238,7 +240,9 @@ public class MainUIManager : MonoBehaviour {
 
     public void DiscoverNewAddress()
     {
-        AddressesList[ActualStoryDataBase.AddressIndexToDiscover].gameObject.SetActive(true);
+        Address_data data = AddressesList[ActualStoryDataBase.AddressIndexToDiscover];
+        data.gameObject.SetActive(true);
+        SetNewActualAddressDocumentFolder(data.GetDocumentFolder());
     }
 
     public void UpdateDiscoveredAdress()
@@ -305,23 +309,27 @@ public class MainUIManager : MonoBehaviour {
     {
         if (_inkStory.currentTags.Count >= 1)
         {
-            if (_inkStory.currentTags[0] == "player")
+            for (int f = 0; f <_inkStory.currentTags.Count; f++)
             {
-                s_PlayerFullText = ContinueText;
-                PlayerText.text = "";
-                PlayerTimeElapsed = 0f;
-            }
-            else if (_inkStory.currentTags[0] == "otherCharacter")
-            {
-                s_OtherCharacterFullText = ContinueText;
-                OtherCharacterText.text = "";
-                OtherPlayerTimeElapsed = 0f;
-            }
-            if (_inkStory.currentTags.Count > 1)
-            {
-                if (_inkStory.currentTags[1] == "NewInvestigation")
+                if (_inkStory.currentTags[f] == "player")
+                {
+                    s_PlayerFullText = ContinueText;
+                    PlayerText.text = "";
+                    PlayerTimeElapsed = 0f;
+                }
+                else if (_inkStory.currentTags[f] == "otherCharacter")
+                {
+                    s_OtherCharacterFullText = ContinueText;
+                    OtherCharacterText.text = "";
+                    OtherPlayerTimeElapsed = 0f;
+                }
+                else if (_inkStory.currentTags[f] == "NewInvestigation")
                 {
                     LaunchNewInvestigation();
+                }
+                else if (_inkStory.currentTags[f] == "NewDocument")
+                {
+                    AddNewDocumentAndShowIt(int.Parse(_inkStory.currentTags[f + 1]),AddressActualFolder,false);
                 }
             }
         }
@@ -493,20 +501,38 @@ public class MainUIManager : MonoBehaviour {
         }
         l_DocumentsDrawerDocNB[DrawerIdx]++;
         if (needToShow)
-        ShowLargeDocument(Document.GetComponent<Image>().sprite);
+        ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite);
     }
 
 
 
-    public void ShowLargeDocument(Sprite sprite)
+    public void ShowLargeDocumentSingle(Sprite sprite)
     {
-        LargeDocument.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
-        LargeDocument.SetActive(true);
+        m_LargeDocument.gameObject.SetActive(true);
+        m_LargeDocument.UpdateSingleDoc(sprite);
+    }
+
+    public void ShowLargeDocumentMulti(Sprite sprite)
+    {
+        if (!b_isAddDocNavigation)
+        {
+            m_LargeDocument.gameObject.SetActive(true);
+            m_LargeDocument.UpdateMultiDoc01(sprite);
+        }
+        if (b_isAddDocNavigation)
+        {
+            m_LargeDocument.gameObject.SetActive(true);
+            m_LargeDocument.UpdateMultiDoc02(sprite);
+            b_isAddDocNavigation = false;
+        }
+
     }
 
     public void CloseLargeDocument()
     {
-        LargeDocument.SetActive(false);
+        m_LargeDocument.gameObject.SetActive(false);
+        m_LargeDocument.HideMultiDoc();
+        m_LargeDocument.HideSingleDoc();
     }
 
     // Document Info
@@ -573,10 +599,11 @@ public class MainUIManager : MonoBehaviour {
         SetupDialogueSystem();
     }
 
-    public void GoToAddres(string s)
+    public void GoToAddres(string s,DocumentFolder documentFolder)
     {
         LoadScreen("SetupDialogueSystem",true);
         SetupNewStory(s);
+        SetNewActualAddressDocumentFolder(documentFolder);
     }
 
     public string GetActualName()
@@ -626,7 +653,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void AddNewCriminalRecord()
     {
-        AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentFolder.AddressD04, true);
+        AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentFolder.CriminalRecord, true);
         if (ActualStoryDataBase.m_LaunchNewInvestigation)
         {
             LaunchNewInvestigation();
@@ -809,4 +836,19 @@ public class MainUIManager : MonoBehaviour {
     {
         _inkStory.variablesState["knowledge_Spaghetti"] = ActualDatas.knowledgeSpaghetty;
     }
+
+    public void SetNewActualAddressDocumentFolder(DocumentFolder documentFolder)
+    {
+        Debug.Log("New Doc Folder");
+        AddressActualFolder = documentFolder;
+    }
+
+    public void AddNewDocToComparision()
+    {
+        m_LargeDocument.gameObject.SetActive(false);
+        m_LargeDocument.AddDoc();
+        b_isAddDocNavigation = true;
+    }
+
+    
 }
