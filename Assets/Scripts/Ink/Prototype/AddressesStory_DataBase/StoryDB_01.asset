@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StoryDB_01
   m_EditorClassIdentifier: 
   StoryData:
-  - first_story
+  - start_capo_apartment
   - 
   - 
   - 
