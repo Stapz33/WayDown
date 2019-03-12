@@ -123,7 +123,7 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.GoToAlphabetical();
                 break;
             case ButtonType.AddNewDocumentToComparison:
-
+                MainUIManager.Singleton.AddNewDocToComparision();
                 break;
             default:
                 break;

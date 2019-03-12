@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(StoryDataBase))]
@@ -45,6 +46,7 @@ public class StoryDataBaseEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
+#endif
 
 public enum InvestigationType {Address, CriminalRecord}
 public enum CriminalRecordType {Name, CompositeSketch}

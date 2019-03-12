@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using Ink.Runtime;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum TabType {Map, AddressBook, Documents}
-public enum DocumentFolder {CriminalRecord, AddressD01, AddressD02, AddressD03, AddressD04, AddressD05 }
+public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Drugstore, Restaurant }
 
 public class MainUIManager : MonoBehaviour {
 
@@ -44,6 +45,8 @@ public class MainUIManager : MonoBehaviour {
     public Text PlayerText;
     public Text OtherCharacterText;
     public Button ChoiceButton;
+    [SerializeField] private Image OtherCharacterSprite;
+    [SerializeField] private Image DialogueBackground;
 
     // Story
     [SerializeField]private TextAsset Story;
@@ -101,6 +104,7 @@ public class MainUIManager : MonoBehaviour {
     [Header("Save/Load")]
     public GameObject SaveState;
 
+    [SerializeField] private GameObject ExitMenu;
 
     #endregion
 
@@ -129,6 +133,7 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private GameObject PoliceOfficeObject;
 
     [SerializeField] private DocumentScriptable DocumentDataBase;
+    [SerializeField] private DialogueScriptable DialogueDataBase;
 
     [SerializeField] private Transform PoliceDropdownParent;
     private List<Dropdown> m_PoliceDropdown = new List<Dropdown>();
@@ -143,7 +148,6 @@ public class MainUIManager : MonoBehaviour {
         {
             Singleton = this;
         }
-        
     }
 
     private void Start()
@@ -217,6 +221,11 @@ public class MainUIManager : MonoBehaviour {
             OtherPlayerTimeElapsed += Time.deltaTime;
             PlayerText.text = GetWords(s_PlayerFullText, (int)(PlayerTimeElapsed * wordsPerSecond));
             OtherCharacterText.text = GetWords(s_OtherCharacterFullText, (int)(OtherPlayerTimeElapsed * wordsPerSecond));
+        }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            ExitMenu.SetActive(true);
         }
     }
 
@@ -330,6 +339,14 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "NewDocument")
                 {
                     AddNewDocumentAndShowIt(int.Parse(_inkStory.currentTags[f + 1]),AddressActualFolder,false);
+                }
+                else if (_inkStory.currentTags[f] == "NewCharacterSprite")
+                {
+                    OtherCharacterSprite.sprite = DialogueDataBase.Characters[int.Parse(_inkStory.currentTags[f + 1])];
+                }
+                else if (_inkStory.currentTags[f] == "NewBackground")
+                {
+                    DialogueBackground.sprite = DialogueDataBase.Backgrounds[int.Parse(_inkStory.currentTags[f + 1])];
                 }
             }
         }
@@ -533,6 +550,7 @@ public class MainUIManager : MonoBehaviour {
         m_LargeDocument.gameObject.SetActive(false);
         m_LargeDocument.HideMultiDoc();
         m_LargeDocument.HideSingleDoc();
+        m_LargeDocument.CloseComparison();
     }
 
     // Document Info
@@ -850,5 +868,29 @@ public class MainUIManager : MonoBehaviour {
         b_isAddDocNavigation = true;
     }
 
-    
+    public void ReturnToMenu()
+    {
+        ExitMenu.SetActive(false);
+        a_LoadingScreenAnimator.SetTrigger("LoadBlack");
+        Invoke("async", 1f);
+    }
+
+    public void ContinueGame()
+    {
+        ExitMenu.SetActive(false);
+    }
+
+    public void async()
+    {
+        StartCoroutine("LoadSceneAsync");
+    }
+
+    IEnumerator LoadSceneAsync()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 }

@@ -18,10 +18,23 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
+  - 
+  - 
   investigationType: 0
   criminalRecordType: 0
   CriminalName: 
   CriminalBool: 
-  CriminalRecord: {fileID: 0}
+  m_LaunchNewInvestigation: 0
+  CriminalRecordIdx: 0
   AddressInfos: Athena    14 rue des messages    Restaurant Grec
   AddressIndexToDiscover: 0
+  Corpulence: 0
+  Height: 0
+  SexType: 0
+  Ethnicity: 0
+  HairType: 0
+  HairColor: 0
+  EyeColor: 0
+  TattooPiercing: 0
+  HintNeeded: 0

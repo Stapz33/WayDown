@@ -13,9 +13,10 @@ public class SaveManager : MonoBehaviour
     private void Awake()
     {
         if (Singleton != null)
-            Destroy(this);
+            Destroy(gameObject);
         else
             Singleton = this;
+        DontDestroyOnLoad(gameObject);
         SetupPaths();
     }
 
@@ -71,5 +72,20 @@ public class SaveManager : MonoBehaviour
         }
         return null;
 
+    }
+
+    public bool CheckSaveExist()
+    {
+        if (File.Exists(storypath))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void DeleteSaves()
+    {
+        File.Delete(storypath);
+        File.Delete(docpath);
     }
 }
