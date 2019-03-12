@@ -20,45 +20,45 @@ VAR DEBUG = false
 
 --------------------------------------------------------------------------------*/
 
-=start_office
+=start_office 
 VAR lanza_stitch_first = 0
 
 TODO Tags (see with Killian)
 TODO Intro capo's apartment (retakes)
-
-This night couldn't have ended in a better way. # player
+# DisableDiscussion
+This night couldn't have ended in a better way. # player 
 I mean for a night where I'll have to meet a corpse, it could be worse. # player
 I could be the dead man. # player
-You understand me Rosenthal? Come here immediatly.
+You understand me Rosenthal? Come here immediatly. # otherCharacter # ActivateDiscussion # NewCharacterSprite #3
     * What's the address again? # player
 
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
 
-- Lived on 98 Francisco Street, . Hurry up, fucking stinks here. # otherCharacter # NewCharacterSprite #3
+- Lived on 98 Francisco Street, . Hurry up, fucking stinks here. # otherCharacter 
     *   [Hang up] # player
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
-- I hung up and got out of bed, my eyes still blurred by that short night. # player
+- I hung up and got out of bed, my eyes still blurred by that short night. # player # DisableDiscussion
 Just saw what time it is. 4 AM. # player
 For fuck sake, that man is not gonna rise from the dead now. # player
     *   [Go to Francisco Street] # player
-- (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player
+- (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player # NewBackground #4
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
 - As I'm slowly starting to loose my temper and head back to the office, a 47' Cadillac slows by. # player
-Mr. Rosenthal? # otherCharacter # NewCharacterSprite #0
+Mr. Rosenthal? # otherCharacter # NewCharacterSprite #0 # ActivateDiscussion
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
     *   Alright, I'm coming[]. couldn't he warn me that you where going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- I step in the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player
+- I step in the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player # DisableDiscussion
 He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours. # player
 - (car_convo)
-    *   Are you new in town kid? # player
-        Came here 6 months ago from Sicily. # otherCharacter
+    *   Are you new in town kid? # player 
+        Came here 6 months ago from Sicily. # otherCharacter # ActivateDiscussion
         **  Lanza got you in here? # player
             Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter
         **  More Italians? Is there any place left in North Beach? # player
@@ -69,7 +69,7 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
         I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter
         ->car_convo
     *   Can't you go directly to the apartment? # player
-        Must make sure that we're not tailed sir # otherCharacter
+        Must make sure that we're not tailed sir # otherCharacter # ActivateDiscussion
         **  Who would follow me?[] Am I a Jewish Marilyn? # player 
         //revoir 
             Let's say that we caught a lot of heat from the trial. # otherCharacter
@@ -92,8 +92,8 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
 - The ride continued in a complete silence. # player
 Giovanni is dead. Poor kid. In top of that, more Italians flooding North Beach. # player
 Someting's wrong. And I'm gettin' mixed in all that. # player
-We finally park in Francisco Street. # player
-I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter
+We finally park in Francisco Street. # player # NewBackground #0
+I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # ActivateDiscussion
     *   Thank you kid # player
     *   [Just a question...] Before I leave kid, can I ask you something? # player
         Go ahead. # otherCharacter

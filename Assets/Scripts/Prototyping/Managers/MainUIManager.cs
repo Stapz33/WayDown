@@ -348,6 +348,14 @@ public class MainUIManager : MonoBehaviour {
                 {
                     DialogueBackground.sprite = DialogueDataBase.Backgrounds[int.Parse(_inkStory.currentTags[f + 1])];
                 }
+                else if (_inkStory.currentTags[f] == "DisableDiscussion")
+                {
+                    DeactivateOtherCharacterDialogue();
+                }
+                else if (_inkStory.currentTags[f] == "ActivateDiscussion")
+                {
+                    ReactivateOtherCharacterDialogue();
+                }
             }
         }
     }
