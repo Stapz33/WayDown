@@ -29,42 +29,42 @@ TODO Intro capo's apartment (retakes)
 This night couldn't have ended in a better way. # player 
 I mean for a night where I'll have to meet a corpse, it could be worse. # player
 I could be the dead man. # player
-You understand me Rosenthal? Come here immediatly. # otherCharacter # ActivateDiscussion # NewCharacterSprite #3
+You understand me Rosenthal? Come here immediately. # otherCharacter # ActivateDiscussion # NewCharacterSprite #3
     * What's the address again? # player
 
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
 
-- Lived on 98 Francisco Street, . Hurry up, fucking stinks here. # otherCharacter 
+- Lived on 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
     *   [Hang up] # player
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
 - I hung up and got out of bed, my eyes still blurred by that short night. # player # DisableDiscussion
 Just saw what time it is. 4 AM. # player
-For fuck sake, that man is not gonna rise from the dead now. # player
+For fuck's sake, that man is not gonna rise from the dead now. # player
     *   [Go to Francisco Street] # player
 - (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player # NewBackground #4
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
-- As I'm slowly starting to loose my temper and head back to the office, a 47' Cadillac slows by. # player
+- As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
 Mr. Rosenthal? # otherCharacter # NewCharacterSprite #0 # ActivateDiscussion
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
-    *   Alright, I'm coming[]. couldn't he warn me that you where going to fetch me? # player
+    *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- I step in the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player # DisableDiscussion
+- I step into the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player # DisableDiscussion
 He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours. # player
 - (car_convo)
-    *   Are you new in town kid? # player 
+    *   Are you new in town, kid? # player 
         Came here 6 months ago from Sicily. # otherCharacter # ActivateDiscussion
         **  Lanza got you in here? # player
             Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter
         **  More Italians? Is there any place left in North Beach? # player
             I'm not here to settle down, Mr. Lanza asked me to come to ensure his protection. # otherCharacter
         --  What is he afraid of? He's not been linked to Lima, has he? # player
-        Not that I know of, the boss was smart enough to make sure that the organisation would not be too much harmed. # otherCharacter
+        Not that I know of, the boss was smart enough to make sure that the organization would not be too much harmed. # otherCharacter
         So who's going after him? # player
         I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter
         ->car_convo
@@ -74,23 +74,23 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
         //revoir 
             Let's say that we caught a lot of heat from the trial. # otherCharacter
         **  I ain't mixed with all that[] kid, Jimmy should have told you so. I'm a simple detective that helps some friends in need. # player
-            Not you personnaly, but we must stay on our guard with the trial. # otherCharacter
-        --  I don't get it, your boss Lima is juged, couldn't you find a strawman to take his place? # player
+            Not you personnally, but we must stay on our guard with the trial. # otherCharacter
+        --  I don't get it, your boss Lima is judged, couldn't you find a straw man to take his place? # player
             Let's say that it's exactly where you're intervening. # otherCharacter
-        **  Are you trowing me under the bus?[] I'll not go down easily motherfucker. # player
+        **  Are you throwing me under the bus?[] I'll not go down easily motherfucker. # player
             Don't be stupid, Mr. Lima cannot be saved. # otherCharacter
             So what am I doing here? # player
         **  Lima didn't request my help for the trial[], what could I possibly do? # player
             If all had gone accordingly to the plan, you would not have been involved in this. # otherCharacter
             So where do I fit in your plan now? # player
-        --  Our strawman is dead. # otherCharacter
+        --  Our straw man is dead. # otherCharacter
         **  Fuck... What happened to Giovanni? # player 
         //à changer
             You will discover it soon enough. # otherCharacter
             ->car_convo
     *->
 - The ride continued in a complete silence. # player
-Giovanni is dead. Poor kid. In top of that, more Italians flooding North Beach. # player
+Giovanni is dead. Poor kid. And more Italians flooding North Beach. # player
 Someting's wrong. And I'm gettin' mixed in all that. # player
 We finally park in Francisco Street. # player # NewBackground #0
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # ActivateDiscussion
@@ -100,12 +100,12 @@ I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter 
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
         And the young prick leaves. # player
-- I cross the treshold of the building and go to the second floor. Apartment 237. # player
+- I cross the threshold of the building and go to the second floor. Apartment 237. # player
 
 TODO First dialogue with Lanza (retakes)
 
 Jimmy Lanza is waiting for me, near to the door. # player
-For fuck's sake, ain't all jewboys supposed to arrive on time? # otherCharacter # NewCharacterSprite #3
+For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter # NewCharacterSprite #3
 *   Never when there are greaseballs like you waiting for me at a crime scene. # player
 //Joke, à améliorer
     I'm not here to joke around, not with two bodies waiting two feet away. # otherCharacter
@@ -187,10 +187,10 @@ TODO Dialogue with Lanza (retakes)
     **  You mean you tailed him sometimes? # player
         Don't be stupid. I keep a close watch on everyone. # otherCharacter
     ->lanza_convo
-*   What is happening with the organisation? # player
-    As you know now, Lima was sent to jail, with a trial coming. # otherCharacter
+*   What is happening with the organization? # player
+    As you should know now, Lima was sent to jail, with a trial coming. # otherCharacter
     Abati took his place, and I second him now. # otherCharacter
-    **  Congratulation[!], Sotto-Capi. Is that your title now? # player
+    **  Congratulations[!], Sotto-Capi. Is that your title now? # player
         That was meant to be temporary. We should have exonerated Lima. # otherCharacter
         But you know your little complication with Giovanni. # otherCharacter
     **  Too much complication to take the power. # player
@@ -199,7 +199,7 @@ TODO Dialogue with Lanza (retakes)
     **  What about Morello? # player
         The Consigliere? He's advising us. He approved of Giovanni's designation. # otherCharacter
         I think he's trying to take some distance with the game. # otherCharacter
-        What can we say, that poor bastard earned to rest now. # otherCharacter
+        What can we say about it? That poor bastard earned to rest now. # otherCharacter
     ->lanza_convo
 *   ->
 ~lanza_stitch_first = 1
