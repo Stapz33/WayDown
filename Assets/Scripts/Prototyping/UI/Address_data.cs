@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Address_data : MonoBehaviour
 {
-    private string ActualKnot;
+    private string ActualKnot = null;
     [SerializeField] private string m_addressDescription;
     [SerializeField] private Sprite m_addressImage;
     [SerializeField] private DocumentFolder m_MyAddresDoc;

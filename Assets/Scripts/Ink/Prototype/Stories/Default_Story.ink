@@ -230,3 +230,8 @@ Test Check Apartment # player
 Lanza, always keeping an eye on me, brought me back to my office on Broadway Street. # player
 That day could not have been worse. # player #NewInvestigation
 ->END
+
+=== DefaultStory
+# DisableDiscussion # NewBackground #4
+I have nothing to do here # player
+->END

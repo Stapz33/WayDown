@@ -378,7 +378,7 @@ public class MainUIManager : MonoBehaviour {
     {
         for (int x = 0; x < AddressesList.Count;x++)
         {
-            if (newStories[x] != null)
+            if (newStories[x] != "")
             AddressesList[x].SetActualStory(newStories[x]);
             else
             AddressesList[x].SetActualStory(DefaultKnot);
