@@ -185,6 +185,7 @@ public class MainUIManager : MonoBehaviour {
                 ActualDatas.AddressState.Add(AddressesList[y].gameObject.activeSelf);
             }
             LaunchNewInvestigation();
+            SaveManager.Singleton.SaveDocumentPath(DocDatas);
             Debug.Log("New Game");
         }
     }
