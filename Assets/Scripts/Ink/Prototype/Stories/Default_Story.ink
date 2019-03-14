@@ -228,5 +228,5 @@ Test Check Apartment # player
 =end_apartment
 
 Lanza, always keeping an eye on me, brought me back to my office on Broadway Street. # player
-That day could not have been worse. # player
+That day could not have been worse. # player #NewInvestigation
 ->END
