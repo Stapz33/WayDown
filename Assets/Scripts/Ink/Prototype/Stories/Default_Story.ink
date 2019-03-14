@@ -1,6 +1,6 @@
 VAR knowledge_Spaghetti = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = false
+VAR DEBUG = true
 {DEBUG:
 	IN DEBUG MODE!
 	*	[Start]	-> start_capo_apartment
@@ -25,23 +25,41 @@ VAR lanza_stitch_first = 0
 
 TODO Tags (see with Killian)
 TODO Intro capo's apartment (retakes)
+// METTRE UN FOND NOIR?
 # DisableDiscussion
-This night couldn't have ended in a better way. # player 
-I mean for a night where I'll have to meet a corpse, it could be worse. # player
-I could be the dead man. # player
-You understand me Rosenthal? Come here immediately. # otherCharacter # ActivateDiscussion # NewCharacterSprite #3
-    * What's the address again? # player
+Fucking city. # player
+"Come to San Francisco" they said. "It's like a Gold Rush for private detectives". # player
+And I fell for it. # player
+Ain't nobody like Bugsy Rosenthal to look like a damn fool. # player
+Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses. # player
+But everybody has to do something for a living. # player
+And this mob is paying quite well. # player
+But they're fucking savages, killing each other and all. # player
+Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player
+And now the fuckin' phone is ringing. # player
+Don't even wants to answer, fuck it. # player
+- (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player
+	*	[Answer] This damn phone ain't gonna stop itself. # player
+	+	[Try to sleep]{Ain't no time to call somebody, they'll wait tomorrow.|Could be a business call... Who am I kidding?|Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...|} # player
+		->phone
+- I decide to get up and finally answer it. # player
 
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
-
-- Lived on 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
+#ActivateDiscussion
+	*	Are you out of your mind?[] Did you fucking see the hour? # player
+- It's James Lanza. We had a problem with Giovanni. # otherCharacter # NewCharacterSprite #3
+You need to come here immediately. # otherCharacter
+	*	What time is it[?] for fuck's sake? # player
+- 3AM, but we pay you to come even when you're shitting. #otherCharacter
+You understand me Rosenthal? Come here right now. # otherCharacter
+    *	What's the address[?] Lanza? # player
+- 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
     *   [Hang up] # player
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
-- I hung up and got out of bed, my eyes still blurred by that short night. # player # DisableDiscussion
-Just saw what time it is. 4 AM. # player
-For fuck's sake, that man is not gonna rise from the dead now. # player
+- I hung up and got out of bed. # player # DisableDiscussion
+For fuck's sake, what did they do again? # player
     *   [Go to Francisco Street] # player
 - (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player # NewBackground #4
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] # player
@@ -212,10 +230,29 @@ TODO Dialogue with Lanza (retakes)
 --------------------------------------------------------------------------------*/
 
 =check_apartment
-
+// BACKGROUND APARTMENT
 TODO Checking the apartment (exploration, gathering clues)
-Test Check Apartment # player
-
+I enter the apartment, only to find a first body. Poor Tommy. # player
+Ok, let's focus now and do that methodically, ain't I a damn detective? # player
+- (clues_apartment)
+	*	[Check Giovanni] test check Giovanni # player
+		Nothing here, except a body. # player 
+		->clues_apartment
+	*	[Check the livingroom] # player
+		Nothing here, except some furnitures. # player
+		->clues_apartment
+	*	[Check the bathroom] # player
+		The prostitute body. I should check her bag. # player
+		->clues_apartment
+		**	[Open the purse] I open that little woman's purse. # player
+		Inside, there's a key for a hotelroom. # player
+		TODO KILLIAN: Il trouve la clé à ce moment.
+		->clues_apartment
+	*	[Check the bedroom] # player
+		Nothing in the bedroom. # player
+		->clues_apartment
+	*->
+	Nothing more for me in that apartment.
 ~lanza_stitch_first = 0
 ->lobby_apartment
 
