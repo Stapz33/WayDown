@@ -63,7 +63,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseTab();
                 break;
             case ButtonType.Adress:
-                MainUIManager.Singleton.GoToAddres(GetComponent<Address_data>().GetActualStory(),GetComponent<Address_data>().GetDocumentFolder());
+                MainUIManager.Singleton.GoToAddres(GetComponent<Address_data>().GetActualStory(),GetComponent<Address_data>().GetDocumentFolder(), GetComponent<Address_data>().GetBG());
                 break;
             case ButtonType.AdressBookNext:
                 AddressBookManager.Singleton.NextPage();

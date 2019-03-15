@@ -268,6 +268,6 @@ That day could not have been worse. # player #NewInvestigation
 ->END
 
 === DefaultStory
-# DisableDiscussion # NewBackground #4
+# DisableDiscussion
 I have nothing to do here # player
 ->END

@@ -43,4 +43,9 @@ public class Address_data : MonoBehaviour
     {
         return m_MyAddresDoc;
     }
+
+    public Sprite GetBG()
+    {
+        return m_addressImage;
+    }
 }

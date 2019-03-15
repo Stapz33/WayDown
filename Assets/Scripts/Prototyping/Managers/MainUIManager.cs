@@ -186,7 +186,8 @@ public class MainUIManager : MonoBehaviour {
             }
             LaunchNewInvestigation();
             SaveManager.Singleton.SaveDocumentPath(DocDatas);
-            Debug.Log("New Game");
+            b_isGoodAddress = true;
+            CallTaxi();
         }
     }
 
@@ -622,15 +623,17 @@ public class MainUIManager : MonoBehaviour {
         else
         {
             SetupNewStory(DefaultKnot);
+            DialogueBackground.sprite = DialogueDataBase.Backgrounds[4];
         }
         SetupDialogueSystem();
     }
 
-    public void GoToAddres(string s,DocumentFolder documentFolder)
+    public void GoToAddres(string s,DocumentFolder documentFolder,Sprite BG)
     {
         LoadScreen("SetupDialogueSystem",true);
         SetupNewStory(s);
         SetNewActualAddressDocumentFolder(documentFolder);
+        DialogueBackground.sprite = BG;
     }
 
     public string GetActualName()
