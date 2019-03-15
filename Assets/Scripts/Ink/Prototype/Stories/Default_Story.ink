@@ -47,9 +47,9 @@ Don't even wants to answer, fuck it. # player
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
-#ActivateDiscussion
 	*	Are you out of your mind?[] Did you fucking see the hour? # player
-- It's James Lanza. We had a problem with Giovanni. # otherCharacter # NewCharacterSprite #3
+- It's James Lanza. We had a problem with Giovanni. # otherCharacter # NewCharacterSprite #3 
+#	ActivateDiscussion
 You need to come here immediately. # otherCharacter
 	*	What time is it[?] for fuck's sake? # player
 - 3AM, but we pay you to come even when you're shitting. #otherCharacter
@@ -153,7 +153,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 --------------------------------------------------------------------------------*/
 
 = lobby_apartment
-
+#ActivateDiscussion
     *   I have some questions for you Lanza. # player
     ->lanza_dialogue
     *   I'll go and check on the bodies {lanza_stitch_first ==1:now|first}. # player
@@ -232,6 +232,7 @@ TODO Dialogue with Lanza (retakes)
 =check_apartment
 // BACKGROUND APARTMENT
 TODO Checking the apartment (exploration, gathering clues)
+# DisableDiscussion
 I enter the apartment, only to find a first body. Poor Tommy. # player
 Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 - (clues_apartment)
@@ -243,10 +244,8 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 		->clues_apartment
 	*	[Check the bathroom] # player
 		The prostitute body. I should check her bag. # player
-		->clues_apartment
 		**	[Open the purse] I open that little woman's purse. # player
 		Inside, there's a key for a hotelroom. # player # NewDocument #5
-		TODO: KILLIAN: Il faut créé l'asset de la clé
 		->clues_apartment
 	*	[Check the bedroom] # player
 		Nothing in the bedroom. # player
