@@ -1,6 +1,6 @@
 VAR knowledge_Spaghetti = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = true
+VAR DEBUG = false
 {DEBUG:
 	IN DEBUG MODE!
 	*	[Start]	-> start_capo_apartment
@@ -245,8 +245,8 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 		The prostitute body. I should check her bag. # player
 		->clues_apartment
 		**	[Open the purse] I open that little woman's purse. # player
-		Inside, there's a key for a hotelroom. # player
-		TODO KILLIAN: Il trouve la clé à ce moment.
+		Inside, there's a key for a hotelroom. # player # NewDocument #5
+		TODO: KILLIAN: Il faut créé l'asset de la clé
 		->clues_apartment
 	*	[Check the bedroom] # player
 		Nothing in the bedroom. # player
