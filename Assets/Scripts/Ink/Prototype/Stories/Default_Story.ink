@@ -27,15 +27,15 @@ TODO Tags (see with Killian)
 TODO Intro capo's apartment (retakes)
 // METTRE UN FOND NOIR?
 # DisableDiscussion
-Fucking city. # player
+Fucking city. # player 
 "Come to San Francisco" they said. "It's like a Gold Rush for private detectives". # player
-And I fell for it. # player
+And I fell for it. # player #NewNarrativeLog #1
 Ain't nobody like Bugsy Rosenthal to look like a damn fool. # player
 Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses. # player
 But everybody has to do something for a living. # player
-And this mob is paying quite well. # player
+And this mob is paying quite well. # player #NewNarrativeLog #0
 But they're fucking savages, killing each other and all. # player
-Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player
+Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player 
 And now the fuckin' phone is ringing. # player
 Don't even wants to answer, fuck it. # player
 - (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player

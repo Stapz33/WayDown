@@ -138,6 +138,9 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private Transform PoliceDropdownParent;
     private List<Dropdown> m_PoliceDropdown = new List<Dropdown>();
 
+    [SerializeField] private GameObject m_LogManager;
+    [SerializeField] private GameObject m_LogManagerButton;
+
     private void Awake()
     {
         if (Singleton != null)
@@ -188,6 +191,7 @@ public class MainUIManager : MonoBehaviour {
             SaveManager.Singleton.SaveDocumentPath(DocDatas);
             b_isGoodAddress = true;
             CallTaxi();
+            m_LogManager.GetComponent<LogManager>().StartingScript();
         }
     }
 
@@ -204,6 +208,7 @@ public class MainUIManager : MonoBehaviour {
                 {
                     LoadScreen(true);
                     CloseDialogue();
+                    SaveGame();
                 }
             }
             if (_inkStory.currentChoices.Count > 0 && ChoiceNeeded == false)
@@ -357,6 +362,10 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "ActivateDiscussion")
                 {
                     ReactivateOtherCharacterDialogue();
+                }
+                else if (_inkStory.currentTags[f] == "NewNarrativeLog")
+                {
+                    m_LogManager.GetComponent<LogManager>().AddLogFromCSV(int.Parse(_inkStory.currentTags[f + 1]));
                 }
             }
         }
@@ -830,6 +839,7 @@ public class MainUIManager : MonoBehaviour {
     {
         ActualDatas = SaveManager.Singleton.LoadStoryPath();
         DocDatas = SaveManager.Singleton.LoadDocumentPath();
+        m_LogManager.GetComponent<LogManager>().LoadLog(SaveManager.Singleton.LoadLogPath());
         UpdateDocumentState();
         UpdateDiscoveredAdress();
         _inkStory.state.LoadJson(ActualDatas.s_Story);
@@ -883,6 +893,7 @@ public class MainUIManager : MonoBehaviour {
     public void ReturnToMenu()
     {
         ExitMenu.SetActive(false);
+        m_LogManager.GetComponent<LogManager>().SaveLog();
         a_LoadingScreenAnimator.SetTrigger("LoadBlack");
         Invoke("async", 1f);
     }
@@ -905,4 +916,21 @@ public class MainUIManager : MonoBehaviour {
             yield return null;
         }
     }
+
+
+    #region NARRATIVE_LOG
+    public void ShowNarrativeLog()
+    {
+        m_LogManager.SetActive(true);
+        m_LogManagerButton.SetActive(false);
+    }
+
+    public void HideNarrativeLog()
+    {
+        m_LogManager.SetActive(false);
+        m_LogManagerButton.SetActive(true);
+    }
+    #endregion
+
+    
 }

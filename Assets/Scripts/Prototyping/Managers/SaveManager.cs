@@ -9,6 +9,7 @@ public class SaveManager : MonoBehaviour
 
     string storypath;
     string docpath;
+    string logpath;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class SaveManager : MonoBehaviour
     {
         storypath = Path.Combine(Application.persistentDataPath, "Story.txt");
         docpath = Path.Combine(Application.persistentDataPath, "Document.txt");
+        logpath = Path.Combine(Application.persistentDataPath, "NarrativeLog.txt");
     }
 
     public void SaveStoryPath(Data idx)
@@ -41,6 +43,16 @@ public class SaveManager : MonoBehaviour
         string jsonString = JsonUtility.ToJson(idx);
 
         using (StreamWriter streamWriter = File.CreateText(docpath))
+        {
+            streamWriter.Write(jsonString);
+        }
+    }
+
+    public void SaveLogPath(SaveLog idx)
+    {
+        string jsonString = JsonUtility.ToJson(idx);
+
+        using (StreamWriter streamWriter = File.CreateText(logpath))
         {
             streamWriter.Write(jsonString);
         }
@@ -74,6 +86,20 @@ public class SaveManager : MonoBehaviour
 
     }
 
+    public SaveLog LoadLogPath()
+    {
+        if (File.Exists(logpath))
+        {
+            using (StreamReader streamReader = File.OpenText(logpath))
+            {
+                string jsonString = streamReader.ReadToEnd();
+                return JsonUtility.FromJson<SaveLog>(jsonString);
+            }
+        }
+        return null;
+
+    }
+
     public bool CheckSaveExist()
     {
         if (File.Exists(storypath))
@@ -87,5 +113,11 @@ public class SaveManager : MonoBehaviour
     {
         File.Delete(storypath);
         File.Delete(docpath);
+        File.Delete(logpath);
     }
+    
+
+
+
+
 }
