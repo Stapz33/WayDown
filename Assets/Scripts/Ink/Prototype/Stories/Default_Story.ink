@@ -48,7 +48,7 @@ TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
 	*	Are you out of your mind?[] Did you fucking see the hour? # player
-- It's James Lanza. We had a problem with Giovanni. # otherCharacter # NewCharacterSprite #3 
+- It's James Lanza. We had a problem with Giovanni. # otherCharacter # NewCharacterSprite #5
 #	ActivateDiscussion
 You need to come here immediately. # otherCharacter
 	*	What time is it[?] for fuck's sake? # player
@@ -123,7 +123,7 @@ I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter 
 TODO First dialogue with Lanza (retakes)
 
 Jimmy Lanza is waiting for me, near to the door. # player
-For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter # NewCharacterSprite #3
+For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter # NewCharacterSprite #5
 *   Never when there are greaseballs like you waiting for me at a crime scene. # player
 //Joke, à améliorer
     I'm not here to joke around, not with two bodies waiting two feet away. # otherCharacter
@@ -159,7 +159,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
     *   I'll go and check on the bodies {lanza_stitch_first ==1:now|first}. # player
     ->check_apartment
     *->
-    {lanza_stitch_first == 1:Enough talking|Come here!} # otherCharacter # NewCharacterSprite #3
+    {lanza_stitch_first == 1:Enough talking|Come here!} # otherCharacter # NewCharacterSprite #5
     We need to go Rosenthal. I'll take you to your office # otherCharacter
     ->end_apartment
     
@@ -175,7 +175,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 TODO Dialogue with Lanza (retakes)
 -   (lanza_convo)
 *   What can you say about Giovanni? # player
-    He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #3
+    He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #5
     The Administration chose him to take the place of Lima during the trial. # otherCharacter
     **  You mean that you decided to throw him under the bus. # player
         No, we'll take care of his family. What he was gonna do for us was essential. # otherCharacter
@@ -245,7 +245,8 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 	*	[Check the bathroom] # player
 		The prostitute body. I should check her bag. # player
 		**	[Open the purse] I open that little woman's purse. # player
-		Inside, there's a key for a hotelroom. # player # NewDocument #5
+		Inside, there's a key for a hotelroom. # player 
+		# NewDocument #5
 		->clues_apartment
 	*	[Check the bedroom] # player
 		Nothing in the bedroom. # player

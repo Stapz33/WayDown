@@ -42,6 +42,7 @@ public class AddressBookManager : MonoBehaviour
     {
         if (PageIdx < LastPageIdx)
         {
+            AudioManager.Singleton.ActivateAudio(AudioType.ChangePageAddressBook);
             PageIdx++;
             RefreshPage();
         }
@@ -51,6 +52,7 @@ public class AddressBookManager : MonoBehaviour
     {
         if (PageIdx > 1)
         {
+            AudioManager.Singleton.ActivateAudio(AudioType.ChangePageAddressBook);
             PageIdx--;
             RefreshPage();
         }

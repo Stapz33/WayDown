@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -51,6 +51,7 @@ public class ButtonCall : MonoBehaviour
     public int PagIdx;
     public string DocumentInfo;
     public Transform parent;
+    
 
     public void OnClick()
     {
@@ -78,6 +79,7 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.SetValidationText(transform.GetComponentInChildren<UnityEngine.UI.Text>().text);
                 break;
             case ButtonType.CallTaxi:
+                AudioManager.Singleton.ActivateAudio(AudioType.CallTaxi);
                 MainUIManager.Singleton.LoadScreen("CallTaxi",true);
                 break;
             case ButtonType.OpenDocumentPanel:
@@ -139,5 +141,10 @@ public class ButtonCall : MonoBehaviour
     public void Exit()
     {
             MainUIManager.Singleton.DeactivateDocumentInfo();
+    }
+
+    public void PlaySound()
+    {
+        AudioManager.Singleton.HoverButton();
     }
 }

@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 3155938244700394760}
   - component: {fileID: 677579336290547255}
   - component: {fileID: 2874488388261216478}
+  - component: {fileID: 7976753952007717522}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -300,6 +301,37 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 531879520694483401}
+--- !u!114 &7976753952007717522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441319919904720874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2874488388261216478}
+          m_MethodName: PlaySound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &3403375690761892825
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +405,7 @@ GameObject:
   - component: {fileID: 961204372804119716}
   - component: {fileID: 7220629264409113794}
   - component: {fileID: 2193225634268215991}
+  - component: {fileID: 1378701802921260002}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -507,6 +540,37 @@ MonoBehaviour:
   PagIdx: 2
   DocumentInfo: 
   parent: {fileID: 531879520694483401}
+--- !u!114 &1378701802921260002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513600760348884732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2193225634268215991}
+          m_MethodName: PlaySound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &7310411821218778588
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +584,7 @@ GameObject:
   - component: {fileID: 3208993476570414218}
   - component: {fileID: 1761693396150832621}
   - component: {fileID: 2101246635982343492}
+  - component: {fileID: 8644234268074529018}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -654,6 +719,37 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 531879520694483401}
+--- !u!114 &8644234268074529018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310411821218778588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2101246635982343492}
+          m_MethodName: PlaySound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &7434452626921021378
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +956,7 @@ GameObject:
   - component: {fileID: 2730939945079757945}
   - component: {fileID: 1821866320205793312}
   - component: {fileID: 8926150341764971690}
+  - component: {fileID: 6959192866169711114}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -994,3 +1091,34 @@ MonoBehaviour:
   PagIdx: 1
   DocumentInfo: 
   parent: {fileID: 531879520694483401}
+--- !u!114 &6959192866169711114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571006868438071369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8926150341764971690}
+          m_MethodName: PlaySound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []

@@ -141,6 +141,8 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private GameObject m_LogManager;
     [SerializeField] private GameObject m_LogManagerButton;
 
+    private bool b_iscontinuing = false;
+
     private void Awake()
     {
         if (Singleton != null)
@@ -198,7 +200,7 @@ public class MainUIManager : MonoBehaviour {
     void Update () {
         if (b_StoryStarted)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (b_iscontinuing)
             {
                 if (_inkStory.canContinue)
                 {
@@ -210,6 +212,7 @@ public class MainUIManager : MonoBehaviour {
                     CloseDialogue();
                     SaveGame();
                 }
+                b_iscontinuing = false;
             }
             if (_inkStory.currentChoices.Count > 0 && ChoiceNeeded == false)
             {
@@ -323,6 +326,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void UpdateVisualText(string ContinueText)
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         if (_inkStory.currentTags.Count >= 1)
         {
             for (int f = 0; f <_inkStory.currentTags.Count; f++)
@@ -424,6 +428,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void LoadScreen(string method, bool NeedToCloseTab)
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         a_LoadingScreenAnimator.SetTrigger("Loading");
         if (NeedToCloseTab)
         {
@@ -434,6 +439,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void LoadScreen(bool NeedToCloseTab)
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         a_LoadingScreenAnimator.SetTrigger("Loading");
         if (NeedToCloseTab)
         {
@@ -449,14 +455,17 @@ public class MainUIManager : MonoBehaviour {
         switch (tab)
         {
             case TabType.Map:
+                AudioManager.Singleton.ActivateAudio(AudioType.MapOpen);
                 MapTab.SetActive(true);
                 ActualTab = MapTab;
                 break;
             case TabType.AddressBook:
+                AudioManager.Singleton.ActivateAudio(AudioType.AddressBookOpen);
                 AddressBookTab.SetActive(true);
                 ActualTab = AddressBookTab;
                 break;
             case TabType.Documents:
+                AudioManager.Singleton.ActivateAudio(AudioType.DrawerOpen);
                 DocumentsTab.SetActive(true);
                 ActualTab = DocumentsTab;
                 break;
@@ -497,6 +506,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void AddNewDocumentAndShowIt(int DocumentIdx, DocumentFolder Type, bool isCriminalRecord)
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.NewDocument);
         DocumentDatas.DocumentStruct yes = new DocumentDatas.DocumentStruct();
         yes.doc = DocumentIdx;
         yes.doctype = Type;
@@ -933,5 +943,9 @@ public class MainUIManager : MonoBehaviour {
     }
     #endregion
 
+    public void DialogueContinue()
+    {
+        b_iscontinuing = true;
+    }
     
 }

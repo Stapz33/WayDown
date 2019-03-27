@@ -35,6 +35,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void LaunchGame()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         m_LoadingScreen.SetTrigger("LoadBlack");
 
         Invoke("async", 1f);

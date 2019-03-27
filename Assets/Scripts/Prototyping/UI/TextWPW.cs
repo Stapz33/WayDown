@@ -44,6 +44,7 @@ public class TextWPW : MonoBehaviour
 
     public void NameTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "And who is the winner ?";
@@ -51,6 +52,7 @@ public class TextWPW : MonoBehaviour
 
     public void NormalTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "What are you lookin' for ?";
@@ -58,6 +60,7 @@ public class TextWPW : MonoBehaviour
 
     public void FaceTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Give me his face then";
@@ -65,6 +68,7 @@ public class TextWPW : MonoBehaviour
 
     public void NoPeopleTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
@@ -72,6 +76,7 @@ public class TextWPW : MonoBehaviour
 
     public void NoCSTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, there are too many possible profiles";
@@ -79,6 +84,7 @@ public class TextWPW : MonoBehaviour
 
     public void PeopleTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
@@ -86,6 +92,7 @@ public class TextWPW : MonoBehaviour
 
     public void AlreadyPeopleTextLaunch()
     {
+        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "You already asked me for this record huh ?";
