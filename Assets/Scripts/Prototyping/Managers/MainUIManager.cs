@@ -833,6 +833,7 @@ public class MainUIManager : MonoBehaviour {
             ActualDatas.AddressState[a] = AddressesList[a].gameObject.activeSelf;
         }
         SaveManager.Singleton.SaveStoryPath(ActualDatas);
+        m_LogManager.GetComponent<LogManager>().SaveLog();
     }
 
     public void LoadGame()

@@ -36,6 +36,7 @@ public class LogManager : MonoBehaviour
         idxtosave = new SaveLog();
         idxtosave.SavedIdx = new List<int>();
         NewLogPanel();
+        SaveLog();
     }
 
     public void NewLogPanel()
