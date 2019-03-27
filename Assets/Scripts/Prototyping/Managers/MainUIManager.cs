@@ -728,103 +728,110 @@ public class MainUIManager : MonoBehaviour {
 
     public void TestCS()
     {
-        int nb = 0;
-        if (ActualStoryDataBase.Corpulence != Corpulence.Null)
+        if (ActualStoryDataBase.investigationType == InvestigationType.CriminalRecord && ActualStoryDataBase.criminalRecordType == CriminalRecordType.CompositeSketch)
         {
-            if ((int)ActualStoryDataBase.Corpulence == m_PoliceDropdown[0].value)
+            int nb = 0;
+            if (ActualStoryDataBase.Corpulence != Corpulence.Null)
             {
-                nb++;
+                if ((int)ActualStoryDataBase.Corpulence == m_PoliceDropdown[0].value)
+                {
+                    nb++;
+                }
             }
-        }
-        else if (ActualStoryDataBase.Corpulence == Corpulence.Null && m_PoliceDropdown[0].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.Height != Height.Null)
-        {
-            if ((int)ActualStoryDataBase.Height == m_PoliceDropdown[1].value)
+            else if (ActualStoryDataBase.Corpulence == Corpulence.Null && m_PoliceDropdown[0].value != 0)
             {
-                nb++;
+                nb = -100;
             }
-        }
-        else if (ActualStoryDataBase.Height == Height.Null && m_PoliceDropdown[1].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.SexType != SexType.Null)
-        {
-            if ((int)ActualStoryDataBase.SexType == m_PoliceDropdown[2].value)
+            if (ActualStoryDataBase.Height != Height.Null)
             {
-                nb++;
+                if ((int)ActualStoryDataBase.Height == m_PoliceDropdown[1].value)
+                {
+                    nb++;
+                }
             }
-        }
-        else if (ActualStoryDataBase.SexType == SexType.Null && m_PoliceDropdown[2].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.Ethnicity != Ethnicity.Null)
-        {
-            if ((int)ActualStoryDataBase.Ethnicity == m_PoliceDropdown[3].value)
+            else if (ActualStoryDataBase.Height == Height.Null && m_PoliceDropdown[1].value != 0)
             {
-                nb++;
+                nb = -100;
             }
-        }
-        else if (ActualStoryDataBase.Ethnicity == Ethnicity.Null && m_PoliceDropdown[3].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.HairType != HairType.Null)
-        {
-            if ((int)ActualStoryDataBase.HairType == m_PoliceDropdown[4].value)
+            if (ActualStoryDataBase.SexType != SexType.Null)
             {
-                nb++;
+                if ((int)ActualStoryDataBase.SexType == m_PoliceDropdown[2].value)
+                {
+                    nb++;
+                }
             }
-        }
-        else if (ActualStoryDataBase.HairType == HairType.Null && m_PoliceDropdown[4].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.HairColor != HairColor.Null)
-        {
-            if ((int)ActualStoryDataBase.HairColor == m_PoliceDropdown[5].value)
+            else if (ActualStoryDataBase.SexType == SexType.Null && m_PoliceDropdown[2].value != 0)
             {
-                nb++;
+                nb = -100;
             }
-        }
-        else if (ActualStoryDataBase.HairColor == HairColor.Null && m_PoliceDropdown[5].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.EyeColor != EyeColor.Null)
-        {
-            if ((int)ActualStoryDataBase.EyeColor == m_PoliceDropdown[6].value)
+            if (ActualStoryDataBase.Ethnicity != Ethnicity.Null)
             {
-                nb++;
+                if ((int)ActualStoryDataBase.Ethnicity == m_PoliceDropdown[3].value)
+                {
+                    nb++;
+                }
             }
-        }
-        else if (ActualStoryDataBase.EyeColor == EyeColor.Null && m_PoliceDropdown[6].value != 0)
-        {
-            nb = -100;
-        }
-        if (ActualStoryDataBase.TattooPiercing != TattooPiercing.Null)
-        {
-            if ((int)ActualStoryDataBase.TattooPiercing == m_PoliceDropdown[7].value)
+            else if (ActualStoryDataBase.Ethnicity == Ethnicity.Null && m_PoliceDropdown[3].value != 0)
             {
-                nb++;
+                nb = -100;
             }
-        }
-        else if (ActualStoryDataBase.TattooPiercing == TattooPiercing.Null && m_PoliceDropdown[7].value != 0)
-        {
-            nb = -100;
-        }
-        if (nb == ActualStoryDataBase.HintNeeded && !ActualDatas.m_IsCriminalKnown)
-        {
-            PoliceOffice.Singleton.GoodName();
-            Invoke("AddNewCriminalRecord", 1.5f);
-        }
-        else if (nb == ActualStoryDataBase.HintNeeded && ActualDatas.m_IsCriminalKnown)
-        {
-            PoliceOffice.Singleton.AlreadyGood();
+            if (ActualStoryDataBase.HairType != HairType.Null)
+            {
+                if ((int)ActualStoryDataBase.HairType == m_PoliceDropdown[4].value)
+                {
+                    nb++;
+                }
+            }
+            else if (ActualStoryDataBase.HairType == HairType.Null && m_PoliceDropdown[4].value != 0)
+            {
+                nb = -100;
+            }
+            if (ActualStoryDataBase.HairColor != HairColor.Null)
+            {
+                if ((int)ActualStoryDataBase.HairColor == m_PoliceDropdown[5].value)
+                {
+                    nb++;
+                }
+            }
+            else if (ActualStoryDataBase.HairColor == HairColor.Null && m_PoliceDropdown[5].value != 0)
+            {
+                nb = -100;
+            }
+            if (ActualStoryDataBase.EyeColor != EyeColor.Null)
+            {
+                if ((int)ActualStoryDataBase.EyeColor == m_PoliceDropdown[6].value)
+                {
+                    nb++;
+                }
+            }
+            else if (ActualStoryDataBase.EyeColor == EyeColor.Null && m_PoliceDropdown[6].value != 0)
+            {
+                nb = -100;
+            }
+            if (ActualStoryDataBase.TattooPiercing != TattooPiercing.Null)
+            {
+                if ((int)ActualStoryDataBase.TattooPiercing == m_PoliceDropdown[7].value)
+                {
+                    nb++;
+                }
+            }
+            else if (ActualStoryDataBase.TattooPiercing == TattooPiercing.Null && m_PoliceDropdown[7].value != 0)
+            {
+                nb = -100;
+            }
+            if (nb == ActualStoryDataBase.HintNeeded && !ActualDatas.m_IsCriminalKnown)
+            {
+                PoliceOffice.Singleton.GoodName();
+                Invoke("AddNewCriminalRecord", 1.5f);
+            }
+            else if (nb == ActualStoryDataBase.HintNeeded && ActualDatas.m_IsCriminalKnown)
+            {
+                PoliceOffice.Singleton.AlreadyGood();
+            }
+            else
+            {
+                PoliceOffice.Singleton.WrongCS();
+            }
         }
         else
         {
