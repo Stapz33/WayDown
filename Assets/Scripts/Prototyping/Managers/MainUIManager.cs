@@ -329,13 +329,13 @@ public class MainUIManager : MonoBehaviour {
             {
                 if (_inkStory.currentTags[f] == "player")
                 {
-                    s_PlayerFullText = ContinueText;
+                    s_PlayerFullText = ContinueText.Replace("\n","");
                     PlayerText.text = "";
                     PlayerTimeElapsed = 0f;
                 }
                 else if (_inkStory.currentTags[f] == "otherCharacter")
                 {
-                    s_OtherCharacterFullText = ContinueText;
+                    s_OtherCharacterFullText = ContinueText.Replace("\n", "");
                     OtherCharacterText.text = "";
                     OtherPlayerTimeElapsed = 0f;
                 }
