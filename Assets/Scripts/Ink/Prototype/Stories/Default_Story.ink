@@ -36,9 +36,9 @@ But everybody has to do something for a living. # player
 And this mob is paying quite well. # player #NewNarrativeLog #0
 But they're fucking savages, killing each other and all. # player
 Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player 
-And now the fuckin' phone is ringing. # player
+And now the fuckin' phone is ringing. # player #SFXPlay #8
 Don't even wants to answer, fuck it. # player
-- (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player
+- (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player #SFXPlay #8
 	*	[Answer] This damn phone ain't gonna stop itself. # player
 	+	[Try to sleep]{Ain't no time to call somebody, they'll wait tomorrow.|Could be a business call... Who am I kidding?|Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...|} # player
 		->phone
@@ -48,8 +48,7 @@ TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
 	*	Are you out of your mind?[] Did you fucking see the hour? # player
-- It's James Lanza. We had a problem with Giovanni. # otherCharacter # NewCharacterSprite #5
-#	ActivateDiscussion
+- It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #5	#ActivateDiscussion
 You need to come here immediately. # otherCharacter
 	*	What time is it[?] for fuck's sake? # player
 - 3AM, but we pay you to come even when you're shitting. #otherCharacter
@@ -61,7 +60,8 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 - I hung up and got out of bed. # player # DisableDiscussion
 For fuck's sake, what did they do again? # player
     *   [Go to Francisco Street] # player
-- (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player # NewBackground #4
+    # NewBackground #4 #MusicPlay #1
+- (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player 
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
 - As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
@@ -110,7 +110,7 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
 - The ride continued in a complete silence. # player
 Giovanni is dead. Poor kid. And more Italians flooding North Beach. # player
 Someting's wrong. And I'm gettin' mixed in all that. # player
-We finally park in Francisco Street. # player # NewBackground #0
+We finally park in Francisco Street. # player # NewBackground #0 #MusicPlay #0
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # ActivateDiscussion
     *   Thank you kid # player
     *   [Just a question...] Before I leave kid, can I ask you something? # player
@@ -246,7 +246,7 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 		The prostitute body. I should check her bag. # player
 		**	[Open the purse] I open that little woman's purse. # player
 		Inside, there's a key for a hotelroom. # player 
-		# NewDocument #5
+		# NewDocument #0
 		->clues_apartment
 	*	[Check the bedroom] # player
 		Nothing in the bedroom. # player

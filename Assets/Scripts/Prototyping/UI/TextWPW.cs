@@ -12,6 +12,8 @@ public class TextWPW : MonoBehaviour
     private string s_PlayerFullText = "What are you lookin' for ?";
 
     private float PlayerTimeElapsed = 0f;
+
+    int i_TextFramingSound = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,6 +38,13 @@ public class TextWPW : MonoBehaviour
             }
             if (words <= 0)
             {
+                if (i_TextFramingSound == 8)
+                {
+                    AudioManager.Singleton.ActivateAudio(AudioType.Text);
+                    int rnd = UnityEngine.Random.Range(-3, 0);
+                    i_TextFramingSound = rnd;
+                }
+                else i_TextFramingSound++;
                 return text.Substring(0, i);
             }
         }
@@ -44,7 +53,6 @@ public class TextWPW : MonoBehaviour
 
     public void NameTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "And who is the winner ?";
@@ -52,7 +60,6 @@ public class TextWPW : MonoBehaviour
 
     public void NormalTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "What are you lookin' for ?";
@@ -60,7 +67,6 @@ public class TextWPW : MonoBehaviour
 
     public void FaceTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Give me his face then";
@@ -68,7 +74,6 @@ public class TextWPW : MonoBehaviour
 
     public void NoPeopleTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
@@ -76,7 +81,6 @@ public class TextWPW : MonoBehaviour
 
     public void NoCSTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, there are too many possible profiles";
@@ -84,7 +88,6 @@ public class TextWPW : MonoBehaviour
 
     public void PeopleTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
@@ -92,7 +95,6 @@ public class TextWPW : MonoBehaviour
 
     public void AlreadyPeopleTextLaunch()
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "You already asked me for this record huh ?";

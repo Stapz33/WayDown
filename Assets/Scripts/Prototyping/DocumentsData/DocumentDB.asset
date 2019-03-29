@@ -13,9 +13,4 @@ MonoBehaviour:
   m_Name: DocumentDB
   m_EditorClassIdentifier: 
   Documents:
-  - {fileID: 3337926126073152917, guid: a7861cccb917fe647928a80365c341e6, type: 3}
-  - {fileID: 3337926126073152917, guid: a7861cccb917fe647928a80365c341e6, type: 3}
-  - {fileID: 3337926126073152917, guid: cc7e7ecc733df21408b228151e9ae40f, type: 3}
-  - {fileID: 3337926126073152917, guid: 3da85c97610e3b64eb0be7632fad7c28, type: 3}
-  - {fileID: 3337926126073152917, guid: 480ad5868851987448f3cc74c60a0e9e, type: 3}
   - {fileID: 3337926126073152917, guid: 19a49a2a9efa3f3458f818610e56d7ab, type: 3}

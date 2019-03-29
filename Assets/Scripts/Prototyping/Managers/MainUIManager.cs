@@ -141,6 +141,7 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private GameObject m_LogManager;
     [SerializeField] private GameObject m_LogManagerButton;
 
+    int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
 
     private void Awake()
@@ -157,6 +158,7 @@ public class MainUIManager : MonoBehaviour {
 
     private void Start()
     {
+        AudioManager.Singleton.ToggleStartRadio();
         for (int i = 0; i < AddressesParent.childCount; i++)
         {
             l_AddressesList.Add(AddressesParent.GetChild(i).GetComponent<Button>());
@@ -211,6 +213,8 @@ public class MainUIManager : MonoBehaviour {
                     LoadScreen(true);
                     CloseDialogue();
                     SaveGame();
+                    AudioManager.Singleton.DeskCheckRadio();
+                    AudioManager.Singleton.StopMusic();
                 }
                 b_iscontinuing = false;
             }
@@ -302,6 +306,13 @@ public class MainUIManager : MonoBehaviour {
             }
             if (words <= 0)
             {
+                if (i_TextFramingSound == 8 )
+                {
+                    AudioManager.Singleton.ActivateAudio(AudioType.Text);
+                    int rnd = UnityEngine.Random.Range(-3, 0);
+                    i_TextFramingSound = rnd;
+                }
+                else i_TextFramingSound++;
                 return text.Substring(0, i);
             }
         }
@@ -326,7 +337,6 @@ public class MainUIManager : MonoBehaviour {
 
     public void UpdateVisualText(string ContinueText)
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.Text);
         if (_inkStory.currentTags.Count >= 1)
         {
             for (int f = 0; f <_inkStory.currentTags.Count; f++)
@@ -371,6 +381,14 @@ public class MainUIManager : MonoBehaviour {
                 {
                     m_LogManager.GetComponent<LogManager>().AddLogFromCSV(int.Parse(_inkStory.currentTags[f + 1]));
                 }
+                else if (_inkStory.currentTags[f] == "SFXPlay")
+                {
+                    AudioManager.Singleton.ActivateAudio((AudioType)int.Parse(_inkStory.currentTags[f + 1]));
+                }
+                else if (_inkStory.currentTags[f] == "MusicPlay")
+                {
+                    AudioManager.Singleton.ChangeMusic(int.Parse(_inkStory.currentTags[f + 1]));
+                }
             }
         }
     }
@@ -404,12 +422,6 @@ public class MainUIManager : MonoBehaviour {
         DialogueSystem.SetActive(true);
         OpenDialogue();
         ActualTab = DialogueSystem;
-    }
-
-    public void CloseDialogueSystem()
-    {
-        DialogueSystem.SetActive(false);
-        CloseDialogue();
     }
 
     public void DeactivateOtherCharacterDialogue()
@@ -645,10 +657,12 @@ public class MainUIManager : MonoBehaviour {
             DialogueBackground.sprite = DialogueDataBase.Backgrounds[4];
         }
         SetupDialogueSystem();
+        AudioManager.Singleton.StopRadio();
     }
 
     public void GoToAddres(string s,DocumentFolder documentFolder,Sprite BG)
     {
+        AudioManager.Singleton.StopRadio();
         LoadScreen("SetupDialogueSystem",true);
         SetupNewStory(s);
         SetNewActualAddressDocumentFolder(documentFolder);
@@ -666,12 +680,14 @@ public class MainUIManager : MonoBehaviour {
 
     public void OpenPoliceOffice()
     {
+        AudioManager.Singleton.StopRadio();
         PoliceOfficeObject.SetActive(true);
         PoliceOffice.Singleton.UpdateNormalInspector();
     }
 
     public void ClosePoliceOffice()
     {
+        AudioManager.Singleton.DeskCheckRadio();
         PoliceOfficeObject.SetActive(false);
     }
 
@@ -928,6 +944,7 @@ public class MainUIManager : MonoBehaviour {
 
     IEnumerator LoadSceneAsync()
     {
+        AudioManager.Singleton.StopDefinitiveRadio();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
         while (!asyncLoad.isDone)
         {

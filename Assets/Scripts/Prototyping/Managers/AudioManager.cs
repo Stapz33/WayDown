@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition }
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing }
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +10,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_ButtonHoverAudio = null;
     [SerializeField] private AudioSource m_TextAudio = null;
     [SerializeField] private AudioSource m_LoadingTransitionAudio = null;
+
+    [Header("Music")]
+    [SerializeField] private AudioSource m_MusicSource = null;
+    [SerializeField] private AudioClip m_MainMenuMusic = null;
+    [SerializeField] private AudioClip m_StreetAmbiance = null;
 
     [Header("Address Book")]
     [SerializeField] private AudioSource m_AddressBookOpenAudio = null;
@@ -23,6 +28,16 @@ public class AudioManager : MonoBehaviour
     [Header("Map")]
     [SerializeField] private AudioSource m_MapOpenAudio = null;
 
+    [Header("Others")]
+    [SerializeField] private AudioSource m_PhoneRingAudio = null;
+
+    [Header("Radio")]
+    [SerializeField] private AudioSource m_RadioAudio = null;
+    [SerializeField] private AudioSource m_RadioTransitionAudio = null;
+    [SerializeField] private List<AudioClip> m_RadioClips = new List<AudioClip>();
+    private int i_ChannelIdx = 0;
+    private bool b_IsRadioActive = false;
+
     public static AudioManager Singleton { get; private set; }
 
     private void Awake()
@@ -32,6 +47,7 @@ public class AudioManager : MonoBehaviour
         else Singleton = this;
 
         DontDestroyOnLoad(gameObject);
+        m_RadioAudio.clip = m_RadioClips[0];
     }
     
     // Update is called once per frame
@@ -71,13 +87,111 @@ public class AudioManager : MonoBehaviour
                 m_CallTaxiAudio.Play();
                 break;
             case AudioType.Text:
+                float rnd = Random.Range(0.7f,3f);
+                m_TextAudio.pitch = rnd;
                 m_TextAudio.Play();
                 break;
             case AudioType.LoadingTransition:
                 m_LoadingTransitionAudio.Play();
                 break;
+            case AudioType.PhoneRing:
+                m_PhoneRingAudio.Play();
+                break;
             default:
                 break;
+        }
+    }
+
+    public void ChangeMusic(int idx)
+    {
+        m_MusicSource.Stop();
+        switch (idx)
+        {
+            case 0:
+                m_MusicSource.clip = m_MainMenuMusic;
+                m_MusicSource.Play();
+                break;
+            case 1:
+                m_MusicSource.clip = m_StreetAmbiance;
+                m_MusicSource.Play();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void StopMusic()
+    {
+        m_MusicSource.Stop();
+    }
+
+    public void ToggleRadio()
+    {
+        b_IsRadioActive = !b_IsRadioActive;
+        if (b_IsRadioActive)
+        {
+            m_RadioAudio.volume = 0.4f;
+        }
+        else
+        {
+            m_RadioAudio.volume = 0f;
+        }
+    }
+
+    public void ChangeRadioChannel()
+    {
+        if (b_IsRadioActive)
+        {
+            if (i_ChannelIdx < m_RadioClips.Count - 1)
+            {
+                i_ChannelIdx++;
+            }
+            else
+            {
+                i_ChannelIdx = 0;
+            }
+            m_RadioAudio.Stop();
+            m_RadioTransitionAudio.Play();
+            m_RadioAudio.clip = m_RadioClips[i_ChannelIdx];
+            Invoke("LaunchRadioChannel", 1.412f);
+        }
+    }
+
+    void LaunchRadioChannel()
+    {
+        m_RadioAudio.time = Random.Range(0f,m_RadioAudio.clip.length);
+        m_RadioAudio.Play();
+    }
+
+    public void StopRadio()
+    {
+        m_RadioAudio.volume = 0f;
+    }
+
+    public void DeskCheckRadio()
+    {
+        if (b_IsRadioActive)
+        {
+            m_RadioAudio.volume = 0.4f;
+        }
+    }
+
+    public void StopDefinitiveRadio()
+    {
+        m_RadioAudio.volume = 0f;
+    }
+
+    public void ToggleStartRadio()
+    {
+        m_RadioAudio.Play();
+        b_IsRadioActive = !b_IsRadioActive;
+        if (b_IsRadioActive)
+        {
+            m_RadioAudio.volume = 0.4f;
+        }
+        else
+        {
+            m_RadioAudio.volume = 0f;
         }
     }
 }

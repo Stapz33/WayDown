@@ -19,6 +19,7 @@ public class MainMenuManager : MonoBehaviour
         {
             m_ContinueButton.SetActive(true);
         }
+        AudioManager.Singleton.ChangeMusic(0);
     }
 
     public void NewGame()
@@ -37,7 +38,6 @@ public class MainMenuManager : MonoBehaviour
     {
         AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         m_LoadingScreen.SetTrigger("LoadBlack");
-
         Invoke("async", 1f);
     }
 
@@ -68,6 +68,7 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator LoadSceneAsync()
     {
+        AudioManager.Singleton.StopMusic();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
         while (!asyncLoad.isDone)
         {
