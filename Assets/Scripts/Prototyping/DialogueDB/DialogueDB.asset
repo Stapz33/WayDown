@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 341104bd50472bb4aac5909ec181dd5c, type: 3}
   - {fileID: 21300000, guid: d288c87d9252e2a40bd5ddf68202695c, type: 3}
   - {fileID: 21300000, guid: c763d7348898d484facfd41eb4ba1329, type: 3}
+  - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   Characters:
   - {fileID: 21300000, guid: c79bbbe3eba0b4e428a81a0ae1b2f67b, type: 3}
   - {fileID: 21300000, guid: 7ffd42b00f71f764297cb4c35160ea65, type: 3}

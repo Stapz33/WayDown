@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_RadioAudio = null;
     [SerializeField] private AudioSource m_RadioTransitionAudio = null;
     [SerializeField] private List<AudioClip> m_RadioClips = new List<AudioClip>();
+
     private int i_ChannelIdx = 0;
     private bool b_IsRadioActive = false;
 

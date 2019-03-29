@@ -140,6 +140,7 @@ public class MainUIManager : MonoBehaviour {
 
     [SerializeField] private GameObject m_LogManager;
     [SerializeField] private GameObject m_LogManagerButton;
+    [SerializeField] private GameObject m_ContinueVinyle;
 
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
@@ -207,6 +208,7 @@ public class MainUIManager : MonoBehaviour {
                 if (_inkStory.canContinue)
                 {
                     UpdateVisualText(_inkStory.Continue());
+                    m_ContinueVinyle.SetActive(false);
                 }
                 else if (!_inkStory.canContinue && _inkStory.currentChoices.Count == 0)
                 {
@@ -215,6 +217,7 @@ public class MainUIManager : MonoBehaviour {
                     SaveGame();
                     AudioManager.Singleton.DeskCheckRadio();
                     AudioManager.Singleton.StopMusic();
+                    m_ContinueVinyle.SetActive(false);
                 }
                 b_iscontinuing = false;
             }
@@ -229,12 +232,17 @@ public class MainUIManager : MonoBehaviour {
                     int choiceId = ii;
                     choice.onClick.AddListener(delegate { ChoiceSelected(choiceId); });
                     ChoiceNeeded = true;
+                    m_ContinueVinyle.SetActive(false);
                 }
             }
             PlayerTimeElapsed += Time.deltaTime;
             OtherPlayerTimeElapsed += Time.deltaTime;
             PlayerText.text = GetWords(s_PlayerFullText, (int)(PlayerTimeElapsed * wordsPerSecond));
             OtherCharacterText.text = GetWords(s_OtherCharacterFullText, (int)(OtherPlayerTimeElapsed * wordsPerSecond));
+            if (!m_ContinueVinyle.activeSelf && PlayerText.text == s_PlayerFullText && OtherCharacterText.text == s_OtherCharacterFullText && _inkStory.currentChoices.Count == 0)
+            {
+                m_ContinueVinyle.SetActive(true);
+            }
         }
 
         if (Input.GetKeyDown("escape"))
