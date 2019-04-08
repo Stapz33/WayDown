@@ -22,16 +22,16 @@ public class MainUIManager : MonoBehaviour {
 
     #region TABS_DATA
 
-    [SerializeField] private GameObject MapTab;
-    [SerializeField] private GameObject AddressBookTab;
-    [SerializeField] private GameObject DocumentsTab;
+    [SerializeField] private GameObject MapTab = null;
+    [SerializeField] private GameObject AddressBookTab = null;
+    [SerializeField] private GameObject DocumentsTab = null;
     private GameObject ActualTab;
 
     #endregion
 
     #region LOADING_SCREEN_DATA
 
-    [SerializeField] private Animator a_LoadingScreenAnimator;
+    [SerializeField] private Animator a_LoadingScreenAnimator = null;
 
     #endregion
 
@@ -41,15 +41,16 @@ public class MainUIManager : MonoBehaviour {
     [Header("Dialogue System")]
     public GameObject DialogueSystem;
     public GameObject OtherCharacterSection;
+    public GameObject PlayerSection;
     public Transform ChoiceSection;
     public Text PlayerText;
     public Text OtherCharacterText;
     public Button ChoiceButton;
-    [SerializeField] private Image OtherCharacterSprite;
-    [SerializeField] private Image DialogueBackground;
+    [SerializeField] private Image OtherCharacterSprite = null;
+    [SerializeField] private Image DialogueBackground = null;
 
     // Story
-    [SerializeField]private TextAsset Story;
+    [SerializeField]private TextAsset Story = null;
     private Story _inkStory;
     
     // Variables
@@ -104,7 +105,7 @@ public class MainUIManager : MonoBehaviour {
     [Header("Save/Load")]
     public GameObject SaveState;
 
-    [SerializeField] private GameObject ExitMenu;
+    [SerializeField] private GameObject ExitMenu = null;
 
     #endregion
 
@@ -113,34 +114,34 @@ public class MainUIManager : MonoBehaviour {
     [Header("Documents")]
     private List<Transform> l_DocumentsDrawer = new List<Transform>();
     private List<int> l_DocumentsDrawerDocNB = new List<int>();
-    [SerializeField] private GameObject DocumentTypeButtons;
-    [SerializeField] private Transform DocumentsDrawerParent;
-    [SerializeField] private Transform DocumentsDrawerButtonsParent;
-    [SerializeField] private GameObject CloseDocumentPanelButton;
+    [SerializeField] private GameObject DocumentTypeButtons = null;
+    [SerializeField] private Transform DocumentsDrawerParent = null;
+    [SerializeField] private Transform DocumentsDrawerButtonsParent = null;
+    [SerializeField] private GameObject CloseDocumentPanelButton = null;
 
     private int ActualDocumentPanel;
 
-    [SerializeField] private LargeDocumentManager m_LargeDocument;
-    [SerializeField] private GameObject DocumentInfo;
+    [SerializeField] private LargeDocumentManager m_LargeDocument = null;
+    [SerializeField] private GameObject DocumentInfo = null;
     private bool b_isAddDocNavigation = false;
 
     #endregion
 
-    [SerializeField] private List<StoryDataBase> StoryDataBase;
+    [SerializeField] private List<StoryDataBase> StoryDataBase = new List<StoryDataBase>();
     private StoryDataBase ActualStoryDataBase;
     private bool b_isGoodAddress = false;
 
-    [SerializeField] private GameObject PoliceOfficeObject;
+    [SerializeField] private GameObject PoliceOfficeObject = null;
 
-    [SerializeField] private DocumentScriptable DocumentDataBase;
-    [SerializeField] private DialogueScriptable DialogueDataBase;
+    [SerializeField] private DocumentScriptable DocumentDataBase = null;
+    [SerializeField] private DialogueScriptable DialogueDataBase = null;
 
-    [SerializeField] private Transform PoliceDropdownParent;
+    [SerializeField] private Transform PoliceDropdownParent = null;
     private List<Dropdown> m_PoliceDropdown = new List<Dropdown>();
 
-    [SerializeField] private GameObject m_LogManager;
-    [SerializeField] private GameObject m_LogManagerButton;
-    [SerializeField] private GameObject m_ContinueVinyle;
+    [SerializeField] private GameObject m_LogManager = null;
+    [SerializeField] private GameObject m_LogManagerButton = null;
+    [SerializeField] private GameObject m_ContinueVinyle = null;
 
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
@@ -181,7 +182,6 @@ public class MainUIManager : MonoBehaviour {
         if (SaveManager.Singleton.LoadStoryPath() != null)
         {
             LoadGame();
-            Debug.Log("Loading");
         }
         else
         {
@@ -351,12 +351,16 @@ public class MainUIManager : MonoBehaviour {
             {
                 if (_inkStory.currentTags[f] == "player")
                 {
+                    DeactivateOtherCharacterDialogue();
+                    ReactivatePlayerDialogue();
                     s_PlayerFullText = ContinueText.Replace("\n","");
                     PlayerText.text = "";
                     PlayerTimeElapsed = 0f;
                 }
                 else if (_inkStory.currentTags[f] == "otherCharacter")
                 {
+                    DeactivatePlayerDialogue();
+                    ReactivateOtherCharacterDialogue();
                     s_OtherCharacterFullText = ContinueText.Replace("\n", "");
                     OtherCharacterText.text = "";
                     OtherPlayerTimeElapsed = 0f;
@@ -440,6 +444,16 @@ public class MainUIManager : MonoBehaviour {
     public void ReactivateOtherCharacterDialogue()
     {
         OtherCharacterSection.SetActive(true);
+    }
+
+    public void DeactivatePlayerDialogue()
+    {
+        PlayerSection.SetActive(false);
+    }
+
+    public void ReactivatePlayerDialogue()
+    {
+        PlayerSection.SetActive(true);
     }
 
     #endregion
@@ -921,7 +935,6 @@ public class MainUIManager : MonoBehaviour {
 
     public void SetNewActualAddressDocumentFolder(DocumentFolder documentFolder)
     {
-        Debug.Log("New Doc Folder");
         AddressActualFolder = documentFolder;
     }
 

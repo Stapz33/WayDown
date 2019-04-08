@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Lamp : MonoBehaviour
 {
-    [SerializeField] private List<float> temps;
+    [SerializeField] private List<float> temps = new List<float>();
     private float f_timer;
     private bool isOn = true;
     private Sprite lamp;
-    [SerializeField] private Sprite nullsprite;
+    [SerializeField] private Sprite nullsprite = null;
 
     private void Start()
     {

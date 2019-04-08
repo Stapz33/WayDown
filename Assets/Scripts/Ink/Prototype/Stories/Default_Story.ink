@@ -28,37 +28,43 @@ TODO Intro capo's apartment (retakes)
 // METTRE UN FOND NOIR?
 # DisableDiscussion
 Fucking city. # player 
-"Come to San Francisco" they said. "It's like a Gold Rush for private detectives". # player
-And I fell for it. # player #NewNarrativeLog #1
-Ain't nobody like Bugsy Rosenthal to look like a damn fool. # player
-Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses. # player
-But everybody has to do something for a living. # player
+"Come to San Francisco" they said. "It's like a Gold Rush for private detectives". # player 
+And I fell for it. # player 
+Ain't nobody like Bugsy Rosenthal to look like a damn fool. # player 
+Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses. # player 
+But everybody has to do something for a living. # player 
 And this mob is paying quite well. # player #NewNarrativeLog #0
-But they're fucking savages, killing each other and all. # player
+But they're fucking savages, killing each other and all. # player 
 Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player 
 And now the fuckin' phone is ringing. # player #SFXPlay #8
-Don't even wants to answer, fuck it. # player
+Don't even wants to answer, fuck it. # player 
 - (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player #SFXPlay #8
+# jump
 	*	[Answer] This damn phone ain't gonna stop itself. # player
-	+	[Try to sleep]{Ain't no time to call somebody, they'll wait tomorrow.|Could be a business call... Who am I kidding?|Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...|} # player
+	+	[Try to sleep]{Ain't no time to call somebody, they'll wait tomorrow.|Could be a business call... Who am I kidding?|Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...|} # player #NewNarrativeLog #1
 		->phone
 - I decide to get up and finally answer it. # player
 
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
-	*	Are you out of your mind?[] Did you fucking see the hour? # player
-- It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #5	#ActivateDiscussion
-You need to come here immediately. # otherCharacter
-	*	What time is it[?] for fuck's sake? # player
-- 3AM, but we pay you to come even when you're shitting. #otherCharacter
-You understand me Rosenthal? Come here right now. # otherCharacter
-    *	What's the address[?] Lanza? # player
+# jump
+	*	Are you out of your mind?[] Did you fucking see the hour? # player 
+- It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #5	#ActivateDiscussion 
+You need to come here immediately. # otherCharacter 
+# jump
+	*	What time is it[?] for fuck's sake? # player 
+- 3AM, but we pay you to come even when you're shitting. #otherCharacter 
+You understand me Rosenthal? Come here right now. # otherCharacter 
+# jump
+    *	What's the address[?] Lanza? # player 
 - 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
+# jump
     *   [Hang up] # player
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
 - I hung up and got out of bed. # player # DisableDiscussion
 For fuck's sake, what did they do again? # player
+# jump
     *   [Go to Francisco Street] # player
     # NewBackground #4 #MusicPlay #1
 - (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player 

@@ -6,11 +6,11 @@ public class PoliceOffice : MonoBehaviour
 {
     public static PoliceOffice Singleton { get; private set; }
 
-    [SerializeField] private TextWPW Inspector;
-    [SerializeField] private GameObject NameInput;
-    [SerializeField] private GameObject CsInput;
-    [SerializeField] private GameObject BlackBackground;
-    [SerializeField] private UnityEngine.UI.Text InputField;
+    [SerializeField] private TextWPW Inspector = null;
+    [SerializeField] private GameObject NameInput = null;
+    [SerializeField] private GameObject CsInput = null;
+    [SerializeField] private GameObject BlackBackground = null;
+    [SerializeField] private UnityEngine.UI.Text InputField = null;
 
     private void Awake()
     {

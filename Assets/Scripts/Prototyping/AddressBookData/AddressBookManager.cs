@@ -9,17 +9,20 @@ public class AddressBookManager : MonoBehaviour
     
     private List<Text> AddressesList = new List<Text>();
 
-    [SerializeField] private Transform AddressesButtonParent;
-    [SerializeField] private GameObject AddressesAlphabeticalButtonParent;
-    [SerializeField] private GameObject AlphabeticalButton;
+    [SerializeField] private Transform AddressesButtonParent = null;
+    [SerializeField] private GameObject AddressesAlphabeticalButtonParent = null;
+    [SerializeField] private GameObject AlphabeticalButton = null;
 
-    [SerializeField] private Text ValidationText;
+    [SerializeField] private GameObject PreviousButton = null;
+    [SerializeField] private GameObject NextButton = null;
+
+    [SerializeField] private Text ValidationText = null;
 
 
     [Header("Good Addresses")]
 
     public int LastPageIdx;
-    private int PageIdx = 0;
+    private int PageIdx = 1;
 
     private void Awake()
     {
@@ -35,7 +38,7 @@ public class AddressBookManager : MonoBehaviour
         {
             AddressesList.Add(AddressesButtonParent.GetChild(i).GetChild(0).GetComponent<Text>());
         }
-        NextPage();
+        //NextPage();
     }
 
     public void NextPage()
@@ -65,6 +68,22 @@ public class AddressBookManager : MonoBehaviour
         {
             AddressesList[y].text = Addresses[y];
         }
+        if (PageIdx <= 1)
+        {
+            PreviousButton.SetActive(false);
+        }
+        if (PageIdx >= 2 && !PreviousButton.activeSelf)
+        {
+            PreviousButton.SetActive(true);
+        }
+        if (PageIdx <= LastPageIdx && !NextButton.activeSelf)
+        {
+            NextButton.SetActive(true);
+        }
+        if (PageIdx >= LastPageIdx)
+        {
+            NextButton.SetActive(false);
+        }
     }
 
     public void JumpToPage(int idx)
@@ -85,6 +104,8 @@ public class AddressBookManager : MonoBehaviour
     public void GoToAlphabetical()
     {
         AlphabeticalButton.SetActive(false);
+        NextButton.SetActive(false);
+        PreviousButton.SetActive(false);
         AddressesButtonParent.gameObject.SetActive(false);
         AddressesAlphabeticalButtonParent.SetActive(true);
     }

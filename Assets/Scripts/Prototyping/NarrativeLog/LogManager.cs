@@ -12,10 +12,10 @@ public class SaveLog
 
 public class LogManager : MonoBehaviour
 {
-    [SerializeField] private Transform m_PanelParent;
-    [SerializeField] private GameObject m_PanelToSpawn;
-    [SerializeField] private GameObject PreviousButton;
-    [SerializeField] private GameObject NextButton;
+    [SerializeField] private Transform m_PanelParent = null;
+    [SerializeField] private GameObject m_PanelToSpawn = null;
+    [SerializeField] private GameObject PreviousButton = null;
+    [SerializeField] private GameObject NextButton = null;
     private List<GameObject> m_PanelList = new List<GameObject>();
     private List<string> m_LogsDataBase = new List<string>();
     private int m_NBofPanel = -1;
@@ -111,7 +111,6 @@ public class LogManager : MonoBehaviour
 
     public void SaveLog()
     {
-        Debug.Log("SaveLog");
         SaveManager.Singleton.SaveLogPath(idxtosave);
     }
 

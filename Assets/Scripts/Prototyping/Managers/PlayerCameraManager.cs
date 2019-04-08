@@ -8,7 +8,6 @@ public class PlayerCameraManager : MonoBehaviour
     public static PlayerCameraManager Singleton { get; private set; }
 
     #region CAMERA_MOVEMENTS
-    private int i_ActualTab = 0;
     private float i_CameraSizeToReach = 0;
     private Vector3 v_PositionToMoveTo = new Vector3();
     private bool b_CameraNeedToMove = false;

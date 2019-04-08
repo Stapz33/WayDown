@@ -46,7 +46,7 @@ public class CSVNarrativeLog : MonoBehaviour
 
     public List<string> GetStrings()
     {
-        for (int i = 0; i < keysImport.Count; i++)
+        for (int i = 0; i < keysImport.Count;)
         {
                 return keysImport[i].Logs;
         }

@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
         {
             return l_CameraInfos[Index];
         }
-        Debug.LogError("Camera Index doesn't exist", gameObject);
         return null; 
     }
 

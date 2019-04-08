@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Address_data : MonoBehaviour
 {
     private string ActualKnot = null;
-    [SerializeField] private string m_addressDescription;
-    [SerializeField] private Sprite m_addressImage;
-    [SerializeField] private DocumentFolder m_MyAddresDoc;
+    [SerializeField] private string m_addressDescription = null;
+    [SerializeField] private Sprite m_addressImage = null;
+    [SerializeField] private DocumentFolder m_MyAddresDoc = new DocumentFolder();
 
-    [SerializeField] private GameObject m_infosPanel;
+    [SerializeField] private GameObject m_infosPanel = null;
 
     private void Awake()
     {

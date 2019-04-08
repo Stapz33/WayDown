@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DocumentFolderManager : MonoBehaviour
 {
-    [SerializeField] private Transform tabParent;
+    [SerializeField] private Transform tabParent = null;
 
     public void UnlockTab(int idx)
     {

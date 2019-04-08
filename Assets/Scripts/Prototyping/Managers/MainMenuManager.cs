@@ -8,10 +8,10 @@ using UnityEditor;
 public class MainMenuManager : MonoBehaviour
 {
 
-    [SerializeField] private Animator m_LoadingScreen;
-    [SerializeField] private GameObject m_ContinueButton;
+    [SerializeField] private Animator m_LoadingScreen = null;
+    [SerializeField] private GameObject m_ContinueButton = null;
 
-    [SerializeField] private GameObject m_NewGameMenu;
+    [SerializeField] private GameObject m_NewGameMenu = null;
     // Start is called before the first frame update
     void Start()
     {
