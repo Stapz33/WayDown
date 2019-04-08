@@ -458,9 +458,19 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5293366854654625497, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: PlayerSection
+      propertyPath: OtherCharacterDialogue
+      value: 
+      objectReference: {fileID: 4711738336229313567}
+    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: PlayerDialogue
       value: 
       objectReference: {fileID: 4711738336229313566}
     m_RemovedComponents: []
@@ -468,6 +478,12 @@ PrefabInstance:
 --- !u!1 &4711738336229313566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7521555598605710891, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    type: 3}
+  m_PrefabInstance: {fileID: 4711738336229313565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4711738336229313567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4479110941908338015, guid: 7e30d4add22b7f1438f20fef1cb40309,
     type: 3}
   m_PrefabInstance: {fileID: 4711738336229313565}
   m_PrefabAsset: {fileID: 0}

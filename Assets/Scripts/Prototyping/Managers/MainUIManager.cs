@@ -41,7 +41,8 @@ public class MainUIManager : MonoBehaviour {
     [Header("Dialogue System")]
     public GameObject DialogueSystem;
     public GameObject OtherCharacterSection;
-    public GameObject PlayerSection;
+    public GameObject OtherCharacterDialogue;
+    public GameObject PlayerDialogue;
     public Transform ChoiceSection;
     public Text PlayerText;
     public Text OtherCharacterText;
@@ -359,6 +360,7 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (_inkStory.currentTags[f] == "otherCharacter")
                 {
+                    ReactivateOtherCharacterSection();
                     DeactivatePlayerDialogue();
                     ReactivateOtherCharacterDialogue();
                     s_OtherCharacterFullText = ContinueText.Replace("\n", "");
@@ -383,11 +385,11 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (_inkStory.currentTags[f] == "DisableDiscussion")
                 {
-                    DeactivateOtherCharacterDialogue();
+                    DeactivateOtherCharacterSection();
                 }
                 else if (_inkStory.currentTags[f] == "ActivateDiscussion")
                 {
-                    ReactivateOtherCharacterDialogue();
+                    ReactivateOtherCharacterSection();
                 }
                 else if (_inkStory.currentTags[f] == "NewNarrativeLog")
                 {
@@ -410,11 +412,11 @@ public class MainUIManager : MonoBehaviour {
         _inkStory.ChoosePathString(newStory);
         if (newStory == DefaultKnot)
         {
-            DeactivateOtherCharacterDialogue();
+            DeactivateOtherCharacterSection();
         }
         else
         {
-            ReactivateOtherCharacterDialogue();
+            ReactivateOtherCharacterSection();
         }
     }
 
@@ -438,22 +440,32 @@ public class MainUIManager : MonoBehaviour {
 
     public void DeactivateOtherCharacterDialogue()
     {
+        OtherCharacterDialogue.SetActive(false);
+    }
+
+    public void DeactivateOtherCharacterSection()
+    {
         OtherCharacterSection.SetActive(false);
     }
 
-    public void ReactivateOtherCharacterDialogue()
+    public void ReactivateOtherCharacterSection()
     {
         OtherCharacterSection.SetActive(true);
     }
 
+    public void ReactivateOtherCharacterDialogue()
+    {
+        OtherCharacterDialogue.SetActive(true);
+    }
+
     public void DeactivatePlayerDialogue()
     {
-        PlayerSection.SetActive(false);
+        PlayerDialogue.SetActive(false);
     }
 
     public void ReactivatePlayerDialogue()
     {
-        PlayerSection.SetActive(true);
+        PlayerDialogue.SetActive(true);
     }
 
     #endregion
