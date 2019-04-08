@@ -103,6 +103,42 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopAudio(AudioType type)
+    {
+        switch (type)
+        {
+            case AudioType.AddressBookOpen:
+                m_AddressBookOpenAudio.Stop();
+                break;
+            case AudioType.DrawerOpen:
+                m_DrawerOpenAudio.Stop();
+                break;
+            case AudioType.MapOpen:
+                m_MapOpenAudio.Stop();
+                break;
+            case AudioType.NewDocument:
+                m_NewDocumentAudio.Stop();
+                break;
+            case AudioType.ChangePageAddressBook:
+                m_ChangePageAddressBookAudio.Stop();
+                break;
+            case AudioType.CallTaxi:
+                m_CallTaxiAudio.Stop();
+                break;
+            case AudioType.Text:
+                m_TextAudio.Stop();
+                break;
+            case AudioType.LoadingTransition:
+                m_LoadingTransitionAudio.Stop();
+                break;
+            case AudioType.PhoneRing:
+                m_PhoneRingAudio.Stop();
+                break;
+            default:
+                break;
+        }
+    }
+
     public void ChangeMusic(int idx)
     {
         m_MusicSource.Stop();

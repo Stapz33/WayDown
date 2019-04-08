@@ -54,14 +54,18 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField]private TextAsset Story = null;
     private Story _inkStory;
     
-    // Variables
-    public float wordsPerSecond = 10f; // speed of typewriter
+    // Variables/ speed of typewriter
     private bool ChoiceNeeded = false;
 	private bool b_StoryStarted = false;
     private string s_PlayerFullText = "";
     private string s_OtherCharacterFullText = "";
-    private float PlayerTimeElapsed = 0f;
-    private float OtherPlayerTimeElapsed = 0f;
+
+    public float TextSpeed;
+    private float TextCooldown = 0f;
+    private string CurrentText = "";
+    private int textlength = 0;
+    private int characterText = 0;
+
     #endregion
 
     #region STORY_SETUP_DATA
@@ -84,6 +88,7 @@ public class MainUIManager : MonoBehaviour {
 
         //variables
         public int knowledgeSpaghetty = 0;
+        
 
     }
 
@@ -115,6 +120,7 @@ public class MainUIManager : MonoBehaviour {
     [Header("Documents")]
     private List<Transform> l_DocumentsDrawer = new List<Transform>();
     private List<int> l_DocumentsDrawerDocNB = new List<int>();
+    [SerializeField] private GameObject NewDocumentFeedback = null;
     [SerializeField] private GameObject DocumentTypeButtons = null;
     [SerializeField] private Transform DocumentsDrawerParent = null;
     [SerializeField] private Transform DocumentsDrawerButtonsParent = null;
@@ -142,7 +148,8 @@ public class MainUIManager : MonoBehaviour {
 
     [SerializeField] private GameObject m_LogManager = null;
     [SerializeField] private GameObject m_LogManagerButton = null;
-    [SerializeField] private GameObject m_ContinueVinyle = null;
+    [SerializeField] private GameObject m_CharacterVinyle = null;
+    [SerializeField] private GameObject m_OtherCharacterVinyle = null;
 
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
@@ -209,7 +216,8 @@ public class MainUIManager : MonoBehaviour {
                 if (_inkStory.canContinue)
                 {
                     UpdateVisualText(_inkStory.Continue());
-                    m_ContinueVinyle.SetActive(false);
+                    m_CharacterVinyle.SetActive(false);
+                    m_OtherCharacterVinyle.SetActive(false);
                 }
                 else if (!_inkStory.canContinue && _inkStory.currentChoices.Count == 0)
                 {
@@ -218,7 +226,8 @@ public class MainUIManager : MonoBehaviour {
                     SaveGame();
                     AudioManager.Singleton.DeskCheckRadio();
                     AudioManager.Singleton.StopMusic();
-                    m_ContinueVinyle.SetActive(false);
+                    m_CharacterVinyle.SetActive(false);
+                    m_OtherCharacterVinyle.SetActive(false);
                 }
                 b_iscontinuing = false;
             }
@@ -233,17 +242,83 @@ public class MainUIManager : MonoBehaviour {
                     int choiceId = ii;
                     choice.onClick.AddListener(delegate { ChoiceSelected(choiceId); });
                     ChoiceNeeded = true;
-                    m_ContinueVinyle.SetActive(false);
+                    m_CharacterVinyle.SetActive(false);
+                    m_OtherCharacterVinyle.SetActive(false);
                 }
             }
-            PlayerTimeElapsed += Time.deltaTime;
-            OtherPlayerTimeElapsed += Time.deltaTime;
-            PlayerText.text = GetWords(s_PlayerFullText, (int)(PlayerTimeElapsed * wordsPerSecond));
-            OtherCharacterText.text = GetWords(s_OtherCharacterFullText, (int)(OtherPlayerTimeElapsed * wordsPerSecond));
-            if (!m_ContinueVinyle.activeSelf && PlayerText.text == s_PlayerFullText && OtherCharacterText.text == s_OtherCharacterFullText && _inkStory.currentChoices.Count == 0)
+            if (!m_CharacterVinyle.activeSelf && PlayerText.text == s_PlayerFullText && OtherCharacterText.text == s_OtherCharacterFullText && _inkStory.currentChoices.Count == 0 && characterText == 0)
             {
-                m_ContinueVinyle.SetActive(true);
+                m_CharacterVinyle.SetActive(true);
             }
+            else if (!m_CharacterVinyle.activeSelf && PlayerText.text == s_PlayerFullText && OtherCharacterText.text == s_OtherCharacterFullText && _inkStory.currentChoices.Count == 0 && characterText == 1)
+            {
+                m_OtherCharacterVinyle.SetActive(true);
+            }
+
+            if (TextCooldown != 0)
+            {
+                TextCooldown -= Time.deltaTime;
+                if (TextCooldown <= 0)
+                {
+                    if (i_TextFramingSound == 1)
+                    {
+                        AudioManager.Singleton.ActivateAudio(AudioType.Text);
+                        i_TextFramingSound = 0;
+                    }
+                    else i_TextFramingSound++;
+                    if (s_PlayerFullText != "")
+                    {
+                        textlength++;
+                        if (characterText == 0)
+                        {
+                            CurrentText = s_PlayerFullText.Substring(0, textlength);
+                            PlayerText.text = CurrentText;
+                            if (CurrentText == s_PlayerFullText)
+                            {
+                                textlength = 0;
+                                TextCooldown = 0f;
+                            }
+                            else
+                            {
+                                TextCooldown = TextSpeed;
+                            }
+                        }
+                        else if (characterText == 1)
+                        {
+                            CurrentText = s_OtherCharacterFullText.Substring(0, textlength);
+                            OtherCharacterText.text = CurrentText;
+                            if (CurrentText == s_OtherCharacterFullText)
+                            {
+                                textlength = 0;
+                                TextCooldown = 0f;
+                            }
+                            else
+                            {
+                                TextCooldown = TextSpeed;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (characterText == 0)
+                        {
+                            CurrentText = s_PlayerFullText;
+                            PlayerText.text = CurrentText;
+                            textlength = 0;
+                            TextCooldown = 0f;
+                        }
+                        else if (characterText == 1)
+                        {
+                            CurrentText = s_OtherCharacterFullText;
+                            OtherCharacterText.text = CurrentText;
+                            textlength = 0;
+                            TextCooldown = 0f;
+                        }
+                    }
+                }
+                
+            }
+            
         }
 
         if (Input.GetKeyDown("escape"))
@@ -315,13 +390,7 @@ public class MainUIManager : MonoBehaviour {
             }
             if (words <= 0)
             {
-                if (i_TextFramingSound == 8 )
-                {
-                    AudioManager.Singleton.ActivateAudio(AudioType.Text);
-                    int rnd = UnityEngine.Random.Range(-3, 0);
-                    i_TextFramingSound = rnd;
-                }
-                else i_TextFramingSound++;
+                
                 return text.Substring(0, i);
             }
         }
@@ -355,8 +424,9 @@ public class MainUIManager : MonoBehaviour {
                     DeactivateOtherCharacterDialogue();
                     ReactivatePlayerDialogue();
                     s_PlayerFullText = ContinueText.Replace("\n","");
+                    characterText = 0;
+                    TextCooldown = TextSpeed;
                     PlayerText.text = "";
-                    PlayerTimeElapsed = 0f;
                 }
                 else if (_inkStory.currentTags[f] == "otherCharacter")
                 {
@@ -364,8 +434,9 @@ public class MainUIManager : MonoBehaviour {
                     DeactivatePlayerDialogue();
                     ReactivateOtherCharacterDialogue();
                     s_OtherCharacterFullText = ContinueText.Replace("\n", "");
+                    characterText = 1;
+                    TextCooldown = TextSpeed;
                     OtherCharacterText.text = "";
-                    OtherPlayerTimeElapsed = 0f;
                 }
                 else if (_inkStory.currentTags[f] == "NewInvestigation")
                 {
@@ -398,6 +469,10 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "SFXPlay")
                 {
                     AudioManager.Singleton.ActivateAudio((AudioType)int.Parse(_inkStory.currentTags[f + 1]));
+                }
+                else if (_inkStory.currentTags[f] == "SFXStop")
+                {
+                    AudioManager.Singleton.StopAudio((AudioType)int.Parse(_inkStory.currentTags[f + 1]));
                 }
                 else if (_inkStory.currentTags[f] == "MusicPlay")
                 {
@@ -513,6 +588,7 @@ public class MainUIManager : MonoBehaviour {
             case TabType.Documents:
                 AudioManager.Singleton.ActivateAudio(AudioType.DrawerOpen);
                 DocumentsTab.SetActive(true);
+                NewDocumentFeedback.SetActive(false);
                 ActualTab = DocumentsTab;
                 break;
             default:
@@ -567,6 +643,7 @@ public class MainUIManager : MonoBehaviour {
             ActualDatas.m_IsCriminalKnown = true;
         }
         InstantiateDocument(DocumentIdx, (int)Type,true);
+        NewDocumentFeedback.SetActive(true);
     }
 
     public void InstantiateDocument(int DocumentIdx, int DrawerIdx,bool needToShow)
@@ -1002,7 +1079,34 @@ public class MainUIManager : MonoBehaviour {
 
     public void DialogueContinue()
     {
-        b_iscontinuing = true;
+        switch (characterText)
+        {
+            case 0:
+                if (PlayerText.text == s_PlayerFullText)
+                {
+                    b_iscontinuing = true;
+                }
+                else
+                {
+                    textlength = 0;
+                    TextCooldown = 0f;
+                    PlayerText.text = s_PlayerFullText;
+                }
+                break;
+            case 1:
+                if (OtherCharacterText.text == s_OtherCharacterFullText)
+                {
+                    b_iscontinuing = true;
+                }
+                else
+                {
+                    textlength = 0;
+                    TextCooldown = 0f;
+                    OtherCharacterText.text = s_OtherCharacterFullText;
+                }
+                break;
+
+        }
     }
     
 }

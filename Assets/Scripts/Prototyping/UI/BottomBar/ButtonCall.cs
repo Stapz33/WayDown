@@ -51,8 +51,12 @@ public class ButtonCall : MonoBehaviour
     public int PagIdx;
     public string DocumentInfo;
     public Transform parent;
-    
 
+    private void Start()
+    {
+        if (TypeOfButton == ButtonType.OpenDocumentPanel)
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
+    }
     public void OnClick()
     {
         switch (TypeOfButton)

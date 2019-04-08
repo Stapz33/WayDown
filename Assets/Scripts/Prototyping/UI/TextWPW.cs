@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class TextWPW : MonoBehaviour
 {
-    public float wordsPerSecond = 10f;
+    public float TextSpeed;
 
     public Text PlayerText;
 
     private string s_PlayerFullText = "What are you lookin' for ?";
 
-    private float PlayerTimeElapsed = 0f;
+    private string CurrentText;
+
+    private int textlength = 0;
+
+
+    private float TextCooldown = 0f;
 
     int i_TextFramingSound = 0;
     // Start is called before the first frame update
@@ -22,81 +27,79 @@ public class TextWPW : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerTimeElapsed += Time.deltaTime;
-        PlayerText.text = GetWords(s_PlayerFullText, (int)(PlayerTimeElapsed * wordsPerSecond));
-    }
-
-     private string GetWords(string text, int wordCount)
-    {
-        int words = wordCount;
-        // loop through each character in text
-        for (int i = 0; i < text.Length; i++)
+        if (TextCooldown != 0)
         {
-            if (text[i] == ' ')
+            TextCooldown -= Time.deltaTime;
+            if (TextCooldown <= 0)
             {
-                words--;
-            }
-            if (words <= 0)
-            {
-                if (i_TextFramingSound == 8)
+                if (i_TextFramingSound == 1)
                 {
                     AudioManager.Singleton.ActivateAudio(AudioType.Text);
-                    int rnd = UnityEngine.Random.Range(-3, 0);
-                    i_TextFramingSound = rnd;
+                    i_TextFramingSound = 0;
                 }
                 else i_TextFramingSound++;
-                return text.Substring(0, i);
+                textlength++;
+                CurrentText = s_PlayerFullText.Substring(0, textlength);
+                PlayerText.text = CurrentText;
+                if (CurrentText == s_PlayerFullText)
+                {
+                    textlength = 0;
+                    TextCooldown = 0f;
+                }
+                else
+                {
+                    TextCooldown = TextSpeed;
+                }
             }
         }
-        return text;
     }
 
     public void NameTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "And who is the winner ?";
+        TextCooldown = TextSpeed;
     }
 
     public void NormalTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "What are you lookin' for ?";
+        TextCooldown = TextSpeed;
     }
 
     public void FaceTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Give me his face then";
+        TextCooldown = TextSpeed;
     }
 
     public void NoPeopleTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
+        TextCooldown = TextSpeed;
     }
 
     public void NoCSTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, there are too many possible profiles";
+        TextCooldown = TextSpeed;
     }
 
     public void PeopleTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
+        TextCooldown = TextSpeed;
     }
 
     public void AlreadyPeopleTextLaunch()
     {
-        PlayerTimeElapsed = 0f;
         PlayerText.text = "";
         s_PlayerFullText = "You already asked me for this record huh ?";
+        TextCooldown = TextSpeed;
     }
 }

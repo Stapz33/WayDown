@@ -249,6 +249,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4737124897979872304, guid: 8a145ccee987aba4eb22a64c347533fa,
+        type: 3}
+      propertyPath: nullSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a145ccee987aba4eb22a64c347533fa, type: 3}
 --- !u!1001 &2823339989537466024
@@ -458,32 +464,5 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5293366854654625497, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: OtherCharacterDialogue
-      value: 
-      objectReference: {fileID: 4711738336229313567}
-    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: PlayerDialogue
-      value: 
-      objectReference: {fileID: 4711738336229313566}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
---- !u!1 &4711738336229313566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7521555598605710891, guid: 7e30d4add22b7f1438f20fef1cb40309,
-    type: 3}
-  m_PrefabInstance: {fileID: 4711738336229313565}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4711738336229313567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4479110941908338015, guid: 7e30d4add22b7f1438f20fef1cb40309,
-    type: 3}
-  m_PrefabInstance: {fileID: 4711738336229313565}
-  m_PrefabAsset: {fileID: 0}

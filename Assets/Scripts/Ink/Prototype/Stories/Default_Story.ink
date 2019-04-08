@@ -38,12 +38,12 @@ But they're fucking savages, killing each other and all. # player
 Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player 
 And now the fuckin' phone is ringing. # player #SFXPlay #8
 Don't even wants to answer, fuck it. # player 
-- (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player #SFXPlay #8
+- (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player 
 # jump
-	*	[Answer] This damn phone ain't gonna stop itself. # player
+	*	[Answer] This damn phone ain't gonna stop itself. # player 
 	+	[Try to sleep]{Ain't no time to call somebody, they'll wait tomorrow.|Could be a business call... Who am I kidding?|Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...|} # player #NewNarrativeLog #1
 		->phone
-- I decide to get up and finally answer it. # player
+- I decide to get up and finally answer it. # player #SFXStop #8
 
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
