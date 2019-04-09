@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -136,6 +136,9 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.ToggleRadio:
                 AudioManager.Singleton.ToggleRadio();
+                break;
+            case ButtonType.Whisky:
+                AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
                 break;
             default:
                 break;
