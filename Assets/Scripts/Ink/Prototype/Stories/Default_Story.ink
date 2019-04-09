@@ -50,7 +50,7 @@ TODO Find Bugsy's address
 TODO Find dead capo's name
 # jump
 	*	Are you out of your mind?[] Did you fucking see the hour? # player 
-- It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #5	#ActivateDiscussion 
+- It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7
 You need to come here immediately. # otherCharacter 
 # jump
 	*	What time is it[?] for fuck's sake? # player 
@@ -60,9 +60,9 @@ You understand me Rosenthal? Come here right now. # otherCharacter
     *	What's the address[?] Lanza? # player 
 - 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
 # jump
-    *   [Hang up] # player
-    *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
-- I hung up and got out of bed. # player # DisableDiscussion
+    *   [Hang up] # player #NewCharacterSprite #0
+    *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player #NewCharacterSprite #0
+- I hung up and got out of bed. # player 
 For fuck's sake, what did they do again? # player
 # jump
     *   [Go to Francisco Street] # player
@@ -71,18 +71,18 @@ For fuck's sake, what did they do again? # player
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
 - As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
-Mr. Rosenthal? # otherCharacter # NewCharacterSprite #0 # ActivateDiscussion
+Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- I step into the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player # DisableDiscussion
+- I step into the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player #NewCharacterSprite #0
 He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours. # player
 - (car_convo)
     *   Are you new in town, kid? # player 
-        Came here 6 months ago from Sicily. # otherCharacter # ActivateDiscussion
+        Came here 6 months ago from Sicily. # otherCharacter # NewCharacterSprite #8
         **  Lanza got you in here? # player
             Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter
         **  More Italians? Is there any place left in North Beach? # player
@@ -93,7 +93,7 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
         I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter
         ->car_convo
     *   Can't you go directly to the apartment? # player
-        Must make sure that we're not tailed sir # otherCharacter # ActivateDiscussion
+        Must make sure that we're not tailed sir # otherCharacter # NewCharacterSprite #8
         **  Who would follow me?[] Am I a Jewish Marilyn? # player 
         //revoir 
             Let's say that we caught a lot of heat from the trial. # otherCharacter
@@ -113,18 +113,18 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
             You will discover it soon enough. # otherCharacter
             ->car_convo
     *->
-- The ride continued in a complete silence. # player
+- The ride continued in a complete silence. # player #NewCharacterSprite #0
 Giovanni is dead. Poor kid. And more Italians flooding North Beach. # player
 Someting's wrong. And I'm gettin' mixed in all that. # player
 We finally park in Francisco Street. # player # NewBackground #0 #MusicPlay #0
-I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # ActivateDiscussion
+I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
     *   Thank you kid # player
     *   [Just a question...] Before I leave kid, can I ask you something? # player
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
         And the young prick leaves. # player
-- I cross the threshold of the building and go to the second floor. Apartment 237. # player
+- I cross the threshold of the building and go to the second floor. Apartment 237. # player # NewCharacterSprite #0
 
 TODO First dialogue with Lanza (retakes)
 
@@ -238,7 +238,7 @@ TODO Dialogue with Lanza (retakes)
 =check_apartment
 // BACKGROUND APARTMENT
 TODO Checking the apartment (exploration, gathering clues)
-# DisableDiscussion
+#NewCharacterSprite #0
 I enter the apartment, only to find a first body. Poor Tommy. # player
 Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 - (clues_apartment)
@@ -275,6 +275,6 @@ That day could not have been worse. # player #NewInvestigation
 ->END
 
 === DefaultStory
-# DisableDiscussion
+#NewCharacterSprite #0
 I have nothing to do here # player
 ->END
