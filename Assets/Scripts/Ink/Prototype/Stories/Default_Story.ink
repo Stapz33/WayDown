@@ -60,18 +60,20 @@ You understand me Rosenthal? Come here right now. # otherCharacter
     *	What's the address[?] Lanza? # player 
 - 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
 # jump
-    *   [Hang up] # player #NewCharacterSprite #0
+    *   [Hang up] <> # player #NewCharacterSprite #0
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player #NewCharacterSprite #0
 - I hung up and got out of bed. # player 
 For fuck's sake, what did they do again? # player
 # jump
-    *   [Go to Francisco Street] # player
+    *   [Go to Francisco Street] <> # player
     # NewBackground #4 #MusicPlay #1
 - (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player 
-    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] # player
+#jump
+    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
 - As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
 Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
+#jump
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
