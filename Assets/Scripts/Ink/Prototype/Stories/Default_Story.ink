@@ -26,7 +26,7 @@ VAR lanza_stitch_first = 0
 TODO Tags (see with Killian)
 TODO Intro capo's apartment (retakes)
 // METTRE UN FOND NOIR?
-# DisableDiscussion
+# DisableDiscussion # PlayerDBox #1
 Fucking city. # player 
 "Come to San Francisco" they said. "It's like a Gold Rush for private detectives". # player 
 And I fell for it. # player 
@@ -49,20 +49,20 @@ TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
 # jump
-	*	Are you out of your mind?[] Did you fucking see the hour? # player 
+	*	Are you out of your mind?[] Did you fucking see the hour? # player # PlayerDBox #0
 - It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7
 You need to come here immediately. # otherCharacter 
 # jump
 	*	What time is it[?] for fuck's sake? # player 
 - 3AM, but we pay you to come even when you're shitting. #otherCharacter 
-You understand me Rosenthal? Come here right now. # otherCharacter 
+You understand me Rosenthal? Come here right now. # otherCharacter #OtherCharacterDbox #1
 # jump
     *	What's the address[?] Lanza? # player 
 - 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
 # jump
     *   [Hang up] <> # player #NewCharacterSprite #0
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player #NewCharacterSprite #0
-- I hung up and got out of bed. # player 
+- I hung up and got out of bed. # player # PlayerDBox #1
 For fuck's sake, what did they do again? # player
 # jump
     *   [Go to Francisco Street] <> # player
@@ -72,8 +72,8 @@ For fuck's sake, what did they do again? # player
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
 - As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
-Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
-#jump
+Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #OtherCharacterDbox #0 
+#jump # PlayerDBox #0
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
