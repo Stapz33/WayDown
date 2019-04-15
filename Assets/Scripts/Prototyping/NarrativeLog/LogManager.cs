@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 [Serializable]
 public class SaveLog
@@ -16,6 +17,8 @@ public class LogManager : MonoBehaviour
     [SerializeField] private GameObject m_PanelToSpawn = null;
     [SerializeField] private GameObject PreviousButton = null;
     [SerializeField] private GameObject NextButton = null;
+    public GameObject LogButtonFeedback;
+    public Animator NewInfoFeedback;
     private List<GameObject> m_PanelList = new List<GameObject>();
     private List<string> m_LogsDataBase = new List<string>();
     private int m_NBofPanel = -1;
@@ -47,7 +50,7 @@ public class LogManager : MonoBehaviour
         m_ActualIdx = -1;
     }
 
-    public void AddLogFromCSV(int idx)
+    public void AddLogFromCSV(int idx,bool feedback)
     {
         if (m_ActualIdx >= 10)
         {
@@ -61,7 +64,14 @@ public class LogManager : MonoBehaviour
         m_ActualIdx++;
         m_PanelList[m_NBofPanel].transform.GetChild(m_ActualIdx).GetComponent<TextMeshProUGUI>().text = m_LogsDataBase[idx].Replace("\\n", "\n");
         idxtosave.SavedIdx.Add(idx);
+        if (feedback)
+        {
+            AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
+            LogButtonFeedback.SetActive(true);
+            NewInfoFeedback.SetTrigger("Info");
+        }
     }
+
 
     public void NextLogPage()
     {
@@ -105,7 +115,7 @@ public class LogManager : MonoBehaviour
         List<int> yes = x.SavedIdx;
         foreach (int a in yes)
         {
-            AddLogFromCSV(a);
+            AddLogFromCSV(a,false);
         }
     }
 
@@ -117,5 +127,10 @@ public class LogManager : MonoBehaviour
     public void OnApplicationQuit()
     {
         SaveLog();
+    }
+
+    public void ResetLogImage()
+    {
+        LogButtonFeedback.SetActive(false);
     }
 }

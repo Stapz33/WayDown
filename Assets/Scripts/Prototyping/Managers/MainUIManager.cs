@@ -49,17 +49,19 @@ public class MainUIManager : MonoBehaviour {
     public Button ChoiceButton;
     [SerializeField] private Image OtherCharacterSprite = null;
     [SerializeField] private Image DialogueBackground = null;
+    [SerializeField] private GameObject m_CharacterVinyle = null;
+    [SerializeField] private GameObject m_OtherCharacterVinyle = null;
+    public List<Sprite> PlayerDialogueSprites;
+    public List<Sprite> OCDialogueSprites;
 
-    // Story
-    [SerializeField]private TextAsset Story = null;
-    private Story _inkStory;
-    
+
+
     // Variables/ speed of typewriter
     private bool ChoiceNeeded = false;
 	private bool b_StoryStarted = false;
     private string s_PlayerFullText = "";
     private string s_OtherCharacterFullText = "";
-
+    
     public float TextSpeed;
     private float TextCooldown = 0f;
     private string CurrentText = "";
@@ -71,8 +73,13 @@ public class MainUIManager : MonoBehaviour {
     #region STORY_SETUP_DATA
 
     [Header("Story")]
+    // Story
+    [SerializeField] private TextAsset Story = null;
+    private Story _inkStory;
     public string DefaultKnot;
     private List<Address_data> AddressesList = new List<Address_data>();
+    [SerializeField] private List<StoryDataBase> StoryDataBase = new List<StoryDataBase>();
+    private StoryDataBase ActualStoryDataBase;
 
     #endregion
 
@@ -117,9 +124,10 @@ public class MainUIManager : MonoBehaviour {
 
     #region DOCUMENTS_DATA
 
-    [Header("Documents")]
+    
     private List<Transform> l_DocumentsDrawer = new List<Transform>();
     private List<int> l_DocumentsDrawerDocNB = new List<int>();
+    [Header("Documents")]
     [SerializeField] private GameObject NewDocumentFeedback = null;
     [SerializeField] private GameObject DocumentTypeButtons = null;
     [SerializeField] private Transform DocumentsDrawerParent = null;
@@ -134,22 +142,23 @@ public class MainUIManager : MonoBehaviour {
 
     #endregion
 
-    [SerializeField] private List<StoryDataBase> StoryDataBase = new List<StoryDataBase>();
-    private StoryDataBase ActualStoryDataBase;
+    
     private bool b_isGoodAddress = false;
 
+    [Header("Police Office")]
     [SerializeField] private GameObject PoliceOfficeObject = null;
-
-    [SerializeField] private DocumentScriptable DocumentDataBase = null;
-    [SerializeField] private DialogueScriptable DialogueDataBase = null;
-
     [SerializeField] private Transform PoliceDropdownParent = null;
     private List<Dropdown> m_PoliceDropdown = new List<Dropdown>();
 
+    [Header("Data Bases")]
+    [SerializeField] private DocumentScriptable DocumentDataBase = null;
+    [SerializeField] private DialogueScriptable DialogueDataBase = null;
+
+
+    [Header("Log System")]
     [SerializeField] private GameObject m_LogManager = null;
     [SerializeField] private GameObject m_LogManagerButton = null;
-    [SerializeField] private GameObject m_CharacterVinyle = null;
-    [SerializeField] private GameObject m_OtherCharacterVinyle = null;
+
 
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
@@ -464,7 +473,7 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (_inkStory.currentTags[f] == "NewNarrativeLog")
                 {
-                    m_LogManager.GetComponent<LogManager>().AddLogFromCSV(int.Parse(_inkStory.currentTags[f + 1]));
+                    m_LogManager.GetComponent<LogManager>().AddLogFromCSV(int.Parse(_inkStory.currentTags[f + 1]),true);
                 }
                 else if (_inkStory.currentTags[f] == "SFXPlay")
                 {
@@ -477,6 +486,14 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "MusicPlay")
                 {
                     AudioManager.Singleton.ChangeMusic(int.Parse(_inkStory.currentTags[f + 1]));
+                }
+                else if (_inkStory.currentTags[f] == "OtherCharacterDbox")
+                {
+                    OtherCharacterDialogue.GetComponent<Image>().sprite = OCDialogueSprites[int.Parse(_inkStory.currentTags[f + 1])];
+                }
+                else if (_inkStory.currentTags[f] == "PlayerDBox")
+                {
+                    PlayerDialogue.GetComponent<Image>().sprite = PlayerDialogueSprites[int.Parse(_inkStory.currentTags[f + 1])];
                 }
             }
         }
@@ -1067,6 +1084,7 @@ public class MainUIManager : MonoBehaviour {
     public void ShowNarrativeLog()
     {
         m_LogManager.SetActive(true);
+        m_LogManager.GetComponent<LogManager>().ResetLogImage();
         m_LogManagerButton.SetActive(false);
     }
 
