@@ -2,18 +2,30 @@ VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
 VAR DEBUG = false
+
+->start_capo_apartment
+===start_capo_apartment===
+
 {DEBUG:
-	IN DEBUG MODE!
-	*	[Start]	-> start_capo_apartment
-	*	[Discussing with Lanza in the Lobby] -> start_capo_apartment.lobby_apartment
-	*	[Deeper discussion with Lanza] -> start_capo_apartment.lanza_dialogue
-	*   [Checking the apartment] -> start_capo_apartment.check_apartment
+	IN DEBUG MODE! # player
+	*	[Start]	-> start_capo_apartment.start_office
+	*	Start of the game[]
+		**	[Discussing with Lanza in the Lobby] -> start_capo_apartment.lobby_apartment
+		**	[Deeper discussion with Lanza] -> start_capo_apartment.lanza_dialogue
+		**  [Checking the apartment] -> start_capo_apartment.check_apartment
+	*	Prostitute Motel[]
+		**	[Start] ->prostitute_motel
+		**	[Motel lobby] ->prostitute_motel.motel_lobby
+		**	[Motel room] ->prostitute_motel.motel_room
+	*	Condor Club[]
+		**	[Start] ->condor_club
+		**	[Entrance] ->condor_club.condor_entrance
+		**	[First discussion with madam] ->condor_club.condor_madam
+		**	[Second discussion with madam] ->condor_club.condor_madam2
 - else:
 	// First diversion: where do we begin?
  ->start_capo_apartment.start_office
  }
- 
-===start_capo_apartment===
 
 /*--------------------------------------------------------------------------------
 
@@ -341,22 +353,31 @@ The manager asks for the key. # otherCharacter # NewCharacterSprite #4
 Bugsy enters the room alone. and searches for clues about her. # player #PlayerDBox #0
 - (motel_search)
 # jump
-    *   [Search inside the bedside table] Bugsy opens a drawer of the bedside table. # player
-        Bugsy finds a small bible. # player
-        # jump
-        **  [Open the bible] He opens the bible. # player
-        There is a wad of notes, with like 100 dollars in small bills. # player
-        ->motel_search
-    *   [Search above the bedside table] He checks above the bedside table. # player
-        Bugsy finds a ashtray with a box of matches. # player
-        # NewDocument #1
-        ->motel_search
-    *   [Check the desk] He goes to the desk to check it.
+	*	[Search around the bed] You look around the bed. # player
+		There's nothing worth noticing, except for the bedside table and a large closet. # player
+		# jump
+		**	[Go to the bedside table] You approach the bedside table. # player
+			---	(bedside_search) # jump
+			***	[Look on the top] He checks above the bedside table. # player
+		        Bugsy finds a ashtray with a box of matches. # player
+		        # NewDocument #1
+		        ->bedside_search
+		    ***	[Open a drawer] Bugsy opens a drawer of the bedside table. # player
+		        Bugsy finds a small bible. # player
+		        # jump
+		        ****  [Open the bible] He opens the bible. # player
+		        There is a wad of notes, with like 100 dollars in small bills. # player
+		        ->bedside_search
+		    ***	->
+		    	->motel_search
+		**	[Open the closet] He opens the closet. # player
+        	Bugsy finds two kinds of clothes. # player
+        	->bedside_search
+		**	->
+			->motel_search
+    *	[Check the desk] He goes to the desk to check it.
         Bugsy finds several letters on the desk.
         # NewDocument #3
-        ->motel_search
-    *   [Open the closet] He opens the closet. # player
-        Bugsy finds two kinds of clothes. # player
         ->motel_search
     *   [Go in the kitchen] He goes in the kitchen. # player
         Nothing interesting in the kitchen, but it is small. Bugsy returns in the room. # player
@@ -379,7 +400,8 @@ Bugsy enters the room alone. and searches for clues about her. # player #PlayerD
 --------------------------------------------------------------------------------*/
 
 ===condor_club===
-{condor_entrance : ->condor_madam2}
+{condor_entrance && knowledge_prostitute_name == 1 : ->condor_madam2}
+{condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
 # NewBackground #6
 Bugsy arrives in front of the Condor Club and exits the taxi. # player #PlayerDBox #1
@@ -477,3 +499,11 @@ He comes immediately to you, with a baseball bat. # player
     The madam is waiting for you. # player
     She asks you about Margaret. She hasn't seen her from two days. # otherCharacter # 
     ->END
+
+=condor_fail
+//Background: Condor Club's street, no interlocutor
+# NewBackground #6
+You go back to the Condor Club. # player #PlayerDBox #1
+But you're not so sure about what you could say without getting shot. # player
+You decide to go back and work a better approach. # player
+->END
