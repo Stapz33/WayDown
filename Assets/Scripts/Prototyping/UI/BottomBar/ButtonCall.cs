@@ -41,7 +41,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -97,6 +97,9 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.CloseLargeDocument:
                 MainUIManager.Singleton.CloseLargeDocument();
+                break;
+            case ButtonType.CloseLargeDocumentSolo:
+                MainUIManager.Singleton.CloseLargeDocumentSolo();
                 break;
             case ButtonType.ClosePoliceOffice:
                 MainUIManager.Singleton.LoadScreen("ClosePoliceOffice",false);

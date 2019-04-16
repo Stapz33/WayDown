@@ -42,13 +42,37 @@ public class StoryDataBaseEditor : Editor
                     EditorGUILayout.PropertyField(serializedObject.FindProperty("TattooPiercing"), true);
                 }
                 break;
+            case 2:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressInfos"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressIndexToDiscover"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalRecordIdx"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalBool"), true);
+                var CrimType = serializedObject.FindProperty("criminalRecordType");
+                EditorGUILayout.PropertyField(CrimType, true);
+                if (CrimType.enumValueIndex == 0)
+                {
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalName"), true);
+                }
+                else
+                {
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("HintNeeded"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Corpulence"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Height"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("SexType"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("Ethnicity"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("HairType"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("HairColor"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("EyeColor"), true);
+                    EditorGUILayout.PropertyField(serializedObject.FindProperty("TattooPiercing"), true);
+                }
+                break;
         }
         serializedObject.ApplyModifiedProperties();
     }
 }
 #endif
 
-public enum InvestigationType {Address, CriminalRecord}
+public enum InvestigationType {Address, CriminalRecord, both}
 public enum CriminalRecordType {Name, CompositeSketch}
 
 public enum Corpulence { Null, Slim, Fat, Normal, Stocky, Muscular }

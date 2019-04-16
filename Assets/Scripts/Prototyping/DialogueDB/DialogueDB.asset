@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d288c87d9252e2a40bd5ddf68202695c, type: 3}
   - {fileID: 21300000, guid: c763d7348898d484facfd41eb4ba1329, type: 3}
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
+  - {fileID: 21300000, guid: 915d4866ffda7764f9edbf841d588985, type: 3}
   Characters:
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   - {fileID: 21300000, guid: 7ffd42b00f71f764297cb4c35160ea65, type: 3}
@@ -31,5 +32,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fbd5fa4dc4ac3a74193bffd7c4093afa, type: 3}
   - {fileID: 21300000, guid: 573e4482b93a2c840ad428828669cb65, type: 3}
   - {fileID: 21300000, guid: 1c6b3adc0ee46c942b9f5faaf82dbbb1, type: 3}
-  - {fileID: 21300000, guid: 63e01317d77d3ed4c9d71752427fdee7, type: 3}
+  - {fileID: 21300000, guid: 1900e53d3eeb02f4bafeb2cf00fb2c65, type: 3}
   - {fileID: 21300000, guid: dba3f3fa5bae4584abd3dde7b4f74547, type: 3}

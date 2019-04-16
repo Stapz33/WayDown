@@ -15,19 +15,19 @@ MonoBehaviour:
   StoryData:
   - 
   - 
+  - condor_club
   - 
   - 
   - 
   - 
-  - 
-  investigationType: 1
-  criminalRecordType: 1
-  CriminalName: Todd Smith
-  CriminalBool: 
+  investigationType: 2
+  criminalRecordType: 0
+  CriminalName: Margaret O'Bannon
+  CriminalBool: knowledge_prostitute_name
   m_LaunchNewInvestigation: 0
-  CriminalRecordIdx: 1
-  AddressInfos: 
-  AddressIndexToDiscover: 0
+  CriminalRecordIdx: 4
+  AddressInfos: Condor Club 460 Broadway Street
+  AddressIndexToDiscover: 2
   Corpulence: 1
   Height: 3
   SexType: 1

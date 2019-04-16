@@ -26,7 +26,7 @@ MonoBehaviour:
   CriminalBool: 
   m_LaunchNewInvestigation: 0
   CriminalRecordIdx: 0
-  AddressInfos: Athena    14 rue des messages    Restaurant Grec
+  AddressInfos: 
   AddressIndexToDiscover: 0
   Corpulence: 0
   Height: 0

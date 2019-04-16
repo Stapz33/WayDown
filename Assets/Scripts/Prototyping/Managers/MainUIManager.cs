@@ -95,7 +95,8 @@ public class MainUIManager : MonoBehaviour {
 
         //variables
         public int knowledgeSpaghetty = 0;
-        
+        public int prostituteknown = 0;
+
 
     }
 
@@ -615,6 +616,11 @@ public class MainUIManager : MonoBehaviour {
 
     public void CloseTab()
     {
+        if (ActualTab == DocumentsTab && b_isAddDocNavigation)
+        {
+            m_LargeDocument.CloseComparison();
+            b_isAddDocNavigation = false;
+        }
         ActualTab.SetActive(false);
     }
 
@@ -669,21 +675,21 @@ public class MainUIManager : MonoBehaviour {
         if (l_DocumentsDrawerDocNB[DrawerIdx] >= 24)
         {
             l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(3);
-            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(3));
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0).GetChild(3));
         }
         else if (l_DocumentsDrawerDocNB[DrawerIdx] >= 16)
         {
             l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(2);
-            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(2));
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0).GetChild(2));
         }
         else if (l_DocumentsDrawerDocNB[DrawerIdx] >= 8)
         {
             l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(1);
-            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(1));
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0).GetChild(1));
         }
         else
         {
-            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0));
+            Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0).GetChild(0));
         }
         l_DocumentsDrawerDocNB[DrawerIdx]++;
         if (needToShow)
@@ -722,6 +728,13 @@ public class MainUIManager : MonoBehaviour {
         m_LargeDocument.CloseComparison();
     }
 
+    public void CloseLargeDocumentSolo()
+    { 
+        m_LargeDocument.gameObject.SetActive(false);
+        m_LargeDocument.HideMultiDoc();
+        m_LargeDocument.HideSingleDocSolo();
+        m_LargeDocument.CloseComparison();
+    }
     // Document Info
 
     public void ActivateDocumentInfo(string Text)
@@ -847,6 +860,8 @@ public class MainUIManager : MonoBehaviour {
     public void AddNewCriminalRecord()
     {
         AddNewDocumentAndShowIt(ActualStoryDataBase.CriminalRecordIdx, DocumentFolder.CriminalRecord, true);
+        if (ActualStoryDataBase.CriminalBool != "")
+            _inkStory.variablesState[ActualStoryDataBase.CriminalBool] = true;
         if (ActualStoryDataBase.m_LaunchNewInvestigation)
         {
             LaunchNewInvestigation();
@@ -855,6 +870,7 @@ public class MainUIManager : MonoBehaviour {
         {
             SaveGame();
         }
+        
     }
 
     /// Police Record
@@ -1032,11 +1048,13 @@ public class MainUIManager : MonoBehaviour {
     public void SaveStoryVar()
     {
         ActualDatas.knowledgeSpaghetty = (int)_inkStory.variablesState["knowledge_Spaghetti"];
+        ActualDatas.prostituteknown = (int)_inkStory.variablesState["knowledge_prostitute_name"];
     }
 
     public void LoadStoryVar()
     {
         _inkStory.variablesState["knowledge_Spaghetti"] = ActualDatas.knowledgeSpaghetty;
+        _inkStory.variablesState["knowledge_prostitute_name"] = ActualDatas.prostituteknown;
     }
 
     public void SetNewActualAddressDocumentFolder(DocumentFolder documentFolder)

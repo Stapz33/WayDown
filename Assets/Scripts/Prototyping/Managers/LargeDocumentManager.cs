@@ -9,6 +9,7 @@ public class LargeDocumentManager : MonoBehaviour
     [SerializeField] private GameObject m_multiDoc = null;
     [SerializeField] private GameObject m_CloseDocFolderButton = null;
     [SerializeField] private GameObject m_ComparisonImage = null;
+    public Animator m_NewDocAnimator = null;
 
     private Image MultiDoc_01;
     private Image MultiDoc_02;
@@ -28,6 +29,13 @@ public class LargeDocumentManager : MonoBehaviour
     public void HideSingleDoc()
     {
         m_monoDoc.SetActive(false);
+    }
+
+    public void HideSingleDocSolo()
+    {
+        m_monoDoc.SetActive(false);
+        m_NewDocAnimator.SetTrigger("Info");
+        AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
     }
 
     public void UpdateMultiDoc01(Sprite sprite)
@@ -53,12 +61,12 @@ public class LargeDocumentManager : MonoBehaviour
     public void AddDoc()
     {
         HideMultiDoc();
-        m_CloseDocFolderButton.SetActive(false);
         m_ComparisonImage.SetActive(true);
     }
 
     public void CloseComparison()
     {
-        m_CloseDocFolderButton.SetActive(true);
+        m_ComparisonImage.SetActive(false);
+        
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3337926126073152919}
   - component: {fileID: 3337926126073152915}
   m_Layer: 5
-  m_Name: DocumentToSelect 1
+  m_Name: ProstituteLetter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 967d2a51bc5540c46bfe2c3b596fcdea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e28f31fef135e545845540b5683c63c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -146,7 +146,8 @@ MonoBehaviour:
   TypeOfTab: 0
   TypeOfDocument: 0
   PagIdx: 0
-  DocumentInfo: The news Paper from yesterday
+  DocumentInfo: Prostitute letter found in her room
+  parent: {fileID: 0}
 --- !u!114 &3337926126073152915
 MonoBehaviour:
   m_ObjectHideFlags: 0
