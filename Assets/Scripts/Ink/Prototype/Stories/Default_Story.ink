@@ -50,9 +50,8 @@ Don't even wants to answer, fuck it. # player
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
 TODO Find dead capo's name
-#PlayerDBox #0
 # jump
-	*	Are you out of your mind?[] Did you fucking see the hour? # player 
+	*	Are you out of your mind?[] Did you fucking see the hour? # player #PlayerDBox #0
 - It's James Lanza. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7
 You need to come here immediately. # otherCharacter 
 # jump
@@ -64,20 +63,20 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 - 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
 # jump
     *   [Hang up] <> # player #NewCharacterSprite #0
-    *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player #NewCharacterSprite #0
-- I hung up and got out of bed. # player #PlayerDBox #1
+    *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
+- I hung up and got out of bed. # player #PlayerDBox #1  #NewCharacterSprite #0
 For fuck's sake, what did they do again? # player
 # jump
     *   [Go to Francisco Street] <> # player
-    # NewBackground #4 #MusicPlay #1
+    #MusicPlay #1
 - (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player 
-# jump
+# jump # NewBackground #4
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player
         {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
 - As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
 Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
-# jump
-    *   Ain't no Yid here kid[], get lost. # player #PlayerDBox #0
+# jump  #PlayerDBox #0
+    *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
@@ -86,9 +85,9 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - I step into the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player #NewCharacterSprite #0 #PlayerDBox #1
 He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours. # player
 - (car_convo)
-# jump
+# jump # NewCharacterSprite #8
     *   Are you new in town, kid? # player #PlayerDBox #0
-        Came here 6 months ago from Sicily. # otherCharacter # NewCharacterSprite #8
+        Came here 6 months ago from Sicily. # otherCharacter 
         # jump
         **  Lanza got you in here? # player
             Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter
@@ -129,19 +128,19 @@ Someting's wrong. And I'm gettin' mixed in all that. # player
 We finally park in Francisco Street. # player #MusicPlay #0
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
 # jump
-    *   Thank you kid # player #PlayerDBox #0
+    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #0
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
-        And the young prick leaves. # player #PlayerDBox #1
-- I cross the threshold of the building and go to the second floor. Apartment 237. # player # NewCharacterSprite #0
+        And the young prick leaves. # player #PlayerDBox #1 # NewCharacterSprite #0
+- I cross the threshold of the building and go to the second floor. Apartment 237. # player
 
 TODO First dialogue with Lanza (retakes)
 
 # NewBackground #0
-Jimmy Lanza is waiting for me, near to the door. # player
-For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter # NewCharacterSprite #5
+Jimmy Lanza is waiting for me, near to the door. # player # NewCharacterSprite #5
+For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
 # jump #PlayerDBox #0
 *   Never when there are greaseballs like you waiting for me at a crime scene. # player
 //Joke, à améliorer
@@ -194,7 +193,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 
 TODO Dialogue with Lanza (retakes)
 -   (lanza_convo)
-# jump
+# jump # NewCharacterSprite #5
 *   What can you say about Giovanni? # player #PlayerDBox #0
     He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #5
     The Administration chose him to take the place of Lima during the trial. # otherCharacter
@@ -273,8 +272,9 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 	*	[Check the livingroom] # player
 		Nothing here, except some furnitures. # player
 		->clues_apartment
-	*	[Check the bathroom] # player
+	*	[Check the bathroom] test check bathroom # player
 		The prostitute body. I should check her bag. # player
+        #jump
 		**	[Open the purse] I open that little woman's purse. # player
 		Inside, there's a key for a hotelroom. # player 
 		# NewDocument #0
