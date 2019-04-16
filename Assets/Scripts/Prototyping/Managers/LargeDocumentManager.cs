@@ -7,7 +7,6 @@ public class LargeDocumentManager : MonoBehaviour
 {
     [SerializeField] private GameObject m_monoDoc = null;
     [SerializeField] private GameObject m_multiDoc = null;
-    [SerializeField] private GameObject m_CloseDocFolderButton = null;
     [SerializeField] private GameObject m_ComparisonImage = null;
     public Animator m_NewDocAnimator = null;
 

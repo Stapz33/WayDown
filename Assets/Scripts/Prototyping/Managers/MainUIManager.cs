@@ -61,6 +61,7 @@ public class MainUIManager : MonoBehaviour {
 	private bool b_StoryStarted = false;
     private string s_PlayerFullText = "";
     private string s_OtherCharacterFullText = "";
+    private bool isFirstStart = true;
     
     public float TextSpeed;
     private float TextCooldown = 0f;
@@ -200,6 +201,7 @@ public class MainUIManager : MonoBehaviour {
         if (SaveManager.Singleton.LoadStoryPath() != null)
         {
             LoadGame();
+            isFirstStart = false;
         }
         else
         {
@@ -756,7 +758,15 @@ public class MainUIManager : MonoBehaviour {
         UpdateAddressesStory(ActualStoryDataBase.StoryData);
         ActualDatas.m_IsCriminalKnown = false;
         ActualDatas.i_investigationIndex++;
-        SaveGame();
+        if (isFirstStart)
+        {
+            isFirstStart = false;
+            return;
+        }
+        else
+        {
+            SaveGame();
+        }
     }
 
     public void LoadInvestigation()

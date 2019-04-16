@@ -39,16 +39,19 @@ public class TextWPW : MonoBehaviour
                 }
                 else i_TextFramingSound++;
                 textlength++;
-                CurrentText = s_PlayerFullText.Substring(0, textlength);
-                PlayerText.text = CurrentText;
-                if (CurrentText == s_PlayerFullText)
+                if (s_PlayerFullText != "")
                 {
-                    textlength = 0;
-                    TextCooldown = 0f;
-                }
-                else
-                {
-                    TextCooldown = TextSpeed;
+                    CurrentText = s_PlayerFullText.Substring(0, textlength);
+                    PlayerText.text = CurrentText;
+                    if (CurrentText == s_PlayerFullText)
+                    {
+                        textlength = 0;
+                        TextCooldown = 0f;
+                    }
+                    else
+                    {
+                        TextCooldown = TextSpeed;
+                    }
                 }
             }
         }
@@ -56,50 +59,64 @@ public class TextWPW : MonoBehaviour
 
     public void NameTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "And who is the winner ?";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "And who is the winner ?";
+        textlength = 0;
     }
 
     public void NormalTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "What are you lookin' for ?";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "What are you lookin' for ?";
+        textlength = 0;
     }
 
     public void FaceTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "Give me his face then";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "Give me his face then";
+        textlength = 0;
     }
 
     public void NoPeopleTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
+        textlength = 0;
     }
 
     public void NoCSTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "Wait a second, there are too many possible profiles";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "Wait a second, there are too many possible profiles";
+        textlength = 0;
     }
 
     public void PeopleTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
+        textlength = 0;
     }
 
     public void AlreadyPeopleTextLaunch()
     {
-        PlayerText.text = "";
-        s_PlayerFullText = "You already asked me for this record huh ?";
         TextCooldown = TextSpeed;
+        PlayerText.text = "";
+        s_PlayerFullText = "";
+        s_PlayerFullText = "You already asked me for this record huh ?";
+        textlength = 0;
     }
 }

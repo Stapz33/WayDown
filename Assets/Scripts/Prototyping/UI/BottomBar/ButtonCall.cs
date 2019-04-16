@@ -59,6 +59,7 @@ public class ButtonCall : MonoBehaviour
     }
     public void OnClick()
     {
+            
         switch (TypeOfButton)
         {
             case ButtonType.OpenTab:
@@ -68,6 +69,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseTab();
                 break;
             case ButtonType.Adress:
+                StartCoroutine("Resetcall");
                 MainUIManager.Singleton.GoToAddres(GetComponent<Address_data>().GetActualStory(),GetComponent<Address_data>().GetDocumentFolder(), GetComponent<Address_data>().GetBG());
                 break;
             case ButtonType.AdressBookNext:
@@ -83,6 +85,7 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.SetValidationText(transform.GetComponentInChildren<UnityEngine.UI.Text>().text);
                 break;
             case ButtonType.CallTaxi:
+                StartCoroutine("Resetcall");
                 AudioManager.Singleton.ActivateAudio(AudioType.CallTaxi);
                 MainUIManager.Singleton.LoadScreen("CallTaxi",true);
                 break;
@@ -102,6 +105,7 @@ public class ButtonCall : MonoBehaviour
                 MainUIManager.Singleton.CloseLargeDocumentSolo();
                 break;
             case ButtonType.ClosePoliceOffice:
+                StartCoroutine("Resetcall");
                 MainUIManager.Singleton.LoadScreen("ClosePoliceOffice",false);
                 break;
             case ButtonType.ClosePoliceFace:
@@ -111,6 +115,7 @@ public class ButtonCall : MonoBehaviour
                 PoliceOffice.Singleton.CloseNameTab();
                 break;
             case ButtonType.OpenPoliceOffice:
+                StartCoroutine("Resetcall");
                 MainUIManager.Singleton.LoadScreen("OpenPoliceOffice",false);
                 break;
             case ButtonType.OpenPoliceFace:
@@ -120,9 +125,11 @@ public class ButtonCall : MonoBehaviour
                 PoliceOffice.Singleton.OpenNameTab();
                 break;
             case ButtonType.PoliceOfficeNameValidation:
+                StartCoroutine("Resetcall");
                 PoliceOffice.Singleton.NameValidation();
                 break;
             case ButtonType.PoliceOfficeCSValidation:
+                StartCoroutine("Resetcall");
                 MainUIManager.Singleton.TestCS();
                 break;
             case ButtonType.SwitchDrawerTab:
@@ -132,6 +139,7 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.GoToAlphabetical();
                 break;
             case ButtonType.AddNewDocumentToComparison:
+                StartCoroutine("Resetcall");
                 MainUIManager.Singleton.AddNewDocToComparision();
                 break;
             case ButtonType.RadioChannel:
@@ -146,6 +154,13 @@ public class ButtonCall : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public IEnumerator Resetcall()
+    {
+        GetComponent<Button>().interactable = false;
+        yield return new WaitForSeconds(0.3f);
+        GetComponent<Button>().interactable = true;
     }
 
 

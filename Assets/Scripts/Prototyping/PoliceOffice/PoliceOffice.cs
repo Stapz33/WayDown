@@ -9,7 +9,8 @@ public class PoliceOffice : MonoBehaviour
     [SerializeField] private TextWPW Inspector = null;
     [SerializeField] private GameObject NameInput = null;
     [SerializeField] private GameObject CsInput = null;
-    [SerializeField] private GameObject BlackBackground = null;
+    [SerializeField] private GameObject BlackBackgroundN = null;
+    [SerializeField] private GameObject BlackBackgroundCS = null;
     [SerializeField] private UnityEngine.UI.Text InputField = null;
 
     private void Awake()
@@ -32,7 +33,7 @@ public class PoliceOffice : MonoBehaviour
     {
         Inspector.NameTextLaunch();
         NameInput.SetActive(true);
-        BlackBackground.SetActive(true);
+        BlackBackgroundN.SetActive(true);
     }
 
     public void OpenCSTab()
@@ -40,7 +41,7 @@ public class PoliceOffice : MonoBehaviour
         Inspector.NameTextLaunch();
         MainUIManager.Singleton.ResetDropdownValue();
         CsInput.SetActive(true);
-        BlackBackground.SetActive(true);
+        BlackBackgroundCS.SetActive(true);
     }
 
     public void UpdateNormalInspector()
@@ -53,14 +54,14 @@ public class PoliceOffice : MonoBehaviour
         Inspector.NormalTextLaunch();
         NameInput.transform.GetChild(0).GetComponent<UnityEngine.UI.InputField>().text = "";
         NameInput.SetActive(false);
-        BlackBackground.SetActive(false);
+        BlackBackgroundN.SetActive(false);
     }
 
     public void CloseCSTab()
     {
         Inspector.NormalTextLaunch();
         CsInput.SetActive(false);
-        BlackBackground.SetActive(false);
+        BlackBackgroundCS.SetActive(false);
     }
 
     public void FaceTextLaunch()
