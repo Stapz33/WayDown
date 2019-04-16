@@ -32,12 +32,7 @@ public class TextWPW : MonoBehaviour
             TextCooldown -= Time.deltaTime;
             if (TextCooldown <= 0)
             {
-                if (i_TextFramingSound == 1)
-                {
-                    AudioManager.Singleton.ActivateAudio(AudioType.Text);
-                    i_TextFramingSound = 0;
-                }
-                else i_TextFramingSound++;
+                
                 textlength++;
                 if (s_PlayerFullText != "")
                 {
@@ -50,6 +45,12 @@ public class TextWPW : MonoBehaviour
                     }
                     else
                     {
+                        if (i_TextFramingSound == 1)
+                        {
+                            AudioManager.Singleton.ActivateAudio(AudioType.Text);
+                            i_TextFramingSound = 0;
+                        }
+                        else i_TextFramingSound++;
                         TextCooldown = TextSpeed;
                     }
                 }

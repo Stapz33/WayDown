@@ -267,17 +267,12 @@ public class MainUIManager : MonoBehaviour {
                 m_OtherCharacterVinyle.SetActive(true);
             }
 
-            if (TextCooldown != 0)
+            if (TextCooldown > 0)
             {
                 TextCooldown -= Time.deltaTime;
                 if (TextCooldown <= 0)
                 {
-                    if (i_TextFramingSound == 1)
-                    {
-                        AudioManager.Singleton.ActivateAudio(AudioType.Text);
-                        i_TextFramingSound = 0;
-                    }
-                    else i_TextFramingSound++;
+                    
                     if (s_PlayerFullText != "")
                     {
                         textlength++;
@@ -292,6 +287,12 @@ public class MainUIManager : MonoBehaviour {
                             }
                             else
                             {
+                                if (i_TextFramingSound == 1)
+                                {
+                                    AudioManager.Singleton.ActivateAudio(AudioType.Text);
+                                    i_TextFramingSound = 0;
+                                }
+                                else i_TextFramingSound++;
                                 TextCooldown = TextSpeed;
                             }
                         }
@@ -306,6 +307,12 @@ public class MainUIManager : MonoBehaviour {
                             }
                             else
                             {
+                                if (i_TextFramingSound == 1)
+                                {
+                                    AudioManager.Singleton.ActivateAudio(AudioType.Text);
+                                    i_TextFramingSound = 0;
+                                }
+                                else i_TextFramingSound++;
                                 TextCooldown = TextSpeed;
                             }
                         }
