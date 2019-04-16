@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: DialogueDB
   m_EditorClassIdentifier: 
   Backgrounds:
-  - {fileID: 21300000, guid: 65be8aadda9387147a3213b6117948b1, type: 3}
+  - {fileID: 21300000, guid: bd22d1e26af69f8468a553054261f7ac, type: 3}
   - {fileID: 21300000, guid: d9c4ef046e461e64d8adb8daedddc116, type: 3}
   - {fileID: 21300000, guid: 7e38dfa33337bd343a7755b24883cf98, type: 3}
-  - {fileID: 21300000, guid: 478200b9d21485346af4dd7c0a22191d, type: 3}
-  - {fileID: 21300000, guid: 322da4e1fdeea6341b9605e4e65c1b29, type: 3}
-  - {fileID: 21300000, guid: ff623045befe8da4cb78cd28cc21f387, type: 3}
-  - {fileID: 21300000, guid: 341104bd50472bb4aac5909ec181dd5c, type: 3}
+  - {fileID: 21300000, guid: 33859107e0e92204e89f37cbdfa2e02c, type: 3}
+  - {fileID: 21300000, guid: b458e4c6a8c9bd040a0cb2f3d4b5f986, type: 3}
+  - {fileID: 21300000, guid: 70892ccb54664314d8139270d0ad4120, type: 3}
+  - {fileID: 21300000, guid: 5494e1ff33e165f49a421501b84a244a, type: 3}
   - {fileID: 21300000, guid: d288c87d9252e2a40bd5ddf68202695c, type: 3}
   - {fileID: 21300000, guid: c763d7348898d484facfd41eb4ba1329, type: 3}
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
-  - {fileID: 21300000, guid: 915d4866ffda7764f9edbf841d588985, type: 3}
+  - {fileID: 21300000, guid: b7e87a612c5c9b84cb22698dc24a2108, type: 3}
   Characters:
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   - {fileID: 21300000, guid: 7ffd42b00f71f764297cb4c35160ea65, type: 3}

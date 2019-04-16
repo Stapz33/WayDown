@@ -5,6 +5,7 @@ using Ink.Runtime;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using RichTextSubstringHelper;
 
 public enum TabType {Map, AddressBook, Documents}
 public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Drugstore, Restaurant }
@@ -278,7 +279,8 @@ public class MainUIManager : MonoBehaviour {
                         textlength++;
                         if (characterText == 0)
                         {
-                            CurrentText = s_PlayerFullText.Substring(0, textlength);
+                            CurrentText = s_PlayerFullText.RichTextSubString(textlength);
+                            //CurrentText = s_PlayerFullText.Substring(0, textlength);
                             PlayerText.text = CurrentText;
                             if (CurrentText == s_PlayerFullText)
                             {
@@ -298,7 +300,8 @@ public class MainUIManager : MonoBehaviour {
                         }
                         else if (characterText == 1)
                         {
-                            CurrentText = s_OtherCharacterFullText.Substring(0, textlength);
+                            CurrentText = s_OtherCharacterFullText.RichTextSubString(textlength);
+                            //CurrentText = s_OtherCharacterFullText.Substring(0, textlength);
                             OtherCharacterText.text = CurrentText;
                             if (CurrentText == s_OtherCharacterFullText)
                             {
@@ -442,7 +445,7 @@ public class MainUIManager : MonoBehaviour {
                 {
                     DeactivateOtherCharacterDialogue();
                     ReactivatePlayerDialogue();
-                    s_PlayerFullText = ContinueText.Replace("\n","");
+                    s_PlayerFullText = ContinueText.Replace("\n","").Replace("<color=yellow>", "<color=#eAe6a9>");
                     characterText = 0;
                     TextCooldown = TextSpeed;
                     PlayerText.text = "";
@@ -452,7 +455,7 @@ public class MainUIManager : MonoBehaviour {
                     ReactivateOtherCharacterSection();
                     DeactivatePlayerDialogue();
                     ReactivateOtherCharacterDialogue();
-                    s_OtherCharacterFullText = ContinueText.Replace("\n", "");
+                    s_OtherCharacterFullText = ContinueText.Replace("\n", "").Replace("<color=yellow>", "<color=#eAe6a9>");
                     characterText = 1;
                     TextCooldown = TextSpeed;
                     OtherCharacterText.text = "";
