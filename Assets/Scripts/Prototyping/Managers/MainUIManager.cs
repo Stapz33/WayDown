@@ -445,7 +445,7 @@ public class MainUIManager : MonoBehaviour {
                 {
                     DeactivateOtherCharacterDialogue();
                     ReactivatePlayerDialogue();
-                    s_PlayerFullText = ContinueText.Replace("\n","").Replace("<color=yellow>", "<color=#eAe6a9>");
+                    s_PlayerFullText = ContinueText.Replace("\n","").Replace("<color=yellow>", "<color=#D6A80C>");
                     characterText = 0;
                     TextCooldown = TextSpeed;
                     PlayerText.text = "";
@@ -455,7 +455,7 @@ public class MainUIManager : MonoBehaviour {
                     ReactivateOtherCharacterSection();
                     DeactivatePlayerDialogue();
                     ReactivateOtherCharacterDialogue();
-                    s_OtherCharacterFullText = ContinueText.Replace("\n", "").Replace("<color=yellow>", "<color=#eAe6a9>");
+                    s_OtherCharacterFullText = ContinueText.Replace("\n", "").Replace("<color=yellow>", "<color=#D6A80C>");
                     characterText = 1;
                     TextCooldown = TextSpeed;
                     OtherCharacterText.text = "";
