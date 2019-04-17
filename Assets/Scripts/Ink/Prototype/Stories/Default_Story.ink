@@ -1,7 +1,7 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = false
+VAR DEBUG = true
 
 ->start_capo_apartment
 ===start_capo_apartment===
@@ -103,9 +103,10 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
         # jump
         **  Lanza got you in here? # player
             Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter
-        **  More Italians? Is there any place left in North Beach? # player
+        **  More Italians?[] Is there any place left in North Beach? # player
             I'm not here to settle down, Mr. Lanza asked me to come to ensure his protection. # otherCharacter
-        --  What is he afraid of? He's not been linked to Lima, has he? # player
+        -- 
+        **	What is he afraid of?[] He's not been linked to Lima, has he? # player
         Not that I know of, the boss was smart enough to make sure that the organization would not be too much harmed. # otherCharacter
         So who's going after him? # player
         I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter
@@ -140,13 +141,13 @@ Someting's wrong. And I'm gettin' mixed in all that. # player
 We finally park in Francisco Street. # player #MusicPlay #0
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
 # jump
-    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #0
+    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
         And the young prick leaves. # player #PlayerDBox #1 # NewCharacterSprite #0
-- I cross the threshold of the building and go to the second floor. Apartment 237. # player
+- I cross the threshold of the building and go to the second floor. Apartment 237. # player #PlayerDBox #1 # NewCharacterSprite #0
 
 TODO First dialogue with Lanza (retakes)
 
@@ -279,7 +280,8 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 	*	[Check Giovanni] test check Giovanni # player
 		Nothing here, except a body. # player 
         You find a poker chip on the ground. # player
-        # NewDocument #2
+        # jump
+        # NewDocument #2 # jump
 		->clues_apartment
 	*	[Check the livingroom] # player
 		Nothing here, except some furnitures. # player
@@ -289,7 +291,7 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
         #jump
 		**	[Open the purse] I open that little woman's purse. # player
 		Inside, there's a key for a hotelroom. # player 
-		# NewDocument #0
+		# NewDocument #0 # jump
 		->clues_apartment
 	*	[Check the bedroom] # player
 		Nothing in the bedroom. # player
@@ -324,7 +326,7 @@ I have nothing to do here # player #PlayerDBox #1
 
 ===prostitute_motel===
 //Background Motel's Street, no interlocutor
-#NewBackground #5
+#NewBackground #5 # NewCharacterSprite #0
 Bugsy arrives in front of the motel and exits the taxi. # player #PlayerDBox #1
 Description of the motel. # player
 # jump
