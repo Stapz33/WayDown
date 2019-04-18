@@ -273,27 +273,39 @@ I enter the apartment, only to find a first body. Poor Tommy. # player #PlayerDB
 Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 - (clues_apartment)
 # jump
-	*	[Check Giovanni] test check Giovanni # player
-		Nothing here, except a body. # player 
+	*	[Check Giovanni] {clues_apartment > 1: You finally decide to go and check on Giovanni.| You decide to check on Giovanni first.} # player
+		Poor boy.  # player
+		His skull is completely shattered, which is caused by the obvious bullet hole on his forehead. # player
+		Skull and brain pieces are all over the wall behind. # player 
         You find a poker chip on the ground. # player
-        # jump
-        # NewDocument #2 # jump
+        # NewDocument #2
 		->clues_apartment
-	*	[Check the livingroom] # player
-		Nothing here, except some furnitures. # player
+	*	[Check the livingroom] You go around the livingroom # player
+		Nothing special here, except some old furnitures. # player
 		->clues_apartment
-	*	[Check the bathroom] test check bathroom # player
+	*	[Check the bathroom] You go to check the bathroom # player
+		Oh that's right. The second body. # player
+		The entire floor is covered in blood. Hers, obviously # player
+		TODO: Continue here.
 		The prostitute body. I should check her bag. # player
-        #jump
+        # jump
 		**	[Open the purse] I open that little woman's purse. # player
 		Inside, there's a key for a hotelroom. # player 
 		# NewDocument #0
 		->clues_apartment
-	*	[Check the bedroom] # player
-		Nothing in the bedroom. # player
+	*	[Check the bedroom] You go to the bedroom. # player
+		It's tidy, as if it was not often used. # player
+		The bed is made. Giovanni didn't sleep here so much. # player
+		There's a closet. # player
+		# jump
+		**	[Open the closet] You open the door of this massive closet. # player
+			Only to find out that it is nearly empty. # player
+			A few suits, some underwear. # player
+			Not enough for someone to live here. # player
+			Unless that person is a slog. But Tommy was not. # player
 		->clues_apartment
 	*->
-	Nothing more for me in that apartment.
+	Nothing more for me in that apartment. # player
 ~lanza_stitch_first = 0
 ->lobby_apartment
 
