@@ -155,18 +155,14 @@ TODO First dialogue with Lanza (retakes)
 Jimmy Lanza is waiting for me, near to the door. # player # NewCharacterSprite #5
 For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
 # jump #PlayerDBox #0
-*   Never when there are greaseballs like you waiting for me at a crime scene. # player
-//Joke, à améliorer
+*   Never when there are [Italians]greaseballs like you waiting for me at a crime scene. # player
     I'm not here to joke around, not with two bodies waiting two feet away. # otherCharacter
-*   Fuck you Lanza, I don't have to come like a dog whenever you fuck things up! # player
-//Go crazy 
+*   Fuck you Lanza[], I don't have to come like a dog whenever you fuck things up! # player
     You think I'm happy with this shit? I could have done without two more bodies. # otherCharacter
-*   Calm down, we have more important to do. Where is he? # player
-//Answer calmly 
+*   Calm down[], we have more important to do. Where is he? # player
     He? You mean them. We found a girl in the bathroom. # otherCharacter
 - # jump
 *   What do you mean?[] I thought Giovanni was the only one. # player
-//à changer
 -   I guess that you were wrong. # otherCharacter
     We found a prostitute in the bathroom. # otherCharacter
 *   For fuck's sake[...], you people really can't keep it in your pants. # player
@@ -234,7 +230,6 @@ TODO Dialogue with Lanza (retakes)
         I can't even say for sure that she's a prostitute. # otherCharacter
         Only a... how could you say... an educated guess Rosenthal. # otherCharacter
         You knew Tommy a little. Always a gentleman with the ladies. # otherCharacter
-// We're putting the Family back on its feet, so we're focusing on greater matters.
     ->lanza_convo
 *   Who's that girl? # player #PlayerDBox #0
     Can't say for sure, that's your job now. Nobody ever saw Tommy with her. # otherCharacter
@@ -258,6 +253,7 @@ TODO Dialogue with Lanza (retakes)
         The Consigliere? He's advising us. He approved of Giovanni's designation. # otherCharacter
         I think he's trying to take some distance with the game. # otherCharacter
         What can we say about it? That poor bastard earned to rest now. # otherCharacter
+        We're putting the Family back on its feet, so we're focusing on greater matters.
     ->lanza_convo
 *   ->
 ~lanza_stitch_first = 1
@@ -291,7 +287,7 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
         #jump
 		**	[Open the purse] I open that little woman's purse. # player
 		Inside, there's a key for a hotelroom. # player 
-		# NewDocument #0 # jump
+		# NewDocument #0
 		->clues_apartment
 	*	[Check the bedroom] # player
 		Nothing in the bedroom. # player
