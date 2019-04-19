@@ -147,6 +147,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &15407288
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +382,7 @@ MonoBehaviour:
   PagIdx: 5
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &37374204
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +717,7 @@ MonoBehaviour:
   PagIdx: 4
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &103798737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1025,7 @@ MonoBehaviour:
   PagIdx: 1
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &138185715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1175,7 @@ MonoBehaviour:
   PagIdx: 5
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &146317056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1552,7 @@ MonoBehaviour:
   PagIdx: 20
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &172550874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1702,7 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &179194765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +1967,7 @@ MonoBehaviour:
   PagIdx: 20
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &192718696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2699,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3139,6 +3148,7 @@ MonoBehaviour:
   PagIdx: 20
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &366535849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4091,7 @@ MonoBehaviour:
   PagIdx: 4
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &463725621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4686,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &505805358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4898,6 +4910,7 @@ MonoBehaviour:
   PagIdx: 20
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &576952828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,6 +5113,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &595548255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5328,6 +5342,7 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &614627103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,6 +5710,7 @@ MonoBehaviour:
   PagIdx: 20
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &627484563
 GameObject:
   m_ObjectHideFlags: 0
@@ -6772,6 +6788,7 @@ GameObject:
   - component: {fileID: 772279901}
   - component: {fileID: 772279900}
   - component: {fileID: 772279899}
+  - component: {fileID: 4711738336229313574}
   m_Layer: 5
   m_Name: Switch
   m_TagString: Untagged
@@ -6793,8 +6810,8 @@ RectTransform:
   m_Father: {fileID: 956192686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.23823616, y: 0.12961164}
-  m_AnchorMax: {x: 0.4255766, y: 0.4376187}
+  m_AnchorMin: {x: 0.404126, y: 0.3062933}
+  m_AnchorMax: {x: 0.46770737, y: 0.4179874}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6906,6 +6923,57 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
+--- !u!114 &4711738336229313574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772279897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 956192687}
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: b5c5a9cc436496a4981d76e9ad69f1f5,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 956192687}
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: edd0eea7f15e4484fb4160a089b1c24e,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &792548319
 GameObject:
   m_ObjectHideFlags: 0
@@ -7055,6 +7123,7 @@ MonoBehaviour:
   PagIdx: 6
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &801440572
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,6 +7273,7 @@ MonoBehaviour:
   PagIdx: 7
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &869010944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7353,6 +7423,7 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &878872193
 GameObject:
   m_ObjectHideFlags: 0
@@ -7912,8 +7983,8 @@ RectTransform:
   m_Father: {fileID: 4711738336947476601}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08589508, y: 0.61214966}
-  m_AnchorMax: {x: 0.20253062, y: 0.74854374}
+  m_AnchorMin: {x: -0.00045879185, y: 0.51732993}
+  m_AnchorMax: {x: 0.32105544, y: 0.9006649}
   m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7945,7 +8016,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a70b883deb260f84d8f55c05174cf5d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edd0eea7f15e4484fb4160a089b1c24e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8256,6 +8327,7 @@ MonoBehaviour:
   PagIdx: 20
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &986410724
 GameObject:
   m_ObjectHideFlags: 0
@@ -9406,6 +9478,7 @@ MonoBehaviour:
   PagIdx: 2
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1118698155
 GameObject:
   m_ObjectHideFlags: 0
@@ -9897,6 +9970,7 @@ GameObject:
   - component: {fileID: 1170718987}
   - component: {fileID: 1170718986}
   - component: {fileID: 1170718985}
+  - component: {fileID: 4711738336229313567}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -9952,7 +10026,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f2ca661957ddf7949b35de3f19f822d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe143b845f2468e4c8c9b6e6c804a58f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -10000,9 +10074,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1170718986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4711738336229313567}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &4711738336229313567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170718983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3a60bb208475941b19d0d2042bcab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TypeOfButton: 28
+  TypeOfTab: 0
+  TypeOfDocument: 0
+  PagIdx: 0
+  DocumentInfo: 
+  parent: {fileID: 0}
+  CigarSprites:
+  - {fileID: 21300000, guid: fe143b845f2468e4c8c9b6e6c804a58f, type: 3}
+  - {fileID: 21300000, guid: aa61a510ce4bdc040a73ee07cee12052, type: 3}
+  - {fileID: 21300000, guid: 055330981e15c574091b7f5668550ac7, type: 3}
+  - {fileID: 21300000, guid: 4b6bde28bbdf50e43babc06d2a1d7fb2, type: 3}
 --- !u!1 &1214184241
 GameObject:
   m_ObjectHideFlags: 0
@@ -10335,6 +10443,7 @@ MonoBehaviour:
   PagIdx: 8
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1255412703
 GameObject:
   m_ObjectHideFlags: 0
@@ -10563,6 +10672,81 @@ MonoBehaviour:
   PagIdx: 6
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
+--- !u!1 &1261906940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261906941}
+  - component: {fileID: 1261906943}
+  - component: {fileID: 1261906942}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1261906941
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261906940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2327818407699209967}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.06592822, y: 0.24794865}
+  m_AnchorMax: {x: 1.041953, y: 1.0540886}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1261906943
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261906940}
+  m_CullTransparentMesh: 0
+--- !u!114 &1261906942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261906940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 9eb8e4843fae75849b3f3564e95f589a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
 --- !u!1 &1281315545
 GameObject:
   m_ObjectHideFlags: 0
@@ -11789,6 +11973,7 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1395799524
 GameObject:
   m_ObjectHideFlags: 0
@@ -12353,6 +12538,7 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1425594583
 GameObject:
   m_ObjectHideFlags: 0
@@ -12971,6 +13157,7 @@ MonoBehaviour:
   PagIdx: 4
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1493713667
 GameObject:
   m_ObjectHideFlags: 0
@@ -14513,6 +14700,7 @@ MonoBehaviour:
   PagIdx: 5
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1696085384
 GameObject:
   m_ObjectHideFlags: 0
@@ -16055,6 +16243,7 @@ GameObject:
   - component: {fileID: 1924441549}
   - component: {fileID: 1924441548}
   - component: {fileID: 1924441547}
+  - component: {fileID: 4711738336229313573}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -16076,9 +16265,9 @@ RectTransform:
   m_Father: {fileID: 956192686}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.68477464, y: 0.10621801}
-  m_AnchorMax: {x: 0.8721151, y: 0.41422507}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000030517578}
+  m_AnchorMin: {x: 0.5583823, y: 0.2868259}
+  m_AnchorMax: {x: 0.64039576, y: 0.40244627}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1924441550
@@ -16189,6 +16378,57 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
+--- !u!114 &4711738336229313573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924441545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 956192687}
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: 2021c1c5f00052a4bac4bac1f5043676,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 956192687}
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: edd0eea7f15e4484fb4160a089b1c24e,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1927545995
 GameObject:
   m_ObjectHideFlags: 0
@@ -16512,6 +16752,7 @@ MonoBehaviour:
   PagIdx: 5
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1965646426
 GameObject:
   m_ObjectHideFlags: 0
@@ -17177,6 +17418,7 @@ MonoBehaviour:
   PagIdx: 4
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &2017470633
 GameObject:
   m_ObjectHideFlags: 0
@@ -17405,6 +17647,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18636,6 +18879,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18816,6 +19060,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &3300590846614662822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19184,6 +19429,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &347900740061690790
 GameObject:
   m_ObjectHideFlags: 0
@@ -19412,6 +19658,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4314371587874610181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19671,6 +19918,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &739121059820230822
 GameObject:
   m_ObjectHideFlags: 0
@@ -19704,8 +19952,8 @@ RectTransform:
   m_Father: {fileID: 2656061936740677756}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2855576, y: 0.7809683}
-  m_AnchorMax: {x: 0.89623374, y: 0.93689543}
+  m_AnchorMin: {x: 0.057603627, y: 0.7809683}
+  m_AnchorMax: {x: 0.89623374, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19895,6 +20143,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &815723191024733672
 GameObject:
   m_ObjectHideFlags: 0
@@ -20548,6 +20797,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1744091953308491862
 GameObject:
   m_ObjectHideFlags: 0
@@ -20697,6 +20947,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20877,6 +21128,7 @@ MonoBehaviour:
   PagIdx: 1
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1828475091049694442
 GameObject:
   m_ObjectHideFlags: 0
@@ -21026,6 +21278,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &1879118276934734193
 GameObject:
   m_ObjectHideFlags: 0
@@ -21179,6 +21432,7 @@ GameObject:
   - component: {fileID: 4265449116805288147}
   - component: {fileID: 3354698902779180855}
   - component: {fileID: 6032339876053386763}
+  - component: {fileID: 4711738336229313575}
   m_Layer: 5
   m_Name: Lamp
   m_TagString: Untagged
@@ -21198,6 +21452,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1181090622685294988}
+  - {fileID: 1261906941}
   m_Father: {fileID: 4711738336947476601}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21296,6 +21551,54 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4711738336229313575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991031049639427764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1261906940}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1261906940}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &2045623351562735025
 GameObject:
   m_ObjectHideFlags: 0
@@ -21519,6 +21822,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &2108578088049348434
 GameObject:
   m_ObjectHideFlags: 0
@@ -21905,6 +22209,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &2393328879744604683
 GameObject:
   m_ObjectHideFlags: 0
@@ -22054,6 +22359,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &2513816815280073953
 GameObject:
   m_ObjectHideFlags: 0
@@ -22202,6 +22508,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22459,6 +22766,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &2970996321793077821
 GameObject:
   m_ObjectHideFlags: 0
@@ -22608,6 +22916,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &1013029804525518902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22899,6 +23208,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23079,6 +23389,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &3515361234203235858
 GameObject:
   m_ObjectHideFlags: 0
@@ -23386,6 +23697,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23566,6 +23878,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &3026847968662924235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23682,14 +23995,14 @@ GameObject:
   - component: {fileID: 4756785112439974677}
   - component: {fileID: 7533701537859345191}
   - component: {fileID: 9135495387899629865}
-  - component: {fileID: 4711738336229313567}
+  - component: {fileID: 4963634711126342949}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4756785112439974677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23746,7 +24059,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!95 &4711738336229313567
+--- !u!95 &4963634711126342949
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -24193,6 +24506,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &4711738336117017329
 GameObject:
   m_ObjectHideFlags: 0
@@ -24343,6 +24657,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &9144483593664636385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24555,7 +24870,7 @@ MonoBehaviour:
   m_OtherCharacterVinyle: {fileID: 1111814907}
   PlayerDialogueSprites:
   - {fileID: 21300000, guid: 81746b48128aa7747a928f99d7c46702, type: 3}
-  - {fileID: 21300000, guid: 33132f59e34527448b643967bf22732a, type: 3}
+  - {fileID: 21300000, guid: 5a09f932ab9ca014685b1f749168c5bd, type: 3}
   OCDialogueSprites:
   - {fileID: 21300000, guid: 1d9b3329c35ac0047b2c6c79e204b48c, type: 3}
   - {fileID: 21300000, guid: f15d60d4f60ed2f47b98a3e02592fef2, type: 3}
@@ -24730,6 +25045,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24872,7 +25188,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4e9ffffbf4a52ed4b8583c12fdcaecea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a65a8b34529972644aaa8a51e611a3b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -25175,6 +25491,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25624,6 +25941,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &4828731707109996075
 GameObject:
   m_ObjectHideFlags: 0
@@ -25773,6 +26091,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &4956312706431274260
 GameObject:
   m_ObjectHideFlags: 0
@@ -25918,7 +26237,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9569ddd574bb8294bae2a95f0d668fce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea98f670c2b61144292fc658ec449116, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -26128,6 +26447,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &5069234246838491321
 GameObject:
   m_ObjectHideFlags: 0
@@ -26315,6 +26635,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26611,6 +26932,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26945,6 +27267,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &6079213545598984339
 GameObject:
   m_ObjectHideFlags: 0
@@ -27189,6 +27512,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &6100735471068354769
 GameObject:
   m_ObjectHideFlags: 0
@@ -27611,6 +27935,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28103,6 +28428,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &7839123008627680092
 GameObject:
   m_ObjectHideFlags: 0
@@ -28252,6 +28578,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &8034790206089289726
 GameObject:
   m_ObjectHideFlags: 0
@@ -28401,6 +28728,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &8109764236584580291
 GameObject:
   m_ObjectHideFlags: 0
@@ -28703,6 +29031,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &8159657519187705242
 GameObject:
   m_ObjectHideFlags: 0
@@ -29005,6 +29334,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &8302189833414954400
 GameObject:
   m_ObjectHideFlags: 0
@@ -29195,8 +29525,8 @@ RectTransform:
   m_Father: {fileID: 2656061936740677756}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.40289354, y: -0.08849192}
-  m_AnchorMax: {x: 1.2062066, y: 0.9115082}
+  m_AnchorMin: {x: 0.52627075, y: -0.0028460026}
+  m_AnchorMax: {x: 1.2661327, y: 0.9327176}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -29228,7 +29558,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 56aa4105f4b28044788bbe5d1fdf5a10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0cbfc2a2ef23b8f47bf8500d8554caf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -29527,6 +29857,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &8762849602714278132
 GameObject:
   m_ObjectHideFlags: 0
@@ -29715,6 +30046,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &8996855565462441207
 GameObject:
   m_ObjectHideFlags: 0
@@ -29864,6 +30196,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &8490684425796658438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30159,6 +30492,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30612,6 +30946,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!1 &9024222305688520781
 GameObject:
   m_ObjectHideFlags: 0
@@ -30879,6 +31214,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &4711738336229313634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31157,6 +31493,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &3523305887267859372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32198,6 +32535,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195442277799974822, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195442277799974822, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195442277799974822, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 128.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195442277799974822, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -56.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195442277799974822, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195442277799974822, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 112.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 959b9c2dbaa6b8e44a2ade1bcfafd698, type: 3}
@@ -33485,15 +33852,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88de8e78227abf74cbafc622c6ac8931, type: 3}
---- !u!95 &8985776391756279918 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4454219499034773911, guid: 88de8e78227abf74cbafc622c6ac8931,
-    type: 3}
-  m_PrefabInstance: {fileID: 4711738337783675385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8985776391756279905 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
+    type: 3}
+  m_PrefabInstance: {fileID: 4711738337783675385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8985776391756279918 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4454219499034773911, guid: 88de8e78227abf74cbafc622c6ac8931,
     type: 3}
   m_PrefabInstance: {fileID: 4711738337783675385}
   m_PrefabAsset: {fileID: 0}

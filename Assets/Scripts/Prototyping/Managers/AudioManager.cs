@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog }
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar }
 
 public class AudioManager : MonoBehaviour
 {
@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_PhoneRingAudio = null;
     [SerializeField] private AudioSource m_WhiskyAudio = null;
     [SerializeField] private AudioSource m_NewLogAudio = null;
+    [SerializeField] private AudioSource m_CigarAudio = null;
 
     [Header("Radio")]
     [SerializeField] private AudioSource m_RadioAudio = null;
@@ -105,6 +106,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.NewLog:
                 m_NewLogAudio.Play();
+                break;
+            case AudioType.Cigar:
+                m_CigarAudio.Play();
                 break;
             default:
                 break;
