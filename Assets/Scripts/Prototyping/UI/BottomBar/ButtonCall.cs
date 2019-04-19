@@ -160,6 +160,7 @@ public class ButtonCall : MonoBehaviour
                 if (cigarIdx < CigarSprites.Count - 1)
                 {
                     cigarIdx++;
+                    AudioManager.Singleton.ActivateAudio(AudioType.Cigar);
                 }
                 else
                     cigarIdx = 0;
