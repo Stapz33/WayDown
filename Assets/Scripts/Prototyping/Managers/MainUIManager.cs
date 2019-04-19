@@ -193,7 +193,7 @@ public class MainUIManager : MonoBehaviour {
         {
             m_PoliceDropdown.Add(PoliceDropdownParent.GetChild(x).GetComponent<Dropdown>());
         }
-        for (int h = 0; h < DocumentsDrawerParent.childCount - 1; h++)
+        for (int h = 1; h < DocumentsDrawerParent.childCount ; h++)
         {
             l_DocumentsDrawer.Add(DocumentsDrawerParent.GetChild(h));
             l_DocumentsDrawerDocNB.Add(0);

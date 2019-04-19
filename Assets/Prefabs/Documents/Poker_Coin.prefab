@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4d1c69e33d0b1cc4396596f5a9177492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0cb1389c2f7de584a930f9dc25457c28, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -148,6 +148,7 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: A poker coin found in the capo's appartment
   parent: {fileID: 0}
+  CigarSprites: []
 --- !u!114 &3337926126073152915
 MonoBehaviour:
   m_ObjectHideFlags: 0
