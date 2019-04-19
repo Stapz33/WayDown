@@ -295,7 +295,7 @@ TODO Checking the apartment (exploration, gathering clues)
 	    # jump
 		***	[Open the purse] <i>You open that little woman's purse.</i> # player
 			<i>Inside, there's a key for a hotelroom.</i> # player 
-		# NewDocument #0
+		# jump # NewDocument #0
 		->clues_apartment
 *	[Check the bedroom] <i>You go to the bedroom.</i> # player
 	<i>It's tidy, as if it was not often used.</i> # player
