@@ -292,12 +292,11 @@ TODO Checking the apartment (exploration, gathering clues)
 		<i>The way she's dressed, her make-up...</i> # player
 		<i>But not a lot of prostitutes have a deep cut accross their throats.</i> # player
 		<i>She didn't come with a lot of stuff. Except for a small lady bag.</i> # player
+	    # jump
+		***	[Open the purse] <i>You open that little woman's purse.</i> # player
+			<i>Inside, there's a key for a hotelroom.</i> # player 
+		# NewDocument #0
 		->clues_apartment
-    # jump
-	**	[Open the purse] <i>You open that little woman's purse.</i> # player
-	<i>Inside, there's a key for a hotelroom.</i> # player 
-	# NewDocument #0
-	->clues_apartment
 *	[Check the bedroom] <i>You go to the bedroom.</i> # player
 	<i>It's tidy, as if it was not often used.</i> # player
 	<i>The bed is made. Giovanni didn't sleep here so much.</i> # player
