@@ -464,39 +464,34 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: PlayerDialogueSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5a09f932ab9ca014685b1f749168c5bd,
-        type: 3}
-    - target: {fileID: 5293366854654625497, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212034928754842174, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 9024222304888876628, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3140927849231011385, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 264926274769446877, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1d9b3329c35ac0047b2c6c79e204b48c,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924441546, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193920407490455236, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-    - target: {fileID: 758958942333665614, guid: 7e30d4add22b7f1438f20fef1cb40309,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268299359820377226, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 81746b48128aa7747a928f99d7c46702,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025252570693207207, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-    - target: {fileID: 4711738336947476600, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a55ab8ae93da93a4087e0354637cd571,
-        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}

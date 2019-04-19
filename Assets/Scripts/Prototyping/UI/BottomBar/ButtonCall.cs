@@ -32,6 +32,9 @@ public class ButtonCallEditor : Editor
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("PagIdx"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("parent"), true);
                 break;
+            case (int)ButtonType.Cigar:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("CigarSprites"), true);
+                break;
             default:
                 break;
         }
@@ -41,7 +44,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo, Cigar }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -51,6 +54,8 @@ public class ButtonCall : MonoBehaviour
     public int PagIdx;
     public string DocumentInfo;
     public Transform parent;
+    public List<Sprite> CigarSprites;
+    private int cigarIdx = 0;
 
     private void Start()
     {
@@ -150,6 +155,15 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.Whisky:
                 AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
+                break;
+            case ButtonType.Cigar:
+                if (cigarIdx < CigarSprites.Count - 1)
+                {
+                    cigarIdx++;
+                }
+                else
+                    cigarIdx = 0;
+                GetComponent<Image>().sprite = CigarSprites[cigarIdx];
                 break;
             default:
                 break;
