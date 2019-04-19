@@ -47,7 +47,7 @@ TODO Intro capo's apartment (retakes)
 <i>Ain't nobody like Bugsy Rosenthal to look like a damn fool.</i> # player 
 <i>Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.</i> # player 
 <i>But everybody has to do something for a living.</i> # player 
-<i>And this mob is paying quite well.</i> # player #NewNarrativeLog #0
+<i>And this mob is paying quite well.</i> # player
 <i>But they're fucking savages, killing each other and all.</i> # player 
 <i>Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.</i> # player 
 <i>And now the fuckin' phone is ringing.</i> # player #SFXPlay #8
@@ -55,7 +55,7 @@ TODO Intro capo's apartment (retakes)
 - (phone) {<i>The phone rings.</i>|<i>The phone doesn't stop.</i>|<i>It continues to ring.</i>} # player 
 # jump
 	*	[Answer] <i>This damn phone ain't gonna stop itself.</i> # player 
-	+	[Try to sleep]{<i>Ain't no time to call somebody, they'll wait tomorrow.</i>|<i>Could be a business call... Who am I kidding?</i>|<i>Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...</i>|} # player #NewNarrativeLog #1
+	+	[Try to sleep]{<i>Ain't no time to call somebody, they'll wait tomorrow.</i>|<i>Could be a business call... Who am I kidding?</i>|<i>Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...</i>|} # player
 		->phone
 - <i>I decide to get up and finally answer it.</i> # player #SFXStop #8
 
@@ -96,7 +96,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
     *   Not so much of a choice[], am I right? # player
 - <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1
 <i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player 
-<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player
+<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0 #NewNarrativeLog #1
 - (car_convo)
 # jump # NewCharacterSprite #8
     *   Are you new in town, kid? # player #PlayerDBox #0
@@ -110,7 +110,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
         **	What is he afraid of?[] He's not been linked to Lima, has he? # player
         Not that I know of, the boss was smart enough to make sure that the organization would not be too much harmed. # otherCharacter
         So who's going after him? # player
-        I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter
+        I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter #NewNarrativeLog #2 #NewNarrativelog #3
         ->car_convo
     *   Can't you go directly to the apartment? # player #PlayerDBox #0
         Must make sure that we're not tailed sir # otherCharacter # NewCharacterSprite #8
@@ -133,7 +133,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
         # jump
         **  Fuck... What happened to Giovanni? # player 
         //à changer
-            You will discover it soon enough. # otherCharacter
+            You will discover it soon enough. # otherCharacter #NewNarrativeLog #4 #NewNarrativeLog #5
             ->car_convo
     *->
 - <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
