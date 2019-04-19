@@ -41,23 +41,23 @@ TODO Intro capo's apartment (retakes)
 // METTRE UN FOND NOIR?
 # DisableDiscussion
 #PlayerDBox #1
-Fucking city. # player 
-"Come to San Francisco" they said. "It's like a Gold Rush for private detectives". # player 
-And I fell for it. # player 
-Ain't nobody like Bugsy Rosenthal to look like a damn fool. # player 
-Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses. # player 
-But everybody has to do something for a living. # player 
-And this mob is paying quite well. # player #NewNarrativeLog #0
-But they're fucking savages, killing each other and all. # player 
-Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy. # player 
-And now the fuckin' phone is ringing. # player #SFXPlay #8
-Don't even wants to answer, fuck it. # player 
-- (phone) {The phone rings.|The phone doesn't stop.|It continues to ring.} # player 
+<i>Fucking city.</i> # player 
+<i>"Come to San Francisco" they said. "It's like a Gold Rush for private detectives".</i> # player 
+<i>And I fell for it.</i> # player 
+<i>Ain't nobody like Bugsy Rosenthal to look like a damn fool.</i> # player 
+<i>Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.</i> # player 
+<i>But everybody has to do something for a living.</i> # player 
+<i>And this mob is paying quite well.</i> # player #NewNarrativeLog #0
+<i>But they're fucking savages, killing each other and all.</i> # player 
+<i>Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.</i> # player 
+<i>And now the fuckin' phone is ringing.</i> # player #SFXPlay #8
+<i>Don't even wants to answer, fuck it.</i> # player 
+- (phone) {<i>The phone rings.</i>|<i>The phone doesn't stop.</i>|<i>It continues to ring.</i>} # player 
 # jump
-	*	[Answer] This damn phone ain't gonna stop itself. # player 
-	+	[Try to sleep]{Ain't no time to call somebody, they'll wait tomorrow.|Could be a business call... Who am I kidding?|Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...|} # player #NewNarrativeLog #1
+	*	[Answer] <i>This damn phone ain't gonna stop itself.</i> # player 
+	+	[Try to sleep]{<i>Ain't no time to call somebody, they'll wait tomorrow.</i>|<i>Could be a business call... Who am I kidding?</i>|<i>Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...</i>|} # player #NewNarrativeLog #1
 		->phone
-- I decide to get up and finally answer it. # player #SFXStop #8
+- <i>I decide to get up and finally answer it.</i> # player #SFXStop #8
 
 TODO Find the capo's address (confirm)
 TODO Find Bugsy's address
@@ -76,16 +76,16 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 # jump
     *   [Hang up] <> # player #NewCharacterSprite #0
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
-- I hung up and got out of bed. # player #PlayerDBox #1  #NewCharacterSprite #0
-For fuck's sake, what did they do again? # player
+- <i>I hung up and got out of bed.</i> # player #PlayerDBox #1  #NewCharacterSprite #0
+<i>For fuck's sake, what did they do again?</i> # player
 # jump
     *   [Go to Francisco Street] <> # player
     #MusicPlay #1
-- (cab) {Not even the time for a coffee, I put on my hat and go outside to find a cab.|} # player 
+- (cab) {<i>Not even the time for a coffee, I put on my hat and go outside to find a cab.</i>|} # player 
 # jump # NewBackground #4
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player
-        {That prick doesn't even slow down.-> cab|Am I covered in shit?-> cab|} # player
-- As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by. # player
+        {<i>That prick doesn't even slow down.</i>-> cab|<i>Am I covered in shit?</i>-> cab|} # player
+- <i>As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by.</i> # player
 Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 # jump  #PlayerDBox #0
     *   Ain't no Yid here kid[], get lost. # player
@@ -94,8 +94,9 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- I step into the car. As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street. # player #NewCharacterSprite #0 #PlayerDBox #1
-He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours. # player
+- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1
+<i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player 
+<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player
 - (car_convo)
 # jump # NewCharacterSprite #8
     *   Are you new in town, kid? # player #PlayerDBox #0
@@ -135,10 +136,10 @@ He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems 
             You will discover it soon enough. # otherCharacter
             ->car_convo
     *->
-- The ride continued in a complete silence. # player #NewCharacterSprite #0 #PlayerDBox #1
-Giovanni is dead. Poor kid. And more Italians flooding North Beach. # player
-Someting's wrong. And I'm gettin' mixed in all that. # player
-We finally park in Francisco Street. # player #MusicPlay #0
+- <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
+<i>Giovanni is dead. Poor kid. And more Italians flooding North Beach.</i> # player
+<i>Someting's wrong. And I'm gettin' mixed in all that.</i> # player
+<i>We finally park in Francisco Street.</i> # player #MusicPlay #0
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
 # jump
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
@@ -146,13 +147,13 @@ I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter 
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
-        And the young prick leaves. # player #PlayerDBox #1 # NewCharacterSprite #0
-- I cross the threshold of the building and go to the second floor. Apartment 237. # player #PlayerDBox #1 # NewCharacterSprite #0
+        <i>And the young prick leaves.</i> # player #PlayerDBox #1 # NewCharacterSprite #0
+- <i>I cross the threshold of the building and go to the second floor. Apartment 237.</i> # player #PlayerDBox #1 # NewCharacterSprite #0
 
 TODO First dialogue with Lanza (retakes)
 
 # NewBackground #0
-Jimmy Lanza is waiting for me, near to the door. # player # NewCharacterSprite #5
+<i>Jimmy Lanza is waiting for me, near to the door.</i> # player # NewCharacterSprite #5
 For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
 # jump #PlayerDBox #0
 *   Never when there are [Italians]greaseballs like you waiting for me at a crime scene. # player
@@ -269,43 +270,47 @@ TODO Dialogue with Lanza (retakes)
 // BACKGROUND APARTMENT
 TODO Checking the apartment (exploration, gathering clues)
 #NewCharacterSprite #0
-I enter the apartment, only to find a first body. Poor Tommy. # player #PlayerDBox #1
-Ok, let's focus now and do that methodically, ain't I a damn detective? # player
+<i>I enter the apartment, only to find a first body. Poor Tommy.</i> # player #PlayerDBox #1
+<i>Ok, let's focus now and do that methodically, ain't I a damn detective?</i> # player
 - (clues_apartment)
 # jump
-	*	[Check Giovanni] {clues_apartment > 1: You finally decide to go and check on Giovanni.| You decide to check on Giovanni first.} # player
-		Poor boy.  # player
-		His skull is completely shattered, which is caused by the obvious bullet hole on his forehead. # player
-		Skull and brain pieces are all over the wall behind. # player 
-        You find a poker chip on the ground. # player
-        # NewDocument #2
+*	[Check Giovanni] {clues_apartment > 1: <i>You finally decide to go and check on Giovanni.</i>| <i>You decide to check on Giovanni first.</i>} # player
+	<i>Poor boy.</i>  # player
+	<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
+	<i>Skull and brain pieces are all over the wall behind.</i> # player 
+    <i>You find a poker chip on the ground.</i> # player
+    # NewDocument #2
+	->clues_apartment
+*	[Check the livingroom] <i>You go around the livingroom.</i> # player
+	<i>Nothing special here, except some old furnitures.</i> # player
+	->clues_apartment
+*	[Check the bathroom] <i>You go to check the bathroom.</i> # player
+	<i>Oh that's right. The second body.</i> # player
+	<i>The entire floor is covered in blood. Hers, obviously.</i> # player
+	**	[Look at the body] <i>You take a look at the dead body.</i> # player
+		<i>She really seems to be a prostitute.</i> # player
+		<i>The way she's dressed, her make-up...</i> # player
+		<i>But not a lot of prostitutes have a deep cut accross their throats.</i> # player
+		<i>She didn't come with a lot of stuff. Except for a small lady bag.</i> # player
 		->clues_apartment
-	*	[Check the livingroom] You go around the livingroom # player
-		Nothing special here, except some old furnitures. # player
-		->clues_apartment
-	*	[Check the bathroom] You go to check the bathroom # player
-		Oh that's right. The second body. # player
-		The entire floor is covered in blood. Hers, obviously # player
-		TODO: Continue here.
-		The prostitute body. I should check her bag. # player
-        # jump
-		**	[Open the purse] I open that little woman's purse. # player
-		Inside, there's a key for a hotelroom. # player 
-		# NewDocument #0
-		->clues_apartment
-	*	[Check the bedroom] You go to the bedroom. # player
-		It's tidy, as if it was not often used. # player
-		The bed is made. Giovanni didn't sleep here so much. # player
-		There's a closet. # player
-		# jump
-		**	[Open the closet] You open the door of this massive closet. # player
-			Only to find out that it is nearly empty. # player
-			A few suits, some underwear. # player
-			Not enough for someone to live here. # player
-			Unless that person is a slog. But Tommy was not. # player
-		->clues_apartment
-	*->
-	Nothing more for me in that apartment. # player
+    # jump
+	**	[Open the purse] <i>You open that little woman's purse.</i> # player
+	<i>Inside, there's a key for a hotelroom.</i> # player 
+	# NewDocument #0
+	->clues_apartment
+*	[Check the bedroom] <i>You go to the bedroom.</i> # player
+	<i>It's tidy, as if it was not often used.</i> # player
+	<i>The bed is made. Giovanni didn't sleep here so much.</i> # player
+	<i>There's a closet.</i> # player
+	# jump
+	**	[Open the closet] <i>You open the door of this massive closet.</i> # player
+		<i>Only to find out that it is nearly empty.</i> # player
+		<i>A few suits, some underwear.</i> # player
+		<i>Not enough for someone to live here.</i> # player
+		<i>Unless that person is a slog. But Tommy was not.</i> # player
+	->clues_apartment
+*->
+<i>Nothing more for you in that apartment.</i> # player
 ~lanza_stitch_first = 0
 ->lobby_apartment
 
@@ -317,13 +322,13 @@ Ok, let's focus now and do that methodically, ain't I a damn detective? # player
 
 =end_apartment
 
-Lanza, always keeping an eye on me, brought me back to my office on Broadway Street. # player #PlayerDBox #1
-That day could not have been worse. # player #NewInvestigation
+<i>Lanza, always keeping an eye on me, brought me back to my office on Broadway Street.</i> # player #PlayerDBox #1
+<i>That day could not have been worse.</i> # player #NewInvestigation
 ->END
 
 === DefaultStory
 #NewCharacterSprite #0
-I have nothing to do here # player #PlayerDBox #1
+<i>I have nothing to do here.</i> # player #PlayerDBox #1
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -335,18 +340,21 @@ I have nothing to do here # player #PlayerDBox #1
 ===prostitute_motel===
 //Background Motel's Street, no interlocutor
 #NewBackground #5 # NewCharacterSprite #0
-Bugsy arrives in front of the motel and exits the taxi. # player #PlayerDBox #1
-Description of the motel. # player
+<i>Bugsy arrives at the motel where the girl lived and exits the taxi.</i> # player #PlayerDBox #1
+<i>The motel is quite shifty, the neon sign is flickering.</i> # player
 # jump
-*   [Enter the motel] Bugsy enters the motel # player
+*   [Enter the motel] Bugsy enters the motel. # player
     ->motel_lobby
 
 =motel_lobby
 //Background Motel's lobby, no interlocutor at first
-Description of the reception. There's a manager. # player
+<i>The reception is dimly lit.</i> # player
+<i>The only persons that come here exits the place immediately, only passing by.</i> # player
+<i>One man stays here. He seems to be the manager.</i> # player
 //Interlocutor: Motel's manager
+He asks you  if he can help you. # otherCharacter # NewCharacterSprite #4
 Bugsy asks if he can visit the girl's room. # player #PlayerDBox #0
-The manager asks for the key. # otherCharacter # NewCharacterSprite #4
+The manager asks for the key. # otherCharacter
 # jump
 *   [Give him the key] Bugsy gives him the key. # player
 - The manager is reluctant, he doesn't want to let you in. # otherCharacter
@@ -360,48 +368,55 @@ The manager asks for the key. # otherCharacter # NewCharacterSprite #4
 //Background Motel's room, no interlocutor
 # NewBackground #3
 # NewCharacterSprite #0
-Bugsy enters the room alone. and searches for clues about her. # player #PlayerDBox #0
+<i>Bugsy enters the room alone. and searches for clues about her.</i> # player #PlayerDBox #1
 - (motel_search)
-# jump
-	*	[Search around the bed] You look around the bed. # player
-		There's nothing worth noticing, except for the bedside table and a large closet. # player
-		# jump
-		**	[Go to the bedside table] You approach the bedside table. # player
-			---	(bedside_search) # jump
-			***	[Look on the top] He checks above the bedside table. # player
-		        Bugsy finds a ashtray with a box of matches. # player
-		        # NewDocument #1
-		        ->bedside_search
-		    ***	[Open a drawer] Bugsy opens a drawer of the bedside table. # player
-		        Bugsy finds a small bible. # player
-		        # jump
-		        ****  [Open the bible] He opens the bible. # player
-		        There is a wad of notes, with like 100 dollars in small bills. # player
-		        ->bedside_search
-		    ***	->
-		    	->motel_search
-		**	[Open the closet] He opens the closet. # player
-        	Bugsy finds two kinds of clothes. # player
-        	->bedside_search
-		**	->
-			->motel_search
-    *	[Check the desk] He goes to the desk to check it.
-        Bugsy finds several letters on the desk.
-        # NewDocument #3
-        ->motel_search
-    *   [Go in the kitchen] He goes in the kitchen. # player
-        Nothing interesting in the kitchen, but it is small. Bugsy returns in the room. # player
-        ->motel_search
-    *   [Ask questions to the manager] He asks to the manager informations about the girl. # player #PlayerDBox #0
-    //Interlocutor: Motel's manager
-        Bugsy asks the manager about her occupation. # player
-        He says that he only know her name, and he didn't have any reason to complain or to ask her for more. #otherCharacter # NewCharacterSprite #4
-        # NewCharacterSprite #0
-        ->motel_search
-    *->
-    Nothing more to find here, Bugsy exits and takes the cab back to his office. # player #PlayerDBox #1
-    # NewInvestigation
-    ->END
+# jump #PlayerDBox #1
+*	[Search around the bed] <i>You look around the bed.</i> # player
+	<i>There's nothing worth noticing, except for the bedside table and a large closet.</i> # player
+	# jump
+	**	[Go to the bedside table] <i>You approach the bedside table.</i> # player
+		---	(bedside_search) # jump
+		***	[Look on the top] <i>You check above the bedside table.</i> # player
+	        <i>You find an ashtray with a box of matches on the side.</i> # player
+	        # NewDocument #1
+	        ->bedside_search
+	    ***	[Open a drawer] <i>You open a drawer of the bedside table.</i> # player
+	        <i>You find a small bible.</i> # player
+	        # jump
+	        ****  [Open the bible] <i>You open the bible.</i> # player
+	        <i>There is a wad of notes, with like 100 dollars in small bills.</i> # player
+	        ->bedside_search
+	    ***	->
+	    	->motel_search
+	**	[Open the closet] <i>You open the closet.</i> # player
+    	<i>You find two kinds of clothes: normal ones, and some only to be worn by a working girl.</i> # player
+    	->bedside_search
+	**	->
+		->motel_search
+*	[Check the desk] <i>You go to the desk to check it.</i>
+    <i>You find several letters on the desk: seems to be from her sister.</i>
+    # NewDocument #3
+    ->motel_search
+*   [Go in the kitchen] <i>You go in the kitchen.</i> # player
+    <i>Nothing interesting in the kitchen, but it is small. You return in the room.</i> # player
+    ->motel_search
+*   [Ask questions to the manager] You ask the manager for informations about the girl. # player #PlayerDBox #0
+//Interlocutor: Motel's manager
+	-- (manager_questions)
+	# jump # NewCharacterSprite #4
+    **	[Ask about her occupation] You ask him if he know what she did for a living. # player
+    ->manager_questions
+    **	[Ask her name] You ask him if he knew her name. # player
+    He says that he only know her name, and he didn't have any reason to complain or to ask her for more. #otherCharacter
+    Her name was Margaret, or Maggy. # otherCharacter
+    # NewCharacterSprite #0
+    ->motel_search
+*->
+<i>Nothing more to find here, you exit and take the cab back to your office.</i> # player #PlayerDBox #1
+<i>This girl seems to be your only lead for now.</i> # player
+<i>But you don't know where she worked, or even her name.</i> # player
+# NewInvestigation
+->END
 
 
 /*--------------------------------------------------------------------------------
@@ -414,33 +429,37 @@ Bugsy enters the room alone. and searches for clues about her. # player #PlayerD
 {condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
 # NewBackground #6
-Bugsy arrives in front of the Condor Club and exits the taxi. # player #PlayerDBox #1
-Description of the club's facade. # player
+<i>You arrive in front of the Condor Club and exit the taxi.</i> # player #PlayerDBox #1
+<i>The club has a large colorful neon sign, which matches the signs of the other places of the street.</i> # player
+<i>The Condor's seems to attract a lot of fancy people, men for the most part.</i> # player
+<i>They don't seem to be here for the drinks.</i> # player
 # jump
-*   [Enter the Condor Club] Bugsy enters the bar. # player
+*   [Enter the Condor Club] <i>You enter the bar.</i> # player
     ->condor_entrance
 
 =condor_entrance
 //Background Condor Club's entrance, no interocutor
-Bugsy is in the club. The place is crowded. # player
+<i>Bugsy is in the club. The place is crowded.</i> # player
+<i>There's hardly any stool left empty at the bar.</i> # player
+<i>The rest of the room is packed, with music and agitation.</i> # player
 # jump
-*   [Go to the bar] Bugsy goes to the bar. # player
-- He finds an empty stool. # player
-The barman does not seem to be interested in Bugsy. He's serving the other customers. # player
+*   [Go to the bar] <i>You approach to the bar.</i> # player
+- <i>You find an empty stool.</i> # player
+<i>The barman does not seem to be interested in you. He's serving the other customers.</i> # player
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   [Put a bill on the bar] You put a 10 dollars bill on the bar. # player
-    The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order it. # player
++   [Put a bill on the bar] <i>You put a 10 dollars bill on the bar.</i> # player
+    <i>The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.</i> # player
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
 +   [Hail the barman] Boy I need to talk to you. # player #PlayerDBox #0
     {number_drinks == 3 : ->condor_madam}
-    He doesn't even raise on eye on you. # player #PlayerDBox #1
+    <i>He doesn't even raise on eye on you.</i> # player #PlayerDBox #1
     ->ordering_drink
 
 =condor_madam
-After a few drinks, the barman finally gets to you. # player
+<i>After a few drinks, the barman finally gets to you.</i> # player
 //Interlocutor: Barman
 TODO: Create barman sprite
 What do you want? # otherCharacter #NewCharacterSprite #3
@@ -473,9 +492,9 @@ She threatens to get you out of the club. # otherCharacter
     You just want to know if anything happened. # player
     She gets angrier. Nothing happened, because there's no girl here. # otherCharacter
     She calls security. # otherCharacter
-    You're dragged to the exit. # player #PlayerDBox #1
+    <i>You're dragged to the exit.</i> # player #PlayerDBox #1
     //Background: Condor Club's street
-    You will have to come here again once you have the name of the girl. # player
+    <i>You will have to come here again once you have the name of the girl.</i> # player
     ->END
 *   {knowledge_prostitute_name == 0} [Threaten her] You threathen her to call the police if she does not cooperate. # player
     She's not impressed. Even a little amused. # otherCharacter
@@ -484,36 +503,36 @@ She threatens to get you out of the club. # otherCharacter
     You agree to leave. # player
     # NewCharacterSprite #0
     //Background: Condor Club's street
-    You will have to come here again once you have the name of the girl. # player #PlayerDBox #1
+    <i>You will have to come here again once you have the name of the girl.</i> # player #PlayerDBox #1
     ->END
 
 =condor_madam2
 //Background: Condor Club's street, no interlocutor
 # NewBackground #6
-You go back to the Condor Club. This time, you're sure. The girl's name is Margaret O'Bannon. # player #PlayerDBox #1
-You enter the club. # player
+<i>You go back to the Condor Club. This time, you're sure. The girl's name is Margaret O'Bannon.</i> # player #PlayerDBox #1
+<i>You enter the club.</i> # player
 //Background: Condor Club's entrance
-You're in the club. As soon as you enter, the barman sees you. # player
-He comes immediately to you, with a baseball bat. # player
+<i>You're in the club. As soon as you enter, the barman sees you.</i> # player
+<i>He comes immediately to you, with a baseball bat.</i> # player
 # jump # NewCharacterSprite #3
 *   [Tell the girl's name] Before the man hits you, you tell him that you have informations on Margaret O'Bannon. # player #PlayerDBox #0
-    He immediately stops. # player #PlayerDBox #1
-    You see the madam in the back, entering from an hidden door. # player
-    The barman goes to her, whispers something to her. # player
-    She's now closely watching you. # player
-    The barman comes back. # player
+    <i>He immediately stops.</i> # player #PlayerDBox #1
+    <i>You see the madam in the back, entering from an hidden door.</i> # player
+    <i>The barman goes to her, whispers something to her.</i> # player
+    <i>She's now closely watching you.</i> # player
+    <i>The barman comes back.</i> # player
     He tells you to follow him. # otherCharacter
     He opens the door and tells you to enter. # otherCharacter
-    He closes the door behind you. # player
-    You're know in the main part of the club: an hidden casino/brothel. # player
-    The madam is waiting for you. # player
-    She asks you about Margaret. She hasn't seen her from two days. # otherCharacter # 
+    <i>He closes the door behind you.</i> # player
+    <i>You're know in the main part of the club: an hidden casino/brothel.</i> # player
+    <i>The madam is waiting for you.</i> # player
+    She asks you about Margaret. She hasn't seen her from two days. # otherCharacter
     ->END
 
 =condor_fail
 //Background: Condor Club's street, no interlocutor
 # NewBackground #6
-You go back to the Condor Club. # player #PlayerDBox #1
-But you're not so sure about what you could say without getting shot. # player
-You decide to go back and work a better approach. # player
+<i>You go back to the Condor Club.</i> # player #PlayerDBox #1
+<i>But you're not so sure about what you could say without getting shot.</i> # player
+<i>You decide to go back and work a better approach.</i> # player
 ->END
