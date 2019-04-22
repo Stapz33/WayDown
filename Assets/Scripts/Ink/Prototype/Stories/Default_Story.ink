@@ -133,7 +133,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
         # jump
         **  Fuck... What happened to Giovanni? # player 
         //à changer
-            You will discover it soon enough. # otherCharacter #NewNarrativeLog #4 #NewNarrativeLog #5
+            You will discover it soon enough. # otherCharacter #NewNarrativeLog #4 #NewNarrativeLog #5 #NewNarrativeLog #6
             ->car_convo
     *->
 - <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
@@ -170,7 +170,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
     Show some respect, Rosenthal. We're not gonna always feed you. # otherCharacter
 *   [The fuck was that good?] The fuck was so good that they both died? # player
     Stop jockin' around. # otherCharacter
-- Someone killed them both, or they killed each other, but I don't think so. # otherCharacter
+- Someone killed them both, or they killed each other, but I don't think so. # otherCharacter #NewNarrativeLog #7 #NewNarrativeLog #8
  But you're the expert here! So what you gonna do? # otherCharacter
 -> lobby_apartment
 
@@ -210,7 +210,7 @@ TODO Dialogue with Lanza (retakes)
     # jump
     **  You mean that you decided to throw him under the bus. # player
         No, we'll take care of his family. What he was gonna do for us was essential. # otherCharacter
-        Now we're in deep shit... # otherCharacter
+        Now we're in deep shit... # otherCharacter #NewNarrativeLog #9 #NewNarrativeLog #10
         ->lanza_convo
     **  What did he do to deserve it? # player
         Stop insinuating that we wanted him killed. He was not made for this job. # otherCharacter
@@ -222,7 +222,7 @@ TODO Dialogue with Lanza (retakes)
             We could not find anyone else. # otherCharacter
             # jump
             ****    Where does she live? # player
-                    She's in Sicily. The boy came here on his own. Fuckin' American dream. # otherCharacter
+                    She's in Sicily. The boy came here on his own. Fuckin' American dream. # otherCharacter #NewNarrativeLog #11 #NewNarrativeLog #12
                     ->lanza_convo
 *   Who could want to harm him? # player #PlayerDBox #0
     Nobody that I would know of. # otherCharacter
@@ -230,14 +230,14 @@ TODO Dialogue with Lanza (retakes)
     **  Not even the girl's pimp? # player
         I can't even say for sure that she's a prostitute. # otherCharacter
         Only a... how could you say... an educated guess Rosenthal. # otherCharacter
-        You knew Tommy a little. Always a gentleman with the ladies. # otherCharacter
+        You knew Tommy a little. Always a gentleman with the ladies. # otherCharacter #NewNarrativeLog #13 #NewNarrativeLog #14
     ->lanza_convo
 *   Who's that girl? # player #PlayerDBox #0
     Can't say for sure, that's your job now. Nobody ever saw Tommy with her. # otherCharacter
     But we were not following him day and night. # otherCharacter
     # jump
     **  You mean you tailed him sometimes? # player
-        Don't be stupid. I keep a close watch on everyone. # otherCharacter
+        Don't be stupid. I keep a close watch on everyone. # otherCharacter #NewNarrativeLog #15
     ->lanza_convo
 *   What is happening with the organization? # player #PlayerDBox #0
     As you should know now, Lima was sent to jail, with a trial coming. # otherCharacter
@@ -278,7 +278,7 @@ TODO Checking the apartment (exploration, gathering clues)
 	<i>Poor boy.</i>  # player
 	<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
 	<i>Skull and brain pieces are all over the wall behind.</i> # player 
-    <i>You find a poker chip on the ground.</i> # player
+    <i>You find a poker chip on the ground.</i> # player #NewNarrativeLog #16
     # NewDocument #2
 	->clues_apartment
 *	[Check the livingroom] <i>You go around the livingroom.</i> # player
@@ -294,7 +294,7 @@ TODO Checking the apartment (exploration, gathering clues)
 		<i>She didn't come with a lot of stuff. Except for a small lady bag.</i> # player
 	    # jump
 		***	[Open the purse] <i>You open that little woman's purse.</i> # player
-			<i>Inside, there's a key for a hotelroom.</i> # player 
+			<i>Inside, there's a key for a hotelroom.</i> # player #NewNarrativeLog #17 #NewNarrativeLog #18 #NewNarrativeLog #19
 		# jump # NewDocument #0
 		->clues_apartment
 *	[Check the bedroom] <i>You go to the bedroom.</i> # player
@@ -306,7 +306,7 @@ TODO Checking the apartment (exploration, gathering clues)
 		<i>Only to find out that it is nearly empty.</i> # player
 		<i>A few suits, some underwear.</i> # player
 		<i>Not enough for someone to live here.</i> # player
-		<i>Unless that person is a slog. But Tommy was not.</i> # player
+		<i>Unless that person is a slog. But Tommy was not.</i> # player #NewNarrativeLog #20 #NewNarrativeLog #21
 	->clues_apartment
 *->
 <i>Nothing more for you in that apartment.</i> # player
@@ -413,7 +413,7 @@ The manager asks for the key. # otherCharacter
 *->
 <i>Nothing more to find here, you exit and take the cab back to your office.</i> # player #PlayerDBox #1
 <i>This girl seems to be your only lead for now.</i> # player
-<i>But you don't know where she worked, or even her name.</i> # player
+<i>But you don't know where she worked, or even her name.</i> # player #NewNarrativeLog #22 #NewNarrativeLog #23 #NewNarrativeLog #24 #NewNarrativeLog #25
 # NewInvestigation
 ->END
 
