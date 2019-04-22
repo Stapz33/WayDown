@@ -359,6 +359,7 @@ The manager asks for the key. # otherCharacter
 - The manager is reluctant, he doesn't want to let you in. # otherCharacter
 # jump
 *   [Threaten him] Bugsy threatens him, saying that he should not interfere with the investigation on her death. # player
+	-- (threat_manager)
 *   [Convince him] Bugsy tries to convince him that she's his girlfriend, and that he hasn't had news since some days. # player
 - The manager leads Bugsy to the room. # otherCharacter
 ->motel_room
@@ -392,8 +393,8 @@ The manager asks for the key. # otherCharacter
     	->bedside_search
 	**	->
 		->motel_search
-*	[Check the desk] <i>You go to the desk to check it.</i>
-    <i>You find several letters on the desk: seems to be from her sister.</i>
+*	[Check the desk] <i>You go to the desk to check it.</i> # player
+    <i>You find several letters on the desk: seems to be from her sister.</i> # player
     # NewDocument #3
     ->motel_search
 *   [Go in the kitchen] <i>You go in the kitchen.</i> # player
@@ -404,10 +405,10 @@ The manager asks for the key. # otherCharacter
 	-- (manager_questions)
 	# jump # NewCharacterSprite #4
     **	[Ask about her occupation] You ask him if he know what she did for a living. # player
+    	He says that he didn't know anything about it, it is a place where no questions are asked to the clients. # otherCharacter
     ->manager_questions
-    **	[Ask her name] You ask him if he knew her name. # player
-    He says that he only know her name, and he didn't have any reason to complain or to ask her for more. #otherCharacter
-    Her name was Margaret, or Maggy. # otherCharacter
+    **	[Ask her name] You ask him if he knew her full name. # player
+		Her name was Margaret, or Maggy. # otherCharacter
     # NewCharacterSprite #0
     ->motel_search
 *->
@@ -448,13 +449,14 @@ The manager asks for the key. # otherCharacter
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   [Put a bill on the bar] <i>You put a 10 dollars bill on the bar.</i> # player
-    <i>The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.</i> # player
++   [{Put a bill on the bar|Put another bill on the counter}] <i>You put {|another} a 10 dollars bill on the bar.</i> # player
+    <i>{The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.|The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.| Again, same dance, he snaps the bill and pour your drink, but seems more inclined to talk with you.}</i> # player
+    <i>{He doesn't seem to consider you interesting (or rich) enough to engage with you.| Don't fool yourself, 20 dollars is not enough to look like a big shot in this city.|30 bucks, nearly all your weekly money. That should be enough.|You're really running low on money now...}</i> # player
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
-+   [Hail the barman] Boy I need to talk to you. # player #PlayerDBox #0
++   [Hail the barman] {Boy I need to talk to you.|Are you deaf boy?|Can I talk to you?} # player #PlayerDBox #0
     {number_drinks == 3 : ->condor_madam}
-    <i>He doesn't even raise on eye on you.</i> # player #PlayerDBox #1
+    <i>{&He doesn't even raise on eye on you.|He sees you, but prefer to go back to cleaning his glasses. Asshole.| MAybe if you get several drinks he would be forced to interact with you!}</i> # player #PlayerDBox #1
     ->ordering_drink
 
 =condor_madam
@@ -468,7 +470,7 @@ What do you want? # otherCharacter #NewCharacterSprite #3
 So does the woman that seats next to you. # otherCharacter
 //Interlocutor: Madam
 # jump
-*   [Tell her who you are] You tell her your name. # player
+*   [Tell her what you do] You begin to explain what you're doing here. # player
     She cuts you: she already knows it. # otherCharacter # NewCharacterSprite #6
     You're  a lonely fellow, coming here to enjoy the booze and music, without attracting any problem. # otherCharacter
     You say that you're not the one searching for problems here. # otherCharacter
@@ -514,7 +516,7 @@ She threatens to get you out of the club. # otherCharacter
 <i>You're in the club. As soon as you enter, the barman sees you.</i> # player
 <i>He comes immediately to you, with a baseball bat.</i> # player
 # jump # NewCharacterSprite #3
-*   [Tell the girl's name] Before the man hits you, you tell him that you have informations on Margaret O'Bannon. # player #PlayerDBox #0
+*   [Tell the girl's nickname] Before the man hits you, you tell him that you know what happened to Cara. # player #PlayerDBox #0
     <i>He immediately stops.</i> # player #PlayerDBox #1
     <i>You see the madam in the back, entering from an hidden door.</i> # player
     <i>The barman goes to her, whispers something to her.</i> # player
