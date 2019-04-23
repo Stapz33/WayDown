@@ -1,7 +1,7 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = true
+VAR DEBUG = false
 
 ->start_capo_apartment
 ===start_capo_apartment===
