@@ -162,6 +162,9 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private GameObject m_LogManager = null;
     [SerializeField] private GameObject m_LogManagerButton = null;
 
+    [Header("Demo")]
+    public GameObject m_demoImage;
+
 
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
@@ -507,6 +510,10 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "PlayerDBox")
                 {
                     PlayerDialogue.GetComponent<Image>().sprite = PlayerDialogueSprites[int.Parse(_inkStory.currentTags[f + 1])];
+                }
+                else if (_inkStory.currentTags[f] == "Demo")
+                {
+                    LoadScreen("GoToDemo",false);
                 }
             }
         }
@@ -1163,6 +1170,18 @@ public class MainUIManager : MonoBehaviour {
                 break;
 
         }
+    }
+
+    public void GoToDemo()
+    {
+        Debug.Log("yes");
+        m_demoImage.SetActive(true);
+        SaveManager.Singleton.DeleteSaves();
+    }
+
+    public bool GetStoryStarted()
+    {
+        return b_StoryStarted;
     }
     
 }

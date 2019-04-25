@@ -13,17 +13,14 @@ public class SaveLog
 
 public class LogManager : MonoBehaviour
 {
-    [SerializeField] private Transform m_PanelParent = null;
-    [SerializeField] private GameObject m_PanelToSpawn = null;
+    [SerializeField] private TextMeshProUGUI m_TextPanel = null;
     [SerializeField] private GameObject PreviousButton = null;
     [SerializeField] private GameObject NextButton = null;
     public GameObject LogButtonFeedback;
     public Animator NewInfoFeedback;
-    private List<GameObject> m_PanelList = new List<GameObject>();
     private List<string> m_LogsDataBase = new List<string>();
-    private int m_NBofPanel = -1;
-    private int m_ActualPanel = -1;
-    private int m_ActualIdx = -1;
+    private int m_nbOfPages = 1;
+    private int m_ActualPage = 1;
     private SaveLog idxtosave;
     
 
@@ -44,26 +41,30 @@ public class LogManager : MonoBehaviour
 
     public void NewLogPanel()
     {
-        m_PanelList.Add(Instantiate(m_PanelToSpawn, m_PanelParent));
-        m_NBofPanel++;
-        m_ActualPanel = m_NBofPanel;
-        m_ActualIdx = -1;
+        m_ActualPage = m_nbOfPages;
     }
 
     public void AddLogFromCSV(int idx,bool feedback)
     {
-        if (m_ActualIdx >= 10)
-        {
-            m_PanelList[m_ActualPanel].gameObject.SetActive(false);
-            NewLogPanel();
-            if (m_NBofPanel == 1)
-            {
-                PreviousButton.SetActive(true);
-            }
-        }
-        m_ActualIdx++;
-        m_PanelList[m_NBofPanel].transform.GetChild(m_ActualIdx).GetComponent<TextMeshProUGUI>().text = m_LogsDataBase[idx].Replace("\\n", "\n");
+        m_TextPanel.text = m_TextPanel.text + m_LogsDataBase[idx].Replace("\\n", "\n");
         idxtosave.SavedIdx.Add(idx);
+        m_nbOfPages = m_TextPanel.textInfo.pageCount;
+        m_TextPanel.pageToDisplay = m_nbOfPages;
+        m_ActualPage = m_nbOfPages;
+        Debug.Log("m_nbOfPages " + m_nbOfPages);
+        Debug.Log("m_TextPanel " + m_TextPanel.textInfo.pageCount);
+        if (m_ActualPage > 1)
+        {
+            PreviousButton.SetActive(true);
+        }
+        if (m_ActualPage < m_nbOfPages)
+        {
+            NextButton.SetActive(true);
+        }
+        else if (m_ActualPage == m_nbOfPages)
+        {
+            NextButton.SetActive(false);
+        }
         if (feedback)
         {
             AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
@@ -75,12 +76,11 @@ public class LogManager : MonoBehaviour
 
     public void NextLogPage()
     {
-        if (m_ActualPanel < m_NBofPanel)
+        if (m_ActualPage < m_nbOfPages)
         {
-            m_PanelList[m_ActualPanel].gameObject.SetActive(false);
-            m_ActualPanel++;
-            m_PanelList[m_ActualPanel].gameObject.SetActive(true);
-            if (m_ActualPanel == m_NBofPanel)
+            m_ActualPage++;
+            m_TextPanel.pageToDisplay = m_ActualPage;
+            if (m_ActualPage == m_nbOfPages)
             {
                 NextButton.SetActive(false);
             }
@@ -93,12 +93,11 @@ public class LogManager : MonoBehaviour
 
     public void PreviousLogPage()
     {
-        if (m_ActualPanel > 0)
+        if (m_ActualPage > 1)
         {
-            m_PanelList[m_ActualPanel].gameObject.SetActive(false);
-            m_ActualPanel--;
-            m_PanelList[m_ActualPanel].gameObject.SetActive(true);
-            if (m_ActualPanel == 0)
+            m_ActualPage--;
+            m_TextPanel.pageToDisplay = m_ActualPage;
+            if (m_ActualPage == 1)
             {
                 PreviousButton.SetActive(false);
             }
@@ -113,9 +112,9 @@ public class LogManager : MonoBehaviour
     {
         StartingScript();
         List<int> yes = x.SavedIdx;
-        foreach (int a in yes)
+        for (int i = 0; i < yes.Count;i++)
         {
-            AddLogFromCSV(a,false);
+            AddLogFromCSV(yes[i], false);
         }
     }
 
@@ -124,8 +123,9 @@ public class LogManager : MonoBehaviour
         SaveManager.Singleton.SaveLogPath(idxtosave);
     }
 
-    public void OnApplicationQuit()
+    private void OnApplicationQuit()
     {
+        if (!MainUIManager.Singleton.GetStoryStarted())
         SaveLog();
     }
 

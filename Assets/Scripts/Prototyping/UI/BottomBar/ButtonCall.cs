@@ -144,7 +144,6 @@ public class ButtonCall : MonoBehaviour
                 AddressBookManager.Singleton.GoToAlphabetical();
                 break;
             case ButtonType.AddNewDocumentToComparison:
-                StartCoroutine("Resetcall");
                 MainUIManager.Singleton.AddNewDocToComparision();
                 break;
             case ButtonType.RadioChannel:

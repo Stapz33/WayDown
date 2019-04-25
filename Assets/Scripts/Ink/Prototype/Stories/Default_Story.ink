@@ -449,13 +449,13 @@ The manager asks for the key. # otherCharacter
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   [{Put a bill on the bar|Put another bill on the counter}] <i>You put {|another} a 10 dollars bill on the bar.</i> # player
++   [{number_drinks == 0 : Put a bill on the bar | Put another bill on the counter}] <i>You put {|another} a 10 dollars bill on the bar.</i> # player
     <i>{The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.|The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.| Again, same dance, he snaps the bill and pour your drink, but seems more inclined to talk with you.}</i> # player
-    <i>{He doesn't seem to consider you interesting (or rich) enough to engage with you.| Don't fool yourself, 20 dollars is not enough to look like a big shot in this city.|30 bucks, nearly all your weekly money. That should be enough.|You're really running low on money now...}</i> # player
+    <i>{He doesn't seem to consider you interesting (or rich) enough to engage with you.| Don't fool yourself, 20 dollars is not enough to look like a big shot in this city.|30 bucks, nearly all your weekly money. That should be enough.|You're really running low on money now...}</i> # player 
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
 +   [Hail the barman] {Boy I need to talk to you.|Are you deaf boy?|Can I talk to you?} # player #PlayerDBox #0
-    {number_drinks == 3 : ->condor_madam}
+    {number_drinks >= 3 : ->condor_madam}
     <i>{&He doesn't even raise on eye on you.|He sees you, but prefer to go back to cleaning his glasses. Asshole.| MAybe if you get several drinks he would be forced to interact with you!}</i> # player #PlayerDBox #1
     ->ordering_drink
 
@@ -487,7 +487,7 @@ She threatens to get you out of the club. # otherCharacter
     She immediately stops to speak. # otherCharacter
     She says to you to follow her. # otherCharacter
     She leads you through a door. # otherCharacter
-    # NewBackground #7
+    # jump # NewBackground #7 # Demo
     ->END
 *   {knowledge_prostitute_name == 0} [Calm the situation] You try to calm her. You're not here to accuse anybody. # player
     You just want to know if anything happened. # player
@@ -527,7 +527,8 @@ She threatens to get you out of the club. # otherCharacter
     <i>He closes the door behind you.</i> # player
     <i>You're know in the main part of the club: an hidden casino/brothel.</i> # player
     <i>The madam is waiting for you.</i> # player
-    She asks you about Margaret. She hasn't seen her from two days. # otherCharacter
+    She asks you about Margaret. She hasn't seen her from two days. # otherCharacter 
+    # jump # Demo
     ->END
 
 =condor_fail
