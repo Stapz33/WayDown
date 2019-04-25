@@ -43,11 +43,11 @@ TODO Intro capo's apartment (retakes)
 #PlayerDBox #1
 <i>Fucking city.</i> # player 
 <i>"Come to San Francisco" they said. "It's like a Gold Rush for private detectives".</i> # player 
-<i>And I fell for it.</i> # player #NewNarrativeLog #12
+<i>And I fell for it.</i> # player
 <i>Ain't nobody like Bugsy Rosenthal to look like a damn fool.</i> # player 
-<i>Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.</i> # player #NewNarrativeLog #13 
+<i>Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.</i> # player
 <i>But everybody has to do something for a living.</i> # player 
-<i>And this mob is paying quite well.</i> # player #NewNarrativeLog #14
+<i>And this mob is paying quite well.</i> # player
 <i>But they're fucking savages, killing each other and all.</i> # player 
 <i>Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.</i> # player 
 <i>And now the fuckin' phone is ringing.</i> # player #SFXPlay #8
