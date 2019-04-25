@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class SaveLog
@@ -22,11 +23,20 @@ public class LogManager : MonoBehaviour
     private int m_nbOfPages = 1;
     private int m_ActualPage = 1;
     private SaveLog idxtosave;
-    
+    bool needtoUpdate = false;
+
+    private void Awake()
+    {
+        SceneManager.activeSceneChanged += ChangedActiveScene;
+    }
 
     private void Update()
     {
-        
+        if (needtoUpdate)
+        {
+            LogUpdate();
+            needtoUpdate = false;
+        }
     }
 
     public void StartingScript()
@@ -48,11 +58,20 @@ public class LogManager : MonoBehaviour
     {
         m_TextPanel.text = m_TextPanel.text + m_LogsDataBase[idx].Replace("\\n", "\n");
         idxtosave.SavedIdx.Add(idx);
+        if (feedback)
+        {
+            AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
+            LogButtonFeedback.SetActive(true);
+            NewInfoFeedback.SetTrigger("Info");
+        }
+        needtoUpdate = true;
+    }
+
+    public void LogUpdate()
+    {
         m_nbOfPages = m_TextPanel.textInfo.pageCount;
-        m_TextPanel.pageToDisplay = m_nbOfPages;
+        m_TextPanel.pageToDisplay = m_TextPanel.textInfo.pageCount;
         m_ActualPage = m_nbOfPages;
-        Debug.Log("m_nbOfPages " + m_nbOfPages);
-        Debug.Log("m_TextPanel " + m_TextPanel.textInfo.pageCount);
         if (m_ActualPage > 1)
         {
             PreviousButton.SetActive(true);
@@ -65,12 +84,7 @@ public class LogManager : MonoBehaviour
         {
             NextButton.SetActive(false);
         }
-        if (feedback)
-        {
-            AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
-            LogButtonFeedback.SetActive(true);
-            NewInfoFeedback.SetTrigger("Info");
-        }
+        
     }
 
 
@@ -129,8 +143,16 @@ public class LogManager : MonoBehaviour
         SaveLog();
     }
 
+
+
     public void ResetLogImage()
     {
         LogButtonFeedback.SetActive(false);
+    }
+
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        if (!MainUIManager.Singleton.GetStoryStarted())
+            SaveLog();
     }
 }
