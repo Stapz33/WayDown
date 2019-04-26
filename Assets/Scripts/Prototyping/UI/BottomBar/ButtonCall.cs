@@ -35,6 +35,13 @@ public class ButtonCallEditor : Editor
             case (int)ButtonType.Cigar:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("CigarSprites"), true);
                 break;
+            case (int)ButtonType.Whisky:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("CigarSprites"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("Bottle"), true);
+                break;
+            case (int)ButtonType.WhiskyBottle:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("Bottle"), true);
+                break;
             default:
                 break;
         }
@@ -44,7 +51,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo, Cigar }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo, Cigar, WhiskyBottle }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -56,6 +63,7 @@ public class ButtonCall : MonoBehaviour
     public Transform parent;
     public List<Sprite> CigarSprites;
     private int cigarIdx = 0;
+    public GameObject Bottle;
 
     private void Start()
     {
@@ -153,7 +161,21 @@ public class ButtonCall : MonoBehaviour
                 AudioManager.Singleton.ToggleRadio();
                 break;
             case ButtonType.Whisky:
-                AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
+                if (cigarIdx < CigarSprites.Count - 2)
+                {
+                    cigarIdx++;
+                    GetComponent<Image>().sprite = CigarSprites[cigarIdx];
+                    AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
+                    return;
+                }
+                else if (cigarIdx == CigarSprites.Count - 2)
+                {
+                    cigarIdx++;
+                    Bottle.SetActive(true);
+                    GetComponent<Image>().sprite = CigarSprites[cigarIdx];
+                    AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
+                }
+                
                 break;
             case ButtonType.Cigar:
                 if (cigarIdx < CigarSprites.Count - 1)
@@ -164,6 +186,10 @@ public class ButtonCall : MonoBehaviour
                 else
                     cigarIdx = 0;
                 GetComponent<Image>().sprite = CigarSprites[cigarIdx];
+                break;
+            case ButtonType.WhiskyBottle:
+                Bottle.GetComponent<ButtonCall>().Whiksy();
+                gameObject.SetActive(false);
                 break;
             default:
                 break;
@@ -191,5 +217,12 @@ public class ButtonCall : MonoBehaviour
     public void PlaySound()
     {
         AudioManager.Singleton.HoverButton();
+    }
+
+    public void Whiksy()
+    {
+        GetComponent<Button>().interactable = true;
+        cigarIdx = 0;
+        GetComponent<Image>().sprite = CigarSprites[cigarIdx];
     }
 }
