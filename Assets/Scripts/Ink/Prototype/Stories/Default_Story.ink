@@ -170,7 +170,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
     Show some respect, Rosenthal. We're not gonna always feed you. # otherCharacter
 *   [The fuck was that good?] The fuck was so good that they both died? # player
     Stop jockin' around. # otherCharacter
-- Someone killed them both, or they killed each other, but I don't think so. # otherCharacter #NewNarrativeLog #7 #NewNarrativeLog #8
+- Someone killed them both, or they killed each other, but I don't think so. # otherCharacter
  But you're the expert here! So what you gonna do? # otherCharacter
 -> lobby_apartment
 
@@ -294,7 +294,7 @@ TODO Checking the apartment (exploration, gathering clues)
 		<i>She didn't come with a lot of stuff. Except for a small lady bag.</i> # player
 	    # jump
 		***	[Open the purse] <i>You open that little woman's purse.</i> # player
-			<i>Inside, there's a key for a hotelroom.</i> # player #NewNarrativeLog #17 #NewNarrativeLog #9
+			<i>Inside, there's a key for a hotelroom.</i> # player #NewNarrativeLog #9
 		# jump # NewDocument #0
 		->clues_apartment
 *	[Check the bedroom] <i>You go to the bedroom.</i> # player
