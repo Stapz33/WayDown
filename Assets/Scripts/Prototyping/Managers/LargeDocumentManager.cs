@@ -13,16 +13,29 @@ public class LargeDocumentManager : MonoBehaviour
     private Image MultiDoc_01;
     private Image MultiDoc_02;
 
+
     public void Awake()
     {
         MultiDoc_01 = m_multiDoc.transform.GetChild(1).GetChild(0).GetComponent<Image>();
         MultiDoc_02 = m_multiDoc.transform.GetChild(1).GetChild(1).GetComponent<Image>();
     }
 
+    public void UpdateSingleDoc(Sprite sprite,Texture2D BW)
+    {
+        m_monoDoc.SetActive(true);
+        Transform Shad = m_monoDoc.transform.GetChild(1);
+        Shad.gameObject.SetActive(true);
+        m_monoDoc.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        Shad.GetComponent<Image>().sprite = sprite;
+        //Shad.GetComponent<Image>().material.SetTexture("_Text_01", BW);
+    }
+
     public void UpdateSingleDoc(Sprite sprite)
     {
         m_monoDoc.SetActive(true);
+        m_monoDoc.transform.GetChild(1).gameObject.SetActive(false);
         m_monoDoc.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        m_monoDoc.transform.GetChild(1).GetComponent<Image>().sprite = sprite;
     }
 
     public void HideSingleDoc()

@@ -27,6 +27,7 @@ public class ButtonCallEditor : Editor
                 break;
             case (int)ButtonType.OpenLargeDocument:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("DocumentInfo"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("BWText"), true);
                 break;
             case (int)ButtonType.SwitchDrawerTab:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("PagIdx"), true);
@@ -64,6 +65,7 @@ public class ButtonCall : MonoBehaviour
     public List<Sprite> CigarSprites;
     private int cigarIdx = 0;
     public GameObject Bottle;
+    public Texture2D BWText;
 
     private void Start()
     {
@@ -189,6 +191,8 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.WhiskyBottle:
                 Bottle.GetComponent<ButtonCall>().Whiksy();
+                transform.GetChild(0).gameObject.SetActive(false);
+                AudioManager.Singleton.ActivateAudio(AudioType.Bottle);
                 gameObject.SetActive(false);
                 break;
             default:

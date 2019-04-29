@@ -1,9 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using System;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [Serializable]
@@ -54,7 +52,7 @@ public class LogManager : MonoBehaviour
         m_ActualPage = m_nbOfPages;
     }
 
-    public void AddLogFromCSV(int idx,bool feedback)
+    public void AddLogFromCSV(int idx, bool feedback)
     {
         m_TextPanel.text = m_TextPanel.text + m_LogsDataBase[idx].Replace("\\n", "\n");
         idxtosave.SavedIdx.Add(idx);
@@ -84,7 +82,7 @@ public class LogManager : MonoBehaviour
         {
             NextButton.SetActive(false);
         }
-        
+
     }
 
 
@@ -126,21 +124,16 @@ public class LogManager : MonoBehaviour
     {
         StartingScript();
         List<int> yes = x.SavedIdx;
-        for (int i = 0; i < yes.Count;i++)
+        for (int i = 0; i < yes.Count; i++)
         {
             AddLogFromCSV(yes[i], false);
         }
+        SaveLog();
     }
 
     public void SaveLog()
     {
         SaveManager.Singleton.SaveLogPath(idxtosave);
-    }
-
-    private void OnApplicationQuit()
-    {
-        if (!MainUIManager.Singleton.GetStoryStarted())
-        SaveLog();
     }
 
 

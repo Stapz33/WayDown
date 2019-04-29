@@ -712,10 +712,22 @@ public class MainUIManager : MonoBehaviour {
         }
         l_DocumentsDrawerDocNB[DrawerIdx]++;
         if (needToShow)
-        ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite);
+        {
+            //if (Document.GetComponent<ButtonCall>().BWText != null)
+            //ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite, Document.GetComponent<ButtonCall>().BWText);
+            //else
+            ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite);
+        }
+        
     }
 
 
+
+    public void ShowLargeDocumentSingle(Sprite sprite,Texture2D BW)
+    {
+        m_LargeDocument.gameObject.SetActive(true);
+        m_LargeDocument.UpdateSingleDoc(sprite, BW);
+    }
 
     public void ShowLargeDocumentSingle(Sprite sprite)
     {
