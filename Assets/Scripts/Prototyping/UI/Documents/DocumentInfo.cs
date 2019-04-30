@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DocumentInfo : MonoBehaviour
 {
     private Text t_MyText;
+    
 
     private void Awake()
     {
@@ -13,10 +14,11 @@ public class DocumentInfo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
-        Vector3 newPos = new Vector3(Input.mousePosition.x +188, Input.mousePosition.y -70, Input.mousePosition.z);
-        transform.position = newPos;
+        Vector3 newPos = Input.mousePosition;
+        newPos.z = 0.36f;
+        transform.position = Camera.main.ScreenToWorldPoint(newPos);
     }
 
     public void UpdateText(string text)

@@ -36,13 +36,13 @@ public class Lamp : MonoBehaviour
     {
         if (isOn)
         {
-            GetComponent<Image>().sprite = nullsprite;
+            GetComponent<Image>().enabled = false;
             isOn = false;
             return;
         }
         else if (!isOn)
         {
-            GetComponent<Image>().sprite = lamp;
+            GetComponent<Image>().enabled = true;
             isOn = true;
             return;
         }

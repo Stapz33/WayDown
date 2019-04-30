@@ -140,7 +140,7 @@ Material:
     - _GlossyReflections: 1
     - _HdrpVersion: 2
     - _IncludeIndirectLighting: 1
-    - _MaskAmount: 10
+    - _MaskAmount: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
