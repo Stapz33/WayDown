@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle }
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance }
 
 public class AudioManager : MonoBehaviour
 {
@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_MusicSource = null;
     [SerializeField] private AudioClip m_MainMenuMusic = null;
     [SerializeField] private AudioClip m_StreetAmbiance = null;
+    [SerializeField] private AudioClip m_BarAmbiance = null;
+    [SerializeField] private AudioClip m_CarAmbiance = null;
 
     [Header("Address Book")]
     [SerializeField] private AudioSource m_AddressBookOpenAudio = null;
@@ -34,6 +36,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_BottleAudio = null;
     [SerializeField] private AudioSource m_NewLogAudio = null;
     [SerializeField] private AudioSource m_CigarAudio = null;
+    [SerializeField] private AudioSource m_BarEntranceAudio = null;
 
     [Header("Radio")]
     [SerializeField] private AudioSource m_RadioAudio = null;
@@ -102,6 +105,11 @@ public class AudioManager : MonoBehaviour
             case AudioType.PhoneRing:
                 m_PhoneRingAudio.Play();
                 break;
+            
+            case AudioType.BarEntrance:
+                m_BarEntranceAudio.Play();
+                break;
+
             case AudioType.Whisky:
                 m_WhiskyAudio.Play();
                 break;
@@ -172,6 +180,14 @@ public class AudioManager : MonoBehaviour
                 break;
             case 1:
                 m_MusicSource.clip = m_StreetAmbiance;
+                m_MusicSource.Play();
+                break;
+            case 2:
+                m_MusicSource.clip = m_BarAmbiance;
+                m_MusicSource.Play();
+                break;
+            case 3:
+                m_MusicSource.clip = m_CarAmbiance;
                 m_MusicSource.Play();
                 break;
             default:
