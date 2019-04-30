@@ -348,6 +348,7 @@ TODO Checking the apartment (exploration, gathering clues)
 
 =motel_lobby
 //Background Motel's lobby, no interlocutor at first
+#NewBackground #14
 <i>The reception is dimly lit.</i> # player
 <i>The only persons that come here exits the place immediately, only passing by.</i> # player
 <i>One man stays here. He seems to be the manager.</i> # player
@@ -429,7 +430,7 @@ The manager asks for the key. # otherCharacter
 {condor_entrance && knowledge_prostitute_name == 1 : ->condor_madam2}
 {condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
-# NewBackground #6
+# NewBackground #13
 <i>You arrive in front of the Condor Club and exit the taxi.</i> # player #PlayerDBox #1
 <i>The club has a large colorful neon sign, which matches the signs of the other places of the street.</i> # player
 <i>The Condor's seems to attract a lot of fancy people, men for the most part.</i> # player
@@ -440,6 +441,7 @@ The manager asks for the key. # otherCharacter
 
 =condor_entrance
 //Background Condor Club's entrance, no interocutor
+# NewBackground #6
 <i>Bugsy is in the club. The place is crowded.</i> # player
 <i>There's hardly any stool left empty at the bar.</i> # player
 <i>The rest of the room is packed, with music and agitation.</i> # player
@@ -510,10 +512,11 @@ She threatens to get you out of the club. # otherCharacter
 
 =condor_madam2
 //Background: Condor Club's street, no interlocutor
-# NewBackground #6
+# NewBackground #13
 <i>You go back to the Condor Club. This time, you're sure. The girl's name is Margaret O'Bannon.</i> # player #PlayerDBox #1
 <i>You enter the club.</i> # player
 //Background: Condor Club's entrance
+# NewBackground #6
 <i>You're in the club. As soon as you enter, the barman sees you.</i> # player
 <i>He comes immediately to you, with a baseball bat.</i> # player
 # jump # NewCharacterSprite #3
@@ -526,6 +529,7 @@ She threatens to get you out of the club. # otherCharacter
     He tells you to follow him. # otherCharacter
     He opens the door and tells you to enter. # otherCharacter
     <i>He closes the door behind you.</i> # player
+    # NewBackground #7
     <i>You're now in the main part of the club: an hidden casino/brothel.</i> # player
     <i>The madam is waiting for you.</i> # player
     She asks you about Margaret. She hasn't seen her from two days. # otherCharacter 
@@ -534,7 +538,7 @@ She threatens to get you out of the club. # otherCharacter
 
 =condor_fail
 //Background: Condor Club's street, no interlocutor
-# NewBackground #6
+# NewBackground #13
 <i>You go back to the Condor Club.</i> # player #PlayerDBox #1
 <i>But you're not so sure about what you could say without getting shot.</i> # player
 <i>You decide to go back and work a better approach.</i> # player
