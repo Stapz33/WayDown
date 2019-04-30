@@ -153,9 +153,11 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites:
   - {fileID: 21300000, guid: 9e2e5b2c285f09642891d2586135f319, type: 3}
-  - {fileID: 21300000, guid: 9e2e5b2c285f09642891d2586135f319, type: 3}
-  - {fileID: 21300000, guid: 9e2e5b2c285f09642891d2586135f319, type: 3}
+  - {fileID: 21300000, guid: a0c68aaa874133144af307e6bb37a61e, type: 3}
+  - {fileID: 21300000, guid: 124023cf3c8e29449b25211029eea960, type: 3}
+  - {fileID: 21300000, guid: 07a73a6938948e043bd0f0250549f3ef, type: 3}
   Bottle: {fileID: 505606621}
+  BWText: {fileID: 0}
 --- !u!114 &3276801452581643393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +447,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &37374204
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +787,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &103798737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1100,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &138185715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1255,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &146317056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +1638,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &172550874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1793,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &179194765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2063,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &192718696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,6 +2800,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3243,6 +3253,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &366535849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,6 +4203,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &463725621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +4802,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &505606621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,6 +4816,7 @@ GameObject:
   - component: {fileID: 505606624}
   - component: {fileID: 505606623}
   - component: {fileID: 505606626}
+  - component: {fileID: 1535088589}
   m_Layer: 5
   m_Name: Bottle
   m_TagString: Untagged
@@ -4817,15 +4831,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505606621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 592633706}
   m_Father: {fileID: 403301439}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 2.010715, y: 0.2065503}
-  m_AnchorMax: {x: 2.5888546, y: 2.5606232}
+  m_AnchorMin: {x: 1.9845293, y: 0.33128375}
+  m_AnchorMax: {x: 2.6191573, y: 2.443368}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4857,9 +4872,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7759f26a02e74e40b6bbf1e59ae7f5b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4942,6 +4957,54 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 7864489}
+  BWText: {fileID: 0}
+--- !u!114 &1535088589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505606621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 592633705}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 592633705}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &505805358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,6 +5233,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &576952828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,6 +5440,81 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
+--- !u!1 &592633705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592633706}
+  - component: {fileID: 592633708}
+  - component: {fileID: 592633707}
+  m_Layer: 5
+  m_Name: Bottle_HL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &592633706
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592633705}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 505606622}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1.9510043, y: 0.24300522}
+  m_AnchorMax: {x: 2.6814167, y: 2.4727943}
+  m_AnchoredPosition: {x: -83.779305, y: -132.34914}
+  m_SizeDelta: {x: 19.642723, y: -178.22913}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &592633708
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592633705}
+  m_CullTransparentMesh: 0
+--- !u!114 &592633707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592633705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 65ec8fd58a33eac42bb82776f07870c4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
 --- !u!1 &595548255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5609,6 +5748,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &614627103
 GameObject:
   m_ObjectHideFlags: 0
@@ -6148,6 +6288,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &627484563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7378,6 +7519,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7581,6 +7723,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &801440572
 GameObject:
   m_ObjectHideFlags: 0
@@ -7735,6 +7878,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &869010944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7889,6 +8033,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &878872193
 GameObject:
   m_ObjectHideFlags: 0
@@ -8806,6 +8951,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &986410724
 GameObject:
   m_ObjectHideFlags: 0
@@ -9975,6 +10121,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1118698155
 GameObject:
   m_ObjectHideFlags: 0
@@ -10615,6 +10762,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 055330981e15c574091b7f5668550ac7, type: 3}
   - {fileID: 21300000, guid: 4b6bde28bbdf50e43babc06d2a1d7fb2, type: 3}
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1214184241
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,6 +11100,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1255412703
 GameObject:
   m_ObjectHideFlags: 0
@@ -11185,6 +11334,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1261906940
 GameObject:
   m_ObjectHideFlags: 0
@@ -12142,6 +12292,7 @@ GameObject:
   - component: {fileID: 1362326157}
   - component: {fileID: 1362326159}
   - component: {fileID: 6592601487654391783}
+  - component: {fileID: 4295770721763325850}
   m_Layer: 5
   m_Name: LargeDocument
   m_TagString: Untagged
@@ -12193,7 +12344,27 @@ MonoBehaviour:
   m_monoDoc: {fileID: 5112406064320991667}
   m_multiDoc: {fileID: 8762849602714278132}
   m_ComparisonImage: {fileID: 1718463337}
+  m_Shader: {fileID: 2100000, guid: 92f98570d17ea234aa987b416c68405b, type: 2}
   m_NewDocAnimator: {fileID: 8985776391756279918}
+--- !u!95 &4295770721763325850
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362326156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7e4985020ee5f2449f7fc43ec26a030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1364443181
 GameObject:
   m_ObjectHideFlags: 0
@@ -12634,6 +12805,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1395799524
 GameObject:
   m_ObjectHideFlags: 0
@@ -13203,6 +13375,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1425594583
 GameObject:
   m_ObjectHideFlags: 0
@@ -13829,6 +14002,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1493713667
 GameObject:
   m_ObjectHideFlags: 0
@@ -15382,6 +15556,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1696085384
 GameObject:
   m_ObjectHideFlags: 0
@@ -17068,6 +17243,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17448,6 +17624,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1965646426
 GameObject:
   m_ObjectHideFlags: 0
@@ -18122,6 +18299,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &2017470633
 GameObject:
   m_ObjectHideFlags: 0
@@ -18355,6 +18533,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19593,6 +19772,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19777,6 +19957,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &3300590846614662822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20148,6 +20329,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &347900740061690790
 GameObject:
   m_ObjectHideFlags: 0
@@ -20381,6 +20563,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4314371587874610181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20644,6 +20827,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &739121059820230822
 GameObject:
   m_ObjectHideFlags: 0
@@ -20873,6 +21057,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &815723191024733672
 GameObject:
   m_ObjectHideFlags: 0
@@ -21531,6 +21716,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1744091953308491862
 GameObject:
   m_ObjectHideFlags: 0
@@ -21685,6 +21871,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21869,6 +22056,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1828475091049694442
 GameObject:
   m_ObjectHideFlags: 0
@@ -22023,6 +22211,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &1879118276934734193
 GameObject:
   m_ObjectHideFlags: 0
@@ -22459,7 +22648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 258.75, y: -99.299995}
+  m_AnchoredPosition: {x: 258.75, y: -99.29999}
   m_SizeDelta: {x: 517.5, y: 66.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4740821626179010035
@@ -22576,6 +22765,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &2108578088049348434
 GameObject:
   m_ObjectHideFlags: 0
@@ -22967,6 +23157,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &2393328879744604683
 GameObject:
   m_ObjectHideFlags: 0
@@ -23121,6 +23312,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &2513816815280073953
 GameObject:
   m_ObjectHideFlags: 0
@@ -23274,6 +23466,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23535,6 +23728,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &2970996321793077821
 GameObject:
   m_ObjectHideFlags: 0
@@ -23689,6 +23883,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &1013029804525518902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23984,6 +24179,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24168,6 +24364,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &3435956925808322819
 GameObject:
   m_ObjectHideFlags: 0
@@ -24233,7 +24430,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d516d136fa457244da8b9462919db05a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b458e4c6a8c9bd040a0cb2f3d4b5f986, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -24556,6 +24753,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24626,7 +24824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccf2586a5fbc4d42b65db5c58dd6b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_addressDescription: Police Rat
+  m_addressDescription: Corrupted Inspector
   m_addressImage: {fileID: 21300000, guid: b458e4c6a8c9bd040a0cb2f3d4b5f986, type: 3}
   m_MyAddresDoc: 0
   m_infosPanel: {fileID: 6334719694848356364}
@@ -24784,6 +24982,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &3026847968662924235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25415,6 +25614,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &4711738336117017329
 GameObject:
   m_ObjectHideFlags: 0
@@ -25570,6 +25770,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &9144483593664636385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25699,9 +25900,9 @@ Canvas:
   m_GameObject: {fileID: 4711738336415760018}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 0.36
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -25963,6 +26164,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26412,6 +26614,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26865,6 +27068,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &4828731707109996075
 GameObject:
   m_ObjectHideFlags: 0
@@ -27019,6 +27223,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &4956312706431274260
 GameObject:
   m_ObjectHideFlags: 0
@@ -27378,6 +27583,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &5069234246838491321
 GameObject:
   m_ObjectHideFlags: 0
@@ -27570,6 +27776,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27617,7 +27824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7942593790461692597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27950,6 +28157,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28171,7 +28379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 793.15, y: -99.299995}
+  m_AnchoredPosition: {x: 793.15, y: -99.29999}
   m_SizeDelta: {x: 517.5, y: 66.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9184439613575043730
@@ -28288,6 +28496,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &6079213545598984339
 GameObject:
   m_ObjectHideFlags: 0
@@ -28537,6 +28746,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &6100735471068354769
 GameObject:
   m_ObjectHideFlags: 0
@@ -28700,14 +28910,14 @@ GameObject:
   m_Component:
   - component: {fileID: 265106364000732645}
   - component: {fileID: 6621690690184090591}
-  - component: {fileID: 1542772487996203650}
+  - component: {fileID: 895699120}
   m_Layer: 5
   m_Name: SoloDoc (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &265106364000732645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28722,8 +28932,8 @@ RectTransform:
   m_Father: {fileID: 7942593790461692597}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.25764504, y: 0}
+  m_AnchorMax: {x: 0.7419056, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28735,7 +28945,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186390780642285810}
   m_CullTransparentMesh: 0
---- !u!114 &1542772487996203650
+--- !u!114 &895699120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28744,7 +28954,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6186390780642285810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 92f98570d17ea234aa987b416c68405b, type: 2}
@@ -28755,15 +28965,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4d1c69e33d0b1cc4396596f5a9177492, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_Texture: {fileID: 2800000, guid: 4d1c69e33d0b1cc4396596f5a9177492, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &6232962699357985359
 GameObject:
   m_ObjectHideFlags: 0
@@ -29346,6 +29554,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29845,6 +30054,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &7839123008627680092
 GameObject:
   m_ObjectHideFlags: 0
@@ -29999,6 +30209,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &8034790206089289726
 GameObject:
   m_ObjectHideFlags: 0
@@ -30153,6 +30364,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &8109764236584580291
 GameObject:
   m_ObjectHideFlags: 0
@@ -30460,6 +30672,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &8159657519187705242
 GameObject:
   m_ObjectHideFlags: 0
@@ -30650,7 +30863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 793.15, y: -33.1}
+  m_AnchoredPosition: {x: 793.15, y: -33.100006}
   m_SizeDelta: {x: 517.5, y: 66.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &505884725278944966
@@ -30767,6 +30980,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &8302189833414954400
 GameObject:
   m_ObjectHideFlags: 0
@@ -31294,6 +31508,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &8762849602714278132
 GameObject:
   m_ObjectHideFlags: 0
@@ -31487,6 +31702,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &8996855565462441207
 GameObject:
   m_ObjectHideFlags: 0
@@ -31641,6 +31857,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &8490684425796658438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31940,6 +32157,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32280,7 +32498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 258.75, y: -33.1}
+  m_AnchoredPosition: {x: 258.75, y: -33.100006}
   m_SizeDelta: {x: 517.5, y: 66.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9024222305486039103
@@ -32397,6 +32615,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!1 &9024222305688520781
 GameObject:
   m_ObjectHideFlags: 0
@@ -32669,6 +32888,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &4711738336229313634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32953,6 +33173,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &3523305887267859372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32990,6 +33211,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6488656764106831951}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33095,16 +33321,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -33140,6 +33356,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_DisabledColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776461, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Sprite
@@ -33161,6 +33382,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33266,16 +33497,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.r
@@ -33332,6 +33553,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33452,16 +33683,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.99999523
       objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.r
@@ -33518,6 +33739,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33637,16 +33868,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99999523
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01 (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
@@ -34039,6 +34260,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738336830892961}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34144,11 +34370,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -34199,6 +34420,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34304,16 +34535,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.r
@@ -34370,6 +34591,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3650309411169828605}
     m_Modifications:
+    - target: {fileID: 4454219499034773915, guid: 88de8e78227abf74cbafc622c6ac8931,
+        type: 3}
+      propertyPath: m_Name
+      value: Infolog
+      objectReference: {fileID: 0}
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34475,11 +34701,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4454219499034773915, guid: 88de8e78227abf74cbafc622c6ac8931,
-        type: 3}
-      propertyPath: m_Name
-      value: Infolog
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88de8e78227abf74cbafc622c6ac8931, type: 3}
 --- !u!95 &1329959209 stripped
@@ -34501,6 +34722,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9024222304185648064}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34621,11 +34847,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000173
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -34676,6 +34897,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7942593790461692597}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34781,16 +35007,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 27
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -34826,6 +35042,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_DisabledColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776461, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Sprite
@@ -34847,6 +35068,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34952,16 +35183,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.r
@@ -35018,6 +35239,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9024222305082197898}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35138,11 +35364,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000173
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -35193,6 +35414,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3650309411169828605}
     m_Modifications:
+    - target: {fileID: 4454219499034773915, guid: 88de8e78227abf74cbafc622c6ac8931,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoDoc
+      objectReference: {fileID: 0}
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35297,11 +35523,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4454219499034773915, guid: 88de8e78227abf74cbafc622c6ac8931,
-        type: 3}
-      propertyPath: m_Name
-      value: InfoDoc
       objectReference: {fileID: 0}
     - target: {fileID: 4454219497951374560, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
@@ -35489,6 +35710,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1919728676}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35594,21 +35825,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -35643,6 +35859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776461, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
@@ -35991,6 +36212,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36095,16 +36326,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
@@ -36322,6 +36543,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2656061936740677756}
     m_Modifications:
+    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: m_Name
+      value: CloseTabButton (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776464, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36427,16 +36653,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776465, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: CloseTabButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
-        type: 3}
-      propertyPath: TypeOfButton
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 6938115141777776466, guid: 46329349586821643a7c729a305f3e2a,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.r
@@ -36471,6 +36687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938115141777776467, guid: 46329349586821643a7c729a305f3e2a,
+        type: 3}
+      propertyPath: TypeOfButton
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46329349586821643a7c729a305f3e2a, type: 3}
@@ -36647,6 +36868,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738336415760014}
     m_Modifications:
+    - target: {fileID: 3387639666424110557, guid: b86292d85006756428da26868f568c55,
+        type: 3}
+      propertyPath: m_Name
+      value: LoadingScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 3387639666424110556, guid: b86292d85006756428da26868f568c55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36751,11 +36977,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3387639666424110557, guid: b86292d85006756428da26868f568c55,
-        type: 3}
-      propertyPath: m_Name
-      value: LoadingScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3387639668407342738, guid: b86292d85006756428da26868f568c55,
         type: 3}
@@ -36947,6 +37168,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4711738338015104644}
     m_Modifications:
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Adress_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547175, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37051,16 +37282,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_Name
-      value: Adress_01 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804222783760547172, guid: 2da2073c050911640ae7dce5ad46e4ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5804222783760547174, guid: 2da2073c050911640ae7dce5ad46e4ab,
         type: 3}

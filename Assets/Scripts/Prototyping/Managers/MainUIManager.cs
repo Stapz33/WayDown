@@ -713,10 +713,10 @@ public class MainUIManager : MonoBehaviour {
         l_DocumentsDrawerDocNB[DrawerIdx]++;
         if (needToShow)
         {
-            //if (Document.GetComponent<ButtonCall>().BWText != null)
-            //ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite, Document.GetComponent<ButtonCall>().BWText);
-            //else
-            ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite);
+            if (Document.GetComponent<ButtonCall>().BWText != null)
+                ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite, Document.GetComponent<ButtonCall>().BWText);
+            else
+                ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite);
         }
         
     }
