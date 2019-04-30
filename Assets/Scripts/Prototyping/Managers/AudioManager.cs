@@ -105,7 +105,6 @@ public class AudioManager : MonoBehaviour
             case AudioType.PhoneRing:
                 m_PhoneRingAudio.Play();
                 break;
-            
             case AudioType.BarEntrance:
                 m_BarEntranceAudio.Play();
                 break;
