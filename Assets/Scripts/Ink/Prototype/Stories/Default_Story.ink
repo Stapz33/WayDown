@@ -138,7 +138,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
     *->
 - <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
 <i>Giovanni is dead. Poor kid. And more Italians flooding North Beach.</i> # player
-<i>Someting's wrong. And I'm gettin' mixed in all that.</i> # player
+<i>Something's wrong. And I'm gettin' mixed in all that.</i> # player
 <i>We finally park in Francisco Street.</i> # player #MusicPlay #0
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
 # jump
@@ -291,7 +291,7 @@ TODO Checking the apartment (exploration, gathering clues)
 	**	[Look at the body] <i>You take a look at the dead body.</i> # player
 		<i>She really seems to be a prostitute.</i> # player
 		<i>The way she's dressed, her make-up...</i> # player
-		<i>But not a lot of prostitutes have a deep cut accross their throats.</i> # player
+		<i>But not a lot of prostitutes have a deep cut across their throats.</i> # player
 		<i>She didn't come with a lot of stuff. Except for a small lady bag.</i> # player
 	    # jump
 		***	[Open the purse] <i>You open that little woman's purse.</i> # player
@@ -526,7 +526,7 @@ She threatens to get you out of the club. # otherCharacter
     He tells you to follow him. # otherCharacter
     He opens the door and tells you to enter. # otherCharacter
     <i>He closes the door behind you.</i> # player
-    <i>You're know in the main part of the club: an hidden casino/brothel.</i> # player
+    <i>You're now in the main part of the club: an hidden casino/brothel.</i> # player
     <i>The madam is waiting for you.</i> # player
     She asks you about Margaret. She hasn't seen her from two days. # otherCharacter 
     # jump # Demo
