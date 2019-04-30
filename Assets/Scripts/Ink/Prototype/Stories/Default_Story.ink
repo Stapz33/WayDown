@@ -133,7 +133,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
         # jump
         **  Fuck... What happened to Giovanni? # player 
         //à changer
-            You will discover it soon enough. # otherCharacter #NewNarrativeLog #3
+            You will discover it soon enough. # otherCharacter #NewNarrativeLog #2
             ->car_convo
     *->
 - <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
@@ -171,7 +171,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 *   [The fuck was that good?] The fuck was so good that they both died? # player
     Stop jockin' around. # otherCharacter
 - Someone killed them both, or they killed each other, but I don't think so. # otherCharacter
- But you're the expert here! So what you gonna do? # otherCharacter
+ But you're the expert here! So what you gonna do? # otherCharacter #NewNarrativeLog #3
 -> lobby_apartment
 
 /*--------------------------------------------------------------------------------
