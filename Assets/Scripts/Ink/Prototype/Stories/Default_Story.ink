@@ -152,7 +152,7 @@ I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter 
 
 TODO First dialogue with Lanza (retakes)
 
-# NewBackground #0
+# NewBackground #12
 <i>Jimmy Lanza is waiting for me, near to the door.</i> # player # NewCharacterSprite #5
 For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
 # jump #PlayerDBox #0
@@ -203,7 +203,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 
 TODO Dialogue with Lanza (retakes)
 -   (lanza_convo)
-# jump # NewCharacterSprite #5
+# jump # NewCharacterSprite #5 # NewBackground #12
 *   What can you say about Giovanni? # player #PlayerDBox #0
     He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #5
     The Administration chose him to take the place of Lima during the trial. # otherCharacter
@@ -269,11 +269,11 @@ TODO Dialogue with Lanza (retakes)
 =check_apartment
 // BACKGROUND APARTMENT
 TODO Checking the apartment (exploration, gathering clues)
-#NewCharacterSprite #0
+#NewCharacterSprite #0 # NewBackground #0
 <i>I enter the apartment, only to find a first body. Poor Tommy.</i> # player #PlayerDBox #1
 <i>Ok, let's focus now and do that methodically, ain't I a damn detective?</i> # player
 - (clues_apartment)
-# jump
+# jump # NewBackground #0
 *	[Check Giovanni] {clues_apartment > 1: <i>You finally decide to go and check on Giovanni.</i>| <i>You decide to check on Giovanni first.</i>} # player
 	<i>Poor boy.</i>  # player
 	<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
@@ -285,6 +285,7 @@ TODO Checking the apartment (exploration, gathering clues)
 	<i>Nothing special here, except some old furnitures.</i> # player
 	->clues_apartment
 *	[Check the bathroom] <i>You go to check the bathroom.</i> # player
+	# NewBackground #11
 	<i>Oh that's right. The second body.</i> # player
 	<i>The entire floor is covered in blood. Hers, obviously.</i> # player
 	**	[Look at the body] <i>You take a look at the dead body.</i> # player
