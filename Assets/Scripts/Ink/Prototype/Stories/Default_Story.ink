@@ -139,7 +139,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
 <i>Giovanni is dead. Poor kid. And more Italians flooding North Beach.</i> # player
 <i>Something's wrong. And I'm gettin' mixed in all that.</i> # player
-<i>We finally park in Francisco Street.</i> # player #MusicPlay #0
+<i>We finally park in Francisco Street.</i> # player #MusicPlay #0 # NewBackground #15
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
 # jump
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
@@ -275,7 +275,7 @@ TODO Checking the apartment (exploration, gathering clues)
 - (clues_apartment)
 # jump # NewBackground #0
 *	[Check Giovanni] {clues_apartment > 1: <i>You finally decide to go and check on Giovanni.</i>| <i>You decide to check on Giovanni first.</i>} # player
-	<i>Poor boy.</i>  # player
+	<i>Poor boy.</i>  # player # NewBackground #16
 	<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
 	<i>Skull and brain pieces are all over the wall behind.</i> # player 
     <i>You find a poker chip on the ground.</i> # player #NewNarrativeLog #8
