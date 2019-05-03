@@ -28,6 +28,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3f0adbd36e2b29547a730b5cb422fe3e, type: 3}
   - {fileID: 21300000, guid: 9a078f5260e1b9543826ca7b2771c404, type: 3}
   - {fileID: 21300000, guid: cea58487dd7905445b2f167b9c5e2abc, type: 3}
+  - {fileID: 21300000, guid: b4c181fac781b114d9e4df2eb71413c8, type: 3}
+  - {fileID: 21300000, guid: 4f395ea5000ad7e4396fa2d5f4bb0ca6, type: 3}
   Characters:
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   - {fileID: 21300000, guid: 7ffd42b00f71f764297cb4c35160ea65, type: 3}
