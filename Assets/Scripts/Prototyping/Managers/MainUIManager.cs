@@ -679,7 +679,6 @@ public class MainUIManager : MonoBehaviour {
         yes.doc = DocumentIdx;
         yes.doctype = Type;
         DocDatas.doclist.Add(yes);
-        SaveManager.Singleton.SaveDocumentPath(DocDatas);
         if (!DocumentsDrawerButtonsParent.GetChild((int)Type).gameObject.activeSelf)
         {
             DocumentsDrawerButtonsParent.GetChild((int)Type).gameObject.SetActive(true);
@@ -1047,6 +1046,7 @@ public class MainUIManager : MonoBehaviour {
         SaveState.SetActive(true);
         Invoke("DeactivateSaveState", 4f);
         SaveStoryVar();
+        SaveManager.Singleton.SaveDocumentPath(DocDatas);
         ActualDatas.s_Story = _inkStory.state.ToJson();
         for (int a = 0; a < AddressesList.Count; a++)
         {

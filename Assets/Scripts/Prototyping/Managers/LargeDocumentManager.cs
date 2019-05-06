@@ -14,6 +14,7 @@ public class LargeDocumentManager : MonoBehaviour
     private Image MultiDoc_01;
     private Image MultiDoc_02;
 
+    private Sprite feedbackSprite = null;
     private float m_MaskAmount = 0f;
     private bool needtoMask = false;
 
@@ -44,6 +45,7 @@ public class LargeDocumentManager : MonoBehaviour
         Shad.gameObject.SetActive(true);
         m_monoDoc.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
         m_Shader.SetTexture("_Text_01", BW);
+        feedbackSprite = sprite;
         needtoMask = true;
     }
 
@@ -52,6 +54,7 @@ public class LargeDocumentManager : MonoBehaviour
         m_monoDoc.SetActive(true);
         m_monoDoc.transform.GetChild(1).gameObject.SetActive(false);
         m_monoDoc.transform.GetChild(0).GetComponent<Image>().sprite = sprite;
+        feedbackSprite = sprite;
     }
 
     public void HideSingleDoc()
@@ -62,6 +65,7 @@ public class LargeDocumentManager : MonoBehaviour
     public void HideSingleDocSolo()
     {
         m_monoDoc.SetActive(false);
+        m_NewDocAnimator.transform.GetChild(1).GetComponent<Image>().sprite = feedbackSprite;
         m_NewDocAnimator.SetTrigger("Info");
         AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
         m_Shader.SetFloat("_MaskAmount", 0f);
