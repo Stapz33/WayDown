@@ -42,7 +42,7 @@ TODO Intro capo's apartment (retakes)
 # DisableDiscussion
 #PlayerDBox #1
 <i>Fucking city.</i> # player 
-<i>"Come to San Francisco" they said. "It's like a Gold Rush for private detectives".</i> # player 
+<i>"Come to San Francisco" they said. "It's like a Gold Rush for private detectives".</i> # player
 <i>And I fell for it.</i> # player
 <i>Ain't nobody like Bugsy Rosenthal to look like a damn fool.</i> # player 
 <i>Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.</i> # player

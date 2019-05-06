@@ -489,7 +489,11 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (_inkStory.currentTags[f] == "NewNarrativeLog")
                 {
-                    m_LogManager.GetComponent<LogManager>().AddLogFromCSV(int.Parse(_inkStory.currentTags[f + 1]),true);
+                    m_LogManager.GetComponent<LogManager>().AddNLog(int.Parse(_inkStory.currentTags[f + 1]),true);
+                }
+                else if (_inkStory.currentTags[f] == "NewCharacterLog")
+                {
+                    m_LogManager.GetComponent<LogManager>().AddCLog(int.Parse(_inkStory.currentTags[f + 1]), true);
                 }
                 else if (_inkStory.currentTags[f] == "SFXPlay")
                 {

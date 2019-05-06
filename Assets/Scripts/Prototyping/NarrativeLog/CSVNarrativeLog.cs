@@ -30,25 +30,42 @@ public class CSVNarrativeLog : MonoBehaviour
     {
         string[] data = csvFile.text.Split(new char[] { '\n' }); // Separate each line of a file ( CSV better )
 
+        TextImportationLog importRow = new TextImportationLog();
 
-        for (int i = 1; i < data.Length; i++)
+        
+        string[] row = data[1].Split(new char[] { ',' }); // Separate each ',' from a CSV file
+                                                            // Create a custom class to stock text / id...
+        for (int y = 1; y < row.Length; y++)
         {
-            string[] row = data[i].Split(new char[] { ',' }); // Separate each ',' from a CSV file
-            TextImportationLog importRow = new TextImportationLog(); // Create a custom class to stock text / id...
-            for (int y = 1; y < row.Length; y++)
-            {
-                importRow.Logs.Add(row[y]);
-            }
-
-            keysImport.Add(importRow);
+            importRow.Logs.Add(row[y]);
         }
+
+
+        string[] rows = data[2].Split(new char[] { ',' }); // Separate each ',' from a CSV file
+                                                          // Create a custom class to stock text / id...
+        for (int y = 1; y < rows.Length; y++)
+        {
+            importRow.CLogs.Add(rows[y]);
+        }
+
+        keysImport.Add(importRow);
+
     }
 
     public List<string> GetStrings()
     {
         for (int i = 0; i < keysImport.Count;)
         {
-                return keysImport[i].Logs;
+            return keysImport[i].Logs;
+        }
+        return null;
+    }
+
+    public List<string> GetClogs()
+    {
+        for (int i = 0; i < keysImport.Count;)
+        {
+            return keysImport[i].CLogs;
         }
         return null;
     }
@@ -58,4 +75,5 @@ public class CSVNarrativeLog : MonoBehaviour
 public class TextImportationLog
 {
     public List<string> Logs = new List<string>();
+    public List<string> CLogs = new List<string>();
 }
