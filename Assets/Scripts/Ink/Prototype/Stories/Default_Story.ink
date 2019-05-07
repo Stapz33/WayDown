@@ -64,7 +64,7 @@ TODO Find Bugsy's address
 TODO Find dead capo's name
 # jump
 	*	Are you out of your mind?[] Did you fucking see the hour? # player #PlayerDBox #0
-- It's <color=yellow>James Lanza</color>. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7
+- It's <color=yellow>James Lanza</color>. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7 #NewCharacterLog #2
 You need to come here immediately. # otherCharacter 
 # jump
 	*	What time is it[?] for fuck's sake? # player 
@@ -140,7 +140,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 <i>Giovanni is dead. Poor kid. And more Italians flooding North Beach.</i> # player
 <i>Something's wrong. And I'm gettin' mixed in all that.</i> # player
 <i>We finally park in Francisco Street.</i> # player #MusicPlay #0 # NewBackground #15
-I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8
+I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0
 # jump
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0
@@ -352,7 +352,7 @@ TODO Checking the apartment (exploration, gathering clues)
 #NewBackground #14
 <i>The reception is dimly lit.</i> # player
 <i>The only persons that come here exits the place immediately, only passing by.</i> # player
-<i>One man stays here. He seems to be the manager.</i> # player
+<i>One man stays here. He seems to be the manager.</i> # player #NewCharacterLog #4
 //Interlocutor: Motel's manager
 He asks you  if he can help you. # otherCharacter # NewCharacterSprite #4
 Bugsy asks if he can visit the girl's room. # player #PlayerDBox #0
@@ -471,7 +471,7 @@ What do you want? # otherCharacter #NewCharacterSprite #3
 # jump
 *   [Tell him who you are] You tell him your name. # player #PlayerDBox #0
 - The barman tells you that he knows who you are. # otherCharacter
-So does the woman that seats next to you. # otherCharacter
+So does the woman that seats next to you. # otherCharacter #NewCharacterLog #6
 //Interlocutor: Madam
 # jump
 *   [Tell her what you do] You begin to explain what you're doing here. # player
