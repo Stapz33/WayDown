@@ -99,6 +99,7 @@ public class MainUIManager : MonoBehaviour {
         public bool m_IsCriminalKnown = false;
         public string s_Story = "";
         public List<bool> AddressState = new List<bool>();
+        public List<string> AddressDiscovered = new List<string>();
 
 
         //variables
@@ -153,6 +154,7 @@ public class MainUIManager : MonoBehaviour {
 
     
     private bool b_isGoodAddress = false;
+    private string stockedAdress = "";
 
     [Header("Police Office")]
     [SerializeField] private GameObject PoliceOfficeObject = null;
@@ -826,6 +828,7 @@ public class MainUIManager : MonoBehaviour {
             {
                 b_isGoodAddress = false;
             }
+            stockedAdress = AddressToTest;
         }
     }
 
@@ -840,11 +843,26 @@ public class MainUIManager : MonoBehaviour {
             SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover].GetActualStory());
             b_isGoodAddress = false;
             DiscoverNewAddress();
+            ActualDatas.AddressDiscovered.Add(stockedAdress);
         }
         else
         {
-            SetupNewStory(DefaultKnot);
-            DialogueBackground.sprite = DialogueDataBase.Backgrounds[4];
+            
+            for(int i = 0; i < ActualDatas.AddressDiscovered.Count; i++)
+            {
+                if (stockedAdress == ActualDatas.AddressDiscovered[i])
+                {
+                    SetupNewStory(AddressesList[i].GetActualStory());
+                    SetupDialogueSystem();
+                    AudioManager.Singleton.StopRadio();
+                    return;
+                }
+                else if (i == ActualDatas.AddressDiscovered.Count)
+                {
+                    SetupNewStory(DefaultKnot);
+                    DialogueBackground.sprite = DialogueDataBase.Backgrounds[4];
+                }
+            }
         }
         SetupDialogueSystem();
         AudioManager.Singleton.StopRadio();
