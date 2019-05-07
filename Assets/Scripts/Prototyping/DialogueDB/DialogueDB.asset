@@ -15,13 +15,13 @@ MonoBehaviour:
   Backgrounds:
   - {fileID: 21300000, guid: 154fea778aa7fdc4fae77da5a79d4419, type: 3}
   - {fileID: 21300000, guid: d9c4ef046e461e64d8adb8daedddc116, type: 3}
-  - {fileID: 21300000, guid: 7e38dfa33337bd343a7755b24883cf98, type: 3}
+  - {fileID: 21300000, guid: dd0ce551a41bc804d8381bcc9b0086dd, type: 3}
   - {fileID: 21300000, guid: 33859107e0e92204e89f37cbdfa2e02c, type: 3}
   - {fileID: 21300000, guid: b458e4c6a8c9bd040a0cb2f3d4b5f986, type: 3}
   - {fileID: 21300000, guid: 70892ccb54664314d8139270d0ad4120, type: 3}
   - {fileID: 21300000, guid: 5494e1ff33e165f49a421501b84a244a, type: 3}
   - {fileID: 21300000, guid: d288c87d9252e2a40bd5ddf68202695c, type: 3}
-  - {fileID: 21300000, guid: c763d7348898d484facfd41eb4ba1329, type: 3}
+  - {fileID: 21300000, guid: 5a5d8ef1fa6617547915ec206e411ed2, type: 3}
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   - {fileID: 21300000, guid: b7e87a612c5c9b84cb22698dc24a2108, type: 3}
   - {fileID: 21300000, guid: 3b49edcb916054c479465c6a5d882ed0, type: 3}
@@ -30,6 +30,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cea58487dd7905445b2f167b9c5e2abc, type: 3}
   - {fileID: 21300000, guid: b4c181fac781b114d9e4df2eb71413c8, type: 3}
   - {fileID: 21300000, guid: 4f395ea5000ad7e4396fa2d5f4bb0ca6, type: 3}
+  - {fileID: 21300000, guid: 312d1bd61b9d11445b7c18ff4428d323, type: 3}
+  - {fileID: 21300000, guid: b47660dc9df5e3349bc83b21bfc73de2, type: 3}
+  - {fileID: 21300000, guid: 6dd2cffadf256c74fb5b1d5daa977f0e, type: 3}
+  - {fileID: 21300000, guid: b09ae8a9633e30345a4ed85167c9a9e7, type: 3}
   Characters:
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   - {fileID: 21300000, guid: 7ffd42b00f71f764297cb4c35160ea65, type: 3}

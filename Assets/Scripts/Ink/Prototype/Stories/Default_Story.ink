@@ -79,10 +79,10 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 - <i>I hung up and got out of bed.</i> # player #PlayerDBox #1  #NewCharacterSprite #0
 <i>For fuck's sake, what did they do again?</i> # player
 # jump
-    *   [Go to Francisco Street] <> # player
+    *   [Go to Francisco Street] <> # player # NewBackground #4
     #MusicPlay #1
-- (cab) {<i>Not even the time for a coffee, I put on my hat and go outside to find a cab.</i>|} # player 
-# jump # NewBackground #4
+-  (cab){<i>Not even the time for a coffee, I put on my hat and go outside to find a cab.</i>|} # player 
+# jump
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player
         {<i>That prick doesn't even slow down.</i>-> cab|<i>Am I covered in shit?</i>-> cab|} # player
 - <i>As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by.</i> # player
@@ -203,7 +203,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 
 TODO Dialogue with Lanza (retakes)
 -   (lanza_convo)
-# jump # NewCharacterSprite #5 # NewBackground #12
+# jump # NewCharacterSprite #5
 *   What can you say about Giovanni? # player #PlayerDBox #0
     He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #5
     The Administration chose him to take the place of Lima during the trial. # otherCharacter
@@ -258,7 +258,7 @@ TODO Dialogue with Lanza (retakes)
     ->lanza_convo
 *   ->
 ~lanza_stitch_first = 1
-->lobby_apartment
+->lobby_apartment 
 
 /*--------------------------------------------------------------------------------
 
@@ -311,6 +311,7 @@ TODO Checking the apartment (exploration, gathering clues)
 	->clues_apartment
 *->
 <i>Nothing more for you in that apartment.</i> # player
+# NewBackground #12
 ~lanza_stitch_first = 0
 ->lobby_apartment
 

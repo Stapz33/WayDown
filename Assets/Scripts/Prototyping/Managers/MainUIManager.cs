@@ -34,6 +34,8 @@ public class MainUIManager : MonoBehaviour {
 
     [SerializeField] private Animator a_LoadingScreenAnimator = null;
 
+    
+
     #endregion
 
     #region DIALOGUE_SYSTEM_SETUP_DATA
@@ -54,6 +56,10 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private GameObject m_OtherCharacterVinyle = null;
     public List<Sprite> PlayerDialogueSprites;
     public List<Sprite> OCDialogueSprites;
+    //TransitionDialogueBG
+    [SerializeField] private Animator m_TransitionScreenAnimator = null;
+    private int m_DialogueBackgroundIdx = 0;
+    public GameObject Dialogue;
 
 
 
@@ -477,7 +483,8 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (_inkStory.currentTags[f] == "NewBackground")
                 {
-                    DialogueBackground.sprite = DialogueDataBase.Backgrounds[int.Parse(_inkStory.currentTags[f + 1])];
+                    m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
+                    SetTransitionDialogueBackground();
                 }
                 else if (_inkStory.currentTags[f] == "DisableDiscussion")
                 {
@@ -1198,6 +1205,29 @@ public class MainUIManager : MonoBehaviour {
     public bool GetStoryStarted()
     {
         return b_StoryStarted;
+    }
+
+    public void SetTransitionDialogueBackground()
+    {
+        Dialogue.SetActive(false);
+        DeactivateOtherCharacterSection();
+        DeactivatePlayerDialogue();
+        m_TransitionScreenAnimator.SetTrigger("Loading");
+        Invoke("SetBGDialogue", 0.3f);
+        
+    }
+
+    public void SetBGDialogue()
+    {
+        m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        Invoke("ResetBG", 1.5f);
+    }
+    public void ResetBG()
+    {
+        Dialogue.SetActive(true);
+        ReactivateOtherCharacterSection();
+        ReactivatePlayerDialogue();
     }
     
 }
