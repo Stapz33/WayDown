@@ -12,6 +12,7 @@ public class PoliceOffice : MonoBehaviour
     [SerializeField] private GameObject BlackBackgroundN = null;
     [SerializeField] private GameObject BlackBackgroundCS = null;
     [SerializeField] private UnityEngine.UI.Text InputField = null;
+    public ButtonCall Validation;
 
     private void Awake()
     {
@@ -25,7 +26,11 @@ public class PoliceOffice : MonoBehaviour
     {
         if (Input.GetKeyDown("return") && NameInput.activeSelf)
         {
-            NameValidation();
+            if (Validation.GetComponent<UnityEngine.UI.Button>().interactable == true)
+            {
+                NameValidation();
+                StartCoroutine(Validation.Resetcall());
+            }
         }
     }
 

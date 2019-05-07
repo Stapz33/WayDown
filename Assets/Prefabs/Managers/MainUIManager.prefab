@@ -2290,8 +2290,8 @@ RectTransform:
   m_Father: {fileID: 3650309411169828605}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.16317582, y: 0.09991205}
+  m_AnchorMax: {x: 1.2518306, y: 1.1276671}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5476,7 +5476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1.9510043, y: 0.24300522}
   m_AnchorMax: {x: 2.6814167, y: 2.4727943}
-  m_AnchoredPosition: {x: -83.77938, y: -132.34912}
+  m_AnchoredPosition: {x: -83.779396, y: -132.34912}
   m_SizeDelta: {x: 19.642723, y: -178.22913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &592633708
@@ -13569,7 +13569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5104357, y: 0.19807145}
   m_AnchorMax: {x: 0.9905401, y: 0.4577453}
-  m_AnchoredPosition: {x: 0.00015258789, y: 0.000579834}
+  m_AnchoredPosition: {x: 0.00018310547, y: 0.000579834}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1425594586
@@ -20484,7 +20484,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     m_HighlightedColor: {r: 0.91764706, g: 0.9019608, b: 0.6627451, a: 1}
     m_PressedColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
-    m_SelectedColor: {r: 0.91764706, g: 0.9019608, b: 0.6627451, a: 1}
+    m_SelectedColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     m_DisabledColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -21548,6 +21548,7 @@ MonoBehaviour:
   BlackBackgroundN: {fileID: 7787652704059749445}
   BlackBackgroundCS: {fileID: 2835499625412654805}
   InputField: {fileID: 7737947922773206569}
+  Validation: {fileID: 6163501144833595581}
 --- !u!1 &1022268685728732924
 GameObject:
   m_ObjectHideFlags: 0
@@ -24364,7 +24365,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     m_HighlightedColor: {r: 0.91764706, g: 0.9019608, b: 0.6627451, a: 1}
     m_PressedColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
-    m_SelectedColor: {r: 0.91764706, g: 0.9019608, b: 0.6627451, a: 1}
+    m_SelectedColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     m_DisabledColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -27807,8 +27808,8 @@ RectTransform:
   m_Father: {fileID: 4711738336415760014}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.0026511326, y: 0.85647506}
-  m_AnchorMax: {x: 0.06080349, y: 0.9922978}
+  m_AnchorMin: {x: 0.0029744953, y: 0.8570645}
+  m_AnchorMax: {x: 0.048794888, y: 0.97498053}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -27840,7 +27841,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5c07602c6ad547f40b494bf6af21a6ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 040e5c65acc7ccd4a8415fbbe32500ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -28350,7 +28351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5293366854654625502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35101,7 +35102,7 @@ PrefabInstance:
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: -2.2155087
+      value: -2.6797376
       objectReference: {fileID: 0}
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
@@ -35111,7 +35112,7 @@ PrefabInstance:
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: -0.055117868
+      value: -0.076733336
       objectReference: {fileID: 0}
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
@@ -35924,7 +35925,7 @@ PrefabInstance:
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: -2.2155087
+      value: -2.434687
       objectReference: {fileID: 0}
     - target: {fileID: 4454219499034773912, guid: 88de8e78227abf74cbafc622c6ac8931,
         type: 3}
@@ -36246,6 +36247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308045996234764822, guid: 814e58ddfab42aa4ebf94ca4e2eaa73f,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6306097156543283266, guid: 814e58ddfab42aa4ebf94ca4e2eaa73f,
         type: 3}
