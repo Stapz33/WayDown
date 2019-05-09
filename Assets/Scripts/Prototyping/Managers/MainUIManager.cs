@@ -847,8 +847,8 @@ public class MainUIManager : MonoBehaviour {
         }
         else
         {
-            
-            for(int i = 0; i < ActualDatas.AddressDiscovered.Count; i++)
+            // BUG
+            for (int i = 0; i < ActualDatas.AddressDiscovered.Count; i++)
             {
                 if (stockedAdress == ActualDatas.AddressDiscovered[i])
                 {
