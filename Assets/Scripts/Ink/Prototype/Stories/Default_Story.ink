@@ -83,7 +83,7 @@ You understand me Rosenthal? Come here right now. # otherCharacter
     #MusicPlay #1
 -  (cab){<i>Not even the time for a coffee, I put on my hat and go outside to find a cab.</i>|} # player 
 # jump
-    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player
+    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player #SFXPlay #15
         {<i>That prick doesn't even slow down.</i>-> cab|<i>Am I covered in shit?</i>-> cab|} # player
 - <i>As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by.</i> # player
 Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
