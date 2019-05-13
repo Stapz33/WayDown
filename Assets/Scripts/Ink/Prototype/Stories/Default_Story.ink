@@ -94,9 +94,9 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1
+- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14
 <i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player 
-<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0
+<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0 #MusicPlay #3
 - (car_convo)
 # jump # NewCharacterSprite #8
     *   Are you new in town, kid? # player #PlayerDBox #0
@@ -139,7 +139,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - <i>The ride continued in a complete silence.</i> # player #NewCharacterSprite #0 #PlayerDBox #1
 <i>Giovanni is dead. Poor kid. And more Italians flooding North Beach.</i> # player
 <i>Something's wrong. And I'm gettin' mixed in all that.</i> # player
-<i>We finally park in Francisco Street.</i> # player #MusicPlay #0 # NewBackground #15
+<i>We finally park in Francisco Street.</i> # player #MusicPlay #0 # NewBackground #15 #SFXPlay #14
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0
 # jump
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
@@ -432,17 +432,17 @@ The manager asks for the key. # otherCharacter
 {condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
 # NewBackground #13
-<i>You arrive in front of the Condor Club and exit the taxi.</i> # player #PlayerDBox #1
+<i>You arrive in front of the Condor Club and exit the taxi.</i> # player #PlayerDBox #1 #SFXPlay #14
 <i>The club has a large colorful neon sign, which matches the signs of the other places of the street.</i> # player
 <i>The Condor's seems to attract a lot of fancy people, men for the most part.</i> # player
 <i>They don't seem to be here for the drinks.</i> # player
 # jump
-*   [Enter the Condor Club] <i>You enter the bar.</i> # player
+*   [Enter the Condor Club] <i>You enter the bar.</i> # player #SFXPlay #9
     ->condor_entrance
 
 =condor_entrance
 //Background Condor Club's entrance, no interocutor
-# NewBackground #6
+# NewBackground #6 #MusicPlay #2
 <i>Bugsy is in the club. The place is crowded.</i> # player
 <i>There's hardly any stool left empty at the bar.</i> # player
 <i>The rest of the room is packed, with music and agitation.</i> # player
