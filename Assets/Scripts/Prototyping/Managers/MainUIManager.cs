@@ -69,6 +69,7 @@ public class MainUIManager : MonoBehaviour {
     private string s_PlayerFullText = "";
     private string s_OtherCharacterFullText = "";
     private bool isFirstStart = true;
+    private bool b_isCheckingView = false;
     
     public float TextSpeed;
     private float TextCooldown = 0f;
@@ -279,6 +280,21 @@ public class MainUIManager : MonoBehaviour {
                 m_OtherCharacterVinyle.SetActive(true);
             }
 
+            if (Input.GetButtonDown("Fire2"))
+            {
+                b_isCheckingView = !b_isCheckingView;
+                if (b_isCheckingView)
+                {
+                    Dialogue.SetActive(false);
+                    OtherCharacterSection.SetActive(false);
+                }
+                else
+                {
+                    Dialogue.SetActive(true);
+                    OtherCharacterSection.SetActive(true);
+                }
+            }
+
             if (TextCooldown > 0)
             {
                 TextCooldown -= Time.deltaTime;
@@ -312,7 +328,6 @@ public class MainUIManager : MonoBehaviour {
                         else if (characterText == 1)
                         {
                             CurrentText = s_OtherCharacterFullText.RichTextSubString(textlength);
-                            //CurrentText = s_OtherCharacterFullText.Substring(0, textlength);
                             OtherCharacterText.text = CurrentText;
                             if (CurrentText == s_OtherCharacterFullText)
                             {
@@ -715,6 +730,7 @@ public class MainUIManager : MonoBehaviour {
         }
         else if (l_DocumentsDrawerDocNB[DrawerIdx] >= 8)
         {
+            l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(0);
             l_DocumentsDrawer[DrawerIdx].GetComponent<DocumentFolderManager>().UnlockTab(1);
             Document = Instantiate(DocumentDataBase.Documents[DocumentIdx], l_DocumentsDrawer[DrawerIdx].transform.GetChild(0).GetChild(1));
         }
@@ -857,7 +873,7 @@ public class MainUIManager : MonoBehaviour {
                     AudioManager.Singleton.StopRadio();
                     return;
                 }
-                else if (i == ActualDatas.AddressDiscovered.Count)
+                else if (i == ActualDatas.AddressDiscovered.Count -1)
                 {
                     SetupNewStory(DefaultKnot);
                     DialogueBackground.sprite = DialogueDataBase.Backgrounds[4];
@@ -1232,14 +1248,13 @@ public class MainUIManager : MonoBehaviour {
         DeactivatePlayerDialogue();
         m_TransitionScreenAnimator.SetTrigger("Loading");
         Invoke("SetBGDialogue", 0.3f);
-        
     }
 
     public void SetBGDialogue()
     {
         m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
-        Invoke("ResetBG", 1.5f);
+        Invoke("ResetBG", 2f);
     }
     public void ResetBG()
     {

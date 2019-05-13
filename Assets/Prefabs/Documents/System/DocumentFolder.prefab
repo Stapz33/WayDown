@@ -85,7 +85,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531879520694483402}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.999993, y: 0.999993, z: 0.999993}
   m_Children:
@@ -170,10 +170,10 @@ RectTransform:
   m_Father: {fileID: 1226790203759418446}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 871.64, y: -56.45}
+  m_SizeDelta: {x: 249.04, y: 112.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5535449390711095305
 CanvasRenderer:
@@ -235,6 +235,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -242,11 +243,13 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 3155938244700394760}
@@ -284,6 +287,9 @@ MonoBehaviour:
   PagIdx: 3
   DocumentInfo: 
   parent: {fileID: 5612539813990645748}
+  CigarSprites: []
+  Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &7976753952007717522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +320,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &3374911339422609380
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,8 +358,8 @@ RectTransform:
   m_Father: {fileID: 531879520694483401}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.010664219, y: 0.018944882}
-  m_AnchorMax: {x: 0.9853369, y: 0.9810552}
+  m_AnchorMin: {x: 0.028570166, y: 0.06220072}
+  m_AnchorMax: {x: 0.96010756, y: 0.9492143}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -424,7 +429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2253270331061619517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -503,10 +508,10 @@ RectTransform:
   m_Father: {fileID: 1226790203759418446}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 622.6, y: -56.45}
+  m_SizeDelta: {x: 249.04, y: 112.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &461481473893650768
 CanvasRenderer:
@@ -568,6 +573,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -575,11 +581,13 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 961204372804119716}
@@ -617,6 +625,9 @@ MonoBehaviour:
   PagIdx: 2
   DocumentInfo: 
   parent: {fileID: 5612539813990645748}
+  CigarSprites: []
+  Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &1378701802921260002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +658,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &7310411821218778588
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +758,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -755,11 +766,13 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 3208993476570414218}
@@ -797,6 +810,9 @@ MonoBehaviour:
   PagIdx: 0
   DocumentInfo: 
   parent: {fileID: 5612539813990645748}
+  CigarSprites: []
+  Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &8644234268074529018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,7 +843,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &7434452626921021378
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,8 +879,8 @@ RectTransform:
   m_Father: {fileID: 5612539813990645748}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.026466262, y: 0.87141377}
-  m_AnchorMax: {x: 0.62211573, y: 0.9865437}
+  m_AnchorMin: {x: 0.045728404, y: 0.87141377}
+  m_AnchorMax: {x: 0.6045284, y: 0.98654366}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -897,7 +912,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 256.3, y: 112.9}
+  m_CellSize: {x: 249.04, y: 112.9}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -917,7 +932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &578584055273808679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -977,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3507988989867740166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1056,10 +1071,10 @@ RectTransform:
   m_Father: {fileID: 1226790203759418446}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 373.56, y: -56.45}
+  m_SizeDelta: {x: 249.04, y: 112.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3144084570468052293
 CanvasRenderer:
@@ -1121,6 +1136,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1128,11 +1144,13 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 78e0c166ce4c83b4e89f4013915f7f33, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: e6374566d2bee794fb2109569b4de615, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2730939945079757945}
@@ -1170,6 +1188,9 @@ MonoBehaviour:
   PagIdx: 1
   DocumentInfo: 
   parent: {fileID: 5612539813990645748}
+  CigarSprites: []
+  Bottle: {fileID: 0}
+  BWText: {fileID: 0}
 --- !u!114 &6959192866169711114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,4 +1221,3 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []

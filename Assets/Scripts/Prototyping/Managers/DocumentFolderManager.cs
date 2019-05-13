@@ -8,10 +8,6 @@ public class DocumentFolderManager : MonoBehaviour
     [SerializeField] private Transform tabParent = null;
 
 
-    private void Start()
-    {
-        GetComponent<Image>().alphaHitTestMinimumThreshold = 0f;
-    }
     public void UnlockTab(int idx)
     {
         GameObject tab = tabParent.GetChild(idx).gameObject;

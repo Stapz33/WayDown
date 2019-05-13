@@ -3424,6 +3424,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 883618703543517970, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618701700456310, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618701883436198, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618702589661563, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618702028973963, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618703394781483, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618703461274747, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618701932311530, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 883618702557433683, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487936766036157379, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 796772159198353536, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5ca66fb234f6ee40b8d6c7df2127660, type: 3}
 --- !u!1001 &4737124898895012314
