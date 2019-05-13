@@ -19,6 +19,7 @@ public class LogManager : MonoBehaviour
     [SerializeField] private GameObject NextButton = null;
     public GameObject NlogButton;
     public GameObject ClogButton;
+    public GameObject ClogFeedback;
     public GameObject LogButtonFeedback;
     public Animator NewInfoFeedback;
     private List<string> m_NLogsBase = new List<string>();
@@ -28,6 +29,8 @@ public class LogManager : MonoBehaviour
     private int m_CPages = 1;
     private int m_ActualCPage = 1;
     private SaveLog idxtosave;
+
+    private bool needReacFB = false;
 
     bool needtoUpdate = false;
 
@@ -83,6 +86,7 @@ public class LogManager : MonoBehaviour
         {
             AudioManager.Singleton.ActivateAudio(AudioType.NewLog);
             LogButtonFeedback.SetActive(true);
+            ClogFeedback.SetActive(true);
             NewInfoFeedback.SetTrigger("Info");
         }
         needtoUpdate = true;
@@ -225,6 +229,8 @@ public class LogManager : MonoBehaviour
 
     public void SetCLog()
     {
+        needReacFB = false;
+        ClogFeedback.SetActive(false);
         ClogButton.SetActive(false);
         NlogButton.SetActive(true);
         m_NTextPanel.gameObject.SetActive(false);
@@ -236,6 +242,24 @@ public class LogManager : MonoBehaviour
         if (m_CTextPanel.textInfo.pageCount > 1)
         {
             PreviousButton.SetActive(true);
+        }
+    }
+
+    public void CheckDeactivated()
+    {
+        if (needReacFB)
+        {
+            ClogFeedback.SetActive(true);
+            needReacFB = false;
+        }
+    }
+
+    public void CheckActivated()
+    {
+        if (ClogFeedback.activeSelf)
+        {
+            needReacFB = true;
+            ClogFeedback.SetActive(false);
         }
     }
 }
