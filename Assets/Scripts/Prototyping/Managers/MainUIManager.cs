@@ -33,6 +33,7 @@ public class MainUIManager : MonoBehaviour {
     #region LOADING_SCREEN_DATA
 
     [SerializeField] private Animator a_LoadingScreenAnimator = null;
+    public Loading Loading;
 
     
 
@@ -155,6 +156,7 @@ public class MainUIManager : MonoBehaviour {
 
     
     private bool b_isGoodAddress = false;
+    private bool b_DisablePlayer = false;
     private string stockedAdress = "";
 
     [Header("Police Office")]
@@ -234,6 +236,12 @@ public class MainUIManager : MonoBehaviour {
     }
 
     void Update () {
+
+        if (Input.GetKeyDown("escape"))
+        {
+            ExitMenu.SetActive(true);
+        }
+
         if (b_StoryStarted)
         {
             if (b_iscontinuing)
@@ -280,21 +288,7 @@ public class MainUIManager : MonoBehaviour {
                 m_OtherCharacterVinyle.SetActive(true);
             }
 
-            if (Input.GetButtonDown("Fire2"))
-            {
-                b_isCheckingView = !b_isCheckingView;
-                if (b_isCheckingView)
-                {
-                    Dialogue.SetActive(false);
-                    OtherCharacterSection.SetActive(false);
-                }
-                else
-                {
-                    Dialogue.SetActive(true);
-                    OtherCharacterSection.SetActive(true);
-                }
-            }
-
+            
             if (TextCooldown > 0)
             {
                 TextCooldown -= Time.deltaTime;
@@ -366,13 +360,30 @@ public class MainUIManager : MonoBehaviour {
                 }
                 
             }
-            
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                if (!b_isCheckingView)
+                {
+                    Dialogue.SetActive(false);
+                    OtherCharacterSection.SetActive(false);
+                    b_isCheckingView = true;
+                    b_StoryStarted = false;
+                }
+                return;
+            }
+
+
         }
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetButtonDown("Fire2") &&  b_isCheckingView)
         {
-            ExitMenu.SetActive(true);
+            Dialogue.SetActive(true);
+            OtherCharacterSection.SetActive(true);
+            b_StoryStarted = true;
+            b_isCheckingView = false;
         }
+
     }
 
     #region ADDRESS_SYSTEM
@@ -503,9 +514,22 @@ public class MainUIManager : MonoBehaviour {
                     m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
                     SetTransitionDialogueBackground();
                 }
+                else if (_inkStory.currentTags[f] == "NewNoBackground")
+                {
+                    DialogueBackground.sprite = DialogueDataBase.Backgrounds[int.Parse(_inkStory.currentTags[f + 1])];
+                }
+                else if (_inkStory.currentTags[f] == "NewBigBackground")
+                {
+                    m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
+                    SetTransitionDialogueBigBackground();
+                }
                 else if (_inkStory.currentTags[f] == "DisableDiscussion")
                 {
                     DeactivateOtherCharacterSection();
+                }
+                else if (_inkStory.currentTags[f] == "DisablePlayer")
+                {
+                    b_DisablePlayer = true;
                 }
                 else if (_inkStory.currentTags[f] == "ActivateDiscussion")
                 {
@@ -1158,7 +1182,7 @@ public class MainUIManager : MonoBehaviour {
         ExitMenu.SetActive(false);
         m_LogManager.GetComponent<LogManager>().SaveLog();
         a_LoadingScreenAnimator.SetTrigger("LoadBlack");
-        Invoke("async", 1f);
+        Invoke("async", 1.2f);
     }
 
     public void ContinueGame()
@@ -1248,6 +1272,17 @@ public class MainUIManager : MonoBehaviour {
         DeactivatePlayerDialogue();
         m_TransitionScreenAnimator.SetTrigger("Loading");
         Invoke("SetBGDialogue", 0.3f);
+        b_StoryStarted = false;
+    }
+
+    public void SetTransitionDialogueBigBackground()
+    {
+        Dialogue.SetActive(false);
+        DeactivateOtherCharacterSection();
+        DeactivatePlayerDialogue();
+        a_LoadingScreenAnimator.SetTrigger("Loading");
+        Invoke("SetBGBigDialogue", 0.3f);
+        b_StoryStarted = false;
     }
 
     public void SetBGDialogue()
@@ -1256,10 +1291,22 @@ public class MainUIManager : MonoBehaviour {
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         Invoke("ResetBG", 2f);
     }
+    public void SetBGBigDialogue()
+    {
+        m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        Invoke("ResetBG", 2.5f);
+    }
     public void ResetBG()
     {
         Dialogue.SetActive(true);
         ReactivateOtherCharacterSection();
+        b_StoryStarted = true;
+        if (b_DisablePlayer)
+        {
+            b_DisablePlayer = false;
+            return;
+        }
         ReactivatePlayerDialogue();
     }
     

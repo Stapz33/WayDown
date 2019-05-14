@@ -79,7 +79,7 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 - <i>I hung up and got out of bed.</i> # player #PlayerDBox #1  #NewCharacterSprite #0
 <i>For fuck's sake, what did they do again?</i> # player
 # jump
-    *   [Go to Francisco Street] <> # player # NewBackground #4
+    *   [Go to Francisco Street] <> # player # NewBigBackground #4
     #MusicPlay #1
 -  (cab){<i>Not even the time for a coffee, I put on my hat and go outside to find a cab.</i>|} # player 
 # jump
@@ -94,9 +94,9 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14
-<i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player 
-<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0 #MusicPlay #3
+- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14 #MusicPlay #3
+<i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player
+<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0
 - (car_convo)
 # jump # NewCharacterSprite #8
     *   Are you new in town, kid? # player #PlayerDBox #0
@@ -152,7 +152,7 @@ I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter 
 
 TODO First dialogue with Lanza (retakes)
 
-# NewBackground #12
+# NewBigBackground #12
 <i>Jimmy Lanza is waiting for me, near to the door.</i> # player # NewCharacterSprite #5
 For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
 # jump #PlayerDBox #0
@@ -311,7 +311,7 @@ TODO Checking the apartment (exploration, gathering clues)
 	->clues_apartment
 *->
 <i>Nothing more for you in that apartment.</i> # player
-# NewBackground #12
+# NewBackground #12 # DisablePlayer
 ~lanza_stitch_first = 0
 ->lobby_apartment
 
@@ -340,7 +340,7 @@ TODO Checking the apartment (exploration, gathering clues)
 
 ===prostitute_motel===
 //Background Motel's Street, no interlocutor
-#NewBackground #5 # NewCharacterSprite #0
+#NewNoBackground #5 # NewCharacterSprite #0
 <i>Bugsy arrives at the motel where the girl lived and exits the taxi.</i> # player #PlayerDBox #1
 <i>The motel is quite shifty, the neon sign is flickering.</i> # player
 # jump
@@ -431,7 +431,7 @@ The manager asks for the key. # otherCharacter
 {condor_entrance && knowledge_prostitute_name == 1 : ->condor_madam2}
 {condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
-# NewBackground #13
+# NewNoBackground #13
 <i>You arrive in front of the Condor Club and exit the taxi.</i> # player #PlayerDBox #1 #SFXPlay #14
 <i>The club has a large colorful neon sign, which matches the signs of the other places of the street.</i> # player
 <i>The Condor's seems to attract a lot of fancy people, men for the most part.</i> # player
@@ -513,7 +513,7 @@ She threatens to get you out of the club. # otherCharacter
 
 =condor_madam2
 //Background: Condor Club's street, no interlocutor
-# NewBackground #13
+# NewNoBackground #13
 <i>You go back to the Condor Club. This time, you're sure. The girl's name is Margaret O'Bannon.</i> # player #PlayerDBox #1
 <i>You enter the club.</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
@@ -539,7 +539,7 @@ She threatens to get you out of the club. # otherCharacter
 
 =condor_fail
 //Background: Condor Club's street, no interlocutor
-# NewBackground #13
+# NewNoBackground #13
 <i>You go back to the Condor Club.</i> # player #PlayerDBox #1
 <i>But you're not so sure about what you could say without getting shot.</i> # player
 <i>You decide to go back and work a better approach.</i> # player
