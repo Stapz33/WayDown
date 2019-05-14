@@ -94,9 +94,9 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14
-<i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player 
-<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0 #MusicPlay #3
+- <i>I step into the car.</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14 #MusicPlay #3
+<i>As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.</i> # player
+<i>He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.</i> # player #NewNarrativeLog #0
 - (car_convo)
 # jump # NewCharacterSprite #8
     *   Are you new in town, kid? # player #PlayerDBox #0
