@@ -513,6 +513,11 @@ public class MainUIManager : MonoBehaviour {
                     m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
                     SetTransitionDialogueBackground();
                 }
+                else if (_inkStory.currentTags[f] == "NewBigBackground")
+                {
+                    m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
+                    SetTransitionDialogueBigBackground();
+                }
                 else if (_inkStory.currentTags[f] == "DisableDiscussion")
                 {
                     DeactivateOtherCharacterSection();
@@ -1257,6 +1262,16 @@ public class MainUIManager : MonoBehaviour {
         DeactivateOtherCharacterSection();
         DeactivatePlayerDialogue();
         m_TransitionScreenAnimator.SetTrigger("Loading");
+        Invoke("SetBGDialogue", 0.3f);
+        b_StoryStarted = false;
+    }
+
+    public void SetTransitionDialogueBigBackground()
+    {
+        Dialogue.SetActive(false);
+        DeactivateOtherCharacterSection();
+        DeactivatePlayerDialogue();
+        a_LoadingScreenAnimator.SetTrigger("Loading");
         Invoke("SetBGDialogue", 0.3f);
         b_StoryStarted = false;
     }
