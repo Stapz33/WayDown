@@ -156,6 +156,7 @@ public class MainUIManager : MonoBehaviour {
 
     
     private bool b_isGoodAddress = false;
+    private bool b_DisablePlayer = false;
     private string stockedAdress = "";
 
     [Header("Police Office")]
@@ -513,6 +514,10 @@ public class MainUIManager : MonoBehaviour {
                     m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
                     SetTransitionDialogueBackground();
                 }
+                else if (_inkStory.currentTags[f] == "NewNoBackground")
+                {
+                    DialogueBackground.sprite = DialogueDataBase.Backgrounds[int.Parse(_inkStory.currentTags[f + 1])];
+                }
                 else if (_inkStory.currentTags[f] == "NewBigBackground")
                 {
                     m_DialogueBackgroundIdx = int.Parse(_inkStory.currentTags[f + 1]);
@@ -521,6 +526,10 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "DisableDiscussion")
                 {
                     DeactivateOtherCharacterSection();
+                }
+                else if (_inkStory.currentTags[f] == "DisablePlayer")
+                {
+                    b_DisablePlayer = true;
                 }
                 else if (_inkStory.currentTags[f] == "ActivateDiscussion")
                 {
@@ -1272,7 +1281,7 @@ public class MainUIManager : MonoBehaviour {
         DeactivateOtherCharacterSection();
         DeactivatePlayerDialogue();
         a_LoadingScreenAnimator.SetTrigger("Loading");
-        Invoke("SetBGDialogue", 0.3f);
+        Invoke("SetBGBigDialogue", 0.3f);
         b_StoryStarted = false;
     }
 
@@ -1282,12 +1291,23 @@ public class MainUIManager : MonoBehaviour {
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         Invoke("ResetBG", 2f);
     }
+    public void SetBGBigDialogue()
+    {
+        m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        Invoke("ResetBG", 2.5f);
+    }
     public void ResetBG()
     {
         Dialogue.SetActive(true);
         ReactivateOtherCharacterSection();
-        ReactivatePlayerDialogue();
         b_StoryStarted = true;
+        if (b_DisablePlayer)
+        {
+            b_DisablePlayer = false;
+            return;
+        }
+        ReactivatePlayerDialogue();
     }
     
 }

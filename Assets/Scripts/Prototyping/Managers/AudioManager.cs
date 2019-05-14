@@ -129,6 +129,8 @@ public class AudioManager : MonoBehaviour
                 m_CarDoorAudio.Play();
                 break;
             case AudioType.hailCab:
+                float rnnd = Random.Range(0.7f, 1.3f);
+                m_HailCabAudio.pitch = rnnd;
                 m_HailCabAudio.Play();
                 break;
             case AudioType.doorOpen:
