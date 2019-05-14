@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Backgrounds:
   - {fileID: 21300000, guid: 154fea778aa7fdc4fae77da5a79d4419, type: 3}
-  - {fileID: 21300000, guid: b458e4c6a8c9bd040a0cb2f3d4b5f986, type: 3}
   - {fileID: 21300000, guid: dd0ce551a41bc804d8381bcc9b0086dd, type: 3}
+  - {fileID: 21300000, guid: fa20576e3a2e8234689792317593c5f2, type: 3}
   - {fileID: 21300000, guid: 33859107e0e92204e89f37cbdfa2e02c, type: 3}
   - {fileID: 21300000, guid: b458e4c6a8c9bd040a0cb2f3d4b5f986, type: 3}
   - {fileID: 21300000, guid: 70892ccb54664314d8139270d0ad4120, type: 3}
@@ -34,6 +34,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b47660dc9df5e3349bc83b21bfc73de2, type: 3}
   - {fileID: 21300000, guid: 6dd2cffadf256c74fb5b1d5daa977f0e, type: 3}
   - {fileID: 21300000, guid: b09ae8a9633e30345a4ed85167c9a9e7, type: 3}
+  - {fileID: 21300000, guid: aa5bedef55f45624b990077e73d26a54, type: 3}
   Characters:
   - {fileID: 21300000, guid: d6a6bd6784d8261478017f98da0dfb77, type: 3}
   - {fileID: 21300000, guid: 7ffd42b00f71f764297cb4c35160ea65, type: 3}

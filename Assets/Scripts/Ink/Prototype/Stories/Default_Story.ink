@@ -1,7 +1,7 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = false
+VAR DEBUG = true
 
 ->start_capo_apartment
 ===start_capo_apartment===
@@ -273,7 +273,7 @@ TODO Checking the apartment (exploration, gathering clues)
 <i>I enter the apartment, only to find a first body. Poor Tommy.</i> # player #PlayerDBox #1
 <i>Ok, let's focus now and do that methodically, ain't I a damn detective?</i> # player
 - (clues_apartment)
-# jump # NewBackground #0
+# jump
 *	[Check Giovanni] {clues_apartment > 1: <i>You finally decide to go and check on Giovanni.</i>| <i>You decide to check on Giovanni first.</i>} # player
 	<i>Poor boy.</i>  # player # NewBackground #16
 	<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
@@ -281,7 +281,7 @@ TODO Checking the apartment (exploration, gathering clues)
     <i>You find a poker chip on the ground.</i> # player #NewNarrativeLog #8
     # NewDocument #2
 	->clues_apartment
-*	[Check the livingroom] <i>You go around the livingroom.</i> # player
+*	[Check the livingroom] <i>You go around the livingroom.</i> # player #NewBackground #0
 	<i>Nothing special here, except some old furnitures.</i> # player
 	->clues_apartment
 *	[Check the bathroom] <i>You go to check the bathroom.</i> # player
@@ -298,7 +298,7 @@ TODO Checking the apartment (exploration, gathering clues)
 			<i>Inside, there's a key for a hotelroom.</i> # player #NewNarrativeLog #9
 		# jump # NewDocument #0
 		->clues_apartment
-*	[Check the bedroom] <i>You go to the bedroom.</i> # player
+*	[Check the bedroom] <i>You go to the bedroom.</i> # player #NewBackground #21
 	<i>It's tidy, as if it was not often used.</i> # player
 	<i>The bed is made. Giovanni didn't sleep here so much.</i> # player
 	<i>There's a closet.</i> # player
@@ -515,7 +515,7 @@ She threatens to get you out of the club. # otherCharacter
 //Background: Condor Club's street, no interlocutor
 # NewBackground #13
 <i>You go back to the Condor Club. This time, you're sure. The girl's name is Margaret O'Bannon.</i> # player #PlayerDBox #1
-<i>You enter the club.</i> # player
+<i>You enter the club.</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
 # NewBackground #6
 <i>You're in the club. As soon as you enter, the barman sees you.</i> # player
