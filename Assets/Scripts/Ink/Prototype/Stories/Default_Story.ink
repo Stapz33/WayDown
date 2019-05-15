@@ -284,8 +284,8 @@ TODO Checking the apartment (exploration, gathering clues)
 *	[Check the livingroom] <i>You go around the livingroom.</i> # player #NewBackground #0
 	<i>Nothing special here, except some old furnitures.</i> # player
 	->clues_apartment
-*	[Check the bathroom] <i>You go to check the bathroom.</i> # player
-	# NewBackground #11
+*	[Check the bathroom] <i>You go to check the bathroom.</i> # player #SFXPlay #17
+	# NewBackground #11 #SFXPlay #18
 	<i>Oh that's right. The second body.</i> # player
 	<i>The entire floor is covered in blood. Hers, obviously.</i> # player
 	**	[Look at the body] <i>You take a look at the dead body.</i> # player
@@ -298,7 +298,8 @@ TODO Checking the apartment (exploration, gathering clues)
 			<i>Inside, there's a key for a hotelroom.</i> # player #NewNarrativeLog #9
 		# jump # NewDocument #0
 		->clues_apartment
-*	[Check the bedroom] <i>You go to the bedroom.</i> # player #NewBackground #21
+*	[Check the bedroom] <i>You go to the bedroom.</i> # player #SFXPlay #17
+	#NewBackground #21 #SFXPlay #18
 	<i>It's tidy, as if it was not often used.</i> # player
 	<i>The bed is made. Giovanni didn't sleep here so much.</i> # player
 	<i>There's a closet.</i> # player
@@ -310,7 +311,7 @@ TODO Checking the apartment (exploration, gathering clues)
 		<i>Unless that person is a slog. But Tommy was not.</i> # player #NewNarrativeLog #10
 	->clues_apartment
 *->
-<i>Nothing more for you in that apartment.</i> # player
+<i>Nothing more for you in that apartment.</i> # player 
 # NewBackground #12 # DisablePlayer
 ~lanza_stitch_first = 0
 ->lobby_apartment
@@ -447,14 +448,14 @@ The manager asks for the key. # otherCharacter
 <i>There's hardly any stool left empty at the bar.</i> # player
 <i>The rest of the room is packed, with music and agitation.</i> # player
 # jump
-*   [Go to the bar] <i>You approach to the bar.</i> # player
+*   [Go to the bar] <i>You approach the bar.</i> # player
 - <i>You find an empty stool.</i> # player
 <i>The barman does not seem to be interested in you. He's serving the other customers.</i> # player
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   [{number_drinks == 0 : Put a bill on the bar | Put another bill on the counter}] <i>You put {|another} a 10 dollars bill on the bar.</i> # player
-    <i>{The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.|The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.| Again, same dance, he snaps the bill and pour your drink, but seems more inclined to talk with you.}</i> # player
++   [{number_drinks == 0 : Put a bill on the bar | Put another bill on the counter}] <i>You put {|another} 10 dollars bill on the bar.</i> # player
+    <i>{The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.|The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.| Again, same dance, he snaps the bill and pours you a drink, but seems more inclined to talk with you.}</i> # player
     <i>{He doesn't seem to consider you interesting (or rich) enough to engage with you.| Don't fool yourself, 20 dollars is not enough to look like a big shot in this city.|30 bucks, nearly all your weekly money. That should be enough.|You're really running low on money now...}</i> # player 
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
@@ -471,11 +472,11 @@ What do you want? # otherCharacter #NewCharacterSprite #3
 # jump
 *   [Tell him who you are] You tell him your name. # player #PlayerDBox #0
 - The barman tells you that he knows who you are. # otherCharacter
-So does the woman that seats next to you. # otherCharacter #NewCharacterLog #6
+So does the woman that sits next to you. # otherCharacter #NewCharacterLog #6
 //Interlocutor: Madam
 # jump
 *   [Tell her what you do] You begin to explain what you're doing here. # player
-    She cuts you: she already knows it. # otherCharacter # NewCharacterSprite #6
+    She interupts you: she already knows it. # otherCharacter # NewCharacterSprite #6
     You're  a lonely fellow, coming here to enjoy the booze and music, without attracting any problem. # otherCharacter
     You say that you're not the one searching for problems here. # otherCharacter
 *   [Hit on her] You try to seduce her. # player
