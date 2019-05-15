@@ -267,51 +267,51 @@ TODO Dialogue with Lanza (retakes)
 --------------------------------------------------------------------------------*/
 
 =check_apartment
-// BACKGROUND APARTMENT
 TODO Checking the apartment (exploration, gathering clues)
 #NewCharacterSprite #0 # NewBackground #0
 <i>I enter the apartment, only to find a first body. Poor Tommy.</i> # player #PlayerDBox #1
 <i>Ok, let's focus now and do that methodically, ain't I a damn detective?</i> # player
+*	[Check the livingroom] <i>Nice apartment.</i> # player #NewBackground #0
+	<i>Nothing special here, except some furnitures.</i> # player
+	<i>And obviously, Giovanni's body.</i> # player
+	**	[Check Giovanni] <i>He's lying near the door.</i> # player
+		<i>Poor boy.</i>  # player # NewBackground #16
+		<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
+		<i>Skull and brain pieces are all over the wall behind.</i> # player 
+	    <i>What does this poker chip do here?</i> # player #NewNarrativeLog #8
+	    # NewDocument #2
+- <i>So now, where would I search for clues?</i> # player
 - (clues_apartment)
 # jump
-*	[Check Giovanni] {clues_apartment > 1: <i>You finally decide to go and check on Giovanni.</i>| <i>You decide to check on Giovanni first.</i>} # player
-	<i>Poor boy.</i>  # player # NewBackground #16
-	<i>His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.</i> # player
-	<i>Skull and brain pieces are all over the wall behind.</i> # player 
-    <i>You find a poker chip on the ground.</i> # player #NewNarrativeLog #8
-    # NewDocument #2
-	->clues_apartment
-*	[Check the livingroom] <i>You go around the livingroom.</i> # player #NewBackground #0
-	<i>Nothing special here, except some old furnitures.</i> # player
-	->clues_apartment
-*	[Check the bathroom] <i>You go to check the bathroom.</i> # player #SFXPlay #17
+*	[Check the bathroom] <i>Maybe there could be something in the bathroom.</i> # player #SFXPlay #17
 	# NewBackground #11 #SFXPlay #18
 	<i>Oh that's right. The second body.</i> # player
 	<i>The entire floor is covered in blood. Hers, obviously.</i> # player
-	**	[Look at the body] <i>You take a look at the dead body.</i> # player
+	**	[Look at the body] <i>Who do we have here?</i> # player
 		<i>She really seems to be a prostitute.</i> # player
 		<i>The way she's dressed, her make-up...</i> # player
 		<i>But not a lot of prostitutes have a deep cut across their throats.</i> # player
 		<i>She didn't come with a lot of stuff. Except for a small lady bag.</i> # player
 	    # jump
-		***	[Open the purse] <i>You open that little woman's purse.</i> # player
-			<i>Inside, there's a key for a hotelroom.</i> # player #NewNarrativeLog #9
+		***	[Open the purse] <i>Maybe I'll find more about her here.</i> # player
+			<i>No papers, only a key for a hotel room.</i> # player #NewNarrativeLog #9
 		# jump # NewDocument #0
 		->clues_apartment
-*	[Check the bedroom] <i>You go to the bedroom.</i> # player #SFXPlay #17
+*	[Check the bedroom] <i>Did they have enough time to use the bedroom?</i> # player #SFXPlay #17
 	#NewBackground #21 #SFXPlay #18
-	<i>It's tidy, as if it was not often used.</i> # player
-	<i>The bed is made. Giovanni didn't sleep here so much.</i> # player
-	<i>There's a closet.</i> # player
+	<i>It's tidy, with not a lot of furnitures.</i> # player
+	<i>Only a bed, an empty desk, and a closet.</i> # player
+	<i>The bed is still made. Giovanni didn't sleep here so much, or at least not yesterday.</i> # player
+	<i>There's the closet then.</i> # player
 	# jump
-	**	[Open the closet] <i>You open the door of this massive closet.</i> # player
-		<i>Only to find out that it is nearly empty.</i> # player
-		<i>A few suits, some underwear.</i> # player
+	**	[Open the closet] <i>What a freakin' creaking door!</i> # player
+		<i>But I know seems logical, the closet being nearly empty.</i> # player
+		<i>Only a few suits, some underwear.</i> # player
 		<i>Not enough for someone to live here.</i> # player
 		<i>Unless that person is a slog. But Tommy was not.</i> # player #NewNarrativeLog #10
 	->clues_apartment
 *->
-<i>Nothing more for you in that apartment.</i> # player 
+<i>Nothing more for me in that apartment.</i> # player 
 # NewBackground #12 # DisablePlayer
 ~lanza_stitch_first = 0
 ->lobby_apartment
