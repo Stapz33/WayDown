@@ -267,7 +267,6 @@ TODO Dialogue with Lanza (retakes)
 --------------------------------------------------------------------------------*/
 
 =check_apartment
-TODO Checking the apartment (exploration, gathering clues)
 #NewCharacterSprite #0 # NewBackground #0
 <i>I enter the apartment, only to find a first body. Poor Tommy.</i> # player #PlayerDBox #1
 <i>Ok, let's focus now and do that methodically, ain't I a damn detective?</i> # player
@@ -342,83 +341,120 @@ TODO Checking the apartment (exploration, gathering clues)
 ===prostitute_motel===
 //Background Motel's Street, no interlocutor
 #NewNoBackground #5 # NewCharacterSprite #0
-<i>Bugsy arrives at the motel where the girl lived and exits the taxi.</i> # player #PlayerDBox #1
-<i>The motel is quite shifty, the neon sign is flickering.</i> # player
+<i>That should be where the girl lived.</i> # player #PlayerDBox #1
+<i>What a shady motel...</i> # player
+<i>I wouldn't stay here for a million bucks!</i> # player
+<i>But I have to go in now</i> # player
 # jump
-*   [Enter the motel] Bugsy enters the motel. # player
+*   [Enter the motel] Let's go. # player
     ->motel_lobby
 
 =motel_lobby
 //Background Motel's lobby, no interlocutor at first
 #NewBackground #14
-<i>The reception is dimly lit.</i> # player
-<i>The only persons that come here exits the place immediately, only passing by.</i> # player
-<i>One man stays here. He seems to be the manager.</i> # player #NewCharacterLog #4
+<i>That place could use some light.</i> # player
+<i>The only client that come here exit the place immediately, only passing by.</i> # player
+<i>There's only this man. Seems to be the manager.</i> # player #NewCharacterLog #4
+*   [Go to the desk] <i>Let's talk to him, that's my only lead.</i> # player
 //Interlocutor: Motel's manager
-He asks you  if he can help you. # otherCharacter # NewCharacterSprite #4
-Bugsy asks if he can visit the girl's room. # player #PlayerDBox #0
-The manager asks for the key. # otherCharacter
+- Hello sir, what do you want? # otherCharacter # NewCharacterSprite #4
+*   [Ask about the room] Good day fellow, I want to access one of your room. # player #PlayerDBox #0
+- Alright, do you have the key? # otherCharacter
 # jump
-*   [Give him the key] Bugsy gives him the key. # player
-- The manager is reluctant, he doesn't want to let you in. # otherCharacter
+*   [Give him the key] Here it is, room 237. # player
+- <i>He seems puzzled, as if I wanted to penetrate the White House.</i> # player #PlayerDBox #1
+- And why would you want to go in there man? # otherCharacter
 # jump
-*   [Threaten him] Bugsy threatens him, saying that he should not interfere with the investigation on her death. # player
+*   [I'm investigating] And why would you want to interfere in an ongoing investigation. # player  #PlayerDBox #0
+    <i>I see the fear in his eyes. That's not someone that want to challenge the police.</i> # player
+    <i>I could swear that he immediately peed is pants.</i> # player
+    Oh... hum, ok sir, if you would follow me. # otherCharacter
 	-- (threat_manager)
-*   [Convince him] Bugsy tries to convince him that she's his girlfriend, and that he hasn't had news since some days. # player
-- The manager leads Bugsy to the room. # otherCharacter
+*   [She's my girlfriend] She's my girl, but I don't have news from her since two days... # player #PlayerDBox #0
+    Your girl... Why does she live alone then? # otherCharacter
+    **  [Not your business] Why don't mind your damn business? # player
+        Alright, calm down... So many weirdos here... # otherCharacter
+    **  [To keep our independance] We're a free couple. # player
+        A what? #otherCharacter
+        We do what we want. # otherCharacter
+        But she's your girl? # otherCharacter
+        Yes she is. # player
+        The one and only? # otherCharacter
+        Seems that I can't fool you... # player
+        Oh... I see... Alright old sport follow me. # otherCharacter
+- <i>That slow man finally seems to trust me, and leads me through the maze that is this shitty motel.</i> # player #PlayerDBox #1
 ->motel_room
 
 =motel_room
 //Background Motel's room, no interlocutor
 # NewBackground #3
 # NewCharacterSprite #0
-<i>Bugsy enters the room alone. and searches for clues about her.</i> # player #PlayerDBox #1
+I'll have to stay with you man, company's policy. # otherCharacter
+No problem, just let me search for a few things # player #PlayerDBox #0
+<i>That's not what you would call a lady bedroom.</i> # player #PlayerDBox #1
+<i>Nearly no furniture. No personal effects. Only some clothes on the bed.</i> # player
+<i>That could make sense if she's a prostitute, she wouldn't have much time to sleep here.</i> # player
+<i>But maybe I'll find something anyway.</i> # player
 - (motel_search)
 # jump #PlayerDBox #1
-*	[Search around the bed] <i>You look around the bed.</i> # player
+*	[Search around the bed] <i>The bed takes nearly the entire room space.</i> # player
 	<i>There's nothing worth noticing, except for the bedside table and a large closet.</i> # player
 	# jump
-	**	[Go to the bedside table] <i>You approach the bedside table.</i> # player
+	-- (room_search)
+	**	[Go to the bedside table] <i>This table is really the only remarkable object here.</i> # player
 		---	(bedside_search) # jump
-		***	[Look on the top] <i>You check above the bedside table.</i> # player
-	        <i>You find an ashtray with a box of matches on the side.</i> # player
+		***	[Look on the top] <i>Above the table, there's a little lamp.</i> # player
+	        <i>Beside it, an ashtray, full of cigarettes, and a little matchbox.</i> # player
 	        # NewDocument #1
+	        <i>What club could this fine lady go to?</i> # player
 	        ->bedside_search
-	    ***	[Open a drawer] <i>You open a drawer of the bedside table.</i> # player
-	        <i>You find a small bible.</i> # player
+	    ***	[Open a drawer] <i>What could we find on the drawer?</i> # player
+	        <i>Only a bible. What a joke...</i> # player
+	        <i>Is it a bookmark in it?</i> # player
 	        # jump
-	        ****  [Open the bible] <i>You open the bible.</i> # player
-	        <i>There is a wad of notes, with like 100 dollars in small bills.</i> # player
+	        ****  [Open the bible] <i>Let's see...</i> # player
+	        <i>Oh. 100 dollars. Big cuts only. Definitely a prostitute.</i> # player
+	        <i>But thanks for the money darling, you won't need it now./i> # player
 	        ->bedside_search
 	    ***	->
-	    	->motel_search
-	**	[Open the closet] <i>You open the closet.</i> # player
-    	<i>You find two kinds of clothes: normal ones, and some only to be worn by a working girl.</i> # player
+	    	->room_search
+	**	[Open the closet] <i>So now lady, what are you hiding in here?</i> # player
+    	<i>Only clothes, normal ones, but also some... enticing outfits.</i> # player
+    	<i>This only assures me that she's a working girl.</i> # player
     	->bedside_search
 	**	->
 		->motel_search
-*	[Check the desk] <i>You go to the desk to check it.</i> # player
-    <i>You find several letters on the desk: seems to be from her sister.</i> # player
+*	[Check the desk] <i>She seems to often use that desk given the amount of papers.</i> # player
+    <i>What are those? Seems to be letters from a relative.</i> # player
+    <i>I'll check that at the office.</i> # player
     # NewDocument #3
     ->motel_search
-*   [Go in the kitchen] <i>You go in the kitchen.</i> # player
-    <i>Nothing interesting in the kitchen, but it is small. You return in the room.</i> # player
-    ->motel_search
-*   [Ask questions to the manager] You ask the manager for informations about the girl. # player #PlayerDBox #0
+// *   [Go in the kitchen] <i>No space</i> # player
+//     <i>Nothing interesting in the kitchen, but it is small. You return in the room.</i> # player
+//     ->motel_search
+*   [Ask questions to the manager] Alright fellow, could I ask you something? # player #PlayerDBox #0
 //Interlocutor: Motel's manager
+    How can I help? # otherCharacter
 	-- (manager_questions)
 	# jump # NewCharacterSprite #4
-    **	[Ask about her occupation] You ask him if he know what she did for a living. # player
-    	He says that he didn't know anything about it, it is a place where no questions are asked to the clients. # otherCharacter
+    **	[Ask about her occupation] Do you know what she did for a living? # player
+    	Didn't ask. I didn't have a reason to. # otherCharacter
+    	If you have what's necessary to pay your room, you can stay. # otherCharacter
+    	But she often went outside at night. Sometime someone would wait for her outside. # otherCharacter
     ->manager_questions
-    **	[Ask her name] You ask him if he knew her full name. # player
-		Her name was Margaret, or Maggy. # otherCharacter
+    **	[Ask her name] Don't you happen to know her name? # player
+		Not a lot of people come here under their real name. # otherCharacter
     # NewCharacterSprite #0
+        So I don't bother to ask. # otherCharacter
+        I heard someone call her Margaret one time. # otherCharacter
+        But I would not give it too much thoughts. # otherCharacter
     ->motel_search
 *->
-<i>Nothing more to find here, you exit and take the cab back to your office.</i> # player #PlayerDBox #1
-<i>This girl seems to be your only lead for now.</i> # player
-<i>But you don't know where she worked, or even her name.</i> # player #NewNarrativeLog #11
+I'm done here. # player #PlayerDBox #0
+<i>I leave without giving him a chance to believe that I'm not with the police.</i> # player #PlayerDBox #1
+//changement background: exterieur motel
+<i>Not too much about that girl... I'll check what I found at the office.</i> # player
+<i>Where she worked, what's her name... I need something.</i> # player #NewNarrativeLog #11
 # NewInvestigation
 ->END
 
