@@ -346,7 +346,7 @@ TODO Dialogue with Lanza (retakes)
 <i>(I wouldn't stay here for a million bucks!)</i> # player
 <i>(But I have to go in now.)</i> # player
 # jump
-*   [Enter the motel] Let's go. # player #SFXPlay #17
+*   [Enter the motel] <i>(Let's go.)</i> # player #SFXPlay #17
     ->motel_lobby
 
 =motel_lobby
@@ -421,7 +421,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 	**	[Open the closet] <i>(So now lady, what are you hiding in here?)</i> # player #SFXPlay #16
     	<i>(Only clothes, normal ones, but also some... enticing outfits.)</i> # player
     	<i>(This only assures me that she's a working girl.)</i> # player
-    	->bedside_search
+    	->room_search
 	**	->
 		->motel_search
 *	[Check the desk] <i>(She seems to often use that desk given the amount of papers.)</i> # player
@@ -448,7 +448,9 @@ No problem, just let me search for a few things # player #PlayerDBox #0
         I heard someone call her Margaret one time. # otherCharacter
         But I would not give it too much thoughts. # otherCharacter
     # NewCharacterSprite #0
-    ->motel_search
+    ->manager_questions
+    **	->
+    	->motel_search
 *->
 I'm done here. # player #PlayerDBox #0
 <i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1
