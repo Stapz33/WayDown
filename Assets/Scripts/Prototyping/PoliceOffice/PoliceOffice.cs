@@ -43,7 +43,7 @@ public class PoliceOffice : MonoBehaviour
 
     public void OpenCSTab()
     {
-        Inspector.NameTextLaunch();
+        Inspector.FaceTextLaunch();
         MainUIManager.Singleton.ResetDropdownValue();
         CsInput.SetActive(true);
         BlackBackgroundCS.SetActive(true);

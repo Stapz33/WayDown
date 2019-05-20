@@ -944,7 +944,7 @@ public class MainUIManager : MonoBehaviour {
         string GoodName = GetActualName();
         if (GoodName != "")
         {
-            if (name == GoodName && !ActualDatas.m_IsCriminalKnown)
+            if (name.ToLower().Replace("'","") == GoodName && !ActualDatas.m_IsCriminalKnown)
             {
                 PoliceOffice.Singleton.GoodName();
                 Invoke("AddNewCriminalRecord", 1.5f);
