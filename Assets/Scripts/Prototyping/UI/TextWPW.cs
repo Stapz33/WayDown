@@ -63,7 +63,7 @@ public class TextWPW : MonoBehaviour
         TextCooldown = TextSpeed;
         PlayerText.text = "";
         s_PlayerFullText = "";
-        s_PlayerFullText = "And who is the winner ?";
+        s_PlayerFullText = "And what is this sweet name ?";
         textlength = 0;
     }
 
@@ -81,7 +81,7 @@ public class TextWPW : MonoBehaviour
         TextCooldown = TextSpeed;
         PlayerText.text = "";
         s_PlayerFullText = "";
-        s_PlayerFullText = "Give me his face then";
+        s_PlayerFullText = "Here's a note give me the details";
         textlength = 0;
     }
 
@@ -90,7 +90,7 @@ public class TextWPW : MonoBehaviour
         TextCooldown = TextSpeed;
         PlayerText.text = "";
         s_PlayerFullText = "";
-        s_PlayerFullText = "Wait a second, no i have no one named like this in the records";
+        s_PlayerFullText = "ugh, no i have no one named like this in the records";
         textlength = 0;
     }
 
@@ -99,7 +99,7 @@ public class TextWPW : MonoBehaviour
         TextCooldown = TextSpeed;
         PlayerText.text = "";
         s_PlayerFullText = "";
-        s_PlayerFullText = "Wait a second, there are too many possible profiles";
+        s_PlayerFullText = "Meh, there are too many possible profiles";
         textlength = 0;
     }
 
@@ -108,7 +108,7 @@ public class TextWPW : MonoBehaviour
         TextCooldown = TextSpeed;
         PlayerText.text = "";
         s_PlayerFullText = "";
-        s_PlayerFullText = "Wait a second, so this is the guy your lookin' for huh ?";
+        s_PlayerFullText = "I think we have a winner here";
         textlength = 0;
     }
 
