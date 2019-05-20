@@ -33,7 +33,6 @@ public class MainUIManager : MonoBehaviour {
     #region LOADING_SCREEN_DATA
 
     [SerializeField] private Animator a_LoadingScreenAnimator = null;
-    public Loading Loading;
 
     
 
@@ -61,6 +60,7 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private Animator m_TransitionScreenAnimator = null;
     private int m_DialogueBackgroundIdx = 0;
     public GameObject Dialogue;
+    public GameObject FreemodeIndicator;
 
 
 
@@ -369,6 +369,7 @@ public class MainUIManager : MonoBehaviour {
                     OtherCharacterSection.SetActive(false);
                     b_isCheckingView = true;
                     b_StoryStarted = false;
+                    FreemodeIndicator.SetActive(true);
                 }
                 return;
             }
@@ -382,6 +383,7 @@ public class MainUIManager : MonoBehaviour {
             OtherCharacterSection.SetActive(true);
             b_StoryStarted = true;
             b_isCheckingView = false;
+            FreemodeIndicator.SetActive(false);
         }
 
     }
