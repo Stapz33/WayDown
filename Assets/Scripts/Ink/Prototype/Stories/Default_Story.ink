@@ -13,11 +13,11 @@ VAR DEBUG = true
 		**	[Discussing with Lanza in the Lobby] -> start_capo_apartment.lobby_apartment
 		**	[Deeper discussion with Lanza] -> start_capo_apartment.lanza_dialogue
 		**  [Checking the apartment] -> start_capo_apartment.check_apartment
-	*	Prostitute Motel[]
+	*	Prostitute Motel[] #NewInvestigation
 		**	[Start] ->prostitute_motel
 		**	[Motel lobby] ->prostitute_motel.motel_lobby
 		**	[Motel room] ->prostitute_motel.motel_room
-	*	Condor Club[]
+	*	Condor Club[] #NewInvestigation #NewInvestigation
 		**	[Start] ->condor_club
 		**	[Entrance] ->condor_club.condor_entrance
 		**	[First discussion with madam] ->condor_club.condor_madam
@@ -362,13 +362,13 @@ TODO Dialogue with Lanza (retakes)
 - Alright, do you have the key? # otherCharacter
 # jump
 *   [Give him the key] Here it is, room 237. # player 
-- <i>(He seems puzzled, as if I wanted to penetrate the White House.)</i> # player #PlayerDBox #1
+- <i>(He seems puzzled, as if I wanted to penetrate the White House.)</i> # player #PlayerDBox #1 #NewNarrativeLog #11
 - And why would you want to go in there man? # otherCharacter
 # jump
 *   [I'm investigating] And why would you want to interfere in an ongoing investigation. # player  #PlayerDBox #0
     <i>(I see the fear in his eyes. That's not someone that want to challenge the police.)</i> # player
     <i>(I could swear that he immediately peed is pants.)</i> # player
-    Oh... hum, ok sir, if you would follow me. # otherCharacter
+    Oh... hum, ok sir, if you would follow me. # otherCharacter #NewNarrativeLog #12
 	-- (threat_manager)
 *   [She's my girlfriend] She's my girl, but I don't have news from her since two days... # player #PlayerDBox #0
     Your girl... Why does she live alone then? # otherCharacter
@@ -382,15 +382,15 @@ TODO Dialogue with Lanza (retakes)
         The one and only? # otherCharacter
         Seems that I can't fool you... # player
         Oh... I see... Alright old sport follow me. # otherCharacter
-- <i>(That slow man finally seems to trust me, and leads me through the maze that is this shitty motel.)</i> # player #PlayerDBox #1 #SFXPlay #16
+- <i>(That slow man finally seems to trust me, and leads me through the maze that is this shitty motel.)</i> # player #PlayerDBox #1 
 ->motel_room
 
 =motel_room
 //Background Motel's room, no interlocutor
-# NewBackground #3 # DisablePlayer
-# NewCharacterSprite #0
+# NewBackground #3 # DisablePlayer #SFXPlay #16 #NewCharacterSprite #4
 I'll have to stay with you man, company's policy. # otherCharacter
 No problem, just let me search for a few things # player #PlayerDBox #0
+# NewCharacterSprite #0
 <i>(That's not what you would call a lady bedroom.)</i> # player #PlayerDBox #1
 <i>(Nearly no furniture. No personal effects. Only some clothes on the bed.)</i> # player
 <i>(That could make sense if she's a prostitute, she wouldn't have much time to sleep here.)</i> # player
@@ -432,11 +432,11 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 // *   [Go in the kitchen] <i>No space</i> # player
 //     <i>Nothing interesting in the kitchen, but it is small. You return in the room.</i> # player
 //     ->motel_search
-*   [Ask questions to the manager] Alright fellow, could I ask you something? # player #PlayerDBox #0
+*   [Ask questions to the manager] Alright fellow, could I ask you something? # player #PlayerDBox #0 # NewCharacterSprite #4
 //Interlocutor: Motel's manager
     How can I help? # otherCharacter
 	-- (manager_questions)
-	# jump # NewCharacterSprite #4
+	# jump
     **	[Ask about her occupation] Do you know what she did for a living? # player
     	Didn't ask. I didn't have a reason to. # otherCharacter
     	If you have what's necessary to pay your room, you can stay. # otherCharacter
@@ -453,11 +453,10 @@ No problem, just let me search for a few things # player #PlayerDBox #0
     	->motel_search
 *->
 I'm done here. # player #PlayerDBox #0
-<i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1
-//changement background: exterieur motel
-#NewBackground #5
+<i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1 #SFXPlay #17
+# NewCharacterSprite #0 #NewBackground #5
 <i>(Not too much about that girl... I'll check what I found at the office.)</i> # player
-<i>(Where she worked, what's her name... I need something.)</i> # player #NewNarrativeLog #11
+<i>(Where she worked, what's her last name... I need something.)</i> # player #NewNarrativeLog #13
 # NewInvestigation
 ->END
 
