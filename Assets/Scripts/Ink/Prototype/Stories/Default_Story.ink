@@ -340,7 +340,7 @@ TODO Dialogue with Lanza (retakes)
 
 ===prostitute_motel===
 //Background Motel's Street, no interlocutor
-#NewNoBackground #5 # NewCharacterSprite #0
+#NewNoBackground #5 # NewCharacterSprite #0 #MusicPlay #1
 <i>(That should be where the girl lived.)</i> # player #PlayerDBox #1
 <i>(What a shady motel...)</i> # player
 <i>(I wouldn't stay here for a million bucks!)</i> # player
@@ -352,7 +352,7 @@ TODO Dialogue with Lanza (retakes)
 =motel_lobby
 //Background Motel's lobby, no interlocutor at first
 #NewBackground #14
-<i>(That place could use some light.)</i> # player
+<i>(That place could use some light.)</i> # player #MusicPlay #0
 <i>(The only client that come here exit the place immediately, only passing by.)</i> # player
 <i>(There's only this man. Seems to be the manager.)</i> # player #NewCharacterLog #4
 *   [Go to the desk] <i>(Let's talk to him, that's my only lead.)</i> # player
@@ -387,7 +387,7 @@ TODO Dialogue with Lanza (retakes)
 
 =motel_room
 //Background Motel's room, no interlocutor
-# NewBackground #3 # DisablePlayer #SFXPlay #16 #NewCharacterSprite #4
+# NewBackground #3 # DisablePlayer #SFXPlay #19 #NewCharacterSprite #4
 I'll have to stay with you man, company's policy. # otherCharacter
 No problem, just let me search for a few things # player #PlayerDBox #0
 # NewCharacterSprite #0
@@ -401,7 +401,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 	<i>(There's nothing worth noticing, except for the bedside table and a large closet.)</i> # player
 	# jump
 	-- (room_search)
-	**	[Go to the bedside table] <i>(This table is really the only remarkable object here.)</i> # player
+	**	[Go to the bedside table] <i>(This table is really the only remarkable object here.)</i> # player # NewCharacterSprite #0
 		---	(bedside_search) # jump
 		***	[Look on the top] <i>(Above the table, there's a little lamp.)</i> # player
 	        <i>(Beside it, an ashtray, full of cigarettes, and a little matchbox.)</i> # player
@@ -424,7 +424,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
     	->room_search
 	**	->
 		->motel_search
-*	[Check the desk] <i>(She seems to often use that desk given the amount of papers.)</i> # player
+*	[Check the desk] <i>(She seems to often use that desk given the amount of papers.)</i> # player # NewCharacterSprite #0
     <i>(What are those? Seems to be letters from a relative.)</i> # player
     <i>(I'll check that at the office.)</i> # player
     # NewDocument #3
@@ -447,7 +447,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
         So I don't bother to ask. # otherCharacter
         I heard someone call her Margaret one time. # otherCharacter
         But I would not give it too much thoughts. # otherCharacter
-    # NewCharacterSprite #0
+        # NewCharacterSprite #0
     ->manager_questions
     **	->
     	->motel_search
