@@ -393,38 +393,38 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 930576926}
-    - target: {fileID: 5293366854654625497, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 484170647, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -231.69995
+      value: -231.69997
       objectReference: {fileID: 0}
     - target: {fileID: 2785809499525348981, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -231.69995
+      value: -231.69997
       objectReference: {fileID: 0}
     - target: {fileID: 8801647889508162897, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -99.29999
+      value: -99.3
       objectReference: {fileID: 0}
     - target: {fileID: 576952829, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -165.5
+      value: -165.50002
       objectReference: {fileID: 0}
     - target: {fileID: 9222611282172309453, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -99.29999
+      value: -99.3
       objectReference: {fileID: 0}
     - target: {fileID: 2036399519446077670, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -165.5
+      value: -165.50002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982966128475550721, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}

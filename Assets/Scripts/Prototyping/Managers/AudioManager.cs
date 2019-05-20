@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep }
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked }
 
 public class AudioManager : MonoBehaviour
 {
@@ -37,10 +37,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_NewLogAudio = null;
     [SerializeField] private AudioSource m_CigarAudio = null;
     [SerializeField] private AudioSource m_BarEntranceAudio = null;
-    [SerializeField] private AudioSource m_CarDoorAudio = null;
     [SerializeField] private AudioSource m_HailCabAudio = null;
-    [SerializeField] private AudioSource m_DoorAudio = null;
     [SerializeField] private AudioSource m_FootstepAudio = null;
+
+    [Header("Doors And Keys")]
+    [SerializeField] private AudioSource m_CarDoorAudio = null;
+    [SerializeField] private AudioSource m_DoorAudio = null;
+    [SerializeField] private AudioSource m_BunchOfKeysAudio = null;
+    [SerializeField] private AudioSource m_DoorUnlockedAudio = null;
 
     [Header("Radio")]
     [SerializeField] private AudioSource m_RadioAudio = null;
@@ -138,6 +142,12 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.footStep:
                 m_FootstepAudio.Play();
+                break;
+            case AudioType.bunchofkeys:
+                m_BunchOfKeysAudio.Play();
+                break;
+            case AudioType.doorunlocked:
+                m_DoorUnlockedAudio.Play();
                 break;
             default:
                 break;
