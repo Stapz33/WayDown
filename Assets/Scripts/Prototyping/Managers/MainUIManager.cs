@@ -50,7 +50,7 @@ public class MainUIManager : MonoBehaviour {
     public Text PlayerText;
     public Text OtherCharacterText;
     public Button ChoiceButton;
-    [SerializeField] private Image OtherCharacterSprite = null;
+    public Image OtherCharacterSprite = null;
     [SerializeField] private Image DialogueBackground = null;
     [SerializeField] private GameObject m_CharacterVinyle = null;
     [SerializeField] private GameObject m_OtherCharacterVinyle = null;
@@ -232,6 +232,8 @@ public class MainUIManager : MonoBehaviour {
             b_isGoodAddress = true;
             CallTaxi();
             m_LogManager.GetComponent<LogManager>().StartingScript();
+
+            
         }
     }
 
@@ -241,6 +243,7 @@ public class MainUIManager : MonoBehaviour {
         {
             ExitMenu.SetActive(true);
         }
+
 
         if (b_StoryStarted)
         {
@@ -939,6 +942,7 @@ public class MainUIManager : MonoBehaviour {
     {
         AudioManager.Singleton.DeskCheckRadio();
         PoliceOfficeObject.SetActive(false);
+        CloseTab();
     }
 
     public void NameValidation(string name)
@@ -1214,12 +1218,20 @@ public class MainUIManager : MonoBehaviour {
         m_LogManager.SetActive(true);
         m_LogManager.GetComponent<LogManager>().ResetLogImage();
         m_LogManagerButton.SetActive(false);
+
+        Dialogue.SetActive(false);
+        OtherCharacterSection.SetActive(false);
+        b_StoryStarted = false;
     }
 
     public void HideNarrativeLog()
     {
         m_LogManager.SetActive(false);
         m_LogManagerButton.SetActive(true);
+
+        Dialogue.SetActive(true);
+        OtherCharacterSection.SetActive(true);
+        b_StoryStarted = true;
     }
     #endregion
 
