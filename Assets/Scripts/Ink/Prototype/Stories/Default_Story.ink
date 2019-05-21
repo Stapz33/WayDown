@@ -382,12 +382,12 @@ TODO Dialogue with Lanza (retakes)
         The one and only? # otherCharacter
         Seems that I can't fool you... # player
         Oh... I see... Alright old sport follow me. # otherCharacter
-- <i>(That slow man finally seems to trust me, and leads me through the maze that is this shitty motel.)</i> # player #PlayerDBox #1 
+- <i>(That slow man finally seems to trust me, and leads me through the maze that is this shitty motel.)</i> # player #PlayerDBox #1 #SFXPlay #20
 ->motel_room
 
 =motel_room
 //Background Motel's room, no interlocutor
-# NewBackground #3 # DisablePlayer #SFXPlay #19 #NewCharacterSprite #4
+# NewBackground #3 # DisablePlayer #NewCharacterSprite #4
 I'll have to stay with you man, company's policy. # otherCharacter
 No problem, just let me search for a few things # player #PlayerDBox #0
 # NewCharacterSprite #0
@@ -566,7 +566,7 @@ She threatens to get you out of the club. # otherCharacter
     <i>The barman goes to her, whispers something to her.</i> # player
     <i>She's now closely watching you.</i> # player
     <i>The barman comes back.</i> # player
-    He tells you to follow him. # otherCharacter
+    He tells you to follow him. # otherCharacter #SFXPlay #17
     He opens the door and tells you to enter. # otherCharacter
     <i>He closes the door behind you.</i> # player
     # NewBackground #7
