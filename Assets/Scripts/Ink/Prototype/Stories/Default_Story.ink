@@ -303,7 +303,7 @@ TODO Dialogue with Lanza (retakes)
 	<i>(The bed is still made. Giovanni didn't sleep here so much, or at least not yesterday.)</i> # player
 	<i>(There's the closet then.)</i> # player
 	# jump
-	**	[Open the closet] <i>(What a freakin' creaking door!)</i> # player
+	**	[Open the closet] <i>(What a freakin' creaking door!)</i> # player #SFXPlay #16 //change
 		<i>(But I know seems logical, the closet being nearly empty.)</i> # player
 		<i>(Only a few suits, some underwear.)</i> # player
 		<i>(Not enough for someone to live here.)</i> # player
@@ -346,7 +346,7 @@ TODO Dialogue with Lanza (retakes)
 <i>(I wouldn't stay here for a million bucks!)</i> # player
 <i>(But I have to go in now.)</i> # player
 # jump
-*   [Enter the motel] <i>(Let's go.)</i> # player #SFXPlay #17
+*   [Enter the motel] <i>(Let's go.)</i> # player #SFXPlay #17 #SFXPlay #9
     ->motel_lobby
 
 =motel_lobby
@@ -361,7 +361,7 @@ TODO Dialogue with Lanza (retakes)
 *   [Ask about the room] Good day fellow, I want to access one of your room. # player #PlayerDBox #0
 - Alright, do you have the key? # otherCharacter
 # jump
-*   [Give him the key] Here it is, room 237. # player 
+*   [Give him the key] Here it is, room 237. # player #SFXPlay #18
 - <i>(He seems puzzled, as if I wanted to penetrate the White House.)</i> # player #PlayerDBox #1 #NewNarrativeLog #11
 - And why would you want to go in there man? # otherCharacter
 # jump
@@ -456,7 +456,7 @@ I'm done here. # player #PlayerDBox #0
 <i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1 #SFXPlay #17
 # NewCharacterSprite #0 #NewBackground #5
 <i>(Not too much about that girl... I'll check what I found at the office.)</i> # player
-<i>(Where she worked, what's her last name... I need something.)</i> # player #NewNarrativeLog #13
+<i>(Where she worked, what's her last name... I need something.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)
 # NewInvestigation
 ->END
 
