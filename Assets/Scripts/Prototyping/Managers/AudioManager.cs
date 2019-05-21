@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked }
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot }
 
 public class AudioManager : MonoBehaviour
 {
@@ -45,6 +45,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_DoorAudio = null;
     [SerializeField] private AudioSource m_BunchOfKeysAudio = null;
     [SerializeField] private AudioSource m_DoorUnlockedAudio = null;
+    [SerializeField] private AudioSource m_DoorUnlockedAndFootStepsAudio = null;
 
     [Header("Radio")]
     [SerializeField] private AudioSource m_RadioAudio = null;
@@ -148,6 +149,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.doorunlocked:
                 m_DoorUnlockedAudio.Play();
+                break;
+            case AudioType.doorandfoot:
+                m_DoorUnlockedAndFootStepsAudio.Play();
                 break;
             default:
                 break;
