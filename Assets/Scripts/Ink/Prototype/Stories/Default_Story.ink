@@ -471,29 +471,36 @@ I'm done here. # player #PlayerDBox #0
 {condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
 # NewNoBackground #13
-<i>You arrive in front of the Condor Club and exit the taxi.</i> # player #PlayerDBox #1 #SFXPlay #14
-<i>The club has a large colorful neon sign, which matches the signs of the other places of the street.</i> # player
-<i>The Condor's seems to attract a lot of fancy people, men for the most part.</i> # player
-<i>They don't seem to be here for the drinks.</i> # player
+<i>(So that's where the girl had her habits...)</i> # player #PlayerDBox #1 #SFXPlay #14
+<i>(Doesn't seem like a place where a girl could enjoy herself.)</i> # player
+<i>(And the men coming here should enjoy something different than their drinks.)</i> # player
+<i>(Let's check this joint.)</i> # player
 # jump
-*   [Enter the Condor Club] <i>You enter the bar.</i> # player #SFXPlay #9
+*   [Enter the Condor Club] <i>(Let's go.)</i> # player #SFXPlay #9
     ->condor_entrance
 
 =condor_entrance
 //Background Condor Club's entrance, no interocutor
 # NewBackground #6 #MusicPlay #2
-<i>Bugsy is in the club. The place is crowded.</i> # player
-<i>There's hardly any stool left empty at the bar.</i> # player
-<i>The rest of the room is packed, with music and agitation.</i> # player
+<i>(Wow.)</i> # player
+<i>(I'm kinda disappointed.)</i> # player
+<i>(I expected music, people, drinks.)</i> # player
+<i>(But it's just a nearly empty club.)</i> # player
+<i>(Only some sad men at the counter, and a barman cleaning its glasses.)</i> # player
+<i>(He says me, and doesn't say a single word.)</i> # player
+<i>(The glasses seem more important.)</i> # player
+<i>(Maybe I can get his attention.)</i> # player
 # jump
-*   [Go to the bar] <i>You approach the bar.</i> # player
-- <i>You find an empty stool.</i> # player
-<i>The barman does not seem to be interested in you. He's serving the other customers.</i> # player
+*   [Go to the bar] <i>(There's an empty stool left.)</i> # player
+<i>(I will not approach me. Maybe I look too much like a cop.)</i> # player
+<i>(But I'll look like a fool if I leave now.)</i> # player
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   [{number_drinks == 0 : Put a bill on the bar | Put another bill on the counter}] <i>You put {|another} 10 dollars bill on the bar.</i> # player
++   {number_drinks <=4}[{number_drinks == 0 : Put a bill on the bar | Put another bill on the counter}] <i({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
     <i>{The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.|The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.| Again, same dance, he snaps the bill and pours you a drink, but seems more inclined to talk with you.}</i> # player
+    Sir, can I have a word with you? # player #PlayerDBox #0
+    <i>()</i> # player
     <i>{He doesn't seem to consider you interesting (or rich) enough to engage with you.| Don't fool yourself, 20 dollars is not enough to look like a big shot in this city.|30 bucks, nearly all your weekly money. That should be enough.|You're really running low on money now...}</i> # player 
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
