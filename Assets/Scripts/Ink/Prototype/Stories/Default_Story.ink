@@ -497,96 +497,133 @@ I'm done here. # player #PlayerDBox #0
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   {number_drinks <=4}[{number_drinks == 0 : Put a bill on the bar | Put another bill on the counter}] <i({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
-    <i>{The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.|The barman immediately comes, seizes it, and a glass of whiskey appears. You didn't order anything.| Again, same dance, he snaps the bill and pours you a drink, but seems more inclined to talk with you.}</i> # player
-    Sir, can I have a word with you? # player #PlayerDBox #0
-    <i>()</i> # player
-    <i>{He doesn't seem to consider you interesting (or rich) enough to engage with you.| Don't fool yourself, 20 dollars is not enough to look like a big shot in this city.|30 bucks, nearly all your weekly money. That should be enough.|You're really running low on money now...}</i> # player 
++   {number_drinks <=4}[{number_drinks <=3 : Put a bill on the bar | Put my last bill on the counter}] <i({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
+    {Sir, can I have a word with you?|Ok boy now listen...|I want to speak to you!|Vodka I guess?} # player #PlayerDBox #0
+    <i>({Not even a look at me.|It's like I'm just a robot handing bucks.|I want to crack that vodka bottle on his head so bad.|And vodka it is.})</i> # player #PlayerDBox #1
+    <i>({He comes and snaps my bill.|My 10 bucks just... disappear.|30 freaking bucks in 5 minutes.|As I see my last bill going away, I'm quite eager now for that drink.})</i> # player
+    <i>({Only to replace it with a glass of vodka.|Another vodka.|And another one.|That doesn't taste so bad after all.})</i> # player
+    <i>({I don't even like vodka.|Not a word. Just a half-full glass.|I'm not drunk, but I'm not sober too.|I think I love vodka.})</i> # player
+    {!<i>(But I won't waste a drink...)</i>|<i>(If my ex-wife was here...)</i>}  # player
+    ++	[Drink] <i>({I hate vodka...|It freakin' burns!|Not so bad... I think my throat is completely anesthetized|Nasdrovia!})</i> # player 
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
-+   [Hail the barman] {Boy I need to talk to you.|Are you deaf boy?|Can I talk to you?} # player #PlayerDBox #0
++   [Hail the barman] {&Boy I need to talk to you.|Are you deaf boy?|Can I talk to you?|Excuse me man...} # player #PlayerDBox #0
     {number_drinks >= 3 : ->condor_madam}
-    <i>{&He doesn't even raise on eye on you.|He sees you, but prefer to go back to cleaning his glasses. Asshole.| MAybe if you get several drinks he would be forced to interact with you!}</i> # player #PlayerDBox #1
+    <i>({&He doesn't even raise on eye on me.|He sees me, but prefer to go back to cleaning his glasses. Asshole.| Is it a way to make me pay? It seems super effective.})</i> # player #PlayerDBox #1
     ->ordering_drink
 
 =condor_madam
-<i>After a few drinks, the barman finally gets to you.</i> # player
+<i>(Now I'm not sober at all.)</i> # player
+<i>(But he finally raises his eyes on me.)</i> # player
 //Interlocutor: Barman
-TODO: Create barman sprite
-What do you want? # otherCharacter #NewCharacterSprite #3
+What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # jump
-*   [Tell him who you are] You tell him your name. # player #PlayerDBox #0
-- The barman tells you that he knows who you are. # otherCharacter
-So does the woman that sits next to you. # otherCharacter #NewCharacterLog #6
+*   [Tell him who I am] I'm Bugsy Rose- # player #PlayerDBox #0
+-	I know who you are. What do you want? # otherCharacter
+*   [Tell him about the dead girl] I'm searching for a girl, kinda cute, she might have worked here. # player
+-	It doesn't ring a bell for me sir. # otherCharacter
+	You don't seem to be very cooperative... # player
+	And you don't seem to be at your place here, please get out sir. # otherCharacter
+*	[Smash my drink on his head] You'll see if I'm not in my place... # player
+	<i>(As soon as I put my hand on the glass, a woman puts a firm hand on my arm.)</i> # player # PlayerDBox #1
+*	[Insult the barman] You fuckin' moron... # player
+	<i>(But I don't have the time to finish, a woman appears and put her hand on my arm.)</i> # player # PlayerDBox #1
+-	I'm sure this gentleman will remain calm now. # otherCharacter  # NewCharacterSprite #6
+	You can go back to your work Dean. # otherCharacter #NewCharacterLog #6
 //Interlocutor: Madam
 # jump
-*   [Tell her what you do] You begin to explain what you're doing here. # player
-    She interupts you: she already knows it. # otherCharacter # NewCharacterSprite #6
-    You're  a lonely fellow, coming here to enjoy the booze and music, without attracting any problem. # otherCharacter
-    You say that you're not the one searching for problems here. # otherCharacter
-*   [Hit on her] You try to seduce her. # player
-    She stops you. Never with a client. It's a serious business here. # otherCharacter # NewCharacterSprite #6
-    You say that it is not so serious, even from whorehouse's standards. # player
+*   [Tell her what you do] Hello miss, I'm searching for- # PlayerDBox #0
+-	I know what you're here for darling. # otherCharacter
+*	[Really?] Really, do you? # player
+	Of course. # otherCharacter
+	Like everyone else, you're here to enjoy the booze and the calm. # otherCharacter
+	You'll whisper your sorrows to your drink, and you'll go back to your wife. # otherCharacter
+	Without causing any problem here. # otherCharacter
+	But I'm not the one searching for problems here. # player
+*	[I'm here for you] Do you? Cause I could swear that I'm here for you now darling. # player
+	I don't think you are. # otherCharacter
+	I prefer to keep things professionnal here. # otherCharacter
+	I'm proud of my business, and I desire to keep it serious. # otherCharacter
+	First time I hear about a serious brothel... # player
 -
 # jump
-*   [Ask her about a missing girl] You ask her if a girl is missing. # player
--   She starts to get mad: she doen't run a brothel. # otherCharacter
-She threatens to get you out of the club. # otherCharacter
+*   [Ask her about a missing girl] Speaking of that, don't you happen to have a missing girl? # player
+-   Excuse me sir? # otherCharacter
+	I think you heard me well darling. # player
+	And I think you don't understand something. # otherCharacter
+	I'm not running a brothel. # otherCharacter
+	Sure you're not. # player
+	You're starting to get on my nerves man. # otherCharacter
+	I'll might ask you to get out. # otherCharacter
 # jump
-*   {knowledge_prostitute_name == 1} [Tell her the name of the girl] You tell her that you found the body of Margaret O'Bannon. # player
-    She immediately stops to speak. # otherCharacter
-    She says to you to follow her. # otherCharacter
-    She leads you through a door. # otherCharacter
-    # jump # NewBackground #7 # Demo
+*   {knowledge_prostitute_name == 1} [Tell her the name of the girl] Even if I know where is Cara? # player
+    ... # otherCharacter
+    You're a customer? # otherCharacter
+    No, first time here. # player
+    ... # otherCharacter
+    Follow me please. # otherCharacter
+    <i>(She gets close to a wall and push on it.)</i> # player # PlayerDBox #1
+    <i>(An hidden door. What a good detective I am...)</i> # player
+    <i>(I follow her, and get to enter in the real business of the joint.)</i> # player
+    <i>(The brothel.)</i># NewBackground #7
+    Do you know where's Cara? #otherCharacter
+    I haven't seen her in two days. # otherCharacter
+    # jump # Demo
     ->END
-*   {knowledge_prostitute_name == 0} [Calm the situation] You try to calm her. You're not here to accuse anybody. # player
-    You just want to know if anything happened. # player
-    She gets angrier. Nothing happened, because there's no girl here. # otherCharacter
-    She calls security. # otherCharacter
-    <i>You're dragged to the exit.</i> # player #PlayerDBox #1
+*   {knowledge_prostitute_name == 0} [Calm the situation] I'm not here to make any accusation. # player
+    I just want what happened here. # player
+    Nothing happened, it's a freakin'bar! # otherCharacter
+    I'll ask you to get the fuck out of here. #otherCharacter
+    Dean, throw this man out of here. # otherCharacter
+    Don't bother, I'm leaving. # player
+    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player
     //Background: Condor Club's street
-    <i>You will have to come here again once you have the name of the girl.</i> # player
-    ->END
-*   {knowledge_prostitute_name == 0} [Threaten her] You threathen her to call the police if she does not cooperate. # player
-    She's not impressed. Even a little amused. # otherCharacter
-    You work for Abati, you couldn't even speak to the police. # otherCharacter
-    She thinks that you should leave the club immediately. # otherCharacter
-    You agree to leave. # player
-    # NewCharacterSprite #0
+*   {knowledge_prostitute_name == 0} [Threaten her] I'm not getting out. Or if so, I'll come back with a bunch of cops. # player
+    You're a pain in the ass but you're funny # otherCharacter
+    As if someone working with Abati so publicly could even go near a cop! # otherCharacter
+    So now get the fuck out of here. # otherCharacter
+    Dean, could you send this man out? # otherCharacter
+    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player
     //Background: Condor Club's street
-    <i>You will have to come here again once you have the name of the girl.</i> # player #PlayerDBox #1
+-   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player
+    <i>(For now.)</i> # player
+    <i>(Ok let's go back to the office. I'll find something.)</i> # player
     ->END
 
 =condor_madam2
 //Background: Condor Club's street, no interlocutor
 # NewNoBackground #13
-<i>You go back to the Condor Club. This time, you're sure. The girl's name is Margaret O'Bannon.</i> # player #PlayerDBox #1
-<i>You enter the club.</i> # player #SFXPlay #9
+<i>(Now I'm sure. Margaret worked here under the name of Cara.)</i> # player #PlayerDBox #1
+<i>(Let's see what that woman has to say about it.)</i> # player
+*   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
 # NewBackground #6
-<i>You're in the club. As soon as you enter, the barman sees you.</i> # player
-<i>He comes immediately to you, with a baseball bat.</i> # player
+-	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
+	<i>(With a freakin' baseball bat.)</i>
 # jump # NewCharacterSprite #3
-*   [Tell the girl's nickname] Before the man hits you, you tell him that you know what happened to Cara. # player #PlayerDBox #0
-    <i>He immediately stops.</i> # player #PlayerDBox #1
-    <i>You see the madam in the back, entering from an hidden door.</i> # player
-    <i>The barman goes to her, whispers something to her.</i> # player
-    <i>She's now closely watching you.</i> # player
-    <i>The barman comes back.</i> # player
-    He tells you to follow him. # otherCharacter #SFXPlay #17
-    He opens the door and tells you to enter. # otherCharacter
-    <i>He closes the door behind you.</i> # player
+*   [Tell the girl's nickname] I know what happened to Cara! # player #PlayerDBox #0
+    <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
+    Wait here for me, sir. # otherCharacter
+    <i>(He goes to a wall and knocks on it.)</i> # player
+    <i>(The wall pivots, and he seems to whisper something to the person that is behind.)</i> # player
+    <i>(I might be in trouble...)</i> # player
+    Sir, could you follow me please. # otherCharacter
+    <i>(He nearly drags me through the door.)</i> # player #SFXPlay #17
+    <i>(Now I'm really in the Condor Club)</i>
     # NewBackground #7
-    <i>You're now in the main part of the club: an hidden casino/brothel.</i> # player
-    <i>The madam is waiting for you.</i> # player
-    She asks you about Margaret. She hasn't seen her from two days. # otherCharacter 
+    <i>(I haven't been to a lot of brothel. But this one is beyond anything else.)</i> # player
+    <i>(And this gal is waiting for me.)</i> # player
+    What happened to Cara? # otherCharacter 
     # jump # Demo
     ->END
 
 =condor_fail
 //Background: Condor Club's street, no interlocutor
 # NewNoBackground #13
-<i>You go back to the Condor Club.</i> # player #PlayerDBox #1
-<i>But you're not so sure about what you could say without getting shot.</i> # player
-<i>You decide to go back and work a better approach.</i> # player
+<i>(What am I doing here?)</i> # player #PlayerDBox #1
+<i>(I can't get there empty handed.)</i> # player
+<i>(I might as well put my gun in my mouth myself.)</i> # player
+<i>(No no, I need to find more about that girl.)</i> # player
 ->END
