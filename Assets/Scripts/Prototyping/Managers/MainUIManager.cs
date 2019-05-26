@@ -560,6 +560,10 @@ public class MainUIManager : MonoBehaviour {
                 {
                     AudioManager.Singleton.ChangeMusic(int.Parse(_inkStory.currentTags[f + 1]));
                 }
+                else if (_inkStory.currentTags[f] == "MusicStop")
+                {
+                    AudioManager.Singleton.StopMusic();
+                }
                 else if (_inkStory.currentTags[f] == "OtherCharacterDbox")
                 {
                     OtherCharacterDialogue.GetComponent<Image>().sprite = OCDialogueSprites[int.Parse(_inkStory.currentTags[f + 1])];

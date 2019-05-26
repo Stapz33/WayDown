@@ -1,7 +1,7 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = true
+VAR DEBUG = false
 
 ->start_capo_apartment
 ===start_capo_apartment===
@@ -484,7 +484,7 @@ I'm done here. # player #PlayerDBox #0
 # NewBackground #6 #MusicPlay #2
 <i>(Wow.)</i> # player
 <i>(I'm kinda disappointed.)</i> # player
-<i>(I expected music, people, drinks.)</i> # player
+<i>(I expected some people, drinks.)</i> # player
 <i>(But it's just a nearly empty club.)</i> # player
 <i>(Only some sad men at the counter, and a barman cleaning its glasses.)</i> # player
 <i>(He says me, and doesn't say a single word.)</i> # player
@@ -565,7 +565,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(She gets close to a wall and push on it.)</i> # player # PlayerDBox #1 #SFXPlay #16
     <i>(An hidden door. What a good detective I am...)</i> # player #NewCharacterSprite #0
     <i>(I follow her, and get to enter in the real business of the joint.)</i> # player
-    # NewBackground #7
+    # NewBackground #7 #MusicStop
     <i>(The brothel.)</i> # player
     # NewCharacterSprite #6
     Do you know where's Cara? #otherCharacter
@@ -582,7 +582,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
     //Background: Condor Club's street
-    #NewBackground #13
+    #NewBackground #13 #MusicStop
 *   {knowledge_prostitute_name == 0} [Threaten her] I'm not getting out. Or if so, I'll come back with a bunch of cops. # player
     You're a pain in the ass but you're funny # otherCharacter
     As if someone working with Abati so publicly could even go near a cop! # otherCharacter
@@ -592,7 +592,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
     //Background: Condor Club's street
-    #NewBackground #13
+    #NewBackground #13 #MusicStop
 -   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
     <i>(For now.)</i> # player
     <i>(Ok let's go back to the office. I'll find something.)</i> # player
@@ -605,7 +605,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 <i>(Let's see what that woman has to say about it.)</i> # player
 *   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
-# NewBackground #6
+# NewBackground #6 #MusicPlay #2
 -	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
 	<i>(With a freakin' baseball bat.)</i>
 # jump # NewCharacterSprite #3
@@ -618,7 +618,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(He nearly drags me through the door.)</i> # player #SFXPlay #17
     <i>(Now I'm really in the Condor Club)</i>
     #NewCharacterSprite #0
-    # NewBackground #7
+    # NewBackground #7 #MusicStop
     <i>(I haven't been to a lot of brothel. But this one is beyond anything else.)</i> # player
     <i>(And this gal is waiting for me.)</i> # player
     #NewCharacterSprite #3

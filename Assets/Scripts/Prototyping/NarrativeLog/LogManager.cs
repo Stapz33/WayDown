@@ -220,8 +220,6 @@ public class LogManager : MonoBehaviour
 
     public void SetNLog()
     {
-        NlogButton.SetActive(false);
-        ClogButton.SetActive(true);
         m_CTextPanel.gameObject.SetActive(false);
         m_NTextPanel.gameObject.SetActive(true);
         LogUpdate();
@@ -229,10 +227,7 @@ public class LogManager : MonoBehaviour
 
     public void SetCLog()
     {
-        needReacFB = false;
         ClogFeedback.SetActive(false);
-        ClogButton.SetActive(false);
-        NlogButton.SetActive(true);
         m_NTextPanel.gameObject.SetActive(false);
         m_CTextPanel.gameObject.SetActive(true);
         m_CTextPanel.pageToDisplay = m_CTextPanel.textInfo.pageCount;
@@ -245,21 +240,5 @@ public class LogManager : MonoBehaviour
         }
     }
 
-    public void CheckDeactivated()
-    {
-        if (needReacFB)
-        {
-            ClogFeedback.SetActive(true);
-            needReacFB = false;
-        }
-    }
 
-    public void CheckActivated()
-    {
-        if (ClogFeedback.activeSelf)
-        {
-            needReacFB = true;
-            ClogFeedback.SetActive(false);
-        }
-    }
 }
