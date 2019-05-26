@@ -41,7 +41,7 @@ TODO Intro capo's apartment (retakes)
 // METTRE UN FOND NOIR?
 # DisableDiscussion
 #PlayerDBox #1
-<i>(Fucking city.)</i> # player 
+<i>(Fucking city.)</i> # player
 <i>("Come to San Francisco" they said. "It's like a Gold Rush for private detectives".)</i> # player
 <i>(And I fell for it.)</i> # player
 <i>(Ain't nobody like Bugsy Rosenthal to look like a damn fool.)</i> # player 
@@ -454,7 +454,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 *->
 I'm done here. # player #PlayerDBox #0
 <i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1 #SFXPlay #17
-# NewCharacterSprite #0 #NewBackground #5
+# NewCharacterSprite #0 #NewBackground #5 #MusicPlay #1
 <i>(Not too much about that girl... I'll check what I found at the office.)</i> # player
 <i>(Where she worked, what's her last name... I need something.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)
 # NewInvestigation
@@ -471,7 +471,7 @@ I'm done here. # player #PlayerDBox #0
 {condor_entrance && knowledge_prostitute_name == 0 : ->condor_fail}
 //Background Condor Club's street, no interlocutor
 # NewNoBackground #13
-<i>(So that's where the girl had her habits...)</i> # player #PlayerDBox #1 #SFXPlay #14
+<i>(So that's where the girl had her habits...)</i> # player #PlayerDBox #1
 <i>(Doesn't seem like a place where a girl could enjoy herself.)</i> # player
 <i>(And the men coming here should enjoy something different than their drinks.)</i> # player
 <i>(Let's check this joint.)</i> # player
@@ -491,20 +491,20 @@ I'm done here. # player #PlayerDBox #0
 <i>(The glasses seem more important.)</i> # player
 <i>(Maybe I can get his attention.)</i> # player
 # jump
-*   [Go to the bar] <i>(There's an empty stool left.)</i> # player
+*   [Go to the bar] <i>(There's an empty stool left.)</i> # player #SFXPlay #17
 <i>(I will not approach me. Maybe I look too much like a cop.)</i> # player
 <i>(But I'll look like a fool if I leave now.)</i> # player
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   {number_drinks <=4}[{number_drinks <=3 : Put a bill on the bar | Put my last bill on the counter}] <i({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
++   {number_drinks <=4}[{number_drinks <=3 : Put a bill on the bar | Put my last bill on the counter}] <i>({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
     {Sir, can I have a word with you?|Ok boy now listen...|I want to speak to you!|Vodka I guess?} # player #PlayerDBox #0
     <i>({Not even a look at me.|It's like I'm just a robot handing bucks.|I want to crack that vodka bottle on his head so bad.|And vodka it is.})</i> # player #PlayerDBox #1
     <i>({He comes and snaps my bill.|My 10 bucks just... disappear.|30 freaking bucks in 5 minutes.|As I see my last bill going away, I'm quite eager now for that drink.})</i> # player
     <i>({Only to replace it with a glass of vodka.|Another vodka.|And another one.|That doesn't taste so bad after all.})</i> # player
     <i>({I don't even like vodka.|Not a word. Just a half-full glass.|I'm not drunk, but I'm not sober too.|I think I love vodka.})</i> # player
     {!<i>(But I won't waste a drink...)</i>|<i>(If my ex-wife was here...)</i>}  # player
-    ++	[Drink] <i>({I hate vodka...|It freakin' burns!|Not so bad... I think my throat is completely anesthetized|Nasdrovia!})</i> # player 
+    ++	[Drink] <i>({I hate vodka...|It freakin' burns!|Not so bad... I think my throat is completely anesthetized|Nasdrovia!})</i> # player #SFXPlay #12
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
 +   [Hail the barman] {&Boy I need to talk to you.|Are you deaf boy?|Can I talk to you?|Excuse me man...} # player #PlayerDBox #0
@@ -562,10 +562,12 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     No, first time here. # player
     ... # otherCharacter
     Follow me please. # otherCharacter
-    <i>(She gets close to a wall and push on it.)</i> # player # PlayerDBox #1
-    <i>(An hidden door. What a good detective I am...)</i> # player
+    <i>(She gets close to a wall and push on it.)</i> # player # PlayerDBox #1 #SFXPlay #16
+    <i>(An hidden door. What a good detective I am...)</i> # player #NewCharacterSprite #0
     <i>(I follow her, and get to enter in the real business of the joint.)</i> # player
-    <i>(The brothel.)</i># NewBackground #7
+    # NewBackground #7
+    <i>(The brothel.)</i> # player
+    # NewCharacterSprite #6
     Do you know where's Cara? #otherCharacter
     I haven't seen her in two days. # otherCharacter
     # jump # Demo
@@ -577,17 +579,21 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     Dean, throw this man out of here. # otherCharacter
     Don't bother, I'm leaving. # player
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-    <i>(With the madam still looking at me, I exit the joint.)</i> # player
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+    #NewCharacterSprite #0
     //Background: Condor Club's street
+    #NewBackground #13
 *   {knowledge_prostitute_name == 0} [Threaten her] I'm not getting out. Or if so, I'll come back with a bunch of cops. # player
     You're a pain in the ass but you're funny # otherCharacter
     As if someone working with Abati so publicly could even go near a cop! # otherCharacter
     So now get the fuck out of here. # otherCharacter
     Dean, could you send this man out? # otherCharacter
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-    <i>(With the madam still looking at me, I exit the joint.)</i> # player
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+    #NewCharacterSprite #0
     //Background: Condor Club's street
--   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player
+    #NewBackground #13
+-   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
     <i>(For now.)</i> # player
     <i>(Ok let's go back to the office. I'll find something.)</i> # player
     ->END
@@ -606,15 +612,16 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 *   [Tell the girl's nickname] I know what happened to Cara! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
     Wait here for me, sir. # otherCharacter
-    <i>(He goes to a wall and knocks on it.)</i> # player
-    <i>(The wall pivots, and he seems to whisper something to the person that is behind.)</i> # player
-    <i>(I might be in trouble...)</i> # player
+    <i>(He goes to a wall and knocks on it.)</i> # player //SFX Knock on Door
+    <i>(The wall pivots, and he seems to whisper something to the person that is behind.)</i> # player #SFXPlay #16
     Sir, could you follow me please. # otherCharacter
     <i>(He nearly drags me through the door.)</i> # player #SFXPlay #17
     <i>(Now I'm really in the Condor Club)</i>
+    #NewCharacterSprite #0
     # NewBackground #7
     <i>(I haven't been to a lot of brothel. But this one is beyond anything else.)</i> # player
     <i>(And this gal is waiting for me.)</i> # player
+    #NewCharacterSprite #3
     What happened to Cara? # otherCharacter 
     # jump # Demo
     ->END
