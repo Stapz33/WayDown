@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: 2c5a601fe8823154bbca55d7eee5ee15,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2159,12 +2159,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3387639668407342738, guid: b86292d85006756428da26868f568c55,
+    - target: {fileID: 2612565599063971540, guid: b86292d85006756428da26868f568c55,
         type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 333415869, guid: b86292d85006756428da26868f568c55, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
