@@ -232,8 +232,6 @@ public class MainUIManager : MonoBehaviour {
             b_isGoodAddress = true;
             CallTaxi();
             m_LogManager.GetComponent<LogManager>().StartingScript();
-
-            
         }
     }
 
@@ -487,7 +485,7 @@ public class MainUIManager : MonoBehaviour {
                 {
                     DeactivateOtherCharacterDialogue();
                     ReactivatePlayerDialogue();
-                    s_PlayerFullText = ContinueText.Replace("\n","").Replace("<color=yellow>", "<color=#D6A80C>");
+                    s_PlayerFullText = ContinueText.Replace("\n","").Replace("<color=red>", "<color=#9F2B2B>");
                     characterText = 0;
                     TextCooldown = TextSpeed;
                     PlayerText.text = "";
@@ -497,7 +495,7 @@ public class MainUIManager : MonoBehaviour {
                     ReactivateOtherCharacterSection();
                     DeactivatePlayerDialogue();
                     ReactivateOtherCharacterDialogue();
-                    s_OtherCharacterFullText = ContinueText.Replace("\n", "").Replace("<color=yellow>", "<color=#D6A80C>");
+                    s_OtherCharacterFullText = ContinueText.Replace("\n", "").Replace("<color=red>", "<color=#9F2B2B>");
                     characterText = 1;
                     TextCooldown = TextSpeed;
                     OtherCharacterText.text = "";

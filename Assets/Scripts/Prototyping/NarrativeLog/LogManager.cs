@@ -13,8 +13,8 @@ public class SaveLog
 
 public class LogManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_NTextPanel = null;
-    [SerializeField] private TextMeshProUGUI m_CTextPanel = null;
+    [SerializeField] private GameObject m_NPanel = null;
+    [SerializeField] private GameObject m_CPanel = null;
     [SerializeField] private GameObject PreviousButton = null;
     [SerializeField] private GameObject NextButton = null;
     public GameObject NlogButton;
@@ -28,7 +28,12 @@ public class LogManager : MonoBehaviour
     private int m_ActualPage = 1;
     private int m_CPages = 1;
     private int m_ActualCPage = 1;
-    private SaveLog idxtosave;
+    private SaveLog idxtosave = new SaveLog();
+    private TextMeshProUGUI NText01;
+    private TextMeshProUGUI NText02;
+
+    private TextMeshProUGUI CText01;
+    private TextMeshProUGUI CText02;
 
     private bool needReacFB = false;
 
@@ -37,6 +42,7 @@ public class LogManager : MonoBehaviour
     private void Awake()
     {
         SceneManager.activeSceneChanged += ChangedActiveScene;
+        //gameObject.SetActive(false);
     }
 
     private void Update()
@@ -56,6 +62,10 @@ public class LogManager : MonoBehaviour
         idxtosave = new SaveLog();
         idxtosave.Nidx = new List<int>();
         idxtosave.Cidx = new List<int>();
+        NText01 = m_NPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        NText02 = m_NPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        CText01 = m_CPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        CText02 = m_CPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         NewLogPanel();
         SaveLog();
     }
@@ -67,7 +77,8 @@ public class LogManager : MonoBehaviour
 
     public void AddNLog(int idx, bool feedback)
     {
-        m_NTextPanel.text = m_NTextPanel.text + m_NLogsBase[idx].Replace("\\n", "\n");
+        NText01.text = NText01.text + m_NLogsBase[idx].Replace("\\n", "\n").Replace("<color=red>", "<color=#9F2B2B>");
+        NText02.text = NText01.text;
         idxtosave.Nidx.Add(idx);
         if (feedback)
         {
@@ -80,7 +91,8 @@ public class LogManager : MonoBehaviour
 
     public void AddCLog(int idx, bool feedback)
     {
-        m_CTextPanel.text = m_CTextPanel.text + m_CLogsBase[idx].Replace("\\n", "\n");
+        CText01.text = CText01.text + m_CLogsBase[idx].Replace("\\n", "\n").Replace("<color=red>", "<color=#9F2B2B>");
+        CText02.text = CText01.text;
         idxtosave.Cidx.Add(idx);
         if (feedback)
         {
@@ -94,10 +106,35 @@ public class LogManager : MonoBehaviour
 
     public void LogUpdate()
     {
-        m_nbOfPages = m_NTextPanel.textInfo.pageCount;
-        m_NTextPanel.pageToDisplay = m_NTextPanel.textInfo.pageCount;
+        if (NText01.textInfo.pageCount == m_nbOfPages + 2)
+        {
+            Debug.Log("1");
+            NText02.pageToDisplay = NText01.textInfo.pageCount + 1;
+            NText01.pageToDisplay = NText01.textInfo.pageCount;
+            m_nbOfPages = NText01.textInfo.pageCount;
+        }
+        else if (NText01.textInfo.pageCount == m_nbOfPages + 1)
+        {
+            Debug.Log("2");
+            NText02.pageToDisplay = NText01.textInfo.pageCount;
+            NText01.pageToDisplay = NText01.textInfo.pageCount - 1;
+        }
+        else if (NText01.textInfo.pageCount == 0)
+        {
+            Debug.Log("3");
+            NText02.pageToDisplay = 2;
+            NText01.pageToDisplay = 1;
+            m_nbOfPages = 1;
+        }
+        else
+        {
+            Debug.Log("4");
+            NText02.pageToDisplay = NText01.textInfo.pageCount + 1;
+            NText01.pageToDisplay = NText01.textInfo.pageCount;
+            m_nbOfPages = NText01.textInfo.pageCount;
+        }
         m_ActualPage = m_nbOfPages;
-        if (m_ActualPage > 1)
+        if (m_ActualPage > 2)
         {
             PreviousButton.SetActive(true);
         }
@@ -114,12 +151,13 @@ public class LogManager : MonoBehaviour
 
     public void NextLogPage()
     {
-        if (m_NTextPanel.gameObject.activeSelf)
+        if (m_NPanel.gameObject.activeSelf)
         {
             if (m_ActualPage < m_nbOfPages)
             {
-                m_ActualPage++;
-                m_NTextPanel.pageToDisplay = m_ActualPage;
+                m_ActualPage += 2;
+                NText01.pageToDisplay = m_ActualPage;
+                NText02.pageToDisplay = m_ActualPage + 1;
                 if (m_ActualPage == m_nbOfPages)
                 {
                     NextButton.SetActive(false);
@@ -134,8 +172,9 @@ public class LogManager : MonoBehaviour
         {
             if (m_ActualCPage < m_CPages)
             {
-                m_ActualCPage++;
-                m_CTextPanel.pageToDisplay = m_ActualCPage;
+                m_ActualCPage += 2;
+                CText01.pageToDisplay = m_ActualPage;
+                CText02.pageToDisplay = m_ActualPage + 1;
                 if (m_ActualCPage == m_CPages)
                 {
                     NextButton.SetActive(false);
@@ -150,12 +189,13 @@ public class LogManager : MonoBehaviour
 
     public void PreviousLogPage()
     {
-        if (m_NTextPanel.gameObject.activeSelf)
+        if (m_NPanel.gameObject.activeSelf)
         {
             if (m_ActualPage > 1)
             {
-                m_ActualPage--;
-                m_NTextPanel.pageToDisplay = m_ActualPage;
+                m_ActualPage -= 2;
+                NText01.pageToDisplay = m_ActualPage;
+                NText02.pageToDisplay = m_ActualPage + 1;
                 if (m_ActualPage == 1)
                 {
                     PreviousButton.SetActive(false);
@@ -170,8 +210,9 @@ public class LogManager : MonoBehaviour
         {
             if (m_ActualCPage > 1)
             {
-                m_ActualCPage--;
-                m_CTextPanel.pageToDisplay = m_ActualCPage;
+                m_ActualCPage -=2;
+                CText01.pageToDisplay = m_ActualCPage;
+                CText02.pageToDisplay = m_ActualCPage + 1;
                 if (m_ActualCPage == 1)
                 {
                     PreviousButton.SetActive(false);
@@ -220,23 +261,32 @@ public class LogManager : MonoBehaviour
 
     public void SetNLog()
     {
-        m_CTextPanel.gameObject.SetActive(false);
-        m_NTextPanel.gameObject.SetActive(true);
-        LogUpdate();
+        m_CPanel.gameObject.SetActive(false);
+        m_NPanel.gameObject.SetActive(true);
+        needtoUpdate = true;
+        //LogUpdate();
     }
 
     public void SetCLog()
     {
         ClogFeedback.SetActive(false);
-        m_NTextPanel.gameObject.SetActive(false);
-        m_CTextPanel.gameObject.SetActive(true);
-        m_CTextPanel.pageToDisplay = m_CTextPanel.textInfo.pageCount;
+        m_NPanel.gameObject.SetActive(false);
+        m_CPanel.gameObject.SetActive(true);
+        if (CText01.textInfo.pageCount == m_CPages + 2)
+        {
+            CText01.pageToDisplay = CText01.textInfo.pageCount;
+            CText01.pageToDisplay = CText01.textInfo.pageCount + 1;
+            m_CPages = CText01.textInfo.pageCount;
+        }
         NextButton.SetActive(false);
-        m_CPages = m_CTextPanel.textInfo.pageCount;
         m_ActualCPage = m_CPages;
-        if (m_CTextPanel.textInfo.pageCount > 1)
+        if (CText01.textInfo.pageCount > 2)
         {
             PreviousButton.SetActive(true);
+        }
+        else
+        {
+            PreviousButton.SetActive(false);
         }
     }
 
