@@ -64,7 +64,7 @@ TODO Find Bugsy's address
 TODO Find dead capo's name
 # jump
 	*	Are you out of your mind?[] Did you fucking see the hour? # player #PlayerDBox #0
-- It's <color=yellow>James Lanza</color>. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7 #NewCharacterLog #2
+- It's <color=red>James Lanza</color>. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7 #NewCharacterLog #2
 You need to come here immediately. # otherCharacter 
 # jump
 	*	What time is it[?] for fuck's sake? # player 
