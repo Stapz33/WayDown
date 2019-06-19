@@ -557,34 +557,36 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	You're starting to get on my nerves man. # otherCharacter
 	I'll might ask you to get out. # otherCharacter
 # jump
-*   {knowledge_prostitute_name == 1} [Tell her the nickname of the girl] #Validation #0
+*   {knowledge_prostitute_name == 1} [You had a girl working here under the name of...] #Validation #0
 *   {knowledge_prostitute_name == 0} [Calm the situation] I'm not here to make any accusation. # player
-    I just want what happened here. # player
-    Nothing happened, it's a freakin'bar! # otherCharacter
-    I'll ask you to get the fuck out of here. #otherCharacter
-    Dean, throw this man out of here. # otherCharacter
-    Don't bother, I'm leaving. # player
-    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
-    #NewCharacterSprite #0
-    //Background: Condor Club's street
-    #NewBackground #13 #MusicStop
+	    I just want to know what happened here. # player
+	    Nothing happened, it's a freakin'bar! # otherCharacter
+	    I'll ask you to get the fuck out of here. #otherCharacter
+	    Dean, throw this man out of here. # otherCharacter
+	    Don't bother, I'm leaving. # player
+	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+	    #NewCharacterSprite #0
+	    //Background: Condor Club's street
+	    #NewBackground #13 #MusicStop
 *   {knowledge_prostitute_name == 0} [Threaten her] I'm not getting out. Or if so, I'll come back with a bunch of cops. # player
-    You're a pain in the ass but you're funny # otherCharacter
-    As if someone working with Abati so publicly could even go near a cop! # otherCharacter
-    So now get the fuck out of here. # otherCharacter
-    Dean, could you send this man out? # otherCharacter
-    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
-    #NewCharacterSprite #0
-    //Background: Condor Club's street
-    #NewBackground #13 #MusicStop
+	    You're a pain in the ass but you're funny. # otherCharacter
+	    As if someone working with Abati so publicly could even go near a cop! # otherCharacter
+	    So now get the fuck out of here. # otherCharacter
+	    Dean, could you send this man out? # otherCharacter
+	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+	    #NewCharacterSprite #0
+	    //Background: Condor Club's street
+	    #NewBackground #13 #MusicStop
 -   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
     <i>(For now.)</i> # player
     <i>(Ok let's go back to the office. I'll find something.)</i> # player
     ->END
 
 = condor_back
+	I... I'm not sure... Could you give me a moment? # player
+	What a jock... # otherCharacter
 	Dean, could you send this man out? # otherCharacter
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
@@ -596,7 +598,9 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(Ok let's go back to the office. I'll find something.)</i> # player
     ->END
  = condor_bad
- 	I don't know anyone with this "name" # otherCharacter
+ 	I don't know anyone working here under that name, man or girl. # otherCharacter
+ 	And to be honest, that's not a typical prostitute name, if it's what your still insinuating. # otherCharacter
+ 	Now, you go man. # otherCharacter
 	Dean, could you send this man out? # otherCharacter
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
@@ -609,7 +613,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     ->END
 = condor_good
 	{madam2 == true :  ->Condor_Good_2Time}
-	Even if I know where is Cara? # player
+	Cara, is that it? Of course it is. # player
     ... # otherCharacter
     You're a customer? # otherCharacter
     No, first time here. # player
@@ -626,7 +630,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     # jump # Demo
     ->END
  = Condor_Good_2Time
-	I know what happened to Cara! # player #PlayerDBox #0
+	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
     Wait here for me, sir. # otherCharacter
     <i>(He goes to a wall and knocks on it.)</i> # player //SFX Knock on Door
@@ -647,7 +651,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
  ~ madam2 = true
 //Background: Condor Club's street, no interlocutor
 # NewNoBackground #13
-<i>(Now I'm sure. Margaret worked here under a nickname.)</i> # player #PlayerDBox #1
+<i>(Now I'm sure. Margaret worked here!)</i> # player #PlayerDBox #1
 <i>(Let's see what that woman has to say about it.)</i> # player
 *   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
@@ -655,7 +659,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 -	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
 	<i>(With a freakin' baseball bat.)</i>
 # jump # NewCharacterSprite #3
-*   [Tell the girl's nickname] Validation #0
+*   [The girl worked here under the name of...] Validation #0
 -> END
 
 =condor_fail
