@@ -1,5 +1,6 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
+VAR madam2 = false
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
 VAR DEBUG = false
 
@@ -556,22 +557,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	You're starting to get on my nerves man. # otherCharacter
 	I'll might ask you to get out. # otherCharacter
 # jump
-*   {knowledge_prostitute_name == 1} [Tell her the name of the girl] Even if I know where is Cara? # player
-    ... # otherCharacter
-    You're a customer? # otherCharacter
-    No, first time here. # player
-    ... # otherCharacter
-    Follow me please. # otherCharacter
-    <i>(She gets close to a wall and push on it.)</i> # player # PlayerDBox #1 #SFXPlay #16
-    <i>(An hidden door. What a good detective I am...)</i> # player #NewCharacterSprite #0
-    <i>(I follow her, and get to enter in the real business of the joint.)</i> # player
-    # NewBackground #7 #MusicStop
-    <i>(The brothel.)</i> # player
-    # NewCharacterSprite #6
-    Do you know where's Cara? #otherCharacter
-    I haven't seen her in two days. # otherCharacter
-    # jump # Demo
-    ->END
+*   {knowledge_prostitute_name == 1} [Tell her the nickname of the girl] #Validation #0
 *   {knowledge_prostitute_name == 0} [Calm the situation] I'm not here to make any accusation. # player
     I just want what happened here. # player
     Nothing happened, it's a freakin'bar! # otherCharacter
@@ -598,18 +584,49 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(Ok let's go back to the office. I'll find something.)</i> # player
     ->END
 
-=condor_madam2
-//Background: Condor Club's street, no interlocutor
-# NewNoBackground #13
-<i>(Now I'm sure. Margaret worked here under the name of Cara.)</i> # player #PlayerDBox #1
-<i>(Let's see what that woman has to say about it.)</i> # player
-*   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
-//Background: Condor Club's entrance
-# NewBackground #6 #MusicPlay #2
--	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
-	<i>(With a freakin' baseball bat.)</i>
-# jump # NewCharacterSprite #3
-*   [Tell the girl's nickname] I know what happened to Cara! # player #PlayerDBox #0
+= condor_back
+	Dean, could you send this man out? # otherCharacter
+    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+    #NewCharacterSprite #0
+    //Background: Condor Club's street
+    #NewBackground #13 #MusicStop
+-   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
+    <i>(For now.)</i> # player
+    <i>(Ok let's go back to the office. I'll find something.)</i> # player
+    ->END
+ = condor_bad
+ 	I don't know anyone with this "name" # otherCharacter
+	Dean, could you send this man out? # otherCharacter
+    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+    #NewCharacterSprite #0
+    //Background: Condor Club's street
+    #NewBackground #13 #MusicStop
+-   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
+    <i>(For now.)</i> # player
+    <i>(Ok let's go back to the office. I'll find something.)</i> # player
+    ->END
+= condor_good
+	{madam2 == true :  ->Condor_Good_2Time}
+	Even if I know where is Cara? # player
+    ... # otherCharacter
+    You're a customer? # otherCharacter
+    No, first time here. # player
+    ... # otherCharacter
+    Follow me please. # otherCharacter
+    <i>(She gets close to a wall and push on it.)</i> # player # PlayerDBox #1 #SFXPlay #16
+    <i>(An hidden door. What a good detective I am...)</i> # player #NewCharacterSprite #0
+    <i>(I follow her, and get to enter in the real business of the joint.)</i> # player
+    # NewBackground #7 #MusicStop
+    <i>(The brothel.)</i> # player
+    # NewCharacterSprite #6
+    Do you know where's Cara? #otherCharacter
+    I haven't seen her in two days. # otherCharacter
+    # jump # Demo
+    ->END
+ = Condor_Good_2Time
+	I know what happened to Cara! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
     Wait here for me, sir. # otherCharacter
     <i>(He goes to a wall and knocks on it.)</i> # player //SFX Knock on Door
@@ -625,6 +642,21 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     What happened to Cara? # otherCharacter 
     # jump # Demo
     ->END
+
+=condor_madam2
+ ~ madam2 = true
+//Background: Condor Club's street, no interlocutor
+# NewNoBackground #13
+<i>(Now I'm sure. Margaret worked here under a nickname.)</i> # player #PlayerDBox #1
+<i>(Let's see what that woman has to say about it.)</i> # player
+*   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
+//Background: Condor Club's entrance
+# NewBackground #6 #MusicPlay #2
+-	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
+	<i>(With a freakin' baseball bat.)</i>
+# jump # NewCharacterSprite #3
+*   [Tell the girl's nickname] Validation #0
+-> END
 
 =condor_fail
 //Background: Condor Club's street, no interlocutor

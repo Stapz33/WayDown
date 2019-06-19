@@ -43,6 +43,9 @@ public class ButtonCallEditor : Editor
             case (int)ButtonType.WhiskyBottle:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("Bottle"), true);
                 break;
+            case (int)ButtonType.SelectProof:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("DocumentInfo"), true);
+                break;
             default:
                 break;
         }
@@ -52,7 +55,7 @@ public class ButtonCallEditor : Editor
 }
 #endif
 
-public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo, Cigar, WhiskyBottle }
+public enum ButtonType { OpenTab,CloseTab, Adress, AdressBookNext,AdressBookPrevious, AddressBookNote, AddressBookAddress, CallTaxi,OpenDocumentPanel,CloseDocumentPanel,CloseLargeDocument,OpenLargeDocument,ClosePoliceOffice,ClosePoliceName,ClosePoliceFace,OpenPoliceName,OpenPoliceFace,OpenPoliceOffice,PoliceOfficeNameValidation, PoliceOfficeCSValidation, SwitchDrawerTab, AlphabeticalButton,AddNewDocumentToComparison,none,RadioChannel,ToggleRadio, Whisky, CloseLargeDocumentSolo, Cigar, WhiskyBottle,SelectProof }
 public class ButtonCall : MonoBehaviour
 {
 
@@ -194,6 +197,9 @@ public class ButtonCall : MonoBehaviour
                 transform.GetChild(0).gameObject.SetActive(false);
                 AudioManager.Singleton.ActivateAudio(AudioType.Bottle);
                 gameObject.SetActive(false);
+                break;
+            case ButtonType.SelectProof:
+
                 break;
             default:
                 break;

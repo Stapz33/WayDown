@@ -62,6 +62,19 @@ public class MainUIManager : MonoBehaviour {
     public GameObject Dialogue;
     public GameObject FreemodeIndicator;
 
+    //Dialogue Validation
+    public GameObject ValidationDialogue;
+    public struct st_ValidationDialogue
+    {
+        public string s_BackValidation;
+        public string s_GoodValidation;
+        public string s_BadValidation;
+        public string s_ValdationName;
+    }
+    public DialogueValidationScriptable ValidationScriptable;
+    int i_GoodIdxValidation = 0;
+    public Text ValidationText;
+
 
 
     // Variables/ speed of typewriter
@@ -573,6 +586,13 @@ public class MainUIManager : MonoBehaviour {
                 else if (_inkStory.currentTags[f] == "Demo")
                 {
                     LoadScreen("GoToDemo",false);
+                }
+                else if (_inkStory.currentTags[f] == "Validation")
+                {
+                    b_StoryStarted = false;
+                    i_GoodIdxValidation = int.Parse(_inkStory.currentTags[f + 1]);
+                    Dialogue.SetActive(false);
+                    ValidationDialogue.SetActive(true);
                 }
             }
         }
@@ -1325,5 +1345,48 @@ public class MainUIManager : MonoBehaviour {
         }
         ReactivatePlayerDialogue();
     }
-    
+
+
+    public void DialogueValidationTest()
+    {
+            string GoodName = ValidationScriptable.ValidationDatas[i_GoodIdxValidation].ValdationName;
+            string TestName = ValidationText.text;
+            if (GoodName != "")
+            {
+                if (TestName.ToLower().Replace("'", "") == GoodName)
+                {
+                    DialogueValidationSetup(2);
+                }
+                else
+                {
+                    DialogueValidationSetup(1);
+                }
+            }
+            else
+            {
+                DialogueValidationSetup(1);
+            }
+    }
+
+    public void DialogueValidationSetup(int ValIdx)
+    {
+        ValidationDialogue.SetActive(false);
+        Dialogue.SetActive(true);
+        b_StoryStarted = true;
+        switch (ValIdx)
+        {
+            case 0:
+                _inkStory.ChoosePathString(ValidationScriptable.ValidationDatas[i_GoodIdxValidation].BackValidation);
+                break;
+            case 1:
+                _inkStory.ChoosePathString(ValidationScriptable.ValidationDatas[i_GoodIdxValidation].BadValidation);
+                break;
+            case 2:
+                _inkStory.ChoosePathString(ValidationScriptable.ValidationDatas[i_GoodIdxValidation].GoodValidation);
+                break;
+            default:
+                break;
+        }
+        
+    }
 }
