@@ -322,15 +322,14 @@ TODO Dialogue with Lanza (retakes)
 =end_apartment
 
 <i>(Lanza, always keeping an eye on me, brought me back to my office on Broadway Street.)</i> # player #PlayerDBox #1
-<i>(That day could not have been worse.)</i> # player #NewBackground #9
+<i>(That day could not have been worse.)</i> # player #NewBackground #9 # NewCharacterSprite #0
 <i>(So let's check what we have here.)</i> #player
 <i>(A mafioso that couldn't keep it in his pants, and got shot for it.)</i> #player
 <i>(Lima eliminated, and the entiere organization turned upside down by it.)</i> #player
 <i>(And above that, this girl. We have nothing on her.)</i> #player
 <i>(Maybe that's what I should work on.)</i> #player
 <i>(Find who she is, where she lived.)</i> #player
-<i>(Ok, let's get to work Bugsy.)</i> #player
- #NewInvestigation #introspection
+<i>(Ok, let's get to work Bugsy.)</i> #player #NewInvestigation # Introspection
 ->END
 
 === DefaultStory
