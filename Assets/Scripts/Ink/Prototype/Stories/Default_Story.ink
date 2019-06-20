@@ -36,9 +36,6 @@ VAR DEBUG = false
 
 =start_office 
 VAR lanza_stitch_first = 0
-
-TODO Tags (see with Killian)
-TODO Intro capo's apartment (retakes)
 // METTRE UN FOND NOIR?
 # DisableDiscussion
 #PlayerDBox #1
@@ -325,7 +322,15 @@ TODO Dialogue with Lanza (retakes)
 =end_apartment
 
 <i>(Lanza, always keeping an eye on me, brought me back to my office on Broadway Street.)</i> # player #PlayerDBox #1
-<i>(That day could not have been worse.)</i> # player #NewInvestigation
+<i>(That day could not have been worse.)</i> # player #NewBackground #9
+<i>(So let's check what we have here.)</i> #player
+<i>(A mafioso that couldn't keep it in his pants, and got shot for it.)</i> #player
+<i>(Lima eliminated, and the entiere organization turned upside down by it.)</i> #player
+<i>(And above that, this girl. We have nothing on her.)</i> #player
+<i>(Maybe that's what I should work on.)</i> #player
+<i>(Find who she is, where she lived.)</i> #player
+<i>(Ok, let's get to work Bugsy.)</i> #player
+ #NewInvestigation #introspection
 ->END
 
 === DefaultStory
@@ -653,13 +658,13 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # NewNoBackground #13
 <i>(Now I'm sure. Margaret worked here!)</i> # player #PlayerDBox #1
 <i>(Let's see what that woman has to say about it.)</i> # player
-*   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
++   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
 # NewBackground #6 #MusicPlay #2
 -	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
 	<i>(With a freakin' baseball bat.)</i>
 # jump # NewCharacterSprite #3
-*   [The girl worked here under the name of...] Validation #0
++   [The girl worked here under the name of...] Validation #0
 -> END
 
 =condor_fail
