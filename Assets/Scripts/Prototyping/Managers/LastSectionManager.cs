@@ -10,6 +10,20 @@ public class LastSectionManager : MonoBehaviour
     public GameObject BackButton;
     int i_ActualDocument = 0;
 
+    public Transform Proof01;
+    public Transform Proof02;
+    public Transform Proof03;
+
+    int i_actualproof = 0;
+
+    int i_proofIdx01 = -1;
+    int i_proofIdx02 = -1;
+    int i_proofIdx03 = -1;
+
+    int i_GoodIdx01 = 0;
+    int i_GoodIdx02 = 1;
+    int i_GoodIdx03 = 2;
+
     private void Awake()
     {
         if (s_Singleton != null)
@@ -35,4 +49,6 @@ public class LastSectionManager : MonoBehaviour
         DocumentParent.GetChild(i_ActualDocument).gameObject.SetActive(false);
         BackButton.SetActive(false);
     }
+
+    
 }
