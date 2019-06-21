@@ -2,7 +2,7 @@ VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 VAR madam2 = false
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = false
+VAR DEBUG = true
 
 ->start_capo_apartment
 ===start_capo_apartment===
@@ -56,10 +56,6 @@ VAR lanza_stitch_first = 0
 	+	[Try to sleep]{<i>(Ain't no time to call somebody, they'll wait tomorrow.)</i>|<i>(Could be a business call... Who am I kidding?)</i>|<i>(Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...)</i>|} # player
 		->phone
 - <i>(I decide to get up and finally answer it.)</i> # player #SFXStop #8
-
-TODO Find the capo's address (confirm)
-TODO Find Bugsy's address
-TODO Find dead capo's name
 # jump
 	*	Are you out of your mind?[] Did you fucking see the hour? # player #PlayerDBox #0
 - It's <color=red>James Lanza</color>. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7 #NewCharacterLog #2
@@ -118,18 +114,18 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
             Let's say that we caught a lot of heat from the trial. # otherCharacter
         **  I ain't mixed with all that[] kid, Jimmy should have told you so. I'm a simple detective that helps some friends in need. # player
             Not you personnally, but we must stay on our guard with the trial. # otherCharacter
-        --  I don't get it, your boss Lima is judged, couldn't you find a straw man to take his place? # player
-            Let's say that it's exactly where you're intervening. # otherCharacter
+        --  I don't get it, your boss Lima is judged, couldn't you find someone to take the blame? # player
+            I don't know, that's not something that I was told. # otherCharacter
         # jump
         **  Are you throwing me under the bus?[] I'll not go down easily motherfucker. # player
-            Don't be stupid, Mr. Lima cannot be saved. # otherCharacter
+            Don't be stupid, Mr. Lima cannot be saved by you. # otherCharacter
             So what am I doing here? # player
         **  Lima didn't request my help for the trial[], what could I possibly do? # player
-            If all had gone accordingly to the plan, you would not have been involved in this. # otherCharacter
+            You're not here to help on that matter. The Administration is working on it. # otherCharacter
             So where do I fit in your plan now? # player
-        --  Our straw man is dead. # otherCharacter
+        --  Giovanni is dead. # otherCharacter
         # jump
-        **  Fuck... What happened to Giovanni? # player 
+        **  Fuck... What happened to him? # player 
         //à changer
             You will discover it soon enough. # otherCharacter #NewNarrativeLog #2
             ->car_convo
@@ -148,8 +144,6 @@ I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter 
         <i>(And the young prick leaves.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0
 - <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0
 
-TODO First dialogue with Lanza (retakes)
-
 # NewBigBackground #12
 <i>(Jimmy Lanza is waiting for me, near to the door.)</i> # player # NewCharacterSprite #5
 For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
@@ -163,7 +157,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 - # jump
 *   What do you mean?[] I thought Giovanni was the only one. # player
 -   I guess that you were wrong. # otherCharacter
-    We found a prostitute in the bathroom. # otherCharacter
+    We found a dead girl in the bathroom. # otherCharacter
 *   For fuck's sake[...], you people really can't keep it in your pants. # player
     Show some respect, Rosenthal. We're not gonna always feed you. # otherCharacter
 *   [The fuck was that good?] The fuck was so good that they both died? # player
@@ -198,13 +192,13 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 --------------------------------------------------------------------------------*/
     
 =lanza_dialogue
-
-TODO Dialogue with Lanza (retakes)
 -   (lanza_convo)
 # jump # NewCharacterSprite #5
 *   What can you say about Giovanni? # player #PlayerDBox #0
     He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #5
     The Administration chose him to take the place of Lima during the trial. # otherCharacter
+    So he was the one that was going to take the blame? # player
+    It is what was agreed. #otherCharacter
     # jump
     **  You mean that you decided to throw him under the bus. # player
         No, we'll take care of his family. What he was gonna do for us was essential. # otherCharacter
@@ -216,7 +210,7 @@ TODO Dialogue with Lanza (retakes)
         *** Is it your opinion? # player
             It is mine, and Abati's too. Even Morello agreed. # otherCharacter
             And he's the fucking Consigliere, taking care of our soldiers and shit. # otherCharacter
-            We agreed to tend for his family, at least his mother. # otherCharacter
+            We agreed to tend for his family, at least for his mother. # otherCharacter
             We could not find anyone else. # otherCharacter
             # jump
             ****    Where does she live? # player
@@ -225,12 +219,15 @@ TODO Dialogue with Lanza (retakes)
 *   Who could want to harm him? # player #PlayerDBox #0
     Nobody that I would know of. # otherCharacter
     # jump
-    **  Not even the girl's pimp? # player
-        I can't even say for sure that she's a prostitute. # otherCharacter
-        Only a... how could you say... an educated guess Rosenthal. # otherCharacter
-        You knew Tommy a little. Always a gentleman with the ladies. # otherCharacter #NewNarrativeLog #6
+    **  Not even the girl's boyfriend? # player
+        How can you say that she had a boyfriend? # otherCharacter
+        Giovanni is Italian. You people really can't keep it in your pants. # player
+        Even more when you can get in trouble by doing so. # player
+        You knew Tommy a little. A good looking boy. # otherCharacter
+        They would fell in his arms in a flash. #otherCharacter
+        But always a gentleman with the ladies.  #NewNarrativeLog #6
     ->lanza_convo
-*   Who's that girl? # player #PlayerDBox #0
+*   So who's that girl? # player #PlayerDBox #0
     Can't say for sure, that's your job now. Nobody ever saw Tommy with her. # otherCharacter
     But we were not following him day and night. # otherCharacter
     # jump
@@ -243,7 +240,7 @@ TODO Dialogue with Lanza (retakes)
     # jump
     **  Congratulations[!], Sotto-Capi. Is that your title now? # player
         That was meant to be temporary. We should have exonerated Lima. # otherCharacter
-        But you know your little complication with Giovanni. # otherCharacter
+        But now all is going south # otherCharacter
     **  Too much complication to take the power. # player
         Again, stop your accusations. We were close to freeing the Boss. # otherCharacter
     --  Now Lima is taking full power, and I'll second him the best I can. # otherCharacter
@@ -459,10 +456,10 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 *->
 I'm done here. # player #PlayerDBox #0
 <i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1 #SFXPlay #17
-# NewCharacterSprite #0 #NewBackground #5 #MusicPlay #1
-<i>(Not too much about that girl... I'll check what I found at the office.)</i> # player
-<i>(Where she worked, what's her last name... I need something.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)
-# NewInvestigation
+# NewCharacterSprite #0 #NewBackground #9 #MusicPlay #1
+<i>(Not too much about that girl... At least I know where she lived.)</i> # player
+<i>(But I still don't know anything else about her, not even her name. Let's work on that.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)#NewBackground #9
+# NewInvestigation #InspectorNameUnlock #Introspection
 ->END
 
 
@@ -502,7 +499,7 @@ I'm done here. # player #PlayerDBox #0
 ~ temp number_drinks = 0
 - (ordering_drink)
 # jump
-+   {number_drinks <=4}[{number_drinks <=3 : Put a bill on the bar | Put my last bill on the counter}] <i>({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
++   {number_drinks <=4}[{number_drinks <=3 : Put {a|another} bill on the bar | Put my last bill on the counter}] <i>({10 bucks should be enough to make him talk.|Another bill, come on man.|This guy will drain me...|40 freakin'bucks, I'm completely bankrupt now.})</i> # player #PlayerDBox #1
     {Sir, can I have a word with you?|Ok boy now listen...|I want to speak to you!|Vodka I guess?} # player #PlayerDBox #0
     <i>({Not even a look at me.|It's like I'm just a robot handing bucks.|I want to crack that vodka bottle on his head so bad.|And vodka it is.})</i> # player #PlayerDBox #1
     <i>({He comes and snaps my bill.|My 10 bucks just... disappear.|30 freaking bucks in 5 minutes.|As I see my last bill going away, I'm quite eager now for that drink.})</i> # player
@@ -582,10 +579,10 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
 	    #NewCharacterSprite #0
 	    //Background: Condor Club's street
-	    #NewBackground #13 #MusicStop
--   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
-    <i>(For now.)</i> # player
-    <i>(Ok let's go back to the office. I'll find something.)</i> # player
+	    #NewBackground #9 #MusicStop
+-   <i>(I'm lost. Nothing to link her to this place, except for a poor matchbox.)</i> # player #NewNarrativeLog #14
+    <i>(I really need to dig more stuff on her.)</i> # player
+    <i>(What could I find now?)</i> # player #Introspection
     ->END
 
 = condor_back
@@ -596,10 +593,11 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
     //Background: Condor Club's street
-    #NewBackground #13 #MusicStop
--   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
-    <i>(For now.)</i> # player
-    <i>(Ok let's go back to the office. I'll find something.)</i> # player
+    #NewBackground #9 #MusicStop
+-   <i>(I'm really not sure about anything.)</i> # player #NewNarrativeLog #14
+    <i>(Is it already time for a drink?)</i> # player
+    <i>(That's tempting...)</i> # player
+    <i>(But I better have to work on that girl? Who where you Margaret?)</i> # player #Introspection
     ->END
  = condor_bad
  	I don't know anyone working here under that name, man or girl. # otherCharacter
@@ -609,11 +607,11 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
-    //Background: Condor Club's street
-    #NewBackground #13 #MusicStop
--   <i>(To be honest, I'm in a dead end. I have nothing more to do here.)</i> # player #NewNarrativeLog #14
-    <i>(For now.)</i> # player
-    <i>(Ok let's go back to the office. I'll find something.)</i> # player
+    #NewBackground #9 #MusicStop
+-   <i>(Did I miss something?)</i> # player #NewNarrativeLog #14
+    <i>(Wasn't she working there under the name of Margaret?)</i> # player
+    <i>(That being said, that's not a really appealing prostitute name.)</i> # player
+    <i>(If that even means something...)</i> # player #Introspection
     ->END
 = condor_good
 	{madam2 == true :  ->Condor_Good_2Time}
@@ -655,13 +653,13 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
  ~ madam2 = true
 //Background: Condor Club's street, no interlocutor
 # NewNoBackground #13
-<i>(Now I'm sure. Margaret worked here!)</i> # player #PlayerDBox #1
-<i>(Let's see what that woman has to say about it.)</i> # player
+<i>({Now I'm sure. Margaret worked here!|Back at it. Let's try to avoid that gorilla-barman.})</i> # player #PlayerDBox #1
+<i>({Let's see what that woman has to say about it.|Let's see what that woman has to say about Margaret.})</i> # player
 +   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
 # NewBackground #6 #MusicPlay #2
 -	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
-	<i>(With a freakin' baseball bat.)</i>
+	<i>(With a freakin' baseball bat.)</i> # player
 # jump # NewCharacterSprite #3
 +   [The girl worked here under the name of...] Validation #0
 -> END
@@ -670,7 +668,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 //Background: Condor Club's street, no interlocutor
 # NewNoBackground #13
 <i>(What am I doing here?)</i> # player #PlayerDBox #1
-<i>(I can't get there empty handed.)</i> # player
-<i>(I might as well put my gun in my mouth myself.)</i> # player
-<i>(No no, I need to find more about that girl.)</i> # player
+<i>(I don't even know the name of that girl!)</i> # player
+<i>(I might as well put my gun in my mouth myself.)</i> # player # NewBackground #9
+<i>(Let's back up a bit.)</i> # player
+<i>(Where could I find her name?)</i> # player #Introspection
 ->END
