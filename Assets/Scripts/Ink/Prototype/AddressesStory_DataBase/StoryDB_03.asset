@@ -22,7 +22,7 @@ MonoBehaviour:
   - 
   investigationType: 2
   criminalRecordType: 0
-  CriminalName: margaret obannon
+  CriminalName: margaretobannon
   CriminalBool: knowledge_prostitute_name
   m_LaunchNewInvestigation: 0
   CriminalRecordIdx: 4

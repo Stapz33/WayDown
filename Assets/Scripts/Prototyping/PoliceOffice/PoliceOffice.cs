@@ -95,6 +95,12 @@ public class PoliceOffice : MonoBehaviour
         MainUIManager.Singleton.NameValidation(InputField.text);
     }
 
+    public void GoodNameInput()
+    {
+        NameInput.SetActive(false);
+        BlackBackgroundN.SetActive(false);
+    }
+
     #endregion
 
     #region CS_VERIFICATION

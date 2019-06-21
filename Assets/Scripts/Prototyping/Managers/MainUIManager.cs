@@ -104,6 +104,7 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private List<StoryDataBase> StoryDataBase = new List<StoryDataBase>();
     private StoryDataBase ActualStoryDataBase;
 
+
     #endregion
 
     #region SAVE_SYSTEM_DATA
@@ -115,7 +116,7 @@ public class MainUIManager : MonoBehaviour {
         public string s_Story = "";
         public List<bool> AddressState = new List<bool>();
         public List<string> AddressDiscovered = new List<string>();
-
+        public bool b_IsInspectorDiscorvered = false;
 
         //variables
         public int knowledgeSpaghetty = 0;
@@ -190,8 +191,13 @@ public class MainUIManager : MonoBehaviour {
     public GameObject m_demoImage;
 
     bool b_isInIntrospection = false;
+    bool b_isInValidation = false;
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
+    public Sprite BackGroundDeskTransitition;
+
+    
+    public GameObject InvestigationTab;
 
     private void Awake()
     {
@@ -408,6 +414,12 @@ public class MainUIManager : MonoBehaviour {
             FreemodeIndicator.SetActive(false);
         }
 
+        if (Input.GetKeyDown("return") && b_isInValidation)
+        {
+            DialogueValidationTest();
+        }
+
+
     }
 
     #region ADDRESS_SYSTEM
@@ -440,6 +452,10 @@ public class MainUIManager : MonoBehaviour {
         for (int j = 0; j < AddressesList.Count; j++)
         {
             AddressesList[j].gameObject.SetActive(ActualDatas.AddressState[j]);
+        }
+        if (ActualDatas.b_IsInspectorDiscorvered)
+        {
+            InvestigationTab.SetActive(true);
         }
     }
 
@@ -597,6 +613,7 @@ public class MainUIManager : MonoBehaviour {
                 }
                 else if (_inkStory.currentTags[f] == "Validation")
                 {
+                    b_isInValidation = true;
                     b_StoryStarted = false;
                     i_GoodIdxValidation = int.Parse(_inkStory.currentTags[f + 1]);
                     Dialogue.SetActive(false);
@@ -606,6 +623,11 @@ public class MainUIManager : MonoBehaviour {
                 {
                     b_isInIntrospection = true;
                 }
+                else if (_inkStory.currentTags[f] == "InspectorNameUnlock")
+                {
+                    InvestigationTab.SetActive(true);
+                    ActualDatas.b_IsInspectorDiscorvered = true;
+                 }
             }
         }
     }
@@ -712,6 +734,7 @@ public class MainUIManager : MonoBehaviour {
                 AudioManager.Singleton.ActivateAudio(AudioType.AddressBookOpen);
                 AddressBookTab.SetActive(true);
                 ActualTab = AddressBookTab;
+                AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
                 break;
             case TabType.Documents:
                 AudioManager.Singleton.ActivateAudio(AudioType.DrawerOpen);
@@ -934,6 +957,7 @@ public class MainUIManager : MonoBehaviour {
                     SetupNewStory(AddressesList[i].GetActualStory());
                     SetupDialogueSystem();
                     AudioManager.Singleton.StopRadio();
+                    AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
                     return;
                 }
                 else if (i == ActualDatas.AddressDiscovered.Count -1)
@@ -945,6 +969,7 @@ public class MainUIManager : MonoBehaviour {
         }
         SetupDialogueSystem();
         AudioManager.Singleton.StopRadio();
+        AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
     }
 
     public void GoToAddres(string s,DocumentFolder documentFolder,Sprite BG)
@@ -984,10 +1009,11 @@ public class MainUIManager : MonoBehaviour {
         string GoodName = GetActualName();
         if (GoodName != "")
         {
-            if (name.ToLower().Replace("'","") == GoodName && !ActualDatas.m_IsCriminalKnown)
+            if (name.ToLower().Replace("'","").Replace(" ", string.Empty) == GoodName && !ActualDatas.m_IsCriminalKnown)
             {
                 PoliceOffice.Singleton.GoodName();
-                Invoke("AddNewCriminalRecord", 1.5f);
+                Invoke("AddNewCriminalRecord", 2f);
+                PoliceOfficeObject.GetComponent<PoliceOffice>().GoodNameInput();
             }
             else if (name == GoodName && ActualDatas.m_IsCriminalKnown)
             {
@@ -1335,13 +1361,27 @@ public class MainUIManager : MonoBehaviour {
 
     public void SetBGDialogue()
     {
-        m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        if (m_DialogueBackgroundIdx == 9)
+        {
+            m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = BackGroundDeskTransitition;
+        }
+        else
+        {
+            m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        }
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         Invoke("ResetBG", 2f);
     }
     public void SetBGBigDialogue()
     {
-        m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        if (m_DialogueBackgroundIdx == 9)
+        {
+            m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = BackGroundDeskTransitition;
+        }
+        else
+        {
+            m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
+        }
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         Invoke("ResetBG", 2.5f);
     }
@@ -1365,7 +1405,7 @@ public class MainUIManager : MonoBehaviour {
             string TestName = ValidationText.text;
             if (GoodName != "")
             {
-                if (TestName.ToLower().Replace("'", "") == GoodName)
+                if (TestName.ToLower().Replace("'", "").Replace(" ", string.Empty) == GoodName)
                 {
                     DialogueValidationSetup(2);
                 }
@@ -1378,6 +1418,7 @@ public class MainUIManager : MonoBehaviour {
             {
                 DialogueValidationSetup(1);
             }
+            b_isInValidation = false;
     }
 
     public void DialogueValidationSetup(int ValIdx)

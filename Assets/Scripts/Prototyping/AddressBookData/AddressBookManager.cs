@@ -15,6 +15,7 @@ public class AddressBookManager : MonoBehaviour
 
     [SerializeField] private GameObject PreviousButton = null;
     [SerializeField] private GameObject NextButton = null;
+    [SerializeField] private GameObject CallTaxiButton = null;
 
     [SerializeField] private Text ValidationText = null;
 
@@ -23,6 +24,7 @@ public class AddressBookManager : MonoBehaviour
 
     public int LastPageIdx;
     private int PageIdx = 1;
+    private float f_DoubleClickCD = 0;
 
     private void Awake()
     {
@@ -39,6 +41,18 @@ public class AddressBookManager : MonoBehaviour
             AddressesList.Add(AddressesButtonParent.GetChild(i).GetChild(0).GetComponent<Text>());
         }
         //NextPage();
+    }
+
+    private void Update()
+    {
+        if (f_DoubleClickCD > 0)
+        {
+            f_DoubleClickCD -= Time.deltaTime;
+            if (f_DoubleClickCD <= 0)
+            {
+                f_DoubleClickCD = 0;
+            }
+        }
     }
 
     public void NextPage()
@@ -95,10 +109,20 @@ public class AddressBookManager : MonoBehaviour
         AlphabeticalButton.SetActive(true);
     }
 
-    public void SetValidationText(string TextToSet)
+    public void SetValidationText(string TextToSet) 
     {
-        ValidationText.text = TextToSet;
-        MainUIManager.Singleton.TestGoodAddress(TextToSet);
+        if (f_DoubleClickCD == 0)
+        {
+            ValidationText.text = TextToSet;
+            MainUIManager.Singleton.TestGoodAddress(TextToSet);
+            f_DoubleClickCD = 0.3f;
+            CallTaxiButton.SetActive(true);
+        }
+        else if (f_DoubleClickCD > 0)
+        {
+            AudioManager.Singleton.ActivateAudio(AudioType.CallTaxi);
+            MainUIManager.Singleton.LoadScreen("CallTaxi", true);
+        }
     }
 
     public void GoToAlphabetical()
@@ -108,5 +132,18 @@ public class AddressBookManager : MonoBehaviour
         PreviousButton.SetActive(false);
         AddressesButtonParent.gameObject.SetActive(false);
         AddressesAlphabeticalButtonParent.SetActive(true);
+        ValidationText.text = "";
+        CallTaxiButton.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        f_DoubleClickCD = 0;
+    }
+
+    public void DisableTaxiButton()
+    {
+        CallTaxiButton.SetActive(false);
+        ValidationText.text = "";
     }
 }
