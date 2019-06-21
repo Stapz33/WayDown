@@ -246,10 +246,10 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
     --  Now Lima is taking full power, and I'll second him the best I can. # otherCharacter
     # jump
     **  What about Morello? # player
-        The Consigliere? He's advising us. He approved of Giovanni's designation. # otherCharacter
-        I think he's trying to take some distance with the game. # otherCharacter
+        The Consigliere? He's advising us. # otherCharacter
+        But to be honest, I think that he's trying to take some distance with the game. # otherCharacter
         What can we say about it? That poor bastard earned to rest now. # otherCharacter
-        We're putting the Family back on its feet, so we're focusing on greater matters.
+        We're putting the Family back on its feet, so we're focusing on greater matters. #otherCharacter
     ->lanza_convo
 *   ->
 ~lanza_stitch_first = 1
@@ -265,6 +265,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 #NewCharacterSprite #0 # NewBackground #0 #SFXPlay #16
 <i>(I enter the apartment, only to find a first body. Poor Tommy.)</i> # player #PlayerDBox #1
 <i>(Ok, let's focus now and do that methodically, ain't I a damn detective?)</i> # player
+TODO: Include the letter
 *	[Check the livingroom] <i>(Nice apartment.)</i> # player
 	<i>(Nothing special here, except some furnitures.)</i> # player
 	<i>(And obviously, Giovanni's body.)</i> # player
@@ -272,8 +273,8 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 		<i>(Poor boy.)</i>  # player # NewNoBackground #16
 		<i>(His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.)</i> # player
 		<i>(Skull and brain pieces are all over the wall behind.)</i> # player 
-	    <i>(What does this poker chip do here?)</i> # player #NewNarrativeLog #8
 	    # NewDocument #2
+	    <i>(What does this poker chip do here?)</i> # player #NewNarrativeLog #8
 - <i>(So now, where would I search for clues?)</i> # player
 - (clues_apartment)
 # jump
@@ -320,7 +321,21 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 
 <i>(Lanza, always keeping an eye on me, brought me back to my office on Broadway Street.)</i> # player #PlayerDBox #1
 <i>(That day could not have been worse.)</i> # player #NewBackground #9 # NewCharacterSprite #0
-<i>(So let's check what we have here.)</i> #player
+<i>(What a night...)</i> #player
+<i>(This freakin' mob is quite a mess.)</i> #player
+<i>(Let's check if I have all the hierarchy in order.)</i> #player
+<i>(So the boss Lima was emprisoned. His second, Abati, took his place.)</i> #player
+<i>(Abati is now at the head of the entire family.)</i> #player
+<i>(Jimmy Lanza is just behind him. As the underboss, he overlooks all the capi.)</i> #player
+<i>(Couldn't they say captains like every american?)</i> #player
+<i>(So each capo have soldiers under their orders.)</i> #player
+<i>(And then there is all the associates. Nice way to call all the Jews, Russians and scum working for them.)</i> #player
+<i>(And then there's Morello.)</i> #player
+<i>(The elder, the Consigliere.)</i> #player
+<i>(Quite out of the game. He's only advising, never getting his hands dirty.)</i> #player
+<i>(What a mess... I should keep a diagram.)</i> #player
+TODO: Create the hierarchy diagram
+<i>(So now, let's check what we have here.)</i> #player
 <i>(A mafioso that couldn't keep it in his pants, and got shot for it.)</i> #player
 <i>(Lima eliminated, and the entiere organization turned upside down by it.)</i> #player
 <i>(And above that, this girl. We have nothing on her.)</i> #player
