@@ -714,6 +714,28 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 --------------------------------------------------------------------------------*/
 
 ===ending===
+=start_ending
+-	(choice_badguy)Qui est le coupable? #otherCharacter
++	[Lanza] C'est Lanza. #player
+	Tu es sûr? #otherCharacter
+	++ [Oui] Oui of course. #player
+	Explique toi alors, même si tu as tort. #otherCharacter
+	TODO:A toi de voir Kiki
+	->END
+	++ [Non] Nop pas sûr du tout. #player
+	->choice_badguy
++	[Morello] C'est Morello. #player
+	++ [Oui] Oui of course. #player
+	Explique toi alors. #otherCharacter
+	TODO: A toi de voir aussi Kiki
+	->END
+	++ [Non] Nop pas sûr du tout. #player
+	->choice_badguy
+
+=badchoice_proofs
+Te fous pas de ma gueule, Rosy. #otherCharacter
+TODO: One last ride Kiki
+->END
 =good_ending
 Bravo vous avez gagné. #player #Demo
 ->END
