@@ -18,7 +18,7 @@ VAR DEBUG = true
 		**	[Start] ->prostitute_motel
 		**	[Motel lobby] ->prostitute_motel.motel_lobby
 		**	[Motel room] ->prostitute_motel.motel_room
-	*	Condor Club[] #NewInvestigation #NewInvestigation
+	*	Condor Club[] #NewInvestigation #NewInvestigation #InspectorNameUnlock
 		**	[Start] ->condor_club
 		**	[Entrance] ->condor_club.condor_entrance
 		**	[First discussion with madam] ->condor_club.condor_madam
@@ -85,7 +85,8 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
-- Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter
+- Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter 
+# jump
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
 - <i>(I step into the car.)</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14 #MusicPlay #3
@@ -97,7 +98,8 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
         Came here 6 months ago from Sicily. # otherCharacter 
         # jump
         **  Lanza got you in here? # player
-            Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter
+            Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter 
+            # jump
         **  More Italians?[] Is there any place left in North Beach? # player
             I'm not here to settle down, Mr. Lanza asked me to come to ensure his protection. # otherCharacter
         -- 
@@ -112,6 +114,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
         **  Who would follow me?[] Am I a Jewish Marilyn? # player 
         //revoir 
             Let's say that we caught a lot of heat from the trial. # otherCharacter
+            # jump
         **  I ain't mixed with all that[] kid, Jimmy should have told you so. I'm a simple detective that helps some friends in need. # player
             Not you personnally, but we must stay on our guard with the trial. # otherCharacter
         --  I don't get it, your boss Lima is judged, couldn't you find someone to take the blame? # player
@@ -157,7 +160,8 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 - # jump
 *   What do you mean?[] I thought Giovanni was the only one. # player
 -   I guess that you were wrong. # otherCharacter
-    We found a dead girl in the bathroom. # otherCharacter
+    We found a dead girl in the bathroom. # otherCharacter 
+    # jump
 *   For fuck's sake[...], you people really can't keep it in your pants. # player
     Show some respect, Rosenthal. We're not gonna always feed you. # otherCharacter
 *   [The fuck was that good?] The fuck was so good that they both died? # player
@@ -180,7 +184,8 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
     *   I'll go and check on the bodies {lanza_stitch_first ==1:now|first}. # player #PlayerDBox #0
     ->check_apartment
     *->
-    {lanza_stitch_first == 1:Enough talking|Come here!} # otherCharacter # NewCharacterSprite #5
+    # NewCharacterSprite #5
+    {lanza_stitch_first == 1:Enough talking|Come here!} # otherCharacter
     We need to go Rosenthal. I'll take you to your office # otherCharacter
     ->end_apartment
     
@@ -264,11 +269,13 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 =check_apartment
 #NewCharacterSprite #0 # NewBackground #0 #SFXPlay #16
 <i>(I enter the apartment, only to find a first body. Poor Tommy.)</i> # player #PlayerDBox #1
-<i>(Ok, let's focus now and do that methodically, ain't I a damn detective?)</i> # player
+<i>(Ok, let's focus now and do that methodically, ain't I a damn detective?)</i> # player 
+# jump
 TODO: Include the letter
 *	[Check the livingroom] <i>(Nice apartment.)</i> # player
 	<i>(Nothing special here, except some furnitures.)</i> # player
-	<i>(And obviously, Giovanni's body.)</i> # player
+	<i>(And obviously, Giovanni's body.)</i> # player 
+	# jump
 	**	[Check Giovanni] <i>(He's lying near the door.)</i> # player
 		<i>(Poor boy.)</i>  # player # NewNoBackground #16
 		<i>(His skull is completely shattered, which is caused by the obvious bullet hole on his forehead.)</i> # player
@@ -279,9 +286,10 @@ TODO: Include the letter
 - (clues_apartment)
 # jump
 *	[Check the bathroom] <i>(Maybe there could be something in the bathroom.)</i> # player #SFXPlay #17
-	# NewBackground #11 #SFXPlay #18
+	# NewBackground #11
 	<i>(Oh that's right. The second body.)</i> # player
-	<i>(The entire floor is covered in blood. Hers, obviously.)</i> # player
+	<i>(The entire floor is covered in blood. Hers, obviously.)</i> # player 
+	# jump
 	**	[Look at the body] <i>(Who do we have here?)</i> # player
 		<i>(She really seems to be a prostitute.)</i> # player
 		<i>(The way she's dressed, her make-up...)</i> # player
@@ -293,7 +301,7 @@ TODO: Include the letter
 		# jump # NewDocument #0
 		->clues_apartment
 *	[Check the bedroom] <i>(Did they have enough time to use the bedroom?)</i> # player #SFXPlay #17
-	#NewBackground #21 #SFXPlay #18
+	#NewBackground #21
 	<i>(It's tidy, with not a lot of furnitures.)</i> # player
 	<i>(Only a bed, an empty desk, and a closet.)</i> # player
 	<i>(The bed is still made. Giovanni didn't sleep here so much, or at least not yesterday.)</i> # player
@@ -305,8 +313,9 @@ TODO: Include the letter
 		<i>(Not enough for someone to live here.)</i> # player
 		<i>(Unless that person is a slog. But Tommy was not.)</i> # player #NewNarrativeLog #10
 	->clues_apartment
+	# jump
 *->
-<i>(Nothing more for me in that apartment.)</i> # player 
+<i>(Nothing more for me in that apartment.)</i> # player #NewCharacterSprite #0 #SFXPlay #20
 # NewBackground #12 # DisablePlayer
 ~lanza_stitch_first = 0
 ->lobby_apartment
@@ -372,9 +381,11 @@ TODO: Create the hierarchy diagram
 <i>(That place could use some light.)</i> # player #MusicPlay #0
 <i>(The only client that come here exit the place immediately, only passing by.)</i> # player
 <i>(There's only this man. Seems to be the manager.)</i> # player #NewCharacterLog #4
+# jump
 *   [Go to the desk] <i>(Let's talk to him, that's my only lead.)</i> # player
 //Interlocutor: Motel's manager
 - Hello sir, what do you want? # otherCharacter # NewCharacterSprite #4
+# jump
 *   [Ask about the room] Good day fellow, I want to access one of your room. # player #PlayerDBox #0
 - Alright, do you have the key? # otherCharacter
 # jump
@@ -389,6 +400,7 @@ TODO: Create the hierarchy diagram
 	-- (threat_manager)
 *   [She's my girlfriend] She's my girl, but I don't have news from her since two days... # player #PlayerDBox #0
     Your girl... Why does she live alone then? # otherCharacter
+    # jump
     **  [Not your business] Why don't mind your damn business? # player
         Alright, calm down... So many weirdos here... # otherCharacter
     **  [To keep our independance] We're a free couple. # player
@@ -444,7 +456,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 *	[Check the desk] <i>(She seems to often use that desk given the amount of papers.)</i> # player # NewCharacterSprite #0
     <i>(What are those? Seems to be letters from a relative.)</i> # player
     <i>(I'll check that at the office.)</i> # player
-    # NewDocument #3
+    # jump # NewDocument #3
     ->motel_search
 // *   [Go in the kitchen] <i>No space</i> # player
 //     <i>Nothing interesting in the kitchen, but it is small. You return in the room.</i> # player
@@ -471,7 +483,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 *->
 I'm done here. # player #PlayerDBox #0
 <i>(I leave without giving him a chance to believe that I'm not with the police.)</i> # player #PlayerDBox #1 #SFXPlay #17
-# NewCharacterSprite #0 #NewBackground #9 #MusicPlay #1
+# NewCharacterSprite #0 #NewBigBackground #9 #MusicPlay #1
 <i>(Not too much about that girl... At least I know where she lived.)</i> # player
 <i>(But I still don't know anything else about her, not even her name. Let's work on that.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)#NewBackground #9
 # NewInvestigation #InspectorNameUnlock #Introspection
@@ -521,6 +533,7 @@ I'm done here. # player #PlayerDBox #0
     <i>({Only to replace it with a glass of vodka.|Another vodka.|And another one.|That doesn't taste so bad after all.})</i> # player
     <i>({I don't even like vodka.|Not a word. Just a half-full glass.|I'm not drunk, but I'm not sober too.|I think I love vodka.})</i> # player
     {!<i>(But I won't waste a drink...)</i>|<i>(If my ex-wife was here...)</i>}  # player
+    # jump
     ++	[Drink] <i>({I hate vodka...|It freakin' burns!|Not so bad... I think my throat is completely anesthetized|Nasdrovia!})</i> # player #SFXPlay #12
     ~ number_drinks = number_drinks + 1
     ->ordering_drink
@@ -537,10 +550,12 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # jump
 *   [Tell him who I am] I'm Bugsy Rose- # player #PlayerDBox #0
 -	I know who you are. What do you want? # otherCharacter
+# jump
 *   [Tell him about the dead girl] I'm searching for a girl, kinda cute, she might have worked here. # player
 -	It doesn't ring a bell for me sir. # otherCharacter
 	You don't seem to be very cooperative... # player
 	And you don't seem to be at your place here, please get out sir. # otherCharacter
+	# jump
 *	[Smash my drink on his head] You'll see if I'm not in my place... # player
 	<i>(As soon as I put my hand on the glass, a woman puts a firm hand on my arm.)</i> # player # PlayerDBox #1
 *	[Insult the barman] You fuckin' moron... # player
@@ -551,6 +566,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # jump
 *   [Tell her what you do] Hello miss, I'm searching for- # PlayerDBox #0
 -	I know what you're here for darling. # otherCharacter
+# jump
 *	[Really?] Really, do you? # player
 	Of course. # otherCharacter
 	Like everyone else, you're here to enjoy the booze and the calm. # otherCharacter
@@ -593,11 +609,11 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
 	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
 	    #NewCharacterSprite #0
-	    //Background: Condor Club's street
-	    #NewBackground #9 #MusicStop
+	    #NewBigBackground #9 #MusicStop
 -   <i>(I'm lost. Nothing to link her to this place, except for a poor matchbox.)</i> # player #NewNarrativeLog #14
     <i>(I really need to dig more stuff on her.)</i> # player
-    <i>(What could I find now?)</i> # player #Introspection
+    <i>(What could I find now?)</i> # player
+    #Introspection
     ->END
 
 = condor_back
@@ -608,11 +624,12 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
     //Background: Condor Club's street
-    #NewBackground #9 #MusicStop
+    #NewBigBackground #9 #MusicStop
 -   <i>(I'm really not sure about anything.)</i> # player #NewNarrativeLog #14
     <i>(Is it already time for a drink?)</i> # player
     <i>(That's tempting...)</i> # player
-    <i>(But I better have to work on that girl? Who where you Margaret?)</i> # player #Introspection
+    <i>(But I better have to work on that girl? Who where you Margaret?)</i> # player 
+    #Introspection
     ->END
  = condor_bad
  	I don't know anyone working here under that name, man or girl. # otherCharacter
@@ -622,7 +639,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
-    #NewBackground #9 #MusicStop
+    #NewBigBackground #9 #MusicStop
 -   <i>(Did I miss something?)</i> # player #NewNarrativeLog #14
     <i>(Wasn't she working there under the name of Margaret?)</i> # player
     <i>(That being said, that's not a really appealing prostitute name.)</i> # player
@@ -659,7 +676,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     # NewBackground #7 #MusicStop
     <i>(I haven't been to a lot of brothel. But this one is beyond anything else.)</i> # player
     <i>(And this gal is waiting for me.)</i> # player
-    #NewCharacterSprite #3
+    #NewCharacterSprite #6
     What happened to Cara? # otherCharacter 
     # jump # Demo
     ->END
@@ -670,13 +687,14 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # NewNoBackground #13
 <i>({Now I'm sure. Margaret worked here!|Back at it. Let's try to avoid that gorilla-barman.})</i> # player #PlayerDBox #1
 <i>({Let's see what that woman has to say about it.|Let's see what that woman has to say about Margaret.})</i> # player
+# jump
 +   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
 //Background: Condor Club's entrance
 # NewBackground #6 #MusicPlay #2
--	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player
+-	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player # NewCharacterSprite #3
 	<i>(With a freakin' baseball bat.)</i> # player
-# jump # NewCharacterSprite #3
-+   [The girl worked here under the name of...] Validation #0
+# jump
++   [The girl worked here under the name of...] #Validation #0
 -> END
 
 =condor_fail
@@ -684,7 +702,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # NewNoBackground #13
 <i>(What am I doing here?)</i> # player #PlayerDBox #1
 <i>(I don't even know the name of that girl!)</i> # player
-<i>(I might as well put my gun in my mouth myself.)</i> # player # NewBackground #9
+# NewBigBackground #9
+<i>(I might as well put my gun in my mouth myself.)</i> # player
 <i>(Let's back up a bit.)</i> # player
 <i>(Where could I find her name?)</i> # player #Introspection
 ->END
