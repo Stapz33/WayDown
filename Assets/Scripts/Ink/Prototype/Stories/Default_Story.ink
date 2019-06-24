@@ -707,3 +707,19 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 <i>(Let's back up a bit.)</i> # player
 <i>(Where could I find her name?)</i> # player #Introspection
 ->END
+
+/*--------------------------------------------------------------------------------
+    Ending
+    
+--------------------------------------------------------------------------------*/
+
+===ending===
+=good_ending
+Bravo vous avez gagné. #player #Demo
+->END
+=bad_ending
+Bravo, vous avez perdo. #player #Demo
+->END
+=lanza_ending
+Bravo, vous vous êtes trompé de mec. #player #Demo
+->END
