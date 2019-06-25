@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot }
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02}
 
 public class AudioManager : MonoBehaviour
 {
@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_BarEntranceAudio = null;
     [SerializeField] private AudioSource m_HailCabAudio = null;
     [SerializeField] private AudioSource m_FootstepAudio = null;
+    [SerializeField] private AudioSource m_BedMovingAudio = null;
 
     [Header("Doors And Keys")]
     [SerializeField] private AudioSource m_CarDoorAudio = null;
@@ -46,6 +47,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_BunchOfKeysAudio = null;
     [SerializeField] private AudioSource m_DoorUnlockedAudio = null;
     [SerializeField] private AudioSource m_DoorUnlockedAndFootStepsAudio = null;
+    [SerializeField] private AudioSource m_DoorBell01Audio = null;
+    [SerializeField] private AudioSource m_DoorBell02Audio = null;
+    [SerializeField] private AudioSource m_KnockingDoor01Audio = null;
+    [SerializeField] private AudioSource m_KnockingDoor02Audio = null;
 
     [Header("Radio")]
     [SerializeField] private AudioSource m_RadioAudio = null;
@@ -152,6 +157,21 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.doorandfoot:
                 m_DoorUnlockedAndFootStepsAudio.Play();
+                break;
+            case AudioType.doorbell01:
+                m_DoorBell01Audio.Play();
+                break;
+            case AudioType.doorbell02:
+                m_DoorBell02Audio.Play();
+                break;
+            case AudioType.bedmoving:
+                m_BedMovingAudio.Play();
+                break;
+            case AudioType.knockingdoor01:
+                m_KnockingDoor01Audio.Play();
+                break;
+            case AudioType.knockingdoor02:
+                m_KnockingDoor02Audio.Play();
                 break;
             default:
                 break;
