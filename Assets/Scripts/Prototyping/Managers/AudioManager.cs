@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02}
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02, pageturning01, pageturning02, pickingupphone, polaroid, reload, searching, shotgun, closingdoor, passingcar01, passingcar02}
 
 public class AudioManager : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     [Header("Documents")]
     [SerializeField] private AudioSource m_DrawerOpenAudio = null;
     [SerializeField] private AudioSource m_NewDocumentAudio = null;
+    [SerializeField] private AudioSource m_PolaroidAudio = null;
 
     [Header("Map")]
     [SerializeField] private AudioSource m_MapOpenAudio = null;
@@ -40,6 +41,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_HailCabAudio = null;
     [SerializeField] private AudioSource m_FootstepAudio = null;
     [SerializeField] private AudioSource m_BedMovingAudio = null;
+    [SerializeField] private AudioSource m_PageTurning01Audio = null;
+    [SerializeField] private AudioSource m_PageTurning02Audio = null;
+    [SerializeField] private AudioSource m_PickingUpPhoneAudio = null;
+    [SerializeField] private AudioSource m_ReloadAudio = null;
+    [SerializeField] private AudioSource m_SearchingAudio = null;
+    [SerializeField] private AudioSource m_ShotGunAudio = null;
+    [SerializeField] private AudioSource m_PassingCar01Audio = null;
+    [SerializeField] private AudioSource m_PassingCar02Audio = null;
 
     [Header("Doors And Keys")]
     [SerializeField] private AudioSource m_CarDoorAudio = null;
@@ -51,6 +60,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_DoorBell02Audio = null;
     [SerializeField] private AudioSource m_KnockingDoor01Audio = null;
     [SerializeField] private AudioSource m_KnockingDoor02Audio = null;
+    [SerializeField] private AudioSource m_ClosingDoorAudio = null;
 
     [Header("Radio")]
     [SerializeField] private AudioSource m_RadioAudio = null;
@@ -172,6 +182,36 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.knockingdoor02:
                 m_KnockingDoor02Audio.Play();
+                break;
+            case AudioType.pageturning01:
+                m_PageTurning01Audio.Play();
+                break;
+            case AudioType.pageturning02:
+                m_PageTurning02Audio.Play();
+                break;
+            case AudioType.pickingupphone:
+                m_PickingUpPhoneAudio.Play();
+                break;
+            case AudioType.polaroid:
+                m_PolaroidAudio.Play();
+                break;
+            case AudioType.reload:
+                m_ReloadAudio.Play();
+                break;
+            case AudioType.searching:
+                m_SearchingAudio.Play();
+                break;
+            case AudioType.shotgun:
+                m_ShotGunAudio.Play();
+                break;
+            case AudioType.closingdoor:
+                m_ClosingDoorAudio.Play();
+                break;
+            case AudioType.passingcar01:
+                m_PassingCar01Audio.Play();
+                break;
+            case AudioType.passingcar02:
+                m_PassingCar02Audio.Play();
                 break;
             default:
                 break;

@@ -47,15 +47,15 @@ VAR lanza_stitch_first = 0
 <i>(But everybody has to do something for a living.)</i> # player 
 <i>(And this mob is paying quite well.)</i> # player
 <i>(But they're fucking savages, killing each other and all.)</i> # player 
-<i>(Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.)</i> # player 
+<i>(Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.)</i> # player #SFXPlay #23
 <i>(And now the fuckin' phone is ringing.)</i> # player #SFXPlay #8
 <i>(Don't even wants to answer, fuck it.)</i> # player 
 - (phone) {<i>(The phone rings.)</i>|<i>(The phone doesn't stop.)</i>|<i>(It continues to ring.)</i>} # player 
 # jump
-	*	[Answer] <i>(This damn phone ain't gonna stop itself.)</i> # player 
-	+	[Try to sleep]{<i>(Ain't no time to call somebody, they'll wait tomorrow.)</i>|<i>(Could be a business call... Who am I kidding?)</i>|<i>(Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...)</i>|} # player
+	*	[Answer] <i>(This damn phone ain't gonna stop itself.)</i> # player
+	+	[Try to sleep]{<i>(Ain't no time to call somebody, they'll wait tomorrow.)</i>|<i>(Could be a business call... Who am I kidding?)</i>|<i>(Twenty-four sheeps. Twenty-five sheeps. Twenty-six sheeps...)</i>|} # player #SFXPlay #23
 		->phone
-- <i>(I decide to get up and finally answer it.)</i> # player #SFXStop #8
+- <i>(I decide to get up and finally answer it.)</i> # player #SFXStop #8 #SFXPlay #28
 # jump
 	*	Are you out of your mind?[] Did you fucking see the hour? # player #PlayerDBox #0
 - It's <color=red>James Lanza</color>. We had a problem with Giovanni. #otherCharacter #NewCharacterSprite #7 #NewCharacterLog #2
