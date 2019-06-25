@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 using RichTextSubstringHelper;
+using UnityEngine.Rendering.PostProcessing;
 
 public enum TabType {Map, AddressBook, Documents}
 public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Drugstore, Restaurant }
@@ -14,6 +15,13 @@ public class MainUIManager : MonoBehaviour {
 
     public static MainUIManager Singleton { get; private set; }
 
+    //Blur
+    public PostProcessProfile PPP;
+    int i_BlurState = -1;
+    float f_blurCooldown = 0;
+    public int m_BlurSpeed;
+    int blurValue = 5;
+  
     #region ADDRESS_SYSTEM_DATA
 
     private List<Button> l_AddressesList = new List<Button>();
@@ -29,6 +37,8 @@ public class MainUIManager : MonoBehaviour {
     private GameObject ActualTab;
 
     #endregion
+
+    
 
     #region LOADING_SCREEN_DATA
 
@@ -195,9 +205,18 @@ public class MainUIManager : MonoBehaviour {
     int i_TextFramingSound = 0;
     private bool b_iscontinuing = false;
     public Sprite BackGroundDeskTransitition;
-
-    
     public GameObject InvestigationTab;
+
+    [Header("EndSection")]
+    public GameObject LastSection;
+    int i_actualProof = 0;
+    public List<GameObject> proofsList;
+    public Sprite DefaultProof;
+    private List<bool> isGoodList = new List<bool>();
+    private List<GameObject> ProofRegisteredList = new List<GameObject>();
+    public GameObject EndGameValidationButton;
+    bool b_isLanzaChoosen = false;
+    bool b_isSecondTime = false;
 
     private void Awake()
     {
@@ -213,6 +232,11 @@ public class MainUIManager : MonoBehaviour {
 
     private void Start()
     {
+        for (int i = 0; i <3;i++)
+        {
+            isGoodList.Add(false);
+        }
+        
         AudioManager.Singleton.ToggleStartRadio();
         for (int i = 0; i < AddressesParent.childCount; i++)
         {
@@ -418,6 +442,44 @@ public class MainUIManager : MonoBehaviour {
         {
             DialogueValidationTest();
         }
+
+        if (i_BlurState != -1)
+        {
+            float value = PPP.GetSetting<DepthOfField>().focalLength.value;
+            if (i_BlurState == 0)
+            {
+                value -= Time.deltaTime * m_BlurSpeed;
+                if (value <= 1)
+                {
+                    value = 1;
+                    i_BlurState = -1;
+                }
+                PPP.GetSetting<DepthOfField>().focalLength.value = value;
+            }
+            else if (i_BlurState == 1)
+            {
+                value += Time.deltaTime * m_BlurSpeed;
+                if (value >= 100)
+                {
+                    value = 100;
+                    f_blurCooldown = blurValue;
+                    blurValue = 10;
+                    i_BlurState = -1;
+                }
+                PPP.GetSetting<DepthOfField>().focalLength.value = value;
+            }
+        }
+
+        if (f_blurCooldown > 0)
+        {
+            f_blurCooldown -= Time.deltaTime;
+            if (f_blurCooldown <= 0)
+            {
+                i_BlurState = 0;
+                f_blurCooldown = 0;
+            }
+        }
+
 
 
     }
@@ -627,7 +689,12 @@ public class MainUIManager : MonoBehaviour {
                 {
                     InvestigationTab.SetActive(true);
                     ActualDatas.b_IsInspectorDiscorvered = true;
-                 }
+                }
+                else if (_inkStory.currentTags[f] == "endgame")
+                {
+                    ActivateEndSection();
+                }
+                
             }
         }
     }
@@ -699,6 +766,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void LoadScreen(string method, bool NeedToCloseTab)
     {
+        blurValue = 5;
         AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         a_LoadingScreenAnimator.SetTrigger("Loading");
         if (NeedToCloseTab)
@@ -710,6 +778,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void LoadScreen(bool NeedToCloseTab)
     {
+        blurValue = 5;
         AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         a_LoadingScreenAnimator.SetTrigger("Loading");
         if (NeedToCloseTab)
@@ -1441,5 +1510,101 @@ public class MainUIManager : MonoBehaviour {
                 break;
         }
         
+    }
+
+    public void AddBlurToScreen()
+    {
+        i_BlurState = 1;
+    }
+
+    public void SelectProof(GameObject proof,bool isGood)
+    {
+        if (i_actualProof <= 2)
+        {
+            ProofRegisteredList.Add(proof);
+            isGoodList[i_actualProof] = isGood;
+            proofsList[i_actualProof].GetComponent<Image>().sprite = proof.GetComponent<Image>().sprite;
+            proofsList[i_actualProof].GetComponent<Button>().interactable = true;
+            proof.SetActive(false);
+            switch (i_actualProof)
+            {
+                case 0:
+                    i_actualProof++;
+                    break;
+                case 1:
+                    proofsList[0].GetComponent<Button>().interactable = false;
+                    i_actualProof++;
+                    break;
+                case 2:
+                    proofsList[1].GetComponent<Button>().interactable = false;
+                    EndGameValidationButton.SetActive(true);
+                    i_actualProof++;
+                    break;
+            }
+        }
+        
+    }
+
+    public void RemoveProof()
+    {
+        i_actualProof--;
+        EndGameValidationButton.SetActive(false);
+        ProofRegisteredList[i_actualProof].SetActive(true);
+        ProofRegisteredList.Remove(ProofRegisteredList[i_actualProof]);
+        isGoodList[i_actualProof] = false;
+        proofsList[i_actualProof].GetComponent<Image>().sprite = DefaultProof;
+        proofsList[i_actualProof].GetComponent<Button>().interactable = false;
+        if (i_actualProof != 0)
+        {
+            proofsList[i_actualProof - 1].GetComponent<Button>().interactable = true;
+        }
+    }
+
+    public void EndGameValidation()
+    {
+        if (b_isLanzaChoosen)
+        {
+            SetupNewStory("ending.lanza_ending");
+            SetupDialogueSystem();
+        }
+        int goodChooses = 0;
+        foreach (bool proof in isGoodList)
+        {
+            if (proof)
+            {
+                goodChooses++;
+            }
+        }
+        if (goodChooses == 3)
+        {
+            SetupNewStory("ending.good_ending");
+            SetupDialogueSystem();
+        }
+        else if (b_isSecondTime)
+        {
+            SetupNewStory("ending.bad_ending");
+            SetupDialogueSystem();
+        }
+        else
+        {
+            SetupNewStory("ending.badchoice_proofs");
+            SetupDialogueSystem();
+            b_isSecondTime = true;
+        }
+    }
+
+    public void ActivateEndSection()
+    {
+        b_StoryStarted = false;
+        CloseTab();
+        CloseDialogue();
+        m_CharacterVinyle.SetActive(false);
+        m_OtherCharacterVinyle.SetActive(false);
+        LastSection.SetActive(true);
+    }
+
+    public void SetLanzaChoosed(bool b)
+    {
+            b_isLanzaChoosen = b;
     }
 }

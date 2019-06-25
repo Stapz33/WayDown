@@ -45,6 +45,7 @@ public class ButtonCallEditor : Editor
                 break;
             case (int)ButtonType.SelectProof:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("DocumentInfo"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("isGood"), true);
                 break;
             default:
                 break;
@@ -69,6 +70,8 @@ public class ButtonCall : MonoBehaviour
     private int cigarIdx = 0;
     public GameObject Bottle;
     public Texture2D BWText;
+    int whiskeyDrank = 0;
+    public bool isGood;
 
     private void Start()
     {
@@ -171,6 +174,7 @@ public class ButtonCall : MonoBehaviour
                     cigarIdx++;
                     GetComponent<Image>().sprite = CigarSprites[cigarIdx];
                     AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
+
                     return;
                 }
                 else if (cigarIdx == CigarSprites.Count - 2)
@@ -179,6 +183,12 @@ public class ButtonCall : MonoBehaviour
                     Bottle.SetActive(true);
                     GetComponent<Image>().sprite = CigarSprites[cigarIdx];
                     AudioManager.Singleton.ActivateAudio(AudioType.Whisky);
+                    whiskeyDrank++;
+                    if(whiskeyDrank >= 3)
+                    {
+                        whiskeyDrank = 0;
+                        MainUIManager.Singleton.AddBlurToScreen();
+                    }
                 }
                 
                 break;
@@ -199,7 +209,7 @@ public class ButtonCall : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
             case ButtonType.SelectProof:
-
+                MainUIManager.Singleton.SelectProof(gameObject,isGood);
                 break;
             default:
                 break;
