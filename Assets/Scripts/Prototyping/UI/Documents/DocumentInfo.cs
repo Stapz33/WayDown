@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class DocumentInfo : MonoBehaviour
 {
+    public bool isImage;
     private Text t_MyText;
     
 
     private void Awake()
     {
+        if (!isImage)
         t_MyText = transform.GetChild(0).GetComponent<Text>();
     }
 
@@ -17,7 +19,16 @@ public class DocumentInfo : MonoBehaviour
     void Update()   
     {
         Vector3 newPos = Input.mousePosition;
-        newPos.z = 0.36f;
+        if (!isImage)
+        {
+            newPos.z = 0.36f;
+        }
+        else
+        {
+            newPos.z = 0.36f;
+            newPos.x += 140f;
+            newPos.y += 167f;
+        }
         transform.position = Camera.main.ScreenToWorldPoint(newPos);
     }
 

@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class LastSectionManager : MonoBehaviour
 {
-    public LastSectionManager s_Singleton { get; private set; }
+    public static LastSectionManager s_Singleton { get; private set; }
 
     public Transform DocumentParent;
-    public GameObject BackButton;
     int i_ActualDocument = 0;
 
     public Animator LanzaAnimator;
     public Animator MorelloAnimator;
     public GameObject ValidationButton;
     public GameObject ProofSection;
+
+    public GameObject DocumentInfo;
 
     bool lanzachoosen = false;
     bool morellochoosen = false;
@@ -35,13 +36,11 @@ public class LastSectionManager : MonoBehaviour
     {
         DocumentParent.GetChild(i).gameObject.SetActive(true);
         i_ActualDocument = i;
-        BackButton.SetActive(true);
     }
 
     public void DeactivateDocPanel()
     {
         DocumentParent.GetChild(i_ActualDocument).gameObject.SetActive(false);
-        BackButton.SetActive(false);
     }
 
     public void ActivateLanza()
@@ -90,6 +89,17 @@ public class LastSectionManager : MonoBehaviour
     {
         ValidationButton.SetActive(false);
         ProofSection.SetActive(true);
+    }
+
+    public void ActivateDocumentInfo(Sprite info)
+    {
+        DocumentInfo.GetComponent<UnityEngine.UI.Image>().sprite = info;
+        DocumentInfo.SetActive(true);
+    }
+
+    public void DeactivateDocumentInfo()
+    {
+        DocumentInfo.SetActive(false);
     }
 
 }
