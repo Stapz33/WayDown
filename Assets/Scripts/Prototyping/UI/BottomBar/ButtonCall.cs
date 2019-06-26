@@ -210,6 +210,7 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.SelectProof:
                 MainUIManager.Singleton.SelectProof(gameObject,isGood);
+                Exit();
                 break;
             default:
                 break;
@@ -226,12 +227,26 @@ public class ButtonCall : MonoBehaviour
 
     public void Enter()
     {
+        if (TypeOfButton == ButtonType.SelectProof)
+        {
+            LastSectionManager.s_Singleton.ActivateDocumentInfo(GetComponent<Image>().sprite);
+        }
+        else
+        {
             MainUIManager.Singleton.ActivateDocumentInfo(DocumentInfo);
+        }
     }
 
     public void Exit()
     {
+        if (TypeOfButton == ButtonType.SelectProof)
+        {
+            LastSectionManager.s_Singleton.DeactivateDocumentInfo();
+        }
+        else
+        {
             MainUIManager.Singleton.DeactivateDocumentInfo();
+        }
     }
 
     public void PlaySound()

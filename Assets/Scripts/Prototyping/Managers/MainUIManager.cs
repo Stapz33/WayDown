@@ -1562,10 +1562,12 @@ public class MainUIManager : MonoBehaviour {
 
     public void EndGameValidation()
     {
+        LastSection.SetActive(false);
         if (b_isLanzaChoosen)
         {
             SetupNewStory("ending.lanza_ending");
             SetupDialogueSystem();
+            return;
         }
         int goodChooses = 0;
         foreach (bool proof in isGoodList)

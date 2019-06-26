@@ -661,8 +661,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     # NewCharacterSprite #6
     Do you know where's Cara? #otherCharacter
     I haven't seen her in two days. # otherCharacter
-    # jump # Demo
-    ->END
+    # jump
+    ->ending
  = Condor_Good_2Time
 	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
@@ -678,8 +678,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(And this gal is waiting for me.)</i> # player
     #NewCharacterSprite #6
     What happened to Cara? # otherCharacter 
-    # jump # Demo
-    ->END
+    # jump 
+    ->ending
 
 =condor_madam2
  ~ madam2 = true
@@ -715,33 +715,25 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 
 ===ending===
 =start_ending
--	(choice_badguy)Qui est le coupable? #otherCharacter
-+	[Lanza] C'est Lanza. #player
-	Tu es sûr? #otherCharacter
-	++ [Oui] Oui of course. #player
-	Explique toi alors, même si tu as tort. #otherCharacter
-	TODO:A toi de voir Kiki
-	->END
-	++ [Non] Nop pas sûr du tout. #player
-	->choice_badguy
-+	[Morello] C'est Morello. #player
-	++ [Oui] Oui of course. #player
-	Explique toi alors. #otherCharacter
-	TODO: A toi de voir aussi Kiki
-	->END
-	++ [Non] Nop pas sûr du tout. #player
-	->choice_badguy
+#jump  #NewBigBackground #9 #NewCharacterSprite #9
+-	(choice_badguy)Qui est le coupable? #otherCharacter 
+#jump #endgame
+->END
 
 =badchoice_proofs
-Te fous pas de ma gueule, Rosy. #otherCharacter
+Te fous pas de ma gueule, Rosy. #otherCharacter 
+#jump #endgame
 TODO: One last ride Kiki
 ->END
 =good_ending
-Bravo vous avez gagné. #player #Demo
+Bravo vous avez gagné. #player 
+#jump #Demo
 ->END
 =bad_ending
-Bravo, vous avez perdo. #player #Demo
+Bravo, vous avez perdo. #player 
+#jump #Demo
 ->END
 =lanza_ending
-Bravo, vous vous êtes trompé de mec. #player #Demo
+Bravo, vous vous êtes trompé de mec. #player 
+#jump #Demo
 ->END
