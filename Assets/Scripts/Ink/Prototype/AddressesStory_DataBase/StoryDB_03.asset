@@ -20,14 +20,19 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
+  - 
+  - 
+  - 
   investigationType: 2
   criminalRecordType: 0
   CriminalName: margaretobannon
   CriminalBool: knowledge_prostitute_name
   m_LaunchNewInvestigation: 0
   CriminalRecordIdx: 4
-  AddressInfos: Condor Club 460 Broadway Street
-  AddressIndexToDiscover: 2
+  AddressInfos01: Condor Club 460 Broadway Street
+  AddressInfos02: 
+  AddressIndexToDiscover: 02000000
   Corpulence: 1
   Height: 3
   SexType: 1

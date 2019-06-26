@@ -20,14 +20,19 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
+  - 
+  - 
+  - 
   investigationType: 0
   criminalRecordType: 0
   CriminalName: Todd Smith
   CriminalBool: 
   m_LaunchNewInvestigation: 0
   CriminalRecordIdx: 0
-  AddressInfos: The Wharf Inn 2601 Mason Street
-  AddressIndexToDiscover: 1
+  AddressInfos01: The Wharf Inn 2601 Mason Street
+  AddressInfos02: 
+  AddressIndexToDiscover: 01000000
   Corpulence: 0
   Height: 0
   SexType: 0

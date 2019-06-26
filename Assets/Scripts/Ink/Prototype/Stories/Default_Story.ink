@@ -1,6 +1,10 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
 VAR madam2 = false
+VAR client_seen = false
+VAR driverapp_seen = false
+VAR drugstore_seen = false
+VAR docker_seen = false
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
 VAR DEBUG = true
 
@@ -661,8 +665,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     # NewCharacterSprite #6
     Do you know where's Cara? #otherCharacter
     I haven't seen her in two days. # otherCharacter
-    # jump
-    ->ending
+    # jump #NewInvestigation
+    ->END
  = Condor_Good_2Time
 	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
@@ -678,8 +682,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(And this gal is waiting for me.)</i> # player
     #NewCharacterSprite #6
     What happened to Cara? # otherCharacter 
-    # jump 
-    ->ending
+    # jump #NewInvestigation
+    ->END
 
 =condor_madam2
  ~ madam2 = true
@@ -707,6 +711,155 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 <i>(Let's back up a bit.)</i> # player
 <i>(Where could I find her name?)</i> # player #Introspection
 ->END
+
+/*--------------------------------------------------------------------------------
+    Driver Appartment
+    
+--------------------------------------------------------------------------------*/
+
+===driver_appartment===
+=driver_entrance
+{
+	- driverapp_seen == true: 
+		->driver_alreadydone
+ 	- else: 
+ 		~ driverapp_seen = true
+}
+blablabla #player
+{
+	- client_seen == true: 
+		->driver_newinvestigation 
+	- else: 
+		->END
+}
+=driver_newinvestigation
+yes new investigation #player #NewInvestigation
+->END
+=driver_alreadydone
+i've already been there #player
+->END
+
+/*--------------------------------------------------------------------------------
+    Client Hotel
+    
+--------------------------------------------------------------------------------*/
+
+===client_hotel===
+=client_entrance
+{
+	- client_seen == true: 
+		->client_alreadydone
+ 	- else: 
+ 		~ client_seen = true
+}
+blablabla #player
+{
+	- driverapp_seen == true: 
+		->client_newinvestigation 
+	- else: 
+		->END
+}
+=client_newinvestigation
+yes new investigation #player #NewInvestigation
+->END
+=client_alreadydone
+i've already been there #player
+->END
+
+/*--------------------------------------------------------------------------------
+    Wreck Yard
+    
+--------------------------------------------------------------------------------*/
+
+===wreckyard===
+=wreckyard_entrance
+blablabla #player #NewInvestigation
+->END
+
+/*--------------------------------------------------------------------------------
+    Killer Appartment
+    
+--------------------------------------------------------------------------------*/
+
+===killer_appartment===
+=killer_entrance
+blablabla #player #NewInvestigation
+->END
+
+/*--------------------------------------------------------------------------------
+    Drugstore
+    
+--------------------------------------------------------------------------------*/
+
+===drugstore===
+=drugstore_entrance
+{
+	- drugstore_seen == true: 
+		->drugstore_alreadydone
+ 	- else: 
+ 		~ drugstore_seen = true
+}
+blablabla #player
+{
+	- docker_seen == true: 
+		->drugstore_newinvestigation 
+	- else: 
+		->END
+}
+=drugstore_alreadydone
+i've already been there #player
+->END
+=drugstore_newinvestigation
+yes new investigation #player #NewInvestigation
+->END
+
+/*--------------------------------------------------------------------------------
+    Restaurant
+    
+--------------------------------------------------------------------------------*/
+
+===restaurant===
+=restaurant_entrance
+blablabla #NewInvestigation
+->END
+
+/*--------------------------------------------------------------------------------
+    Dockers
+    
+--------------------------------------------------------------------------------*/
+
+===dockers===
+=dockers_entrance
+{
+	- docker_seen == true: 
+		->dockers_alreadydone
+ 	- else: 
+ 		~ docker_seen = true
+}
+blablabla #player
+{
+	- drugstore_seen == true: 
+		->dockers_newinvestigation 
+	- else: 
+		->END
+}
+=dockers_alreadydone
+i've already been there #player
+->END
+=dockers_newinvestigation
+yes new investigation #player #NewInvestigation
+->END
+
+/*--------------------------------------------------------------------------------
+    Pier 35
+    
+--------------------------------------------------------------------------------*/
+
+===pier35===
+=pier35_entrance
+yeah the final lap #player
+->ending
+
 
 /*--------------------------------------------------------------------------------
     Ending

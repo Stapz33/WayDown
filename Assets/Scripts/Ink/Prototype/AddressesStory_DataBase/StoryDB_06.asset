@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c82609356a517e44f8accd781265deba, type: 3}
-  m_Name: StoryDB_01
+  m_Name: StoryDB_06
   m_EditorClassIdentifier: 
   StoryData:
-  - start_capo_apartment
   - 
   - 
   - 
@@ -24,21 +23,22 @@ MonoBehaviour:
   - 
   - 
   - 
-  investigationType: 0
-  criminalRecordType: 0
-  CriminalName: 
-  CriminalBool: 
-  m_LaunchNewInvestigation: 0
-  CriminalRecordIdx: 0
-  AddressInfos01: 
+  - 
+  investigationType: 1
+  criminalRecordType: 1
+  CriminalName: margaretobannon
+  CriminalBool: knowledge_prostitute_name
+  m_LaunchNewInvestigation: 1
+  CriminalRecordIdx: 8
+  AddressInfos01: Barton's Auto Wreck Yard 872 Bay St
   AddressInfos02: 
-  AddressIndexToDiscover: 00000000
-  Corpulence: 0
-  Height: 0
-  SexType: 0
-  Ethnicity: 0
-  HairType: 0
-  HairColor: 0
-  EyeColor: 0
-  TattooPiercing: 0
-  HintNeeded: 0
+  AddressIndexToDiscover: 05000000
+  Corpulence: 3
+  Height: 3
+  SexType: 1
+  Ethnicity: 2
+  HairType: 2
+  HairColor: 6
+  EyeColor: 2
+  TattooPiercing: 2
+  HintNeeded: 8

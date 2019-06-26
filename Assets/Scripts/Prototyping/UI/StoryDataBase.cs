@@ -4,6 +4,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 
+[CanEditMultipleObjects]
 [CustomEditor(typeof(StoryDataBase))]
 public class StoryDataBaseEditor : Editor
 {
@@ -17,7 +18,8 @@ public class StoryDataBaseEditor : Editor
         switch(InvType.enumValueIndex)
         {
             case 0:
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressInfos"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressInfos01"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressInfos02"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressIndexToDiscover"), true);
                 break;
             case 1:
@@ -43,7 +45,7 @@ public class StoryDataBaseEditor : Editor
                 }
                 break;
             case 2:
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressInfos"), true);
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressInfos01"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("AddressIndexToDiscover"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalRecordIdx"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("CriminalBool"), true);
@@ -102,8 +104,9 @@ public class StoryDataBase : ScriptableObject
     // Criminal Sketch;
     public int CriminalRecordIdx;
 
-    public string AddressInfos;
-    public int AddressIndexToDiscover;
+    public string AddressInfos01;
+    public string AddressInfos02;
+    public List<int> AddressIndexToDiscover;
 
     public Corpulence Corpulence;
     public Height Height;

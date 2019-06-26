@@ -9,7 +9,7 @@ using RichTextSubstringHelper;
 using UnityEngine.Rendering.PostProcessing;
 
 public enum TabType {Map, AddressBook, Documents}
-public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Drugstore, Restaurant }
+public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Drugstore, Restaurant,Wreckyard,KillerAppartment,Dockers,Pier35}
 
 public class MainUIManager : MonoBehaviour {
 
@@ -148,6 +148,7 @@ public class MainUIManager : MonoBehaviour {
         public List<DocumentStruct> doclist = new List<DocumentStruct>();
     }
     private Data ActualDatas;
+    int i_actualGoodAddress = 0;
     private DocumentDatas DocDatas;
     private DocumentFolder AddressActualFolder;
     
@@ -504,7 +505,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void DiscoverNewAddress()
     {
-        Address_data data = AddressesList[ActualStoryDataBase.AddressIndexToDiscover];
+        Address_data data = AddressesList[ActualStoryDataBase.AddressIndexToDiscover[i_actualGoodAddress]];
         data.gameObject.SetActive(true);
         SetNewActualAddressDocumentFolder(data.GetDocumentFolder());
     }
@@ -989,15 +990,22 @@ public class MainUIManager : MonoBehaviour {
 
     public void TestGoodAddress(string AddressToTest)
     {
-        if (ActualStoryDataBase.AddressInfos != null)
+        if (ActualStoryDataBase.AddressInfos01 != null)
         {
-            if (AddressToTest == ActualStoryDataBase.AddressInfos)
+            if (AddressToTest == ActualStoryDataBase.AddressInfos01)
             {
                 b_isGoodAddress = true;
+                i_actualGoodAddress = 0;
+            }
+            else if (AddressToTest == ActualStoryDataBase.AddressInfos02 && ActualStoryDataBase.AddressInfos02 != "")
+            {
+                b_isGoodAddress = true;
+                i_actualGoodAddress = 1;
             }
             else
             {
                 b_isGoodAddress = false;
+                i_actualGoodAddress = -1;
             }
             stockedAdress = AddressToTest;
         }
@@ -1011,7 +1019,7 @@ public class MainUIManager : MonoBehaviour {
             {
                 LaunchNewInvestigation();
             }
-            SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover].GetActualStory());
+            SetupNewStory(AddressesList[ActualStoryDataBase.AddressIndexToDiscover[i_actualGoodAddress]].GetActualStory());
             b_isGoodAddress = false;
             DiscoverNewAddress();
             ActualDatas.AddressDiscovered.Add(stockedAdress);
