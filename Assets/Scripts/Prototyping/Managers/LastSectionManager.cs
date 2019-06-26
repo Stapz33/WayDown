@@ -46,6 +46,10 @@ public class LastSectionManager : MonoBehaviour
 
     public void ActivateLanza()
     {
+        if (lanzachoosen)
+        {
+            return;
+        }
         LanzaAnimator.SetTrigger("Activation");
         if (morellochoosen)
         {
@@ -63,6 +67,10 @@ public class LastSectionManager : MonoBehaviour
 
     public void ActivateMorello()
     {
+        if (morellochoosen)
+        {
+            return;
+        }
         MorelloAnimator.SetTrigger("Activation");
         if (lanzachoosen)
         {
