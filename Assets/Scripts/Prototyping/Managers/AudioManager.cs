@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02, pageturning01, pageturning02, pickingupphone, polaroid, reload, searching, shotgun, closingdoor, passingcar01, passingcar02}
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02, pageturning01, pageturning02, pickingupphone, polaroid, reload, searching, shotgun, closingdoor, passingcar01, passingcar02, cararriving}
 
 public class AudioManager : MonoBehaviour
 {
@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_ShotGunAudio = null;
     [SerializeField] private AudioSource m_PassingCar01Audio = null;
     [SerializeField] private AudioSource m_PassingCar02Audio = null;
+    [SerializeField] private AudioSource m_CarArrivingAudio = null;
 
     [Header("Doors And Keys")]
     [SerializeField] private AudioSource m_CarDoorAudio = null;
@@ -212,6 +213,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.passingcar02:
                 m_PassingCar02Audio.Play();
+                break;
+            case AudioType.cararriving:
+                m_CarArrivingAudio.Play();
                 break;
             default:
                 break;

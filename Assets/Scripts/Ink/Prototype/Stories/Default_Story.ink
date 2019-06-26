@@ -70,17 +70,17 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 # jump
     *   [Hang up] <> # player #NewCharacterSprite #0
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
-- <i>(I hung up and got out of bed.)</i> # player #PlayerDBox #1  #NewCharacterSprite #0
+- <i>(I hung up and got out of bed.)</i> # player #PlayerDBox #1  #NewCharacterSprite #0 #SFXPlay #23
 <i>(For fuck's sake, what did they do again?)</i> # player
 # jump
-    *   [Go to Francisco Street] <> # player # NewBigBackground #4
+    *   [Go to Francisco Street] <> # player # NewBigBackground #4 #SFXPlay #33
     #MusicPlay #1
--  (cab){<i>(Not even the time for a coffee, I put on my hat and go outside to find a cab.)</i>|} # player 
+-  (cab){<i>(Not even the time for a coffee, I put on my hat and go outside to find a cab.)</i>|} # player
 # jump
-    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player #SFXPlay #15
+    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player #SFXPlay #15 #SFXPlay #35
         {<i>(That prick doesn't even slow down.)</i>-> cab|<i>(Am I covered in shit?)</i>-> cab|} # player
 - <i>(As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by.)</i> # player
-Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
+Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #36
 # jump  #PlayerDBox #0
     *   Ain't no Yid here kid[], get lost. # player
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
