@@ -792,6 +792,7 @@ So what happened to her Mr Rosenthal? #otherCharacter
                 Right, something like that. #otherCharacter
                 But Cara could handle it. She was good with that. #otherCharacter
                 ->clientdriver
+*	->
 -   I don't think that I could give you anything else Mr Rosenthal. #otherCharacter
     Cara was really dear to me. I'll have to announce it to the other girls. #otherCharacter
     Can I ask you a last thing? #player
