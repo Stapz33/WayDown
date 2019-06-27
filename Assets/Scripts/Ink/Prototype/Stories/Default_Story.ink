@@ -649,6 +649,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(That being said, that's not a really appealing prostitute name.)</i> # player
     <i>(If that even means something...)</i> # player #Introspection
     ->END
+
 = condor_good
 	{madam2 == true :  ->Condor_Good_2Time}
 	Cara, is that it? Of course it is. # player
@@ -665,8 +666,8 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     # NewCharacterSprite #6
     Do you know where's Cara? #otherCharacter
     I haven't seen her in two days. # otherCharacter
-    # jump #NewInvestigation
-    ->END
+    ->condor_secondpart_madam
+
  = Condor_Good_2Time
 	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
@@ -682,8 +683,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(And this gal is waiting for me.)</i> # player
     #NewCharacterSprite #6
     What happened to Cara? # otherCharacter 
-    # jump #NewInvestigation
-    ->END
+    ->condor_secondpart_madam
 
 =condor_madam2
  ~ madam2 = true
@@ -700,6 +700,192 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 # jump
 +   [The girl worked here under the name of...] #Validation #0
 -> END
+
+=condor_secondpart_madam
+#PlayerDBox #1
+#NewCharacterSprite #6
+<i>(She can't be serious.)</i> #player
+<i>(No, she really seems to not know what happened to Cara.)</i> #player
+So what happened to her Mr Rosenthal? #otherCharacter
+- (whathappened) #jump
+*   [She's dead] We found her dead at one of Abati's man's apartment. With the said man also dead. #player #PlayerDBox #0
+        Jesus Christ... Poor girl, that will be bad for business. #otherCharacter
+        So she worked in your brothel! #player
+        Of course she worked here. She was the jewel of this establishment. #otherCharacter
+        Any man that entered here would want to have her, at least for some hours. #otherCharacter
+        That could lead to some kind of tension among the clients... But Dean would handle it in most cases. #otherCharacter
+        ->whathappened
+*   [How do you know my name?] {whathappened==2:But let's back up a second, how do you know who I am?| Wait, how do you know my name?} #player #PlayerDBox #0
+        Don't be silly, you're like the Jewish dog of the mob. #otherCharacter
+        Always preceding them. #otherCharacter
+        I wouldn't be surprised if some dagoes came through that door now. #otherCharacter
+        Don't worry, I'm alone here. Lanza gave me some leverage on this. #player
+        Allow me to doubt it. They trust no one. #otherCharacter
+        {whathappened<2:But you're not here to talk about me. What happened to Cara?} #otherCharacter
+        ->whathappened
+*	->
+-   Can I ask you something Mr Rosenthal? #otherCharacter
+    #jump
+    *   [Call me Bugsy] Please darling, call me Bugsy. #player
+    *   Go ahead. #player
+-   Did your Italian fellow kill Cara? #otherCharacter
+    I can't say for sure, but the bullet that he took in the head would have prevented that. #player
+    So who killed them? #otherCharacter
+    That's what I was hoping for you to help me with. #player
+#jump
+*   [Why was she outside?]What was she doing outside of the club last night. #player
+-   Let's say that we provide a kind of premium service for long time customers... #otherCharacter
+    We have some drivers that bring our girls directly to them. #otherCharacter
+    They wait there, and then fetch them back here, or directly to there place. #otherCharacter
+    Wait, so someone brought her to where she was found? #player
+    Usually yes, but she was supposed to go join a client that we know of. #otherCharacter
+-   (clientdriver)
+#jump
+*   [Who's the driver?] Do you know her driver for that night? #player #PlayerDBox #0
+        Of course, he works with us for several months. #otherCharacter
+        Did he came back her since last night? #player
+        Now that you mention it, no he didn't. #otherCharacter
+        You think that he's the killer? #otherCharacter
+        Doesn't seem like the kind of man to do that. #otherCharacter
+        I suppose that you want to check on him? #otherCharacter
+        #jump
+        **  [You bet] Of course, he's my prime suspect for now. #player
+                Where can I find him? #player
+                He lives in the Lombard Condominiums. #otherCharacter
+                I'll check on him then. #player
+        **  [Should I?] Do you think that I should? #player
+                I don't know. Maybe. #otherCharacter
+                This business really puts a pressure on you. #otherCharacter
+                Maybe it's time for me to leave it. #otherCharacter
+                I should try politics. #otherCharacter
+                Nearly same work yes. #player
+                Where can I find your driver? #player
+                In the Lombard Condominiums, near the Piers. #otherCharacter
+                I'll give it a look then.
+        --  ->clientdriver
+*   [Who's the client?] So who was she supposed to meet last night? #player #PlayerDBox #0
+        Some regular, quite fond of her. #otherCharacter
+        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton. #otherCharacter
+            #jump
+            **  [Any problem with him?] Did she had any problem with him? #player
+                    Not at all, he was quite lovely. #otherCharacter
+                    A little too pushy at time. #otherCharacter
+                    He would often ask her too leave her... occupation, and marry him. #otherCharacter
+                    #jump
+                    *** A whore's lover?[] That's cute. #player
+                            Only someone respecting women. #otherCharacter
+                            Not a dog jumping on everyone. #otherCharacter
+                            Does it apply to me? #player
+                            Don't know, you tell me darling. #otherCharacter
+                    *** [Is he that rich?] How much does it cost to have a full time hooker? #player
+                            I don't know, how much is your wife charging you? #otherCharacter
+                            #jump
+                            **** [Fuck you madam] No offense, but fuck you.
+                            **** [Try to make a joke] How ironic for you to say that! #player
+                                    Why? #otherCharacter
+                                    Because hum... #player
+                                    You see... #player
+                                    Ok nevermind, let's get back to business. #player
+                                    Freakin' whore. #player #PlayerDBox #1
+            --  So anyway, no problem with him, but he would often do strange things when he couldn't have her. #otherCharacter #PlayerDBox #0
+                I see, a needy client. #player
+                Right, something like that. #otherCharacter
+                But Cara could handle it. She was good with that. #otherCharacter
+                ->clientdriver
+*	->
+-   I don't think that I could give you anything else Mr Rosenthal. #otherCharacter
+    Cara was really dear to me. I'll have to announce it to the other girls. #otherCharacter
+    Can I ask you a last thing? #player
+    Of course. #otherCharacter
+#jump
+*   [Do you know Giovanni?] Do you know Tommy Giovanni? #player
+        I've only seen him once or twice, isn't he one of your men? #otherCharacter
+-   He's the one who was found with Cara, at his place. #player
+#jump
+*   [Do they knew each other?] Did he ever came here to see her? #player
+        Not that I know. Only came here for the drinks. #otherCharacter
+        I don't think he was really... "interested" in what we offer. #otherCharacter
+-   I'll leave you now Mr. Rosenthal. #otherCharacter
+    Please find what happened to Cara. #otherCharacter
+    She didn't deserve that. #otherCharacter
+    ->condor_secondpart_morello
+    
+=condor_secondpart_morello
+    <i>(She leads me to the bar, and goes back to the brothel.)</i>#player #PlayerDBox #1 #NewCharacterSprite #0
+    <i>(Beautiful. But tough woman.)</i>#player # NewBackground #6
+    <i>(Dean is still beyond his glasses, scrapping them, and keeping an eye on me.)</i>#player
+    <i>(But someone else is.)</i>#player
+    <i>(Small, with a constant grin on his face.)</i>#player
+    <i>(Someone easily likeable, even if you're a little compelled to do so.)</i>#player
+    Mr Morello... #player #PlayerDBox #0 #NewCharacterSprite #10
+#jump
+*   [Enjoying yourself here?] I didn't know that you appreciated the services of the club. #player
+        Always enjoying a nice drink in every good place of this town. #otherCharacter
+        Especially when our famous investigator is in there... #otherCharacter
+        Only wanted to have a drink with you, that's all! #otherCharacter
+        This would be a first time since I work for the family. #player
+*   [What a coincidence!] How odd it is to find you here! Are you also keeping an eye on me? #player
+        Why are you saying it like that? Why can't I only come for a friendly drink with you? #otherCharacter
+        Cause you never did so since I work for the family? #player
+-   I see... Let's say that it's a friendly drink between two workers in the family. #otherCharacter
+#jump
+*   [What do you want?] So what do you want from me Mr Morello? #player
+-   Only for you to find what happened to Giovanni, like anyone else. #otherCharacter
+    It's a great blow to our organization, and something needs to be made. #otherCharacter
+    I'm not usually advising for a power showdown, but now we need to be tough. #otherCharacter
+#jump
+*   [Is the family that weak?] Is the Italian mob in so much trouble. #player
+        We're not. But no one takes on the family. #otherCharacter
+*   [Strange choice from you] I would not have thought that you would be the one advising for the strong method. #player
+        I would not in normal times, but now we need to show that nobody can attack us. #otherCharacter
+-   How can you be so sure that it is the work of someone else? #player
+    And not only a hookup that went amiss? #player
+    That's really not the type of Giovanni. #otherCharacter
+    He was key to our organization. #otherCharacter
+    We worked closely on a business together. #otherCharacter
+#jump
+*   [What was it?] What was this company? #player
+-   Castelbueno Oil Company. #otherCharacter
+    There's always oil somewhere with Italians... #player
+    It's just something for the family to pour money into. #otherCharacter
+    Actually, we had very little to do with Giovanni. #otherCharacter
+    And even less money for ourselves. #otherCharacter
+    So why would he be targeted? #player
+    Because he was the future. #otherCharacter
+    The bright young face of the family. #otherCharacter
+    Maybe someone that would bury us all. #otherCharacter
+#jump
+*   [A threat?] Maybe a threat then? #player
+-   More like a renewed family. #otherCharacter
+    But anyway, now we'll try to repair that. #otherCharacter
+#jump
+*   [What's the name of the company?] What's the name of the company again? #player
+    Castelbueno Oil Company. #otherCharacter
+    Here, take a card. #otherCharacter
+    But don't expect to order any oil from it. #otherCharacter
+    [[YOU TAKE THE CARD]] #player
+-   I'll leave you now. #otherCharacter
+    Try to find who whants to harm us. #otherCharacter
+    What else would I try to find? #player
+    I don't know, but remember who's paying you Bugsy. #otherCharacter
+    Then we'll be grateful, and know how to show it. #otherCharacter
+    Goodbye then, until next time. #otherCharacter
+    <i>(That old snake...)</i>#player #PlayerDBox #1 #NewCharacterSprite #0
+    <i>(It's not surprising that he survived this long in that city.)</i>#player
+    <i>(Let's get back to the office.)</i>#player
+    # NewBigBackground #9
+    <i>(What a strange day.)</i>#player
+    <i>(Now I have to lead to follow.)</i>#player
+    <i>(The driver, and the client-lover.)</i>#player
+    <i>(Quite a nice casting.)</i>#player
+    <i>(The driver seems quite suspicious.)</i>#player
+    <i>(Even more after disappearing.)</i>#player
+    <i>(And the client could be the killer, a jealous lover that could not stand to see her with another.)</i>#player
+    <i>(So he wacked'em both.)</i>#player
+    <i>(Maybe the driver was killed trying to defend her.)</i>#player
+    <i>(So many 'maybes'.)</i>#player
+    <i>(It's time to digg on that and start to have some certainties.)</i>#player #Introspection
+->END
 
 =condor_fail
 //Background: Condor Club's street, no interlocutor
