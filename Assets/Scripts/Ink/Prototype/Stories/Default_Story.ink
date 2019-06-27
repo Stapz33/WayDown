@@ -77,7 +77,7 @@ You understand me Rosenthal? Come here right now. # otherCharacter
 - <i>(I hung up and got out of bed.)</i> # player #PlayerDBox #1  #NewCharacterSprite #0 #SFXPlay #23
 <i>(For fuck's sake, what did they do again?)</i> # player
 # jump
-    *   [Go to Francisco Street] <> # player # NewBigBackground #4 #SFXPlay #33
+    *   [Go to Francisco Street] <> # player # NewBigBackground #15 #SFXPlay #33
     #MusicPlay #1
 -  (cab){<i>(Not even the time for a coffee, I put on my hat and go outside to find a cab.)</i>|} # player
 # jump
@@ -140,7 +140,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #36
 - <i>(The ride continued in a complete silence.)</i> # player #NewCharacterSprite #0 #PlayerDBox #1
 <i>(Giovanni is dead. Poor kid. And more Italians flooding North Beach.)</i> # player
 <i>(Something's wrong. And I'm gettin' mixed in all that.)</i> # player
-<i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 # NewBackground #15 #SFXPlay #14
+<i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #14
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0
 # jump
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
