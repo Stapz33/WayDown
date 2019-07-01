@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c82609356a517e44f8accd781265deba, type: 3}
-  m_Name: StoryDB_09
+  m_Name: StoryDB_11
   m_EditorClassIdentifier: 
   StoryData:
   - 
@@ -20,19 +20,19 @@ MonoBehaviour:
   - 
   - 
   - 
-  - drugstore
   - 
-  - dockers
   - 
-  investigationType: 0
-  criminalRecordType: 1
-  CriminalName: margaretobannon
+  - 
+  - ending
+  investigationType: 2
+  criminalRecordType: 0
+  CriminalName: 456489
   CriminalBool: knowledge_prostitute_name
   m_LaunchNewInvestigation: 0
-  CriminalRecordIdx: 8
-  AddressInfos01: Marx's Emporium 1298 Samsone Av
-  AddressInfos02: San Francisco's Docks 1040 The Embarcadero
-  AddressIndexToDiscover: 0700000009000000
+  CriminalRecordIdx: 13
+  AddressInfos01: The Little Door Restaurant 2235 Beach Ave
+  AddressInfos02: 
+  AddressIndexToDiscover: 0a000000
   Corpulence: 3
   Height: 3
   SexType: 1

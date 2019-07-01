@@ -1,13 +1,13 @@
 VAR knowledge_Spaghetti = 0
 VAR knowledge_prostitute_name = 0
-VAR madam2 = false
-VAR client_seen = false
-VAR driverapp_seen = false
-VAR drugstore_seen = false
-VAR docker_seen = false
+VAR madam2 = 0
+VAR client_seen = 0
+VAR driverapp_seen = 0
+VAR drugstore_seen = 0
+VAR docker_seen = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
 VAR DEBUG = true
-
+TODO: Remove Debug
 ->start_capo_apartment
 ===start_capo_apartment===
 
@@ -275,7 +275,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 <i>(I enter the apartment, only to find a first body. Poor Tommy.)</i> # player #PlayerDBox #1
 <i>(Ok, let's focus now and do that methodically, ain't I a damn detective?)</i> # player 
 # jump
-TODO: Include the letter
+
 *	[Check the livingroom] <i>(Nice apartment.)</i> # player
 	<i>(Nothing special here, except some furnitures.)</i> # player
 	<i>(And obviously, Giovanni's body.)</i> # player 
@@ -307,7 +307,8 @@ TODO: Include the letter
 *	[Check the bedroom] <i>(Did they have enough time to use the bedroom?)</i> # player #SFXPlay #17
 	#NewBackground #21
 	<i>(It's tidy, with not a lot of furnitures.)</i> # player
-	<i>(Only a bed, an empty desk, and a closet.)</i> # player
+	<i>(Only a bed, an empty desk with only one paper on it, and a closet.)</i> # player
+	<i>(A love letter ?)</i> # player #NewDocument #14
 	<i>(The bed is still made. Giovanni didn't sleep here so much, or at least not yesterday.)</i> # player
 	<i>(There's the closet then.)</i> # player
 	# jump
@@ -861,9 +862,8 @@ So what happened to her Mr Rosenthal? #otherCharacter
 #jump
 *   [What's the name of the company?] What's the name of the company again? #player
     Castelbueno Oil Company. #otherCharacter
-    Here, take a card. #otherCharacter
-    But don't expect to order any oil from it. #otherCharacter
-    [[YOU TAKE THE CARD]] #player
+    Here, take a card. #otherCharacter #NewDocument #5
+    But don't expect to order any oil from it. #otherCharacter 
 -   I'll leave you now. #otherCharacter
     Try to find who whants to harm us. #otherCharacter
     What else would I try to find? #player
@@ -905,21 +905,26 @@ So what happened to her Mr Rosenthal? #otherCharacter
 
 ===driver_appartment===
 =driver_entrance
+#NewCharacterSprite #0 #NewNoBackground #24
 {
-	- driverapp_seen == true: 
+	- driverapp_seen == 1: 
 		->driver_alreadydone
  	- else: 
- 		~ driverapp_seen = true
+ 		~ driverapp_seen = 1
 }
-blablabla #player
+Hey there is no keys for the car here #player
+But i have more informations about the car #player
+The child gave me some information about the killer #player
+He is a Russian Man with a big tatoo on his left arm #player #NewNarrativeLog #17
 {
-	- client_seen == true: 
+	- client_seen == 1: 
 		->driver_newinvestigation 
 	- else: 
 		->END
 }
 =driver_newinvestigation
-yes new investigation #player #NewInvestigation
+# NewBigBackground #9 
+Now i've everything i need about this killer and the car #player #NewInvestigation #Introspection
 ->END
 =driver_alreadydone
 i've already been there #player
@@ -933,10 +938,10 @@ i've already been there #player
 ===client_hotel===
 =client_entrance
 {
-	- client_seen == true: 
+	- client_seen == 1: 
 		->client_alreadydone
  	- else: 
- 		~ client_seen = true
+ 		~ client_seen = 1
 }
 TODO: Sheraton Background (ASK TONY)
 #PlayerDBox #1
@@ -1017,7 +1022,7 @@ TODO: SFX elevator ring
     And his eyes...#otherCharacter
     What about them?#player
     So cold... A pair of pale green eyes.#otherCharacter
-    They could kill you, even without a gun under your nose.#otherCharacter
+    They could kill you, even without a gun under your nose.#otherCharacter #NewNarrativeLog #15
 #jump
 *   [Grow a pair man] Why don't you act like a man? #player
     Wait to be in front of him!#otherCharacter
@@ -1041,7 +1046,7 @@ TODO: SFX elevator ring
     If you say so...#player
     <i>(Let this man hope a little, maybe he'll forget her.)</i>#player #PlayerDBox #1
 -	{
-	- driverapp_seen == true: 
+	- driverapp_seen == 1: 
 		->client_newinvestigation 
 	- else: 
 		->client_introspection
@@ -1075,7 +1080,17 @@ TODO: SFX elevator ring
 
 ===wreckyard===
 =wreckyard_entrance
-blablabla #player #NewInvestigation
+#NewNoBackground #28
+Ok so here is the wreckyard #player
+I need to speak to the guardian about the killer #player
+The guardian gave me more informations #player #NewBackground # 26
+The killer have medium long grey hair #player #NewNarrativeLog #16
+lets check the driver car #player
+here is the car #player #NewBackground #27
+the driver is found dead in the trunk #player #NewDocument #9
+ah, a menu of a restaurant ? #player
+it's everything that i need here #player 
+So now i have a full description of the killer, i could get a composite sketch of him. i need more informations #NewBigBackground #9 #Introspection #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1085,7 +1100,11 @@ blablabla #player #NewInvestigation
 
 ===killer_appartment===
 =killer_entrance
-blablabla #player #NewInvestigation
+#NewNoBackground #24
+I find a receip #player #NewDocument #8
+I find a restaurant napkin #player #NewDocument #8
+The killer went regularly to a drugstore, and to the a restaurant #player #NewDocument #6
+Okay so a drugstore and a restaurant #Introspection #NewBigBackground #9 #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1095,15 +1114,19 @@ blablabla #player #NewInvestigation
 
 ===drugstore===
 =drugstore_entrance
+#NewNoBackground #17
 {
-	- drugstore_seen == true: 
+	- drugstore_seen == 1: 
 		->drugstore_alreadydone
  	- else: 
- 		~ drugstore_seen = true
+ 		~ drugstore_seen = 1
 }
-blablabla #player
+the killer didn't came the day of the crime #player
+the drugstore hide a gun seller #player
+the killer didn't came since the day of the crime #player
+the car model of the killer is a Chebrillet Deluxe #player #NewNarrativeLog #19
 {
-	- docker_seen == true: 
+	- docker_seen == 1: 
 		->drugstore_newinvestigation 
 	- else: 
 		->END
@@ -1112,7 +1135,7 @@ blablabla #player
 i've already been there #player
 ->END
 =drugstore_newinvestigation
-yes new investigation #player #NewInvestigation
+So now i have everything, i need more infos about these piers #player #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1122,7 +1145,9 @@ yes new investigation #player #NewInvestigation
 
 ===restaurant===
 =restaurant_entrance
-blablabla #NewInvestigation
+#NewNoBackground #8
+the killer went here for "special" cases #player
+the killer add his last meet up at "San Francisco's Docks 1040 The Embarcadero" #player #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1132,15 +1157,18 @@ blablabla #NewInvestigation
 
 ===dockers===
 =dockers_entrance
+#NewNoBackground #19
 {
-	- docker_seen == true: 
+	- docker_seen == 1: 
 		->dockers_alreadydone
  	- else: 
- 		~ docker_seen = true
+ 		~ docker_seen = 1
 }
-blablabla #player
+The dock guardian gave me the first record of the cars #player
+And he have a second one for this day #player #NewDocument #10
+Her it is #player #NewDocument #11
 {
-	- drugstore_seen == true: 
+	- drugstore_seen == 1: 
 		->dockers_newinvestigation 
 	- else: 
 		->END
@@ -1149,7 +1177,7 @@ blablabla #player
 i've already been there #player
 ->END
 =dockers_newinvestigation
-yes new investigation #player #NewInvestigation
+So now i have everything, i need more infos about these piers #player #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1159,8 +1187,14 @@ yes new investigation #player #NewInvestigation
 
 ===pier35===
 =pier35_entrance
-yeah the final lap #player
-->ending
+#NewNoBackground #20
+i hear a gunshot, i run #player
+okay so here i have the killer, who's dead, great #player
+i find on him the gun he used to kill Giovanni, and a little note  #player
+As i check this i hear a car, quickly going out of the pier, but i have her license plate #NewDocument #12
+okay so now i need to leave #NewNarrativeLog #21
+I have a license plate, a dead body, and a note #Introspection #NewBigBackground #9 #NewInvestigation
+->END
 
 
 /*--------------------------------------------------------------------------------

@@ -131,6 +131,11 @@ public class MainUIManager : MonoBehaviour {
         //variables
         public int knowledgeSpaghetty = 0;
         public int prostituteknown = 0;
+        public int madam2 = 0;
+        public int clientseen = 0;
+        public int driverappseen = 0;
+        public int drugstoreseen = 0;
+        public int dockerseen = 0;
 
 
     }
@@ -1311,12 +1316,22 @@ public class MainUIManager : MonoBehaviour {
     {
         ActualDatas.knowledgeSpaghetty = (int)_inkStory.variablesState["knowledge_Spaghetti"];
         ActualDatas.prostituteknown = (int)_inkStory.variablesState["knowledge_prostitute_name"];
+        ActualDatas.madam2 = (int)_inkStory.variablesState["madam2"];
+        ActualDatas.clientseen = (int)_inkStory.variablesState["client_seen"];
+        ActualDatas.driverappseen = (int)_inkStory.variablesState["driverapp_seen"];
+        ActualDatas.drugstoreseen = (int)_inkStory.variablesState["drugstore_seen"];
+        ActualDatas.dockerseen = (int)_inkStory.variablesState["docker_seen"];
     }
 
     public void LoadStoryVar()
     {
         _inkStory.variablesState["knowledge_Spaghetti"] = ActualDatas.knowledgeSpaghetty;
         _inkStory.variablesState["knowledge_prostitute_name"] = ActualDatas.prostituteknown;
+        _inkStory.variablesState["madam2"] = ActualDatas.madam2;
+        _inkStory.variablesState["client_seen"] = ActualDatas.clientseen;
+        _inkStory.variablesState["driverapp_seen"] = ActualDatas.driverappseen;
+        _inkStory.variablesState["drugstore_seen"] = ActualDatas.drugstoreseen;
+        _inkStory.variablesState["docker_seen"] = ActualDatas.dockerseen;
     }
 
     public void SetNewActualAddressDocumentFolder(DocumentFolder documentFolder)
