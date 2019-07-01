@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip m_StreetAmbiance = null;
     [SerializeField] private AudioClip m_BarAmbiance = null;
     [SerializeField] private AudioClip m_CarAmbiance = null;
+    [SerializeField] private AudioClip m_DeskAmbiance = null;
 
     [Header("Address Book")]
     [SerializeField] private AudioSource m_AddressBookOpenAudio = null;
@@ -285,6 +286,10 @@ public class AudioManager : MonoBehaviour
                 m_MusicSource.clip = m_CarAmbiance;
                 m_MusicSource.Play();
                 break;
+            case 4:
+                m_MusicSource.clip = m_DeskAmbiance;
+                m_MusicSource.Play();
+                break;
             default:
                 break;
         }
@@ -364,4 +369,5 @@ public class AudioManager : MonoBehaviour
             m_RadioAudio.volume = 0f;
         }
     }
+
 }

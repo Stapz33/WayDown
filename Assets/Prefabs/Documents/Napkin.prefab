@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3337926126073152919}
   - component: {fileID: 3337926126073152915}
   m_Layer: 5
-  m_Name: ProstituteLetter
+  m_Name: Napkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 882d06c8cbcccf9408b78c82d617eae1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14ddb67c6713d6b449bd0975b734302e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -149,11 +149,11 @@ MonoBehaviour:
   TypeOfTab: 0
   TypeOfDocument: 0
   PagIdx: 0
-  DocumentInfo: Prostitute letter found in her room
+  DocumentInfo: A napkin found in the killer appartment
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
-  BWText: {fileID: 0}
+  BWText: {fileID: 2800000, guid: 1e7bc73e94343864ca8501f8b7a9ee1e, type: 3}
   isGood: 0
 --- !u!114 &3337926126073152915
 MonoBehaviour:

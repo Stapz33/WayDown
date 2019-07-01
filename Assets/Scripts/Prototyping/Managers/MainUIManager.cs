@@ -277,6 +277,7 @@ public class MainUIManager : MonoBehaviour {
             CallTaxi();
             m_LogManager.GetComponent<LogManager>().StartingScript();
         }
+        AudioManager.Singleton.ChangeMusic(4);
     }
 
     void Update () {
@@ -311,7 +312,7 @@ public class MainUIManager : MonoBehaviour {
                     CloseDialogue();
                     SaveGame();
                     AudioManager.Singleton.DeskCheckRadio();
-                    AudioManager.Singleton.StopMusic();
+                    AudioManager.Singleton.ChangeMusic(4);
                     m_CharacterVinyle.SetActive(false);
                     m_OtherCharacterVinyle.SetActive(false);
                 }
@@ -854,7 +855,14 @@ public class MainUIManager : MonoBehaviour {
 
     public void AddNewDocumentAndShowIt(int DocumentIdx, DocumentFolder Type, bool isCriminalRecord)
     {
-        AudioManager.Singleton.ActivateAudio(AudioType.NewDocument);
+        if (DocumentDataBase.Documents[DocumentIdx].GetComponent<ButtonCall>().BWText != null)
+        {
+            AudioManager.Singleton.ActivateAudio(AudioType.polaroid);
+        }
+        else
+        {
+            AudioManager.Singleton.ActivateAudio(AudioType.NewDocument);
+        }
         DocumentDatas.DocumentStruct yes = new DocumentDatas.DocumentStruct();
         yes.doc = DocumentIdx;
         yes.doctype = Type;
@@ -1046,6 +1054,7 @@ public class MainUIManager : MonoBehaviour {
         }
         SetupDialogueSystem();
         AudioManager.Singleton.StopRadio();
+        AudioManager.Singleton.StopMusic();
         AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
     }
 
@@ -1069,6 +1078,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void OpenPoliceOffice()
     {
+        AudioManager.Singleton.StopMusic();
         AudioManager.Singleton.StopRadio();
         PoliceOfficeObject.SetActive(true);
         PoliceOffice.Singleton.UpdateNormalInspector();
@@ -1076,6 +1086,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void ClosePoliceOffice()
     {
+        AudioManager.Singleton.ChangeMusic(4);
         AudioManager.Singleton.DeskCheckRadio();
         PoliceOfficeObject.SetActive(false);
         CloseTab();
@@ -1441,6 +1452,7 @@ public class MainUIManager : MonoBehaviour {
         if (m_DialogueBackgroundIdx == 9)
         {
             m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = BackGroundDeskTransitition;
+            AudioManager.Singleton.ChangeMusic(4);
         }
         else
         {

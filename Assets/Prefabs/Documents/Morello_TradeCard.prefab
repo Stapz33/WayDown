@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3337926126073152919}
   - component: {fileID: 3337926126073152915}
   m_Layer: 5
-  m_Name: ProstituteLetter
+  m_Name: Morello_TradeCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 882d06c8cbcccf9408b78c82d617eae1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d87472255582af24e89e6b509e5f7e4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -149,7 +149,7 @@ MonoBehaviour:
   TypeOfTab: 0
   TypeOfDocument: 0
   PagIdx: 0
-  DocumentInfo: Prostitute letter found in her room
+  DocumentInfo: The Consigliere's trade card
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}
