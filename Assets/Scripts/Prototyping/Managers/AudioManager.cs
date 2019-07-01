@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02, pageturning01, pageturning02, pickingupphone, polaroid, reload, searching, shotgun, closingdoor, passingcar01, passingcar02, cararriving}
+public enum AudioType {AddressBookOpen,DrawerOpen,MapOpen,NewDocument,ChangePageAddressBook,CallTaxi,Text,LoadingTransition,PhoneRing, Whisky,NewLog,Cigar, Bottle,BarEntrance,CloseCarDoor,hailCab,doorOpen,footStep,bunchofkeys,doorunlocked, doorandfoot, doorbell01, doorbell02, bedmoving, knockingdoor01, knockingdoor02, pageturning01, pageturning02, pickingupphone, polaroid, reload, searching, shotgun, closingdoor, passingcar01, passingcar02, cararriving, accelerate, braking01, braking02, braking03, turnsignal, motor, decelerate, manualbraking}
 
 public class AudioManager : MonoBehaviour
 {
@@ -48,9 +48,19 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_ReloadAudio = null;
     [SerializeField] private AudioSource m_SearchingAudio = null;
     [SerializeField] private AudioSource m_ShotGunAudio = null;
+    
+    [Header("Soldier Car")]
     [SerializeField] private AudioSource m_PassingCar01Audio = null;
     [SerializeField] private AudioSource m_PassingCar02Audio = null;
     [SerializeField] private AudioSource m_CarArrivingAudio = null;
+    [SerializeField] private AudioSource m_AccelerateAudio = null;
+    [SerializeField] private AudioSource m_Braking01Audio = null;
+    [SerializeField] private AudioSource m_Braking02Audio = null;
+    [SerializeField] private AudioSource m_Braking03Audio = null;
+    [SerializeField] private AudioSource m_TurnSignalAudio = null;
+    [SerializeField] private AudioSource m_MotorAudio = null;
+    [SerializeField] private AudioSource m_DecelerateAudio = null;
+    [SerializeField] private AudioSource m_ManualBrakingAudio = null;
 
     [Header("Doors And Keys")]
     [SerializeField] private AudioSource m_CarDoorAudio = null;
@@ -218,6 +228,30 @@ public class AudioManager : MonoBehaviour
             case AudioType.cararriving:
                 m_CarArrivingAudio.Play();
                 break;
+            case AudioType.accelerate:
+                m_AccelerateAudio.Play();
+                break;
+            case AudioType.braking01:
+                m_Braking01Audio.Play();
+                break;
+            case AudioType.braking02:
+                m_Braking02Audio.Play();
+                break;
+            case AudioType.braking03:
+                m_Braking03Audio.Play();
+                break;
+            case AudioType.turnsignal:
+                m_TurnSignalAudio.Play();
+                break;
+            case AudioType.motor:
+                m_MotorAudio.Play();
+                break;
+            case AudioType.decelerate:
+                m_DecelerateAudio.Play();
+                break;
+            case AudioType.manualbraking:
+                m_ManualBrakingAudio.Play();
+                break;
             default:
                 break;
         }
@@ -259,6 +293,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.NewLog:
                 m_NewLogAudio.Stop();
+                break;
+            case AudioType.motor:
+                m_MotorAudio.Play();
                 break;
             default:
                 break;

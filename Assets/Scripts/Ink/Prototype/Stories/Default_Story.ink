@@ -81,12 +81,12 @@ You understand me Rosenthal? Come here right now. # otherCharacter
     #MusicPlay #1
 -  (cab){<i>(Not even the time for a coffee, I put on my hat and go outside to find a cab.)</i>|} # player
 # jump
-    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player #SFXPlay #15 #SFXPlay #35
+    +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player #SFXPlay #15 
         {<i>(That prick doesn't even slow down.)</i>-> cab|<i>(Am I covered in shit?)</i>-> cab|} # player
-- <i>(As I'm slowly starting to lose my temper and head back to the office, a 47' Cadillac slows by.)</i> # player
-Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #36
+- <i>(As I'm slowly starting to lose my temper and head back to the office, a 47' Cadilloc slows by.)</i> # player #SFXPlay #36
+Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 # jump  #PlayerDBox #0
-    *   Ain't no Yid here kid[], get lost. # player
+    *   Ain't no Yid here kid[], get lost. # player 
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
 - Mr. Lanza sent me to get you, could you please get in the car? # otherCharacter 
@@ -94,62 +94,62 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #36
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
 - <i>(I step into the car.)</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14 #MusicPlay #3
-<i>(As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.)</i> # player
+<i>(As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.)</i> # player SFXPlay #37
 <i>(He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.)</i> # player #NewNarrativeLog #0
 - (car_convo)
 # jump # NewCharacterSprite #8
-    *   Are you new in town, kid? # player #PlayerDBox #0
+    *   Are you new in town, kid? # player #PlayerDBox #0 #SFXPlay #35
         Came here 6 months ago from Sicily. # otherCharacter 
         # jump
-        **  Lanza got you in here? # player
+        **  Lanza got you in here? # player #SFXPlay #40
             Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter 
             # jump
         **  More Italians?[] Is there any place left in North Beach? # player
-            I'm not here to settle down, Mr. Lanza asked me to come to ensure his protection. # otherCharacter
+            I'm not here to settle down, Mr. Lanza asked me to come to ensure his protection. # otherCharacter #SFXPlay #37
         -- 
-        **	What is he afraid of?[] He's not been linked to Lima, has he? # player
+        **	What is he afraid of?[] He's not been linked to Lima, has he? # player #SFXPlay #38
         Not that I know of, the boss was smart enough to make sure that the organization would not be too much harmed. # otherCharacter
         So who's going after him? # player
-        I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter #NewNarrativeLog #1
+        I can't say anything, but I'm sure Mr. Lanza will talk to you about it. # otherCharacter #NewNarrativeLog #1 #SFXPlay #37
         ->car_convo
-    *   Can't you go directly to the apartment? # player #PlayerDBox #0
-        Must make sure that we're not tailed sir # otherCharacter # NewCharacterSprite #8
+    *   Can't you go directly to the apartment? # player #PlayerDBox #0 #SFXPlay #34
+        Must make sure that we're not tailed sir # otherCharacter # NewCharacterSprite #8 #SFXPlay #40
         # jump
-        **  Who would follow me?[] Am I a Jewish Marilyn? # player 
+        **  Who would follow me?[] Am I a Jewish Marilyn? # player #SFXPlay #37
         //revoir 
-            Let's say that we caught a lot of heat from the trial. # otherCharacter
+            Let's say that we caught a lot of heat from the trial. # otherCharacter #SFXPlay #41
             # jump
         **  I ain't mixed with all that[] kid, Jimmy should have told you so. I'm a simple detective that helps some friends in need. # player
-            Not you personnally, but we must stay on our guard with the trial. # otherCharacter
+            Not you personnally, but we must stay on our guard with the trial. # otherCharacter #SFXPlay #41
         --  I don't get it, your boss Lima is judged, couldn't you find someone to take the blame? # player
-            I don't know, that's not something that I was told. # otherCharacter
+            I don't know, that's not something that I was told. # otherCharacter #SFXPlay #37
         # jump
-        **  Are you throwing me under the bus?[] I'll not go down easily motherfucker. # player
+        **  Are you throwing me under the bus?[] I'll not go down easily motherfucker. # player #SFXPlay #38
             Don't be stupid, Mr. Lima cannot be saved by you. # otherCharacter
-            So what am I doing here? # player
+            So what am I doing here? # player #SFXPlay #40
         **  Lima didn't request my help for the trial[], what could I possibly do? # player
-            You're not here to help on that matter. The Administration is working on it. # otherCharacter
+            You're not here to help on that matter. The Administration is working on it. # otherCharacter #SFXPlay #41
             So where do I fit in your plan now? # player
-        --  Giovanni is dead. # otherCharacter
+        --  Giovanni is dead. # otherCharacter #SFXPlay #35
         # jump
-        **  Fuck... What happened to him? # player 
+        **  Fuck... What happened to him? # player #SFXPlay #37
         //à changer
             You will discover it soon enough. # otherCharacter #NewNarrativeLog #2
             ->car_convo
     *->
-- <i>(The ride continued in a complete silence.)</i> # player #NewCharacterSprite #0 #PlayerDBox #1
+- <i>(The ride continued in a complete silence.)</i> # player #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #38
 <i>(Giovanni is dead. Poor kid. And more Italians flooding North Beach.)</i> # player
 <i>(Something's wrong. And I'm gettin' mixed in all that.)</i> # player
-<i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #14
+<i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #14 #SFXPlay #36
 I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0
 # jump
-    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8
+    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #42 #SFXPlay #44
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
-        <i>(And the young prick leaves.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0
-- <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0
+        <i>(And the young prick leaves.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #SFXPlay #37
+- <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0 #SFXStop #11
 
 # NewBigBackground #12
 <i>(Jimmy Lanza is waiting for me, near to the door.)</i> # player # NewCharacterSprite #5
