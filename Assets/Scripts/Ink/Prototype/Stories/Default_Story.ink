@@ -938,18 +938,134 @@ i've already been there #player
  	- else: 
  		~ client_seen = true
 }
-blablabla #player
-{
+TODO: Sheraton Background (ASK TONY)
+#PlayerDBox #1
+<i>(So that's where Cara was supposed to come.)</i>#player
+<i>(Let's see what her lover did to them.)</i>#player
+//Elevator Background
+<i>(So that woman told me that he stays at the 7th floor.)</i>#player #NewBackground #25
+<i>(I'm not paid enough to take the stairs.)</i>#player
+#jump
+*   [Call the elevator]
+-   <i>(...)</i>#player
+<i>(...)</i>#player
+<i>(It takes quite a long time...)</i>#player
+<i>(...)</i>#player
+TODO: SFX elevator ring
+<i>(Finally!)</i>#player #NewBackground #23
+<i>(Nobody in the corridor.)</i>#player
+<i>(There never seems to be anybody on those fancy hotels.)</i>#player
+<i>(But wait for a door to open and you'll see where those rich bastards are hidding.)</i>#player
+<i>(So what was the room number again? I believe it's 738.)</i>#player
+<i>(Let's check that.)</i>#player
+<i>(...)</i>#player
+<i>(Should be this one.)</i>#player
+#jump
+*   [Knock at the door] <i>(It he still in here?)</i>#player
+-   <i>(...)</i>#player
+    <i>(I can't here anything.)</i>#player
+    <i>(At least nothing discernable.)</i>#player
+    <i>(There's kind of hushered sounds.)</i>#player
+#jump
+*   [Knock again] <i>(Let's try something.)</i>#player
+    #jump
+    **  [Room service!] Hello sir, it's the room service, you ordered something.#player #PlayerDBox #0
+        <i>(At least some sounds! He getting close to the door.)</i>#player #PlayerDBox #1
+        Oh that was quite fast, I ordered like a minute ago. #otherCharacter
+        <i>(Stupid schmuck.)</i>#player #PlayerDBox #1
+        #jump
+        *** [Kick down the door] Enjoy your meal you shithead! #player #PlayerDBox #0
+            What is... Oh God!#otherCharacter #NewCharacterSprite #1
+    **  [Police sir, open up!] Sir, I'll need you to open right now, it's the police!#player #PlayerDBox #0
+        W-w-wait, i-I haven't done anything sir!#otherCharacter
+        <i>(Idiot, he's getting closer to the door, I can hear him.)</i>#player #PlayerDBox #1
+        #jump
+        *** [Kick down the door] No, but you're gonna take this door in the face! #player #PlayerDBox #0
+            What is... Jesus!#otherCharacter #NewCharacterSprite #1
+-   <i>(So that's our suspect...)</i>#player #PlayerDBox #1 #NewBackground #2
+    <i>(An obese fellow rolling on the floor.)</i>#player
+    <i>(Can't say that I'm not a little disappointed.)</i>#player
+    Wh-who are you? What h-have I done?#otherCharacter
+    Alright let me tell you a story fellow. #player #PlayerDBox #0
+    Once upon a time, a man fell for cute Irish prostitute.#player
+    But seeing that she was not really receptive, he followed her.#player
+    And saw her being 'friendly' with another.#player
+    So he decided to eliminate the competition.#player
+    What are you talking about?? #otherCharacter
+    I haven't left the since Cara left!#otherCharacter
+#jump
+*   So she was here?[] You didn't follow her after? #player
+-   Not with a gun pointed at me, no!#otherCharacter
+#jump
+*   [What gun?] Did she had a gun?#player
+-   Not her. Her freakin' driver!#otherCharacter
+    I paid the Condor to have her for the all night, but then after half an hour, he came to the door.#otherCharacter
+    Saying that she had another client to see.#otherCharacter
+    Can't believe it, the Condor used to be more serious!#otherCharacter
+#jump
+*   [Where did she went to?] Do you know where was this other client? #player
+-   Didn't have the time to ask! #otherCharacter
+    He took her by the arm, but she didn't seem to want to go with him.#otherCharacter
+    So I tried to take her back to the room. #otherCharacter
+    That's when he draw his gun. #otherCharacter
+    Geez... #player
+    Did something happened to her? #otherCharacter
+#jump
+*   [Can you describe him?] Did you saw what he looked like? #player
+-   Looked like a normal fellow, not skinny but not fat.#otherCharacter
+    But he was quite large, about one or two heads above me. #otherCharacter
+    And his eyes...#otherCharacter
+    What about them?#player
+    So cold... A pair of pale green eyes.#otherCharacter
+    They could kill you, even without a gun under your nose.#otherCharacter
+#jump
+*   [Grow a pair man] Why don't you act like a man? #player
+    Wait to be in front of him!#otherCharacter
+    And then what?#player
+    Then you'll see what man you are.#otherCharacter
+*   [The devil himself?] Ain't that the devil himself?#player
+    Don't know if he's the devil, but for sure he's gonna join him in the end.#otherCharacter
+-   Do you know what did he do to Cara?#otherCharacter
+*   [Tell him the truth] She was killed with another man, most likely by the man that you saw last night.#player
+    R-really?#otherCharacter
+    Yes, fellow.#player
+    **  [I'm sorry] Sorry for your loss.#player
+        <i>(Let's leave this man alone, I cannot do anything else for him.)</i>#player #PlayerDBox #1
+    **  [Stop whipping] Won't you stop weeping for a freakin' hooker? Jesus.#player
+        <i>(For Christ's sake, why does he can't stop crying?)</i>#player #PlayerDBox #1
+        <i>(Let's get the hell outta here.)</i>#player
+*   [Lie to him] Hm... she was sent by the Condor Club to another client, like the man said.#player
+    What can I say, she was popular.#player
+    I can't argue with that.#otherCharacter
+    But that's not reaaly professionnal, the club will hear from me.#otherCharacter
+    If you say so...#player
+    <i>(Let this man hope a little, maybe he'll forget her.)</i>#player #PlayerDBox #1
+-	{
 	- driverapp_seen == true: 
 		->client_newinvestigation 
 	- else: 
-		->END
-}
+		->client_introspection
+	}
 =client_newinvestigation
-yes new investigation #player #NewInvestigation
+-   <i>(So our man went here, after taking the driver's car.)</i>#player #NewCharacterSprite #0 #NewBackground #23
+-   <i>(But where's the driver now?)</i>#player #NewBackground #9 #Introspection
+    <i>(Obviously killed.)</i>#player
+    <i>(But you cannot kill a car.)</i>#player
+    <i>(He must have got rid of it somewhere. Too recognizable.)</i>#player
+    <i>(A parking lot? No, most surely a auto wreck yard.)</i>#player
+    <i>(Where could I find one?)</i>#player
+    #NewInvestigation
 ->END
+
+=client_introspection
+-   <i>(Who's that driver?)</i>#player #NewCharacterSprite #0 #NewBackground #23
+    <i>(I didn't picture a freakin' cold blooded killer.)</i>#player
+    #NewBigBackground #9 #Introspection
+    <i>(I should check where he's living. But I guess that he'll not be there. Obviously.)</i>#player
+->END
+
 =client_alreadydone
-i've already been there #player
+<i>(I can't do anything else for that man.)</i> #player #PlayerDBox #1
 ->END
 
 /*--------------------------------------------------------------------------------
