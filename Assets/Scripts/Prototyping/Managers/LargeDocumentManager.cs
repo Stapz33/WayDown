@@ -71,6 +71,7 @@ public class LargeDocumentManager : MonoBehaviour
         m_Shader.SetFloat("_MaskAmount", 0f);
         m_MaskAmount = 0f;
         needtoMask = false;
+        MainUIManager.Singleton.ReactivateDialogue();
     }
 
     public void UpdateMultiDoc01(Sprite sprite)

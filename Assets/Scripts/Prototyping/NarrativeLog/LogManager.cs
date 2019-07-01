@@ -146,6 +146,10 @@ public class LogManager : MonoBehaviour
         {
             NextButton.SetActive(false);
         }
+        if (ClogFeedback.activeSelf)
+        {
+            SetCLog();
+        }
     }
 
 

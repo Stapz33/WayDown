@@ -910,6 +910,7 @@ public class MainUIManager : MonoBehaviour {
         l_DocumentsDrawerDocNB[DrawerIdx]++;
         if (needToShow)
         {
+            DeactivateDialogueTemporary();
             if (Document.GetComponent<ButtonCall>().BWText != null)
                 ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite, Document.GetComponent<ButtonCall>().BWText);
             else
@@ -1643,5 +1644,19 @@ public class MainUIManager : MonoBehaviour {
     public void SetLanzaChoosed(bool b)
     {
             b_isLanzaChoosen = b;
+    }
+
+    public void DeactivateDialogueTemporary()
+    {
+        Dialogue.SetActive(false);
+        OtherCharacterSection.SetActive(false);
+        b_StoryStarted = false;
+    }
+
+    public void ReactivateDialogue()
+    {
+        Dialogue.SetActive(true);
+        OtherCharacterSection.SetActive(true);
+        b_StoryStarted = true;
     }
 }
