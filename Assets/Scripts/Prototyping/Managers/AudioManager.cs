@@ -295,7 +295,7 @@ public class AudioManager : MonoBehaviour
                 m_NewLogAudio.Stop();
                 break;
             case AudioType.motor:
-                m_MotorAudio.Play();
+                m_MotorAudio.Stop();
                 break;
             default:
                 break;

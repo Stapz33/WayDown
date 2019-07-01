@@ -84,7 +84,7 @@ You understand me Rosenthal? Come here right now. # otherCharacter
     +   [{Hail a cab|Hail a cab again|Try to hail a cab}] <> # player #SFXPlay #15 
         {<i>(That prick doesn't even slow down.)</i>-> cab|<i>(Am I covered in shit?)</i>-> cab|} # player
 - <i>(As I'm slowly starting to lose my temper and head back to the office, a 47' Cadilloc slows by.)</i> # player #SFXPlay #36
-Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
+Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
 # jump  #PlayerDBox #0
     *   Ain't no Yid here kid[], get lost. # player 
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
@@ -93,7 +93,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 # jump
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
-- <i>(I step into the car.)</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14 #MusicPlay #3
+- <i>(I step into the car.)</i># player # NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #14 #MusicPlay #3 #SFXStop #42
 <i>(As soon as I seat, my nocturnal driver starts the engine and takes me to Francisco Street.)</i> # player SFXPlay #37
 <i>(He rides smoothly and hardly ever speaks. Francisco is not so far, but he seems to take quite a lot of detours.)</i> # player #NewNarrativeLog #0
 - (car_convo)
@@ -140,16 +140,16 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8
 - <i>(The ride continued in a complete silence.)</i> # player #NewCharacterSprite #0 #PlayerDBox #1 #SFXPlay #38
 <i>(Giovanni is dead. Poor kid. And more Italians flooding North Beach.)</i> # player
 <i>(Something's wrong. And I'm gettin' mixed in all that.)</i> # player
-<i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #14 #SFXPlay #36
-I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0
+<i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #36
+I let you go by yourself. Mr. Lanza is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0 #SFXPlay #42 #SFXPlay #44
 # jump
-    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #42 #SFXPlay #44
-    *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0
+    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #14
+    *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0 #SFXPlay #14
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to fuck me over to save their heads? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
         <i>(And the young prick leaves.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #SFXPlay #37
-- <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0 #SFXStop #11
+- <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0 #SFXStop #42
 
 # NewBigBackground #12
 <i>(Jimmy Lanza is waiting for me, near to the door.)</i> # player # NewCharacterSprite #5
