@@ -491,7 +491,29 @@ I'm done here. # player #PlayerDBox #0
 # NewCharacterSprite #0 #NewBigBackground #9 #MusicPlay #1
 <i>(Not too much about that girl... At least I know where she lived.)</i> # player
 <i>(But I still don't know anything else about her, not even her name. Let's work on that.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)#NewBackground #9
-# NewInvestigation #InspectorNameUnlock #Introspection
+
+<i>(Maybe Gibbs could help me on that.)</i>#player
+<i>(I hate to go to a cop, but let's face it, it's as much a good cop as Lanza is.)</i>#player
+<i>(He could even betray is own mother.)</i>#player
+<i>(But he's useful. Let's go check on him.)</i>#player
+#NewBackground #4
+What do you want from me this time Mr Rosenthal?#otherCharacter
+I couldn't find much on your wife, she's keeping a low profile right now.#otherCharacter
+I'm not here for that Gibbs, I work for Lanza for now.#player
+I need to find the name of a girl, she was found with one of Abati's men.#player
+Could you give me anything on her?#player
+Jesus, those Italians are always all guns out.#player
+I could check on our records, but I'll need her full name.#otherCharacter
+Why didn't you call the police?#otherCharacter
+...#player
+Gibbs, do you even think some times?#player
+Do you see Lanza calling cops?#player
+Yeah you're right...#otherCharacter
+Anyway, I'll get you the name of that girl.#player
+I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
+#NewBackground #9 #Introspection #NewCharacterSprite #0 #PlayerDBox #1
+<i>(So now, where could I find that girl's name?)</i>#player
+# NewInvestigation #InspectorNameUnlock 
 ->END
 
 
