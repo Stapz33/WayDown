@@ -953,8 +953,8 @@ So what happened to her Mr Rosenthal? #otherCharacter
     But I heard his voice. Sounded quite Russian, or Slave.#otherCharacter
     Anyway, a fellow from the east.#otherCharacter
     I also saw a mark on is arm when he draw his gun.#otherCharacter
-    Something like a tattoo I think.#otherCharacter
-*   [What happened then?] So what happened after he draw the gun?
+    Something like a tattoo I think.#otherCharacter #NewNarrativeLog #17
+*   [What happened then?] So what happened after he draw the gun? #player
     And how didn't he see you?#player
     But let's back up a little... who the hell are you?#player
     I live here, down the hall.#otherCharacter
@@ -1208,7 +1208,7 @@ TODO: SFX elevator ring
     Seems to be. Tall guy? With tattoos?#player
     He seemed tall yes, but I couldn't see if he had tattoos or not.#otherCharacter
     I could only see the back of his head when he escaped the wreck yard.#otherCharacter
-    Something like a medium cut, with grey hair.#otherCharacter
+    Something like a medium cut, with grey hair.#otherCharacter #NewNarrativeLog #16
 -   So he left on his feet?#player
     Yeah, could have dropped the car anywhere in the yard, it's a hell of a jungle here.#otherCharacter
 #jump
@@ -1243,7 +1243,7 @@ TODO: SFX elevator ring
 #jump
 *   [Look in the car] I'll take a look inside, see if our man dropped something.#player #NewCharacterSprite #0
 -   <i>(...)</i>#player #PlayerDBox #1
-    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #9
+    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #6
     <i>(What's this?)</i>#player
     <i>(Could have been left by the killer.)</i>#player
     <i>(I need to get out of here, before real cops show up.)</i>#player
@@ -1276,9 +1276,9 @@ TODO: SFX elevator ring
 ===killer_appartment===
 =killer_entrance
 #NewNoBackground #24
-I find a receip #player #NewDocument #8
-I find a restaurant napkin #player #NewDocument #8
-The killer went regularly to a drugstore, and to the a restaurant #player #NewDocument #6
+I find a receipt #player #NewDocument #8
+I find a restaurant menu #player #NewDocument #9
+The killer went regularly to a drugstore, and to the a restaurant #player
 Okay so a drugstore and a restaurant #Introspection #NewBigBackground #9 #NewInvestigation
 ->END
 
