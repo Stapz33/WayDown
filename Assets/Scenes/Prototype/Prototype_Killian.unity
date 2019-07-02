@@ -1479,8 +1479,54 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: CsTab
+      value: 
+      objectReference: {fileID: 1982966128629935726}
+    - target: {fileID: 4711738336830892966, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968078140595513402, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333673321397799521, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 619192933, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_Text
+      value: 'I have the full name of someone
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 619192933, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965113845116460858, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_Text
+      value: I have the description of someone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965113845116460858, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+--- !u!1 &1982966128629935726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5333673321397799521, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982966128629935725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2823339989537466024
 PrefabInstance:
   m_ObjectHideFlags: 0

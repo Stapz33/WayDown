@@ -127,6 +127,7 @@ public class MainUIManager : MonoBehaviour {
         public List<bool> AddressState = new List<bool>();
         public List<string> AddressDiscovered = new List<string>();
         public bool b_IsInspectorDiscorvered = false;
+        public bool b_IsCSDiscorvered = false;
 
         //variables
         public int knowledgeSpaghetty = 0;
@@ -212,6 +213,7 @@ public class MainUIManager : MonoBehaviour {
     private bool b_iscontinuing = false;
     public Sprite BackGroundDeskTransitition;
     public GameObject InvestigationTab;
+    public GameObject CsTab;
 
     [Header("EndSection")]
     public GameObject LastSection;
@@ -526,6 +528,10 @@ public class MainUIManager : MonoBehaviour {
         {
             InvestigationTab.SetActive(true);
         }
+        if (ActualDatas.b_IsCSDiscorvered)
+        {
+            CsTab.SetActive(true);
+        }
     }
 
     #endregion
@@ -696,6 +702,11 @@ public class MainUIManager : MonoBehaviour {
                 {
                     InvestigationTab.SetActive(true);
                     ActualDatas.b_IsInspectorDiscorvered = true;
+                }
+                else if (_inkStory.currentTags[f] == "CSUnlock")
+                {
+                    CsTab.SetActive(true);
+                    ActualDatas.b_IsCSDiscorvered = true;
                 }
                 else if (_inkStory.currentTags[f] == "endgame")
                 {
