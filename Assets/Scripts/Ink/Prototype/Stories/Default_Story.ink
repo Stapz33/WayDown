@@ -1287,7 +1287,7 @@ TODO: SFX elevator ring
     <i>(All the people that I talked to saw some bits of the killer.)</i>#player
     <i>(Maybe I could try to compose a complete profile and go check on Gibbs.)</i>#player
     <i>(Those lazy cops need to get some work.)</i>#player
-    #Introspection #NewInvestigation
+    #Introspection #NewInvestigation #CSUnlock
 ->END
 
 /*--------------------------------------------------------------------------------
