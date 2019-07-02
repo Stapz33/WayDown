@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3337926126073152919}
   - component: {fileID: 3337926126073152915}
   m_Layer: 5
-  m_Name: Napkin 1
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   TypeOfTab: 0
   TypeOfDocument: 0
   PagIdx: 0
-  DocumentInfo: A napkin found in the killer appartment
+  DocumentInfo: A restaurant menu found in the driver car
   parent: {fileID: 0}
   CigarSprites: []
   Bottle: {fileID: 0}

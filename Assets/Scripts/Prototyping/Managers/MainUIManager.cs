@@ -1368,7 +1368,7 @@ public class MainUIManager : MonoBehaviour {
     IEnumerator LoadSceneAsync()
     {
         AudioManager.Singleton.StopDefinitiveRadio();
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
         while (!asyncLoad.isDone)
         {
             yield return null;

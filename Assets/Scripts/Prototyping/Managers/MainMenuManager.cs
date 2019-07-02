@@ -69,7 +69,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator LoadSceneAsync()
     {
         AudioManager.Singleton.StopMusic();
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(2);
         while (!asyncLoad.isDone)
         {
             yield return null;
