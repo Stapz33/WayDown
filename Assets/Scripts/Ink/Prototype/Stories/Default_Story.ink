@@ -905,17 +905,81 @@ So what happened to her Mr Rosenthal? #otherCharacter
 
 ===driver_appartment===
 =driver_entrance
-#NewCharacterSprite #0 #NewNoBackground #24
+#NewCharacterSprite #0 #NewNoBackground #24 #PlayerDBox #1
 {
 	- driverapp_seen == 1: 
 		->driver_alreadydone
  	- else: 
  		~ driverapp_seen = 1
 }
-Hey there is no keys for the car here #player
-But i have more informations about the car #player
-The child gave me some information about the killer #player
-He is a Russian Man with a big tatoo on his left arm #player #NewNarrativeLog #17
+#PlayerDBox #1 #NewBackground #24
+{client_seen==true:<i>(So our killer lives here...)</i>|<i>(So that's where the driver lives...)</i>}#player
+{client_seen==true:<i>(I'm kinda disappointed.)</i>|<i>(Nice place for a worker.)</i>}#player
+{client_seen==true:<i>(I didn't picture a professionnal killer living in a place like that.)</i>|<i>(Maybe I could end up in a place like that.)</i>}#player
+{client_seen==true:<i>(Anyway, let's check his place.)</i>|<i>(Stop dreaming Bugsy, time to work.)</i>}#player
+#jump
+*   [Enter the building] <i>(Let's go in there, he's at the 375.)</i>#player #NewBackground #22
+-   <i>(This place is really calm.)</i>#player
+    <i>(I would have expected a little more people in here.)</i>#player
+    <i>(Here is 375. Let's check if he's here.)</i>#player
+#jump
+*   [Knock on the door]<i>(Will I be lucky?)</i>#player
+-   <i>(...)</i>#player
+    <i>(It seems that I won't.)</i>#player
+#jump
+*   [Knock again]Is there someone in here?#player #PlayerDBox #0
+-   <i>(Still no sound.)</i>#player #PlayerDBox #1
+    You won't find anybody here sir.#otherCharacter #NewCharacterSprite #11
+    Jesus Christ, who are you? #player #PlayerDBox #0
+    Why do you creep on people like that?#player
+    Sorry, I was quite afraid that the man from the other night was coming again.#otherCharacter
+    Who are you talking about?#player
+    The man that lived here?#player
+    No, the man that came for him.#otherCharacter
+#jump
+*   [Which man?] Another man? Someone that used to come here often?#player
+    No, first time that I've seen him.#otherCharacter
+    Didn't look like the type of workers that live here.#otherCharacter
+    Not like Cooper, the man that lives in that apartment.#otherCharacter
+*   {client_seen==false}[Stop jocking around] What are you saying? It was the man that lived there that you saw, don't you?#player
+    No, it was someone else. I know the man that lives here.#otherCharacter
+    Quite an handsome man.I think his name was Cooper I think. #otherCharacter
+-   The man that came banged on the door.#otherCharacter
+    Was not really trying to be discreet.#otherCharacter
+    Then Cooper opened the door, and started to yell.#otherCharacter
+    But he quickly stopped when the other man flashed a gun.#otherCharacter
+*   [What did he look like?] Did you see his face?#player
+-   No, I couldn't. He had a hat deeply set on his head.#otherCharacter
+    But I heard his voice. Sounded quite Russian, or Slave.#otherCharacter
+    Anyway, a fellow from the east.#otherCharacter
+    I also saw a mark on is arm when he draw his gun.#otherCharacter
+    Something like a tattoo I think.#otherCharacter
+*   [What happened then?] So what happened after he draw the gun?
+    And how didn't he see you?#player
+    But let's back up a little... who the hell are you?#player
+    I live here, down the hall.#otherCharacter
+    **  [Strange place for a girl like you] What is a gorgeous girl like you doing here?#player
+        Let's say that the other tenants don't mind the traffic in my apartment.#otherCharacter
+        Even less when they are part of this traffic.#otherCharacter
+        By the way, if you want to come by someday, feel free to call me...#otherCharacter
+    **  [Live here with your husband?] Ain't your husband at home?#player
+        I live alone here, sir.#otherCharacter
+        Not even a roommate?#player
+        Oh I have quite some company stopping by. Even some of the men from the other apartments.#otherCharacter
+        By the way, if you want to come by someday, feel free to call me...#otherCharacter
+-   Anyway, so I was just opening my door to go and get the mail when I heard the shouts.#otherCharacter
+    But what could a poor woman like me do between those two men?#otherCharacter
+    Maybe go back to your apartment?#player
+    Or I could hear what they were saying and help an handsome inspector passing by after that, don't you think?#otherCharacter
+    So I stayed on my doorstep, and just took a peep sometimes.#otherCharacter
+    They exited the building and took Cooper's car, an old grey pick-up truck parked outside.#otherCharacter
+    Anything else useful about them?#player
+    Don't think so, but you should be careful.#otherCharacter
+    I heard that those Russian guys are quite wild.#otherCharacter
+    I wouldn't want you to be hurt darling.##otherCharacter
+*   How thoughtful[] from you, thank you miss.#player
+-   I should get on his tail now.#player
+    Have a good day.#player
 {
 	- client_seen == 1: 
 		->driver_newinvestigation 
@@ -923,11 +987,41 @@ He is a Russian Man with a big tatoo on his left arm #player #NewNarrativeLog #1
 		->END
 }
 =driver_newinvestigation
-# NewBigBackground #9 
-Now i've everything i need about this killer and the car #player #NewInvestigation #Introspection
+#PlayerDBox #1 #NewCharacterSprite #0
+<i>(What a woman.)</i>#player
+<i>(I really seem to have an attraction with prostitutes.)</i>#player
+<i>(Quite easy if you ask me.)</i>#player
+<i>(Strip Bugsy from his coat and a few bucks, and see if I attract as many women.)</i>#player
+<i>(Let's focus on what's important now.)</i>#player #NewBackground #24
+<i>(Seems that the driver was a victim too.)</i>#player
+<i>(But where is he now?)</i>#player #NewBackground #9
+<i>(My guess would be that he's with the car, or ditched in a alley, with a hole in his head.)</i>#player #Introspection
+<i>(I cannot go on every corner of the city, so the car is the better lead to follow now.)</i>#player
+<i>(But where would it be?)</i>#player
+<i>(If I was the killer, I would get rid of it.)</i>#player
+<i>(Maybe in an auto wreck yard, or a parking lot?)</i>#player
+<i>(Time to do some boring investigator work.)</i>#player
+#NewInvestigation
 ->END
+
+=driver_introspection
+#PlayerDBox #1 #NewCharacterSprite #0
+<i>(What a woman.)</i>#player
+<i>(I really seem to have an attraction with prostitutes.)</i>#player
+<i>(Quite easy if you ask me.)</i>#player
+<i>(Strip Bugsy from his coat and a few bucks, and see if I attract as many women.)</i>#player
+<i>(Let's focus on what's important now.)</i>#player #NewBackground #24
+<i>(That Cooper was not the killer then.)</i>#player
+<i>(But why a Russian?)</i>#player
+<i>(Is there a beef between the families that I don't know of?)</i>#player #NewBackground #9
+<i>(But I shouldn't try to get mixed with all this.)</i>#player #Introspection
+<i>(Let's focus on what matters now.)</i>#player
+<i>(Who's the killer, and why was he at Giovanni's place.)</i>#player
+<i>(There's still that shady last client, I shouldn't forget that.)</i>#player
+->END
+
 =driver_alreadydone
-i've already been there #player
+<i>(The driver is not here anymore, that will not help.)</i> #player #PlayerDBox #1
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1080,17 +1174,98 @@ TODO: SFX elevator ring
 
 ===wreckyard===
 =wreckyard_entrance
-#NewNoBackground #28
-Ok so here is the wreckyard #player
-I need to speak to the guardian about the killer #player
-The guardian gave me more informations #player #NewBackground # 26
-The killer have medium long grey hair #player #NewNarrativeLog #16
-lets check the driver car #player
-here is the car #player #NewBackground #27
-the driver is found dead in the trunk #player #NewDocument #9
-ah, a menu of a restaurant ? #player
-it's everything that i need here #player 
-So now i have a full description of the killer, i could get a composite sketch of him. i need more informations #NewBigBackground #9 #Introspection #NewInvestigation
+#NewNoBackground #28 #PlayerDBox #1
+<i>(I couldn't imagine a place like that in San Francisco.)</i>#player
+<i>(It looks like I'm not in the city anymore.)</i>#player
+<i>(That's quite nice. Calm.)</i>#player
+<i>(No gun shots, no police sirens...)</i>#player
+<i>("Rosenthal Auto Repair")</i>#player
+<i>(I'll think about it.)</i>#player
+<i>(Let's check if they saw the car.)</i>#player
+#jump
+*   [Enter the wreck yard]  <i>(Is there anybody?)</i>#player
+-   Hello? #player #PlayerDBox #0 #NewBackground # 26
+    ... #player
+    Is anybody here?#player
+    Yeah yeah, just wait a second.#otherCharacter
+    Ok, I'll wait outside.#player
+    ...#player
+    Morning mister, what do you want?#otherCharacter #NewCharacterSprite #15
+#jump
+*   [Looking for a car] Did someone drop a car here last night? Like an old grey pick up truck, or something like that.#player
+    Indeed someone quite shady did that.#otherCharacter
+    Came here nearly banging the gate.#otherCharacter
+    It was my shift last night, I thought the communists were bombing us. Freakin' pinkoes.#otherCharacter
+    Did you see who the man was?#player
+    Only saw him when he escaped the facility.#otherCharacter
+    He was running pretty fast.#otherCharacter
+    Any chance that you managed to take a look at his face.#player
+    Could only see his hair. Grey ones, with a kind of medium cut.#otherCharacter
+*   [Looking for someone] I'm looking for someone that could have come here last night, does it ring a bell?#player
+    Indeed there was a man that came here.#otherCharacter
+    He nearly banged the gate with a car, like a grey rusty pick up truck.#otherCharacter
+    Is that the one you're looking for?#otherCharacter
+    Seems to be. Tall guy? With tattoos?#player
+    He seemed tall yes, but I couldn't see if he had tattoos or not.#otherCharacter
+    I could only see the back of his head when he escaped the wreck yard.#otherCharacter
+    Something like a medium cut, with grey hair.#otherCharacter
+-   So he left on his feet?#player
+    Yeah, could have dropped the car anywhere in the yard, it's a hell of a jungle here.#otherCharacter
+#jump
+*   [Can you guess where it is?] Can you guess where he could have dropped the car?#player
+    I don't have weeks to find him.#player
+-   Follow me, I'll help you.#otherCharacter
+    Nothing else to do today, might as well help a police officer.#otherCharacter
+#jump
+*   [I'm not with the police] I don't work with the police.#player
+    So I'll ask you to stay discreet about what we could find.#player
+    Exactly what a cop would say, don't worry sir.#otherCharacter
+    Follow me sir.#otherCharacter #NewBackground #27
+-   Is this the car?#player
+    I think so, it was not here yesterday.#otherCharacter
+    Pretty damaged don't you think.#player
+    I know, but that could easily be done by someone trying to cover his track, don't yo think officer?#otherCharacter
+    I'm not a c...#player
+    Yes you're right.#player
+#jump
+*   [Approach the car] Let's see what we can find in here.#player
+-   What the...#otherCharacter
+    Yes, he's one of the man that I was hoping to find.#player
+    <i>(So our killer wacked the driver, and put him in the trunk.)</i>#player #PlayerDBox #1
+    <i>(That some Sicilian-level of savagery.)</i>#player
+    <i>(Or Russian, I really need to get find our man, before he causes more damage to the organization.)</i>#player
+    Officer?#otherCharacter #PlayerDBox #0
+    Yes?#player
+    Am I in trouble?#otherCharacter
+    Never had a dead body in my yard.#otherCharacter
+    Don't worry, I'll send somone to get rid of the body.#player
+    Ok...#otherCharacter
+#jump
+*   [Look in the car] I'll take a look inside, see if our man dropped something.#player #NewCharacterSprite #0
+-   <i>(...)</i>#player #PlayerDBox #1
+    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #9
+    <i>(What's this?)</i>#player
+    <i>(Could have been left by the killer.)</i>#player
+    <i>(I need to get out of here, before real cops show up.)</i>#player
+    Alright sir, my work here is done, I'll go back to the precinct.#player #PlayerDBox #0
+    But what do I do with the body?#otherCharacter #NewCharacterSprite #15
+    I'll send someone, I told you.#player
+    Stay by it please.#player
+    O-ok officer...#otherCharacter
+    #NewBackground #28 #PlayerDBox #1 #NewCharacterSprite #0
+    <i>(What a fool.)</i>#player
+    <i>(Those people these days. That listen too much to the radio.)</i>#player
+    <i>(They think that they can do police work.)</i>#player
+    <i>(I'm curious to know how long that dumb man will stay near the body.)</i>#player
+    #NewBackground #9
+    <i>(So let's go over what we have.)</i>#player
+    <i>(A killer that vanished in the nature. Most likely Russian.)</i>#player
+    <i>(A driver, with a bullet in the head. Most likely dead.)</i>#player
+    <i>(Not a really good lead to follow.)</i>#player
+    <i>(All the people that I talked to saw some bits of the killer.)</i>#player
+    <i>(Maybe I could try to compose a complete profile and go check on Gibbs.)</i>#player
+    <i>(Those lazy cops need to get some work.)</i>#player
+    #Introspection #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
