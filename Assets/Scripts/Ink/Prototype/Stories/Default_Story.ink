@@ -655,7 +655,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 -   <i>(I'm really not sure about anything.)</i> # player #NewNarrativeLog #14
     <i>(Is it already time for a drink?)</i> # player
     <i>(That's tempting...)</i> # player
-    <i>(But I better have to work on that girl? Who where you <color=red>Margaret</color>?)</i> # player 
+    <i>(But I better have to work on that girl? Who where you <color=red>Margaret</color>?)</i> # player
     #Introspection
     ->END
  = condor_bad
@@ -695,7 +695,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
     Wait here for me, sir. # otherCharacter
-    <i>(He goes to a wall and knocks on it.)</i> # player //SFX Knock on Door
+    <i>(He goes to a wall and knocks on it.)</i> # player #SFXPlay #25
     <i>(The wall pivots, and he seems to whisper something to the person that is behind.)</i> # player #SFXPlay #16
     Sir, could you follow me please. # otherCharacter
     <i>(He nearly drags me through the door.)</i> # player #SFXPlay #17
@@ -1232,7 +1232,7 @@ TODO: SFX elevator ring
     I could only see the back of his head when he escaped the wreck yard.#otherCharacter
     Something like a medium cut, with grey hair.#otherCharacter #NewNarrativeLog #16
 -   So he left on his feet?#player
-    Yeah, could have dropped the car anywhere in the yard, it's a hell of a jungle here.#otherCharacter
+    Yeah, could have dropped the car anywhere in the yard, it's a hell of a jungle here.#otherCharacter #NewNarrativeLog #16
 #jump
 *   [Can you guess where it is?] Can you guess where he could have dropped the car?#player
     I don't have weeks to find him.#player
