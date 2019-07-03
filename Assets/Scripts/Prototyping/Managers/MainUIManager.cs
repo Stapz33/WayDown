@@ -331,7 +331,7 @@ public class MainUIManager : MonoBehaviour {
                 {
                     Button choice = Instantiate(ChoiceButton, ChoiceSection);
                     Text choiceText = choice.GetComponentInChildren<Text>();
-                    choiceText.text = _inkStory.currentChoices[ii].text;
+                    choiceText.text = _inkStory.currentChoices[ii].text.Replace("<color=red>", "<color=#9F2B2B>");
 
                     int choiceId = ii;
                     choice.onClick.AddListener(delegate { ChoiceSelected(choiceId); });
