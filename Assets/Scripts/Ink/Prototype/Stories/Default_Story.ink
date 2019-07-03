@@ -1354,27 +1354,77 @@ the killer add his last meet up at "San Francisco's Docks 1040 The Embarcadero" 
 
 ===dockers===
 =dockers_entrance
-#NewNoBackground #19
+#NewNoBackground #19 #PlayerDBox #1 #NewCharacterSprite #0
 {
 	- docker_seen == 1: 
 		->dockers_alreadydone
  	- else: 
  		~ docker_seen = 1
 }
-The dock guardian gave me the first record of the cars #player
-And he have a second one for this day #player #NewDocument #10
-Her it is #player #NewDocument #11
-{
-	- drugstore_seen == 1: 
-		->dockers_newinvestigation 
-	- else: 
-		->END
-}
+<i>(So that should be where Chtcherbina came.)</i>layer
+<i>(On one of the longest dock in the world...)</i>#player
+<i>(Everybody seems to want to give me a hard time.)</i>#player
+<i>(Let's try with the entrance first.)</i>#player
+#jump
+*   [Go to the entrance] Hello, is there anyone?#player #PlayerDBox #0
+-   Hello sir, how can I help you?#otherCharacter #NewCharacterSprite #12
+#jump
+*   [Looking for someone] I'm looking for a fellow that came here, tall guy, very Russian-type, does it ring a bell?#player
+-   I'm sorry sir, but the piers are almost 3 miles long.#otherCharacter
+    Quite difficult to spot anyone that come and goes.#otherCharacter
+    Don't you keep a record?#player
+    Of course, but only of the cars entering and exiting.#otherCharacter
+    You don't really see people walking in here.#otherCharacter
+    Are you a cop?#otherCharacter
+#jump
+*   Yes sir[], I'm asking for your cooperation on that investigation.#player
+    Of course sir, right away.#otherCharacter
+*   [Only looking for a friend]No I'm not, I was looking for my pal Valery, he told me to met him here.#player
+    But he didn't gave me the pier, and I'm not gonna run across the entire 3 miles.#player
+    Strange place to meet someone...#otherCharacter
+    He loves the sea.#player
+    But it's the San Francisco's Bay.#otherCharacter
+    Anyway, can I have them? #player
+    If you want.#otherCharacter
+-   Which days?#otherCharacter
+    What?#player
+    Which day's records do you want?#otherCharacter
+    We keep all the books since 1912.#otherCharacter
+    The couple last days should be enough.#player #NewDocument #10
+    So here's the first page.#otherCharacter #NewDocument #11
+    And here's the second.#otherCharacter
+    Will bring them back quickly?#otherCharacter
+    As soon as I find what I'm looking for.#player
+    Which will take...#otherCharacter
+    Goodbye sir, and thanks for your help.#player
+    <i>(What a good fellow.)</i>#player #NewCharacterSprite #0 #PlayerDBox #1
+    <i>(Just dumb enough.)</i>#player
+    {
+    	- drugstore_seen == 1: 
+    		->dockers_newinvestigation 
+    	- else: 
+    		->dockers_introspection
+    }
 =dockers_alreadydone
-i've already been there #player
+#NewNoBackground #19 #PlayerDBox #1 #NewCharacterSprite #0
+<i>(They won't help me here, I need to find the killer by myself.)</i> #player
+<i>(And they say that I don't have a tough job...)</i>#player
 ->END
+
 =dockers_newinvestigation
-So now i have everything, i need more infos about these piers #player #NewInvestigation
+<i>(So now I know that Chtcherbina came here not long ago.)</i>#player
+<i>(But he could be anywhere in those piers...)</i>#player #NewBackground #9
+<i>(I need to think, and fast.)</i>#player #Introspection
+<i>(He could disappear anytime soon.)</i>#player
+<i>(Let's find if someone gave me useful information to track him.)</i>#player #NewInvestigation
+->END
+
+=dockers_introspection
+<i>(So now I know that Chtcherbina came here not long ago.)</i>#player
+<i>(But he could be anywhere in those piers...)</i>#player #NewBackground #9
+<i>(I need to think, and fast.)</i>#player #Introspection
+<i>(He could disappear anytime soon.)</i>#player
+<i>(I have to find more about him, what he did, who did he talk to...)</i>#player
 ->END
 
 /*--------------------------------------------------------------------------------
