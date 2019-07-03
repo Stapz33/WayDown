@@ -11,7 +11,7 @@ public class CinematicText : MonoBehaviour
 
     public TextMeshProUGUI PlayerText;
 
-    private string s_PlayerFullText = "";
+    public string s_PlayerFullText;
 
     private string CurrentText;
 
@@ -30,8 +30,6 @@ public class CinematicText : MonoBehaviour
     {
         TextCooldown = TextSpeed;
         PlayerText.text = "";
-        s_PlayerFullText = "";
-        s_PlayerFullText = "<b>Somewhere in San Francisco</b> \n <size=35><i>April 13th 1953 </i></size>";
         textlength = 0;
     }
 
@@ -47,6 +45,7 @@ public class CinematicText : MonoBehaviour
                 textlength++;
                 if (s_PlayerFullText != "")
                 {
+                    s_PlayerFullText = s_PlayerFullText.Replace("\\n", "\n");
                     CurrentText = s_PlayerFullText.RichTextSubString(textlength);
                     PlayerText.text = CurrentText;
                     if (CurrentText == s_PlayerFullText)

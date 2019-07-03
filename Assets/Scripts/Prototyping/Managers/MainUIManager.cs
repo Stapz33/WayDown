@@ -9,7 +9,7 @@ using RichTextSubstringHelper;
 using UnityEngine.Rendering.PostProcessing;
 
 public enum TabType {Map, AddressBook, Documents}
-public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Drugstore, Restaurant,Wreckyard,KillerAppartment,Dockers,Pier35}
+public enum DocumentFolder {CriminalRecord, ProstituteMotel, CapoAppartment, Bar, DriverAppartment, ClientAppartment, Wreckyard, KillerAppartment, Drugstore, Restaurant, Dockers,Pier35}
 
 public class MainUIManager : MonoBehaviour {
 

@@ -501,89 +501,50 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 930576926}
-    - target: {fileID: 9024222304888876628, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 1533135815849816513, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_MyAddresDoc
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 2122010979, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434141069400294829, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 1511925102229414359, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_MyAddresDoc
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 7870900027209688791, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 1511925102229414359, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_addressDescription
+      value: Killer Appartment
       objectReference: {fileID: 0}
-    - target: {fileID: 2697869326135411892, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 1597148075558944696, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_MyAddresDoc
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 6906286780921711146, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 1597148074135369456, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_MyAddresDoc
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 2755319264007499399, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 469356249209458783, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: TypeOfDocument
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 8348694407114936397, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 6116163951526451757, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: TypeOfDocument
+      value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 6439774617750556410, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 2147471147326919630, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: TypeOfDocument
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 2769695504008513632, guid: 7e30d4add22b7f1438f20fef1cb40309,
+    - target: {fileID: 2356830731407399328, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5780731947929298708, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235087454801284518, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659421858671473521, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5854850592949836893, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1199174160581992850, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6272024796299864776, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545440618141874227, guid: 7e30d4add22b7f1438f20fef1cb40309,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: TypeOfDocument
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
