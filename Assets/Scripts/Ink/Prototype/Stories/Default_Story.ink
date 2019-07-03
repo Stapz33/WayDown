@@ -906,7 +906,7 @@ So what happened to her Mr Rosenthal? #otherCharacter
     <i>(So he wacked'em both.)</i>#player
     <i>(Maybe the driver was killed trying to defend her.)</i>#player
     <i>(So many 'maybes'.)</i>#player
-    <i>(It's time to digg on that and start to have some certainties.)</i>#player #Introspection
+    <i>(It's time to digg on that and start to have some certainties.)</i>#player # NewInvestigation #Introspection
 ->END
 
 =condor_fail
