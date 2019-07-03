@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject m_ContinueButton = null;
 
     [SerializeField] private GameObject m_NewGameMenu = null;
+    public GameObject LoadText;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class MainMenuManager : MonoBehaviour
     {
         AudioManager.Singleton.ActivateAudio(AudioType.LoadingTransition);
         m_LoadingScreen.SetTrigger("LoadBlack");
+        LoadText.SetActive(true);
         Invoke("async", 1.2f);
     }
 

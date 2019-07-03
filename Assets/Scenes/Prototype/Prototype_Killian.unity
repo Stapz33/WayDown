@@ -1519,7 +1519,61 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 40
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1336626743, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409048455075745664, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.6465105
+      objectReference: {fileID: 0}
+    - target: {fileID: 592633706, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -83.77972
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550375972073283342, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1336626745, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
 --- !u!1 &1982966128629935726 stripped
 GameObject:

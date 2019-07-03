@@ -225,6 +225,7 @@ public class MainUIManager : MonoBehaviour {
     public GameObject EndGameValidationButton;
     bool b_isLanzaChoosen = false;
     bool b_isSecondTime = false;
+    bool b_isInDocDiscover = false;
 
     private void Awake()
     {
@@ -922,6 +923,7 @@ public class MainUIManager : MonoBehaviour {
         if (needToShow)
         {
             DeactivateDialogueTemporary();
+            b_isInDocDiscover = true;
             if (Document.GetComponent<ButtonCall>().BWText != null)
                 ShowLargeDocumentSingle(Document.GetComponent<Image>().sprite, Document.GetComponent<ButtonCall>().BWText);
             else
@@ -1394,9 +1396,10 @@ public class MainUIManager : MonoBehaviour {
         m_LogManager.GetComponent<LogManager>().ResetLogImage();
         m_LogManagerButton.SetActive(false);
 
-        Dialogue.SetActive(false);
-        OtherCharacterSection.SetActive(false);
-        b_StoryStarted = false;
+        if (!b_isInDocDiscover)
+        {
+            DeactivateDialogueTemporary();
+        }
     }
 
     public void HideNarrativeLog()
@@ -1404,9 +1407,11 @@ public class MainUIManager : MonoBehaviour {
         m_LogManager.SetActive(false);
         m_LogManagerButton.SetActive(true);
 
-        Dialogue.SetActive(true);
-        OtherCharacterSection.SetActive(true);
-        b_StoryStarted = true;
+        if (!b_isInDocDiscover)
+        {
+            ReactivateDialogue();
+        }
+        
     }
     #endregion
 
@@ -1666,6 +1671,10 @@ public class MainUIManager : MonoBehaviour {
 
     public void ReactivateDialogue()
     {
+        if (b_isInDocDiscover)
+        {
+            b_isInDocDiscover = false;
+        }
         Dialogue.SetActive(true);
         OtherCharacterSection.SetActive(true);
         b_StoryStarted = true;
