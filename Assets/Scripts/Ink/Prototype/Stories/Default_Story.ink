@@ -496,7 +496,7 @@ I'm done here. # player #PlayerDBox #0
 <i>(I hate to go to a cop, but let's face it, it's as much a good cop as Lanza is.)</i>#player
 <i>(He could even betray is own mother.)</i>#player
 <i>(But he's useful. Let's go check on him.)</i>#player
-#NewBackground #4
+#NewBackground #4 #NewCharacterSprite #16
 What do you want from me this time Mr Rosenthal?#otherCharacter
 I couldn't find much on your wife, she's keeping a low profile right now.#otherCharacter
 I'm not here for that Gibbs, I work for Lanza for now.#player
@@ -545,9 +545,9 @@ I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
 <i>(Only some sad men at the counter, and a barman cleaning its glasses.)</i> # player
 <i>(He says me, and doesn't say a single word.)</i> # player
 <i>(The glasses seem more important.)</i> # player
-<i>(Maybe I can get his attention.)</i> # player
+<i>(Maybe I can get his attention.)</i> # player 
 # jump
-*   [Go to the bar] <i>(There's an empty stool left.)</i> # player #SFXPlay #17
+*   [Go to the bar] <i>(There's an empty stool left.)</i> # player #SFXPlay #17 #NewNarrativeLog #14
 <i>(I will not approach me. Maybe I look too much like a cop.)</i> # player
 <i>(But I'll look like a fool if I leave now.)</i> # player
 ~ temp number_drinks = 0
@@ -570,7 +570,7 @@ I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
     ->ordering_drink
 
 =condor_madam
-<i>(Now I'm not sober at all.)</i> # player
+<i>(Now I'm not sober at all.)</i> # player #NewNarrativeLog #18
 <i>(But he finally raises his eyes on me.)</i> # player
 //Interlocutor: Barman
 What do you want, sir? # otherCharacter #NewCharacterSprite #3
@@ -614,7 +614,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	I'm not running a brothel. # otherCharacter
 	Sure you're not. # player
 	You're starting to get on my nerves man. # otherCharacter
-	I'll might ask you to get out. # otherCharacter
+	I'll might ask you to get out. # otherCharacter #NewNarrativeLog #22
 # jump
 *   {knowledge_prostitute_name == 1} [You had a girl working here under the name of...] #Validation #0
 *   {knowledge_prostitute_name == 0} [Calm the situation] I'm not here to make any accusation. # player
@@ -624,7 +624,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	    Dean, throw this man out of here. # otherCharacter
 	    Don't bother, I'm leaving. # player
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9 #NewNarrativeLog #24
 	    #NewCharacterSprite #0
 	    //Background: Condor Club's street
 	    #NewBackground #13 #MusicStop
