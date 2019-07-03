@@ -290,7 +290,7 @@ public class MainUIManager : MonoBehaviour {
 
     void Update () {
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape") && !m_demoImage.activeSelf)
         {
             ExitMenu.SetActive(true);
         }
@@ -1449,9 +1449,8 @@ public class MainUIManager : MonoBehaviour {
 
     public void GoToDemo()
     {
-        Debug.Log("yes");
         m_demoImage.SetActive(true);
-        SaveManager.Singleton.DeleteSaves();
+        AudioManager.Singleton.StopMusic();
     }
 
     public bool GetStoryStarted()
