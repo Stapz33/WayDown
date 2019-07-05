@@ -762,7 +762,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     We have some drivers that bring our girls directly to them. #otherCharacter
     They wait there, and then fetch them back here, or directly to there place. #otherCharacter
     Wait, so someone brought her to where she was found? #player
-    Usually yes, but she was supposed to go join a client that we know of. #otherCharacter
+    Usually yes, but she was supposed to go join a client that we know of. #otherCharacter #NewNarrativeLog #29
 -   (clientdriver)
 #jump
 *   [Who's the driver?] Do you know her driver for that night? #player #PlayerDBox #0
@@ -776,7 +776,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
         **  [You bet] Of course, he's my prime suspect for now. #player
                 Where can I find him? #player
                 He lives in the Lombard Condominiums. #otherCharacter
-                I'll check on him then. #player #NewNarrativeLog #
+                I'll check on him then. #player #NewNarrativeLog #23
         **  [Should I?] Do you think that I should? #player
                 I don't know. Maybe. #otherCharacter
                 This business really puts a pressure on you. #otherCharacter
@@ -785,11 +785,11 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
                 Nearly same work yes. #player
                 Where can I find your driver? #player
                 In the Lombard Condominiums, near the Piers. #otherCharacter
-                I'll give it a look then.
+                I'll give it a look then. #NewNarrativeLog #23
         --  ->clientdriver
 *   [Who's the client?] So who was she supposed to meet last night? #player #PlayerDBox #0
         Some regular, quite fond of her. #otherCharacter
-        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton. #otherCharacter
+        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton. #otherCharacter #NewNarrativeLog #30
             #jump
             **  [Any problem with him?] Did she had any problem with him? #player
                     Not at all, he was quite lovely. #otherCharacter
@@ -1478,7 +1478,7 @@ How did you came accross our store?#otherCharacter
 =restaurant_entrance
 #NewNoBackground #8
 the killer went here for "special" cases #player
-the killer add his last meet up at "San Francisco's Docks 1040 The Embarcadero" #player #NewInvestigation
+the killer add his last meet up at "San Francisco's Docks 1040 The Embarcadero" #player #NewInvestigation #NewNarrativeLog #32
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1574,7 +1574,9 @@ okay so here i have the killer, who's dead, great #player
 i find on him the gun he used to kill <color=red>Giovanni</color>, and a little note  #player
 As i check this i hear a car, quickly going out of the pier, but i have her license plate #NewDocument #12
 okay so now i need to leave #NewNarrativeLog #21
-I have a license plate, a dead body, and a note #Introspection #NewBigBackground #9 #NewInvestigation
+#NewBigBackground #9
+I have a license plate, a dead body, and a note#NewInvestigation
+Abati's calling me and asked to join him in his restaurant, the Little Door Restaurant. #NewNarrativeLog #31 #Introspection 
 ->END
 
 
