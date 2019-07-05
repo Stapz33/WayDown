@@ -215,6 +215,7 @@ public class MainUIManager : MonoBehaviour {
     public GameObject InvestigationTab;
     public GameObject CsTab;
     public GameObject Cigar;
+    public GameObject cender;
 
     [Header("EndSection")]
     public GameObject LastSection;
@@ -1066,6 +1067,7 @@ public class MainUIManager : MonoBehaviour {
                     SetupDialogueSystem();
                     AudioManager.Singleton.StopRadio();
                     AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
+                    cender.SetActive(false);
                     Cigar.SetActive(true);
                     return;
                 }
@@ -1080,6 +1082,7 @@ public class MainUIManager : MonoBehaviour {
         AudioManager.Singleton.StopRadio();
         AudioManager.Singleton.StopMusic();
         AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
+        cender.SetActive(false);
         Cigar.SetActive(true);
     }
 
@@ -1688,5 +1691,11 @@ public class MainUIManager : MonoBehaviour {
         Dialogue.SetActive(true);
         OtherCharacterSection.SetActive(true);
         b_StoryStarted = true;
+    }
+
+    public void ActivateCender()
+    {
+        Cigar.SetActive(false);
+        cender.SetActive(true);
     }
 }

@@ -43,6 +43,9 @@ public class ButtonCallEditor : Editor
             case (int)ButtonType.WhiskyBottle:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("Bottle"), true);
                 break;
+            case (int)ButtonType.ToggleRadio:
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("radioled"), true);
+                break;
             case (int)ButtonType.SelectProof:
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("DocumentInfo"), true);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("isGood"), true);
@@ -72,6 +75,7 @@ public class ButtonCall : MonoBehaviour
     public Texture2D BWText;
     int whiskeyDrank = 0;
     public bool isGood;
+    public GameObject radioled;
 
     private void Start()
     {
@@ -176,6 +180,7 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.ToggleRadio:
                 AudioManager.Singleton.ToggleRadio();
+                radioled.SetActive(!radioled.activeSelf);
                 break;
             case ButtonType.Whisky:
                 if (cigarIdx < CigarSprites.Count - 2)
@@ -210,7 +215,8 @@ public class ButtonCall : MonoBehaviour
                 else
                 {
                     cigarIdx = 0;
-                    transform.parent.gameObject.SetActive(false);
+                    AudioManager.Singleton.ActivateAudio(AudioType.Cigar);
+                    MainUIManager.Singleton.ActivateCender();
                 }
                     
                 GetComponent<Image>().sprite = CigarSprites[cigarIdx];
