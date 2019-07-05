@@ -23,6 +23,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
   - ending
   investigationType: 2
   criminalRecordType: 0
@@ -32,7 +33,7 @@ MonoBehaviour:
   CriminalRecordIdx: 13
   AddressInfos01: The Little Door Restaurant 2235 Beach Ave
   AddressInfos02: 
-  AddressIndexToDiscover: 0a000000
+  AddressIndexToDiscover: 0b000000
   Corpulence: 3
   Height: 3
   SexType: 1
