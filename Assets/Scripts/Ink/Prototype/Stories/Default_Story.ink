@@ -1298,11 +1298,40 @@ TODO: SFX elevator ring
 
 ===killer_appartment===
 =killer_entrance
-#NewNoBackground #24
-I find a receipt #player #NewDocument #8
-I find a restaurant menu #player #NewDocument #9
-The killer went regularly to a drugstore, and to the a restaurant #player
-Okay so a drugstore and a restaurant #Introspection #NewBigBackground #9 #NewInvestigation
+#NewBackground #1 #PlayerDBox #1 #NewCharacterSprite #0
+<i>(Quite easy to enter Valery's apartment.)</i>#player
+<i>(I'm even a little disappointed.)</i>#player
+<i>(What killer would keep his place so easily accessible?)</i>#player
+<i>(Anyway, it makes my job easier.)</i>#player
+<i>(So what do we have here?)</i>#player
+<i>(Quite a nice place!)</i>#player
+<i>(Only a little messy.)</i>#player
+<i>(There's a lot of trash everywhere.)</i>#player
+#jump
+*   [Examine the bookcase] <i>(There's really a lot of books.)</i>#player
+-   <i>(Books on everything: history, politics, comics...)</i>#player
+<i>(Most of them in Russian. How did he manage to get so much of them?)</i>#player
+<i>(I don't think that you can purchase them easily nowadays.)</i>#player
+<i>(What else do we have...)</i>#player
+<i>(What are those?)</i>#player #NewDocument #8
+<i>(Dozens of receipts.))</i>#player
+<i>(With the same order everytime...)</i>#player
+<i>(What else...)</i>#player
+#jump
+*   [Look below the couch] <i>(What do we have here?)</i>#player #NewDocument #9
+-   <i>(Again, dozens of what looks like... restaurant menus?)</i>#player
+    <i>(Quite weird.)</i>#player
+    <i>(What's the meaning of all that?)</i>#player
+    <i>(The rest of the apartment is quite clean.)</i>#player
+    <i>(And still no traces of Chtcherbina.)</i>#player
+    <i>(But again, not really surprising, this guy wouldn't come back after killing a guy.)</i>#player
+    <i>(Especially after leaving so much clues.)</i>#player
+    <i>(Time to go back to the office.)</i>#player #NewBackground #9
+    <i>(So basically, I have nothing on Chtcherbina.)</i>#player #Introspection
+    <i>(I don't know where he is.)</i>#player
+    <i>(Who did he spend time with, and where.)</i>#player
+    <i>(I need to locate him.)</i>#player
+    <i>(Did I miss something?)</i>#player
 ->END
 
 /*--------------------------------------------------------------------------------
