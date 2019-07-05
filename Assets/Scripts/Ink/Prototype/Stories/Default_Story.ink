@@ -5,6 +5,7 @@ VAR client_seen = 0
 VAR driverapp_seen = 0
 VAR drugstore_seen = 0
 VAR docker_seen = 0
+VAR drugstore_firsttime = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
 VAR DEBUG = true
 TODO: Remove Debug
@@ -1311,28 +1312,161 @@ Okay so a drugstore and a restaurant #Introspection #NewBigBackground #9 #NewInv
 
 ===drugstore===
 =drugstore_entrance
-#NewNoBackground #17
+#NewBackground #17 #PlayerDBox #1 #NewCharacterSprite #0
 {
-	- drugstore_seen == 1: 
-		->drugstore_alreadydone
- 	- else: 
- 		~ drugstore_seen = 1
+    -drugstore_seen ==1: ->drugstore_alreadydone
+    -drugstore_firsttime ==1:->drugstore_validation
 }
-the killer didn't came the day of the crime #player
-the drugstore hide a gun seller #player
-the killer didn't came since the day of the crime #player
-the car model of the killer is a Chebrillet Deluxe #player #NewNarrativeLog #19
-{
-	- docker_seen == 1: 
-		->drugstore_newinvestigation 
-	- else: 
-		->END
-}
-=drugstore_alreadydone
-i've already been there #player
+<i>(So... a drugstore.)</i>#player
+<i>(Given the amount of receipts that I found at his apartment, Valery really spent a lot of time here.)</i>#player
+<i>(But there's nothing really interesting in this shop.)</i>#player
+<i>(No client, only one man behind the counter....)</i>#player
+<i>(He said nothing when I entered, but he keeps a close eye on me.)</i>#player
+<i>(I can feel it...)</i>#player
+<i>(He isn't the type of fellow that blends well in a drugstore.)</i>#player
+<i>(That's odd...)</i>#player
+#jump
+*   [Go to the counter] <i>(Let's see what this man is doing here.)</i>#player
+#NewCharacterSprite #2 #PlayerDBox #0
+-   Hi, could you help me with something?#player
+    Hello sir, of course, do you want to buy something?#otherCharacter
+    ~drugstore_firsttime=1
+#jump
+*   [Yes please] Of course, what else would I want in a drugstore?#player
+    ->drugstore_validation
+*   [Just want some information] Actually I was hoping to you somet...#player
+    I'm afraid that I cannot help you sir, have a good day.#otherCharacter
+    But I...#player
+    Have a good day, sir.#otherCharacter #PlayerDBox #1
+    <i>(But... He's chasing me out of the store!)</i>#player #NewCharacterSprite #0
+    #NewBackground #9 #Introspcetion
+    <i>(This place is strange...)</i>#player
+    <i>(They're hiding something.)</i>#player
+    <i>(But what could that be? It must be linked to Chtcherbina's activities.)</i>#player
+    <i>(How can I make this clerk talk?)</i>#player
 ->END
+
+=drugstore_validation
+So what do you want to buy sir?#otherCharacter #Validation #1
+->END
+
+=drugstore_validation_wrong
+Sorry, but I don't think that we have that in store.#otherCharacter
+Have a good day.#otherCharacter #PlayerDBox #1
+<i>(Without even letting me say a word, he ushers me out of the store. What the hell...)</i>#player
+#NewBackground #9 #Introspection
+<i>(Did I miss something?)</i>#player
+->END
+
+=drugstore_validation_cancel
+I... I don't have anything specific in mind.#player
+Then I think that I will not be able to help you sir.#otherCharacter
+Have a good day.#otherCharacter #PlayerDBox #1
+<i>(Without even letting me say a word, he ushers me out of the store. What the hell is this place...)</i>#player
+#NewBackground #9 #Introspection
+<i>(Do I miss something?)</i>#player
+->END
+
+=drugstore_validation1_good
+I'd like a bottle of Irdin vodka please.#player
+Alright, we just received a shipment of that brand.#otherCharacter
+What else will you need?#otherCharacter #Validation #2
+->END
+
+=drugstore_validation2_good
+Do you have some Jack's corns?#player
+I'm starving.#player
+Right away sir.#otherCharacter
+Anything else?#otherCharacter #Validation #3
+->END
+
+=drugstore_validation3_good
+I'll have a pack of Murlburus please.#player
+Alright, could you follow me please?#otherCharacter
+Oh... yeah sure.#player
+->drugstore_backroom
+
+=drugstore_backroom
+#NewCharacterSprite #0 #PlayerDBox #1
+<i>(I knew that this guy was hiding something!)</i>#player #NewBackground #18
+<i>(A full ammunation.)</i>#player
+<i>(My guess is that it was Valery's first supplier.)</i>#player
+#NewCharacterSprite #2
+Welcome to the Emporium sir.#otherCharacter #PlayerDBox #0
+I can't remember your face, although you know the password.#otherCharacter
+How did you came accross our store?#otherCharacter
+#jump
+*   [Friend of mine, Valery] A good pal, Valery Chtcherbina, couldn't stop talking about you.#player
+    I had to see it with my own eyes.#player
+    This name doesn't ring a bell.#otherCharacter
+*   [Ad in a magazine?] Aren't you advertised in magazines?#player
+    I could swear that I could see a 'Two for one' coupon for your store!#player
+    As you would understand, we like to keep a low profile.#otherCharacter
+    Always in the interest of our clients, of course.#otherCharacter
+    Clients like Valery Chtcherbina?#player
+    Can't tell you sir.#otherCharacter
+-   Really? You want to do this?#player
+#jump
+*   [Menace him] Aren't you on Abati's territory?#player
+    I suppose that Lanza would love to come and visit this shop...#player
+    Cut the crap pal.#otherCharacter
+    I managed to put this business on his feet, without any problem.#otherCharacter
+    I want to keep it that way.#otherCharacter
+    Tell me what you know about Chtcherbina then.#player
+    He's a regular customer.#otherCharacter
+    I think that I'm his only supplier, given the amount of weapon that he buys.#otherCharacter
+    When was the last time that he came here?#player
+    About two days ago. Wanted a simple handgun and ammos.#otherCharacter
+    Not the most singular order.#otherCharacter
+    Did he came alone?#player
+    Yes, always.#otherCharacter
+    Came with his car, a really noticeable Chebrillet Deluxe.#otherCharacter #NewNarrativeLog #19
+    Maybe a little too noticeable.#otherCharacter
+    That's how you find his track?#otherCharacter
+    Not really, he killed one of Abati's capi.#player
+    For God's sake...#otherCharacter
+    Can't say that it won't be good for business.#otherCharacter
+    All those Italians and Russians shooting each other...#otherCharacter
+    But now I'm afraid that I won't be of any help in your hunt.#otherCharacter
+    I don't want to take side in this.#otherCharacter
+    That's not what I asked. I'll leave your shop, and you won't hear about me again.#player
+    Have a good day then.#otherCharacter
+    ~drugstore_seen = 1
+    {
+    	- docker_seen == 1: 
+    		->drugstore_newinvestigation 
+    	- else: 
+    		->drugstore_introspection
+    }
+
+
+->END
+
+=drugstore_alreadydone
+<i>(I will not find Chtcherbina here.)</i>#player
+<i>(I need to dig somewhere else.)</i>#player
+->END
+
 =drugstore_newinvestigation
-So now i have everything, i need more infos about these piers #player #NewInvestigation
+#NewCharacterSprite #0 #PlayerDBox #1
+<i>(Chtcherbina, you Russian bastard.)</i>#player
+<i>(They really seem to be behind this.)</i>#player #NewBackground #9
+<i>(But... it doesn't really hold up.)</i>#player #Introspection
+<i>(Why would they want to attack their allies?)</i>#player
+<i>(The two organization are really close since the war.)</i>#player
+<i>(Anyway, all the evidences point to Chtcherbina.)</i>#player
+<i>(But still, I can't find him.)</i>#player
+<i>(Where could he be?)</i>#player
+#NewInvestigation
+->END
+
+=drugstore_introspection
+#NewCharacterSprite #0 #PlayerDBox #1
+<i>(This really stinks.)</i>#player
+<i>(Those Russian seems to appear quite often in the picture.)</i>#player #NewBackground #9
+<i>(But that still will not give me the location of Chtcherbina.)</i>#player #Introspection
+<i>(Where could I find his track again?)</i>#player
+<i>(Time to go back to work.)</i>#player
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1354,27 +1488,77 @@ the killer add his last meet up at "San Francisco's Docks 1040 The Embarcadero" 
 
 ===dockers===
 =dockers_entrance
-#NewNoBackground #19
+#NewNoBackground #19 #PlayerDBox #1 #NewCharacterSprite #0
 {
 	- docker_seen == 1: 
 		->dockers_alreadydone
  	- else: 
  		~ docker_seen = 1
 }
-The dock guardian gave me the first record of the cars #player
-And he have a second one for this day #player #NewDocument #10
-Her it is #player #NewDocument #11
-{
-	- drugstore_seen == 1: 
-		->dockers_newinvestigation 
-	- else: 
-		->END
-}
+<i>(So that should be where Chtcherbina came.)</i>layer
+<i>(On one of the longest dock in the world...)</i>#player
+<i>(Everybody seems to want to give me a hard time.)</i>#player
+<i>(Let's try with the entrance first.)</i>#player
+#jump
+*   [Go to the entrance] Hello, is there anyone?#player #PlayerDBox #0
+-   Hello sir, how can I help you?#otherCharacter #NewCharacterSprite #12
+#jump
+*   [Looking for someone] I'm looking for a fellow that came here, tall guy, very Russian-type, does it ring a bell?#player
+-   I'm sorry sir, but the piers are almost 3 miles long.#otherCharacter
+    Quite difficult to spot anyone that come and goes.#otherCharacter
+    Don't you keep a record?#player
+    Of course, but only of the cars entering and exiting.#otherCharacter
+    You don't really see people walking in here.#otherCharacter
+    Are you a cop?#otherCharacter
+#jump
+*   Yes sir[], I'm asking for your cooperation on that investigation.#player
+    Of course sir, right away.#otherCharacter
+*   [Only looking for a friend]No I'm not, I was looking for my pal Valery, he told me to met him here.#player
+    But he didn't gave me the pier, and I'm not gonna run across the entire 3 miles.#player
+    Strange place to meet someone...#otherCharacter
+    He loves the sea.#player
+    But it's the San Francisco's Bay.#otherCharacter
+    Anyway, can I have them? #player
+    If you want.#otherCharacter
+-   Which days?#otherCharacter
+    What?#player
+    Which day's records do you want?#otherCharacter
+    We keep all the books since 1912.#otherCharacter
+    The couple last days should be enough.#player #NewDocument #10
+    So here's the first page.#otherCharacter #NewDocument #11
+    And here's the second.#otherCharacter
+    Will bring them back quickly?#otherCharacter
+    As soon as I find what I'm looking for.#player
+    Which will take...#otherCharacter
+    Goodbye sir, and thanks for your help.#player
+    <i>(What a good fellow.)</i>#player #NewCharacterSprite #0 #PlayerDBox #1
+    <i>(Just dumb enough.)</i>#player
+    {
+    	- drugstore_seen == 1: 
+    		->dockers_newinvestigation 
+    	- else: 
+    		->dockers_introspection
+    }
 =dockers_alreadydone
-i've already been there #player
+#NewNoBackground #19 #PlayerDBox #1 #NewCharacterSprite #0
+<i>(They won't help me here, I need to find the killer by myself.)</i> #player
+<i>(And they say that I don't have a tough job...)</i>#player
 ->END
+
 =dockers_newinvestigation
-So now i have everything, i need more infos about these piers #player #NewInvestigation
+<i>(So now I know that Chtcherbina came here not long ago.)</i>#player
+<i>(But he could be anywhere in those piers...)</i>#player #NewBackground #9
+<i>(I need to think, and fast.)</i>#player #Introspection
+<i>(He could disappear anytime soon.)</i>#player
+<i>(Let's find if someone gave me useful information to track him.)</i>#player #NewInvestigation
+->END
+
+=dockers_introspection
+<i>(So now I know that Chtcherbina came here not long ago.)</i>#player
+<i>(But he could be anywhere in those piers...)</i>#player #NewBackground #9
+<i>(I need to think, and fast.)</i>#player #Introspection
+<i>(He could disappear anytime soon.)</i>#player
+<i>(I have to find more about him, what he did, who did he talk to...)</i>#player
 ->END
 
 /*--------------------------------------------------------------------------------
