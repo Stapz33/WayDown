@@ -309,7 +309,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 	#NewBackground #21
 	<i>(It's tidy, with not a lot of furnitures.)</i> # player
 	<i>(Only a bed, an empty desk with only one paper on it, and a closet.)</i> # player
-	<i>(A love letter ?)</i> # player #NewDocument #14
+	<i>(A love letter ?)</i> # player #NewDocument #14 #NewNarrativeLog #34
 	<i>(The bed is still made. <color=red>Giovanni</color> didn't sleep here so much, or at least not yesterday.)</i> # player
 	<i>(There's the closet then.)</i> # player
 	# jump
@@ -804,7 +804,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
                     *** [Is he that rich?] How much does it cost to have a full time hooker? #player
                             I don't know, how much is your wife charging you? #otherCharacter
                             #jump
-                            **** [Fuck you madam] No offense, but fuck you.
+                            **** [Fuck you madam] No offense, but fuck you. #player
                             **** [Try to make a joke] How ironic for you to say that! #player
                                     Why? #otherCharacter
                                     Because hum... #player
@@ -1251,7 +1251,8 @@ TODO: SFX elevator ring
     I'm not a c...#player
     Yes you're right.#player
 #jump
-*   [Approach the car] Let's see what we can find in here.#player
+*   [Approach the car] Let's see what we can find in here.#player 
+	#NewBackground #33
 -   What the...#otherCharacter
     Yes, he's one of the man that I was hoping to find.#player
     <i>(So our killer wacked the driver, and put him in the trunk.)</i>#player #PlayerDBox #1
@@ -1686,8 +1687,9 @@ i find on him the gun he used to kill <color=red>Giovanni</color>, and a little 
 As i check this i hear a car, quickly going out of the pier, but i have her license plate #NewDocument #12
 okay so now i need to leave #NewNarrativeLog #21
 #NewBigBackground #9
-I have a license plate, a dead body, and a note#NewInvestigation
+I have a license plate, a dead body, and a note.
 Abati's calling me and asked to join him in his restaurant, the Little Door Restaurant. #NewNarrativeLog #31 #Introspection 
+#NewInvestigation
 ->END
 
 
