@@ -18,14 +18,6 @@ MonoBehaviour:
     BadValidation: condor_club.condor_bad
     ValdationName: cara
   - BackValidation: drugstore.drugstore_validation_cancel
-    GoodValidation: drugstore.drugstore_validation1_good
-    BadValidation: drugstore.drugstore_validation_wrong
-    ValdationName: irdin vodka
-  - BackValidation: drugstore.drugstore_validation_cancel
-    GoodValidation: drugstore.drugstore_validation2_good
-    BadValidation: drugstore.drugstore_validation_wrong
-    ValdationName: jacks corns
-  - BackValidation: drugstore.drugstore_validation_cancel
     GoodValidation: drugstore.drugstore_validation3_good
     BadValidation: drugstore.drugstore_validation_wrong
-    ValdationName: murlburu cigarettes
+    ValdationName: jacks cigarettes

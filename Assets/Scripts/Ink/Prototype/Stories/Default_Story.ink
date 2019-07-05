@@ -1381,7 +1381,9 @@ Anything else?#otherCharacter #Validation #3
 ->END
 
 =drugstore_validation3_good
-I'll have a pack of Murlburus please.#player
+I'll have a pack of Jack's cigarettes please.#player
+Sir, we don't have that in store.#otherCharacter
+I know.#player
 Alright, could you follow me please?#otherCharacter
 Oh... yeah sure.#player
 ->drugstore_backroom
