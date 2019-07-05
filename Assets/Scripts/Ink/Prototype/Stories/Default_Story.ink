@@ -822,7 +822,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     Can I ask you a last thing? #player
     Of course. #otherCharacter
 #jump
-*   [Do you know <color=red>Giovanni</color>?] Do you know <color=red>Tommy</color> <color=red>Giovanni</color>? #player
+*   [Do you know <color=red>Giovanni</color>?] Do you know <color=red>Tommy Giovanni</color>? #player
         I've only seen him once or twice, isn't he one of your men? #otherCharacter
 -   He's the one who was found with Cara, at his place. #player
 #jump
