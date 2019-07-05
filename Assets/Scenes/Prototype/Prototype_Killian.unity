@@ -1236,6 +1236,25 @@ PrefabInstance:
       propertyPath: TypeOfButton
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6550375972325718626, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.0007324
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919728675, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756464693511654949, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686807513924208883, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: m_Spacing.x
+      value: 30.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
 --- !u!224 &1982966128629935726 stripped
