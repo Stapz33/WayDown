@@ -545,7 +545,7 @@ I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
 <i>(Only some sad men at the counter, and a barman cleaning its glasses.)</i> # player
 <i>(He says me, and doesn't say a single word.)</i> # player
 <i>(The glasses seem more important.)</i> # player
-<i>(Maybe I can get his attention.)</i> # player
+<i>(Maybe I can get his attention.)</i> # player #NewNarrativeLog #14
 # jump
 *   [Go to the bar] <i>(There's an empty stool left.)</i> # player #SFXPlay #17
 <i>(I will not approach me. Maybe I look too much like a cop.)</i> # player
@@ -570,7 +570,7 @@ I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
     ->ordering_drink
 
 =condor_madam
-<i>(Now I'm not sober at all.)</i> # player
+<i>(Now I'm not sober at all.)</i> # player #NewNarrativeLog #18
 <i>(But he finally raises his eyes on me.)</i> # player
 //Interlocutor: Barman
 What do you want, sir? # otherCharacter #NewCharacterSprite #3
@@ -614,7 +614,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	I'm not running a brothel. # otherCharacter
 	Sure you're not. # player
 	You're starting to get on my nerves man. # otherCharacter
-	I'll might ask you to get out. # otherCharacter
+	I'll might ask you to get out. # otherCharacter #NewNarrativeLog #22
 # jump
 *   [You had a girl working here under the name of...] #Validation #0
 *   [Calm the situation] I'm not here to make any accusation. # player
@@ -624,7 +624,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	    Dean, throw this man out of here. # otherCharacter
 	    Don't bother, I'm leaving. # player
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9 #NewNarrativeLog #24
 	    #NewCharacterSprite #0
 	    //Background: Condor Club's street
 	    #NewBackground #13 #MusicStop
@@ -634,10 +634,10 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	    So now get the fuck out of here. # otherCharacter
 	    Dean, could you send this man out? # otherCharacter
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9 #NewNarrativeLog #25
 	    #NewCharacterSprite #0
 	    #NewBigBackground #9 #MusicStop
--   <i>(I'm lost. Nothing to link her to this place, except for a poor matchbox.)</i> # player #NewNarrativeLog #14
+-   <i>(I'm lost. Nothing to link her to this place, except for a poor matchbox.)</i> # player
     <i>(I really need to dig more stuff on her.)</i> # player
     <i>(What could I find now?)</i> # player
     #Introspection
@@ -652,10 +652,10 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     #NewCharacterSprite #0
     //Background: Condor Club's street
     #NewBigBackground #9 #MusicStop
--   <i>(I'm really not sure about anything.)</i> # player #NewNarrativeLog #14
+-   <i>(I'm really not sure about anything.)</i> # player
     <i>(Is it already time for a drink?)</i> # player
     <i>(That's tempting...)</i> # player
-    <i>(But I better have to work on that girl? Who where you <color=red>Margaret</color>?)</i> # player 
+    <i>(But I better have to work on that girl? Who were you <color=red>Margaret</color>?)</i> # player #NewNarrativeLog #26
     #Introspection
     ->END
  = condor_bad
@@ -667,9 +667,9 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
     #NewCharacterSprite #0
     #NewBigBackground #9 #MusicStop
--   <i>(Did I miss something?)</i> # player #NewNarrativeLog #14
+-   <i>(Did I miss something?)</i> # player
     <i>(Wasn't she working there under the name of <color=red>Margaret</color>?)</i> # player
-    <i>(That being said, that's not a really appealing prostitute name.)</i> # player
+    <i>(That being said, that's not a really appealing prostitute name.)</i> # player #NewNarrativeLog #27
     <i>(If that even means something...)</i> # player #Introspection
     ->END
 
@@ -695,7 +695,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
     Wait here for me, sir. # otherCharacter
-    <i>(He goes to a wall and knocks on it.)</i> # player //SFX Knock on Door
+    <i>(He goes to a wall and knocks on it.)</i> # player #SFXPlay #25
     <i>(The wall pivots, and he seems to whisper something to the person that is behind.)</i> # player #SFXPlay #16
     Sir, could you follow me please. # otherCharacter
     <i>(He nearly drags me through the door.)</i> # player #SFXPlay #17
@@ -729,7 +729,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 #NewCharacterSprite #6
 <i>(She can't be serious.)</i> #player
 <i>(No, she really seems to not know what happened to Cara.)</i> #player
-So what happened to her Mr Rosenthal? #otherCharacter
+So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 - (whathappened) #jump
 *   [She's dead] We found her dead at one of Abati's man's apartment. With the said man also dead. #player #PlayerDBox #0
         Jesus Christ... Poor girl, that will be bad for business. #otherCharacter
@@ -770,12 +770,12 @@ So what happened to her Mr Rosenthal? #otherCharacter
         Now that you mention it, no he didn't. #otherCharacter
         You think that he's the killer? #otherCharacter
         Doesn't seem like the kind of man to do that. #otherCharacter
-        I suppose that you want to check on him? #otherCharacter
+        I suppose that you want to check on him? #otherCharacter #NewNarrativeLog #29
         #jump
         **  [You bet] Of course, he's my prime suspect for now. #player
                 Where can I find him? #player
                 He lives in the Lombard Condominiums. #otherCharacter
-                I'll check on him then. #player
+                I'll check on him then. #player #NewNarrativeLog #
         **  [Should I?] Do you think that I should? #player
                 I don't know. Maybe. #otherCharacter
                 This business really puts a pressure on you. #otherCharacter
