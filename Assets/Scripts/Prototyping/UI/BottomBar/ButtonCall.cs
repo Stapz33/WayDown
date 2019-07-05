@@ -77,6 +77,14 @@ public class ButtonCall : MonoBehaviour
     {
         if (TypeOfButton == ButtonType.OpenDocumentPanel)
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        if (TypeOfButton == ButtonType.Whisky)
+        {
+            cigarIdx = CigarSprites.Count - 1;
+            Bottle.SetActive(true);
+            GetComponent<Image>().sprite = CigarSprites[cigarIdx];
+            whiskeyDrank = 0;
+        }
+            
     }
     public void OnClick()
     {
@@ -161,6 +169,7 @@ public class ButtonCall : MonoBehaviour
                 break;
             case ButtonType.AddNewDocumentToComparison:
                 MainUIManager.Singleton.AddNewDocToComparision();
+                transform.GetChild(0).gameObject.SetActive(false);
                 break;
             case ButtonType.RadioChannel:
                 AudioManager.Singleton.ChangeRadioChannel();
@@ -199,7 +208,11 @@ public class ButtonCall : MonoBehaviour
                     AudioManager.Singleton.ActivateAudio(AudioType.Cigar);
                 }
                 else
+                {
                     cigarIdx = 0;
+                    transform.parent.gameObject.SetActive(false);
+                }
+                    
                 GetComponent<Image>().sprite = CigarSprites[cigarIdx];
                 break;
             case ButtonType.WhiskyBottle:

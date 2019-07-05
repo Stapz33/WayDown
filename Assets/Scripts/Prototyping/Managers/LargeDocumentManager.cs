@@ -9,6 +9,7 @@ public class LargeDocumentManager : MonoBehaviour
     [SerializeField] private GameObject m_multiDoc = null;
     [SerializeField] private GameObject m_ComparisonImage = null;
     [SerializeField] private Material m_Shader = null;
+    public GameObject BackButton;
     public Animator m_NewDocAnimator = null;
 
     private Image MultiDoc_01;
@@ -79,6 +80,7 @@ public class LargeDocumentManager : MonoBehaviour
         MultiDoc_02.gameObject.SetActive(false);
         m_multiDoc.SetActive(true);
         MultiDoc_01.sprite = sprite;
+        BackButton.SetActive(false);
     }
 
     public void UpdateMultiDoc02(Sprite sprite)
@@ -87,16 +89,25 @@ public class LargeDocumentManager : MonoBehaviour
         MultiDoc_02.gameObject.SetActive(true);
         m_multiDoc.SetActive(true);
         MultiDoc_02.sprite = sprite;
+        BackButton.SetActive(false);
     }
 
     public void HideMultiDoc()
     {
         m_multiDoc.SetActive(false);
+        BackButton.SetActive(true);
+    }
+
+    public void HideMultiDocadd()
+    {
+        m_multiDoc.SetActive(false);
+        MainUIManager.Singleton.CloseDocumentPanel();
     }
 
     public void AddDoc()
     {
-        HideMultiDoc();
+        HideMultiDocadd();
+        m_ComparisonImage.transform.GetChild(0).GetComponent<Image>().sprite = MultiDoc_01.sprite;
         m_ComparisonImage.SetActive(true);
     }
 

@@ -214,6 +214,7 @@ public class MainUIManager : MonoBehaviour {
     public Sprite BackGroundDeskTransitition;
     public GameObject InvestigationTab;
     public GameObject CsTab;
+    public GameObject Cigar;
 
     [Header("EndSection")]
     public GameObject LastSection;
@@ -226,6 +227,7 @@ public class MainUIManager : MonoBehaviour {
     bool b_isLanzaChoosen = false;
     bool b_isSecondTime = false;
     bool b_isInDocDiscover = false;
+    public GameObject MapFeedback;
 
     private void Awake()
     {
@@ -516,6 +518,7 @@ public class MainUIManager : MonoBehaviour {
     {
         Address_data data = AddressesList[ActualStoryDataBase.AddressIndexToDiscover[i_actualGoodAddress]];
         data.gameObject.SetActive(true);
+        MapFeedback.SetActive(true);
         SetNewActualAddressDocumentFolder(data.GetDocumentFolder());
     }
 
@@ -816,6 +819,7 @@ public class MainUIManager : MonoBehaviour {
             case TabType.Map:
                 AudioManager.Singleton.ActivateAudio(AudioType.MapOpen);
                 MapTab.SetActive(true);
+                MapFeedback.SetActive(false);
                 ActualTab = MapTab;
                 break;
             case TabType.AddressBook:
@@ -1062,6 +1066,7 @@ public class MainUIManager : MonoBehaviour {
                     SetupDialogueSystem();
                     AudioManager.Singleton.StopRadio();
                     AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
+                    Cigar.SetActive(true);
                     return;
                 }
                 else if (i == ActualDatas.AddressDiscovered.Count -1)
@@ -1075,6 +1080,7 @@ public class MainUIManager : MonoBehaviour {
         AudioManager.Singleton.StopRadio();
         AudioManager.Singleton.StopMusic();
         AddressBookTab.GetComponent<AddressBookManager>().DisableTaxiButton();
+        Cigar.SetActive(true);
     }
 
     public void GoToAddres(string s,DocumentFolder documentFolder,Sprite BG)
@@ -1490,7 +1496,7 @@ public class MainUIManager : MonoBehaviour {
             m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         }
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
-        Invoke("ResetBG", 2f);
+        Invoke("ResetBG", 3f);
     }
     public void SetBGBigDialogue()
     {
@@ -1503,7 +1509,7 @@ public class MainUIManager : MonoBehaviour {
             m_TransitionScreenAnimator.transform.GetChild(0).GetComponent<Image>().sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
         }
         DialogueBackground.sprite = DialogueDataBase.Backgrounds[m_DialogueBackgroundIdx];
-        Invoke("ResetBG", 2.5f);
+        Invoke("ResetBG", 3.5f);
     }
     public void ResetBG()
     {
@@ -1674,6 +1680,11 @@ public class MainUIManager : MonoBehaviour {
         {
             b_isInDocDiscover = false;
         }
+        if (b_isCheckingView)
+        {
+            return;
+        }
+        
         Dialogue.SetActive(true);
         OtherCharacterSection.SetActive(true);
         b_StoryStarted = true;
