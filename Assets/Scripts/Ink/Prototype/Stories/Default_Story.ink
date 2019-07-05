@@ -1507,9 +1507,89 @@ How did you came accross our store?#otherCharacter
 
 ===restaurant===
 =restaurant_entrance
-#NewNoBackground #8
-the killer went here for "special" cases #player
-the killer add his last meet up at "San Francisco's Docks 1040 The Embarcadero" #player #NewInvestigation #NewNarrativeLog #32
+#NewBackground #30 #PlayerDbox #1 #NewCharacterSprite #0
+<i>(Given all junk that I found in his place, Chtcherbina seemed to be a regular customer of this place.)</i>#player
+<i>(More Russian stuff. That stinks.)</i>#player
+<i>(Maybe he just liked the food here?)</i>#player
+<i>(Or it's a front for the mob...)</i>#player
+<i>(Please, let's hope that it's just the food.)</i>#player
+#jump
+*   [Enter the diner] <i>(Let's get a taste of this place.)</i>#player
+#NewBackground #8
+-   <i>(There's quite a lot of people in here.)</i>#player
+<i>(No sign of Chtcherbina, obviously.)</i>#player
+<i>(Would have been a strange time for a pie.)</i>#player
+#jump
+*   [Go to a table] <i>(Maybe I can ask something to a waitress...)</i>#player
+-   <i>(...)</i>#player
+<i>(Do I smell bad?)</i>#player
+<i>(Nobody seems to be interested in taking my order.)</i>#player
+I'm happy to finally meet you, Mr Rosenthal.#otherCharacter
+<i>(Who's talk...)</i>#player
+#NewCahracterSprite #15 #PlayerDBox #0
+Mind if I join you?#otherCharacter
+#jump
+*   [Please, be my guest] Of course, but I really enjoy knowing who sits at my table.#player
+    My restaurant, my rules. You won't need my name.#otherCharacter
+*   Do I have the choice?[] It doesn't really seems so.#player
+    Of course. Chatting with me, of getting killed.#otherCharacter
+    You're quite a straightforward person, Mr...#player
+    You won't need my name.#otherCharacter
+-   If you say so...#player
+    So why are you going after Valery?#otherCharacter
+#jump
+*   I think you already know it[], sir.#player
+    Actually I don't.#otherCharacter
+    But I know that you're searching for him in the entire city.#otherCharacter
+    You even went to his apartment.#otherCharacter
+    So don't try to make me angrier.#otherCharacter
+*   Am I? Are you sure?[] What could make you believe that?#player
+    Maybe the fact that you're looking for him all over the city.#otherCharacter
+    You even went to his apartment.#otherCharacter
+    So don't try to make me angrier than I already am.#otherCharacter
+-  But why would I tell you what you already know?#player
+That you sent Chtcherbina to wack one of Abati's capi.#player
+...#otherCharacter
+#jump
+*   [Nothing to say?] Ain't got nothing to say to that?#player
+    Or will you just threaten me?#player
+    What difference will it make?#otherCharacter
+    In either case, the war with Abati seems inevitable.#otherCharacter
+    You wouldn't believe me if I told you that we have nothing to do with it.#otherCharacter
+    #jump
+    **  [Why would I?]  Hard to believe in this.#player
+-   I presume that you're with the Russian mob.#player
+    You have everything to win from a weaker Italian family.#player
+    And you're aware of that.#player
+    Of course.#otherCharacter
+    But for the moment, we don't really need to take over.#otherCharacter
+    What Valery did, if he really did so, was not under my orders.#otherCharacter
+    Or anyone else that I could know of.#otherCharacter
+    Valery did this on his own, he was used to do that.#otherCharacter
+    Allows him to make an extra buck or two.#otherCharacter
+    But the deal was that it would never impact us.#otherCharacter
+    Which is clearly not the case here.#otherCharacter
+    I allowed him to conduct his business in a safe environment like this one.#otherCharacter
+    As a matter of fact, he encountered someone here some days ago.#otherCharacter
+#jump
+*   [Who was it?] Did you see the man that came to see him?#player
+-   As I said, I don't want to be involved, so I leave him alone.#otherCharacter
+    But that needs to change obviously.#otherCharacter
+    I only know that he operated from the docks, near the The Embarcadero. 
+    As a gesture of good faith to you and Abati, I'll let you chase him.#otherCharacter #NewNarrativeLog #32
+    Under what condition?#player
+    Don't kill him.#otherCharacter
+    He's a brother, as everyone here.#otherCharacter
+    We'll deal with him.#otherCharacter
+    Now you'll have to excuse me, I have a restaurant to run.#otherCharacter
+    I don't expect to see you too much again Mr Rosenthal.#otherCharacter #PlayerDBox #1
+    <i>(So the Russian mob is involved.)</i>#player
+    <i>(Or is it?)</i>#player
+    <i>(It was quite a peaceful time in San Francisco, why trying to jeopardize that?)</i>#player
+    <i>(Let's hope that I won't get caught in the middle of the fire.)</i>#player #NewBackground #9
+    <i>(If that man said the truth, Chtcherbina worked on his own.)</i>#player
+    <i>(But why? Or for who?)</i>#player
+    <i>(Maybe I will find his track again at the docks.)</i>#player #Introspection #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
