@@ -1700,25 +1700,199 @@ Abati's calling me and asked to join him in his restaurant, the Little Door Rest
 
 ===ending===
 =start_ending
-#jump  #NewBigBackground #9 #NewCharacterSprite #9
--	(choice_badguy)Qui est le coupable? #otherCharacter 
+#NewBackground #31 #PlayerDBox #1
+<i>(That's where it all should end.)</i>#player
+<i>(In a freakin' Italian restaurant.)</i>#player
+<i>(Why do I end up in this?)</i>#player
+<i>(But I guess it's too late now.)</i>#player
+Hello again, Mr Rosenthal. Can you follow me please?#otherCharacter #PlayerDBox #0
+Alright. Let's end this.#player
+#NewBackground #32 #NewCharacterSprite #9
+Welcome Bugsy.#otherCharacter
+Sorry that I couldn't meet you sooner.#otherCharacter
+Please have a seat.#otherCharacter
+You can go now, Rossini. I'll call you if we need anything.#otherCharacter
+Here we are Bugsy. On the verge of war with the Russians.#otherCharacter
+But most important, we're at war with ourselves.#otherCharacter
+-   (choice_badguy) Who betrayed us?#otherCharacter
+And why?#otherCharacter
+What did you find?#otherCharacter
 #jump #endgame
 ->END
 
 =badchoice_proofs
-Te fous pas de ma gueule, Rosy. #otherCharacter 
+That really doesn't make any sense.#otherCharacter
+We pay you good money Bugsy, don't try to fuck me.#otherCharacter
+Let's try it one more time, but I swear, I'll kill you if you don't take it seriously.#otherCharacter
 #jump #endgame
-TODO: One last ride Kiki
 ->END
+
 =good_ending
-Bravo vous avez gagné. #player 
-#jump #Demo
+Jesus... Morello, really?#otherCharacter
+I'm positive, yes.#player
+But why?#otherCharacter
+So you see that letter that we found at Giovanni's apartment?#player
+I first thought it was from a woman.#player
+Turns out it had the same handwriting as the note that we found on the killer's body.#player
+It makes sense that whoever wrote that letter, also saw the killer, and possibly asked him to kill Giovanni.#player
+But how is this connected to Morello?#otherCharacter
+See the partial phone number, just under the tear on the tearing on the killer's note?#player
+It's the same on that business card...#player
+Castelbueno...#otherCharacter
+Yes, the company controlled by Morello and Giovanni.#player
+I think that they were lovers.#player
+...#otherCharacter
+Does anyone else know this?#otherCharacter
+Not that I know of.#player
+I intend to keep it that way.#otherCharacter
+Mr. Abati...#player
+Yes Bugsy?#otherCharacter
+#jump
+*   [What will happen to him?] What will you do to Morello?#player
+    I'm pretty sure that you have an idea about that.#otherCharacter
+    He's dead to us.#otherCharacter
+    We can't tolerate such a disgrace in our ranks.#otherCharacter
+    Even if he's one of the founders of our family.#otherCharacter
+*   Can I talk to him[?] one last time?#player
+    I don't like to be taken for a schmuck, and it seems that Morello only saw me like that.#player
+    I think that I can give you that.#otherCharacter
+    Rossini, bring Morello.#otherCharacter
+    He's already here?#player
+    I called a meeting of the administration.#otherCharacter
+    Your two suspects were on another room, they came just after you.#otherCharacter
+    So that conclude our collaboration for now Bugsy.#otherCharacter
+    It's not that I don't like you, but when I see you it's after a tragedy.#otherCharacter
+    And I would like to prevent that.#otherCharacter
+    I completly agree.#player
+    No offense, but when I'm around Italians, I can't stop watching over my shoulder now.#player
+    Goodbye then Mr Rosenthal.#otherCharacter #PlayerDBox #1
+    ->discussion_morello
+-   But you don't have to worry about it anymore.#otherCharacter
+Your work here is done.#otherCharacter
+Finally! I can't survive around Italians it seems.#player
+Always a witty comment. I really don't know how you managed to survive.#otherCharacter
+I'll let you go now.#otherCharacter
+Goodbye Mr Rosenthal.#otherCharacter #PlayerDBox #1
+<i>(So that where it ends.)</i>#player #NewCharacterSprite #0
+<i>(Without a big win, or an epic climax.)</i>#player
+<i>(Only old gangsters, killing each other.)</i>#player
+<i>(I could swear that I heard a gunshot when I left.)</i>#player #NewBackground #9
+<i>(Here we go again.)</i>#player
+<i>(Same office. Same files.)</i>#player
+<i>(I'm not a winner in this.)</i>#player
+<i>(But I ain't dead either.)</i>#player
+<i>(So that's a win.)</i>#player
+TODO:SFX phone
+<i>(What's this...)</i>#player
+#jump
+*   [Answer the phone] <i>(I didn't expected to find a new work so soon.)</i>#player
+-   #PlayerDBox #0
+Bugsy Rosenthal, private eye, what can I do for you?#player #NewCharacterSprite #7
+Really professionnal Bugsy, that's surprising.#otherCharacter
+Jesus Lanza, not you again...#player
+Don't say that, you'll miss me.#otherCharacter
+What do you want?#player
+Just wanted to thank you. You really pulled this off.#otherCharacter
+I hate to say this, but you saved us on this.#otherCharacter
+Otherwise we would have been in a really ugly war.#otherCharacter
+I think those methods are better left in the past.#otherCharacter
+Anyway, I'll stop following you from now.#otherCharacter
+You can go back to sleep, I won't bother you at 3AM from now.
+#jump
+*   Fuck you Lanza[].#player
+TODO: SFX hang up the phone
+-   #NewCharacterSprite #0 #Demo
 ->END
+
+=discussion_morello
+#NewBackgroundSprite #9 #PlayerDBox #1
+<i>(Abati leaves, without even looking at me.)</i>#player
+<i>(I'm already in the past for him.)</i>#player
+<i>(Can't blame him.)</i>#player
+<i>(He's replaced by an old man, pale, but still proud.)</i>#player
+<i>(Yet, only the shadow of who Morello was.)</i>#player #NewCharacterSprite #10
+So we meet one last time it seems, Bugsy.#otherCharacter #PlayerDBox #0
+Indeed. I got you.#player
+I know. And to be honest, I'm kinda relieved.#otherCharacter
+You won't get out of this.#player
+Yes, without any doubt.#otherCharacter
+But it was quite a life.#otherCharacter
+Life of murder?#player
+No, it was the first time for me.#otherCharacter
+Why Giovanni then?#player
+I think that you know it.#otherCharacter
+I loved him.#otherCharacter
+I still do.#otherCharacter
+He asked me to change the administration decision about sending him in prison to save Lima.#otherCharacter
+But I couldn't, it would draw too much suspicion over us.#otherCharacter
+So he threatened to go public about our relation.#otherCharacter
+I couldn't let him do that.#otherCharacter
+How is this situation relieving then? You got caught.#player
+Because I had to hid. I felt like a prey, never able to live my life.#otherCharacter
+Now it doesn't matter.#otherCharacter
+I only hope that Giovanni will forgive me.#otherCharacter
+#NewBackground #9 #NewCharacterSprite #0 #PlayerDBox #1
+<i>(I knew leaving that room that nobody would see Morello alive anymore.)</i>#player
+<i>(In fact, I think that I heard a muffled gunshot when I left the place.)</i>#player
+<i>(Here we go again.)</i>#player
+<i>(Same office. Same files.)</i>#player
+<i>(I'm not a winner in this.)</i>#player
+<i>(But I ain't dead either.)</i>#player
+<i>(So that's a win.)</i>#player
+TODO:SFX phone
+<i>(What's this...)</i>#player
+#jump
+*   [Answer the phone] <i>(I didn't expected to find a new work so soon.)</i>#player
+-   #PlayerDBox #0
+Bugsy Rosenthal, private eye, what can I do for you?#player #NewCharacterSprite #7
+Really professionnal Bugsy, that's surprising.#otherCharacter
+Jesus Lanza, not you again...#player
+Don't say that, you'll miss me.#otherCharacter
+What do you want?#player
+Just wanted to thank you. You really pulled this off.#otherCharacter
+I hate to say this, but you saved us on this.#otherCharacter
+Otherwise we would have been in a really ugly war.#otherCharacter
+I think those methods are better left in the past.#otherCharacter
+Anyway, I'll stop following you from now.#otherCharacter
+You can go back to sleep, I won't bother you at 3AM from now.
+#jump
+*   Fuck you Lanza[].#player
+TODO: SFX hang up the phone
+-   #NewCharacterSprite #0 #Demo
+->END
+
 =bad_ending
-Bravo, vous avez perdo. #player 
+How disappointing...#otherCharacter
+You're just a drunk, tired, and useless man.#otherCharacter
+Get the hell out of here.#otherCharacter
+Rossini? Deal with him.#otherCharacter #PlayerDBox #1
+#NewCharacterSprite #0
+<i>(I never saw the shot coming.)</i>#player
+<i>(Only thing I saw was the face of Rossini.)</i>#player #NewCharacterSprite #8
+<i>(No anger in his eyes. No shame either.)</i>#player
+<i>(Only disappointement.)</i>#player
+<i>(I don't know if the death coming over me was blowing up my brain, but I could swear that he tried to tell me something.)</i>#player
+<i>(But what's the point now?)</i>#player #NewCharacterSprite #0
+<i>(It all ends here.)</i>#player
+<i>(At least for me.)</i>#player
 #jump #Demo
 ->END
+
 =lanza_ending
-Bravo, vous vous êtes trompé de mec. #player 
+So it was Jimmy...#otherCharacter
+It seems so.#player
+Alright, that's all I needed.#otherCharacter
+What a waste...#otherCharacter
+Go back home Bugsy. You won't have to see such a disgrace.#otherCharacter #PlayerDBox #1
+<i>(I could swear that what I saw in Abati's eyes was sadness.)</i>#player
+<i>(And disappointment.)</i>#player
+#NewBackground #9
+<i>(Back to the beginning.)</i>#player
+<i>(Except that Abati and the others seem to avoid talking to me.)</i>#player
+<i>(Of course, nobody saw Lanza ever again.)</i>#player
+<i>(It should be a victory. For me, for the family.)</i>#player
+<i>(But this victory tasted like shit.)</i>#player
+<i>(...)</i>#player
+<i>(Did... did I miss something?)</i>#player
 #jump #Demo
 ->END
