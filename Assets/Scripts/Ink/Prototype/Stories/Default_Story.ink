@@ -1680,16 +1680,118 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
 
 ===pier35===
 =pier35_entrance
-#NewNoBackground #20
-i hear a gunshot, i run #player
-okay so here i have the killer, who's dead, great #player
-i find on him the gun he used to kill <color=red>Giovanni</color>, and a little note  #player
-As i check this i hear a car, quickly going out of the pier, but i have her license plate #NewDocument #12
-okay so now i need to leave #NewNarrativeLog #21
-#NewBigBackground #9
-I have a license plate, a dead body, and a note.
-Abati's calling me and asked to join him in his restaurant, the Little Door Restaurant. #NewNarrativeLog #31 #Introspection 
-#NewInvestigation
+#NewBackground #20 #NewCharacterSprite #0 #PlayerDBox #1
+<i>(If I read the records correctly, Chtcherbina's car is still here.)</i>#player
+<i>(Finally, I think that I found him.)</i>#player
+<i>(Let's hope that it will end here.)</i>#player
+#jump
+*   [Search for the vehicule] <i>(Let's find Valer-...)</i>#player
+TODO: SFX gunshot
+-   <i>(What was that?)</i>#player
+<i>(Holy crap...)</i>#player
+#jump
+*   [Run toward the sound] <i>(Am I the only one after Chtcherbina?)</i>#player
+-   #NewBackground #29
+<i>(What the...)</i>#player
+<i>(That's Valery.)</i>#player
+<i>(He won't be a threat now.)</i>#player
+<i>(But who did this?)</i>#player
+TODO: SFX Car speeding up
+<i>(He's escaping!)</i>#player
+<i>(I won't be able to pursue him... Crap!)</i>#player
+<i>(Better get his plate at least.)</i>#player #NewNarrativeLog #31
+<i>(I'll try to run it by Gibbs, see if he can find something.)</i>#player
+<i>(What happened here?)</i>#player
+#jump
+*   [Look at the corpse] <i>(So at least he won't escape me this time.)</i>#player
+-   <i>(He took the bullet in the forehead.)</i>#player
+<i>(Dead right as it crushed his skull.)</i>#player
+<i>(What did he had on him?)</i>#player
+#jump
+*   [Empty his pockets] <i>(Let's see...)</i>#player #NewDocument #12
+-   <i>(So he was meeting someone here...)</i>#player
+<i>(His client?)</i>#player
+<i>(Then why killing him, with the job already done?)</i>#player
+<i>(That's odd...)</i>#player
+TODO:SFX gunshot (Russians)
+<i>(What the hell!!)</i>#player
+<i>(They speak Russian... so that bastard sent someone to follow me after all.)</i>#player
+<i>(How am I going to get out of -...)</i>#player
+TODO: SFX gunshot (Soldier, closer)
+<i>(...)</i>#player
+<i>(They're getting close.)</i>#player
+#NewCharacterSprite #8
+Mr Rosenthal, take a cover, I handle it.#otherCharacter
+<i>(What the...)</i>#player
+<i>(That's Lanza's man/)</i>#player
+<i>(Everybody is following me it seems.)</i>#player
+Alright, I think I got one, the other escaped. Freakin' russians.#otherCharacter
+Are you ok sir?#otherCharacter #PlayerDBox #0
+Y-yeah, it seems so...#player
+I'll get you back home. Who's this guy?#otherCharacter
+The man that killed Giovanni.#player
+Russian too?#otherCharacter
+Yeah, I think they followed me.#player
+So they are after us...#otherCharacter
+I need to inform Lanza.#otherCharacter
+But someone killed this guy!#player
+That could be the man that called the hit!#player
+I wouldn't give it a lot of thoughts.#otherCharacter
+That's what happen it this field.#otherCharacter
+I'll get you back right away.#otherCharacter
+We have a war to prepare.#otherCharacter
+#NewBackground #10 #PlayerDBox #1
+<i>(Maybe he's right. Maybe the war is the only ending.)</i>#player
+<i>(But I can't shake off the feeling that it stinks.)</i>#player
+<i>(It's too simple.)</i>#player
+#NewBackground #9
+<i>(Now it's been like 3 days since the shooting.)</i>#player
+<i>(Given what I heard, Abati's and his men are on the path to war.)</i>#player
+<i>(Why does it bother me?)</i>#player
+<i>(They put me back in the closet. I'm not a fighter.)</i>#player
+<i>(And not an Italian.)</i>#player
+<i>(...)</i>#player
+TODO:SFX phone
+<i>(Please, make it only be a jealous husband...)</i>#player
+#jump #PlayerDBox #0
+*   [Answer the phone] Bugsy Rosenthal, private eye, what can I do for you?#player
+-   Hello, it's Abati.#otherCharacter
+Oh hum, hello Mr Abati.#player
+I talked to Rossini, Lanza's man.#otherCharacter
+He told me that you had some reservations about what we're about to do.#otherCharacter
+I don't know if I'm the best to advise you.#player
+I'm the one asking you to.#otherCharacter
+I don't think that the Russians are behind this.#player
+Or at least not entirely.#player
+You're right.#otherCharacter
+I know for a fact that we have a traitor.#otherCharacter
+How can you be so sure about it?#player
+Only a few persons knew about the fact that Giovanni would take the blame for Lima.#otherCharacter
+I happen to be one of them.#otherCharacter
+Who were the others?#player
+Only two people.#otherCharacter
+First one is Lanza.#otherCharacter
+What the...#player
+And the second one is Morello.#otherCharacter
+But... how can one of them betray the family?#player
+I really don't know. That's why I need you.#otherCharacter
+You'll need to find if one of them is linked with all this.#otherCharacter
+But don't tell anyone.#otherCharacter
+When you find something, come to The Little Door Restaurant. I'll meet you there.#otherCharacter #NewNarrativeLog #31
+But I'll ask for proofs.#otherCharacter
+This war will cost us a lot, I cannot afford another mistake.#otherCharacter
+You'll still attack the Russians? It's madness!#player
+It's too late for second thought.#otherCharacter
+Let's hope that we'll at least eliminate one threat.#otherCharacter
+See you soon, Bugsy.#otherCharacter #PlayerDBox #1
+#NewCharacterSprite #0
+<i>(Jesus Christ...)</i>#player
+<i>(So one of the members of the administration is behind that.)</i>#player
+<i>(But... why?)</i>#player
+<i>(Let's find out what's hidden here.)</i>#player
+<i>(Right now I only have a licence plate, and a pile of objects and documents.)</i>#player
+<i>(And an even bigger pile of bodies.)</i>#player
+<i>(What's the big picture behind all that?)</i>#player #Introspection #NewInvestigation
 ->END
 
 
