@@ -789,7 +789,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
         --  ->clientdriver
 *   [Who's the client?] So who was she supposed to meet last night? #player #PlayerDBox #0
         Some regular, quite fond of her. #otherCharacter
-        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton. #otherCharacter #NewNarrativeLog #30
+        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton. #otherCharacter
             #jump
             **  [Any problem with him?] Did she had any problem with him? #player
                     Not at all, he was quite lovely. #otherCharacter
@@ -827,7 +827,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 -   He's the one who was found with Cara, at his place. #player
 #jump
 *   [Do they knew each other?] Did he ever came here to see her? #player
-        Not that I know. Only came here for the drinks. #otherCharacter
+        Not that I know. Only came here for the drinks. #otherCharacter #NewNarrativeLog #33
         I don't think he was really... "interested" in what we offer. #otherCharacter
 -   I'll leave you now Mr. Rosenthal. #otherCharacter
     Please find what happened to Cara. #otherCharacter
@@ -835,7 +835,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     ->condor_secondpart_morello
     
 =condor_secondpart_morello
-    <i>(She leads me to the bar, and goes back to the brothel.)</i>#player #PlayerDBox #1 #NewCharacterSprite #0
+    <i>(She leads me to the bar, and goes back to the brothel.)</i>#player #PlayerDBox #1 #NewCharacterSprite #0 #MusicPlay #2
     <i>(Beautiful. But tough woman.)</i>#player # NewBackground #6
     <i>(Dean is still beyond his glasses, scrapping them, and keeping an eye on me.)</i>#player
     <i>(But someone else is.)</i>#player
@@ -886,7 +886,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 *   [What's the name of the company?] What's the name of the company again? #player
     Castelbueno Oil Company. #otherCharacter
     Here, take a card. #otherCharacter #NewDocument #5
-    But don't expect to order any oil from it. #otherCharacter 
+    But don't expect to order any oil from it. #otherCharacter #NewNarrativeLog #35
 -   I'll leave you now. #otherCharacter
     Try to find who whants to harm us. #otherCharacter
     What else would I try to find? #player
@@ -896,7 +896,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     <i>(That old snake...)</i>#player #PlayerDBox #1 #NewCharacterSprite #0
     <i>(It's not surprising that he survived this long in that city.)</i>#player
     <i>(Let's get back to the office.)</i>#player
-    # NewBigBackground #9
+    # NewBigBackground #9 #MusicStop #2
     <i>(What a strange day.)</i>#player
     <i>(Now I have to lead to follow.)</i>#player
     <i>(The driver, and the client-lover.)</i>#player
