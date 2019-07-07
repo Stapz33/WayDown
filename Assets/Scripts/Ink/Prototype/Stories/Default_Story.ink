@@ -941,16 +941,16 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 {client_seen==true:<i>(I didn't picture a professionnal killer living in a place like that.)</i>|<i>(Maybe I could end up in a place like that.)</i>}#player
 {client_seen==true:<i>(Anyway, let's check his place.)</i>|<i>(Stop dreaming Bugsy, time to work.)</i>}#player
 #jump
-*   [Enter the building] <i>(Let's go in there, he's at the 375.)</i>#player #NewBackground #22
+*   [Enter the building] <i>(Let's go in there, he's at the 375.)</i>#player #NewBackground #22 #SFXPlay #17
 -   <i>(This place is really calm.)</i>#player
     <i>(I would have expected a little more people in here.)</i>#player
     <i>(Here is 375. Let's check if he's here.)</i>#player
 #jump
-*   [Knock on the door]<i>(Will I be lucky?)</i>#player
+*   [Knock on the door]<i>(Will I be lucky?)</i>#player #SFXPlay #24
 -   <i>(...)</i>#player
     <i>(It seems that I won't.)</i>#player
 #jump
-*   [Knock again]Is there someone in here?#player #PlayerDBox #0
+*   [Knock again]Is there someone in here?#player #PlayerDBox #0 #SFXPlay #24
 -   <i>(Still no sound.)</i>#player #PlayerDBox #1
     You won't find anybody here sir.#otherCharacter #NewCharacterSprite #11
     Jesus Christ, who are you? #player #PlayerDBox #0
@@ -966,17 +966,17 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     Not like Cooper, the man that lives in that apartment.#otherCharacter
 *   {client_seen==false}[Stop jocking around] What are you saying? It was the man that lived there that you saw, don't you?#player
     No, it was someone else. I know the man that lives here.#otherCharacter
-    Quite an handsome man.I think his name was Cooper I think. #otherCharacter
+    Quite an handsome man.I think his name was Cooper. #otherCharacter
 -   The man that came banged on the door.#otherCharacter
     Was not really trying to be discreet.#otherCharacter
     Then Cooper opened the door, and started to yell.#otherCharacter
     But he quickly stopped when the other man flashed a gun.#otherCharacter
 *   [What did he look like?] Did you see his face?#player
 -   No, I couldn't. He had a hat deeply set on his head.#otherCharacter
-    But I heard his voice. Sounded quite Russian, or Slave.#otherCharacter
+    But I heard his voice. Sounded quite Russian, or Slavic.#otherCharacter
     Anyway, a fellow from the east.#otherCharacter
     I also saw a mark on is arm when he draw his gun.#otherCharacter
-    Something like a tattoo I think.#otherCharacter #NewNarrativeLog #17
+    Something like a tattoo I think.#otherCharacter
 *   [What happened then?] So what happened after he draw the gun? #player
     And how didn't he see you?#player
     But let's back up a little... who the hell are you?#player
@@ -995,7 +995,7 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     Maybe go back to your apartment?#player
     Or I could hear what they were saying and help an handsome inspector passing by after that, don't you think?#otherCharacter
     So I stayed on my doorstep, and just took a peep sometimes.#otherCharacter
-    They exited the building and took Cooper's car, an old grey pick-up truck parked outside.#otherCharacter
+    They exited the building and took Cooper's car, an old grey pick-up truck parked outside.#otherCharacter #NewNarrativeLog #17
     Anything else useful about them?#player
     Don't think so, but you should be careful.#otherCharacter
     I heard that those Russian guys are quite wild.#otherCharacter
@@ -1017,13 +1017,14 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(Strip Bugsy from his coat and a few bucks, and see if I attract as many women.)</i>#player
 <i>(Let's focus on what's important now.)</i>#player #NewBackground #24
 <i>(Seems that the driver was a victim too.)</i>#player
-<i>(But where is he now?)</i>#player #NewBackground #9
-<i>(My guess would be that he's with the car, or ditched in a alley, with a hole in his head.)</i>#player #Introspection
+<i>(But where is he now?)</i>#player 
+#NewBackground #9
+<i>(My guess would be that he's with the car, or ditched in a alley, with a hole in his head.)</i>#player
 <i>(I cannot go on every corner of the city, so the car is the better lead to follow now.)</i>#player
 <i>(But where would it be?)</i>#player
 <i>(If I was the killer, I would get rid of it.)</i>#player
-<i>(Maybe in an auto wreck yard, or a parking lot?)</i>#player
-<i>(Time to do some boring investigator work.)</i>#player
+<i>(Maybe in an auto wreck yard, or a parking lot?)</i>#player #NewNarrativeLog #36
+<i>(Time to do some boring investigator work.)</i>#player #Introspection
 #NewInvestigation
 ->END
 
@@ -1036,11 +1037,12 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(Let's focus on what's important now.)</i>#player #NewBackground #24
 <i>(That Cooper was not the killer then.)</i>#player
 <i>(But why a Russian?)</i>#player
-<i>(Is there a beef between the families that I don't know of?)</i>#player #NewBackground #9
-<i>(But I shouldn't try to get mixed with all this.)</i>#player #Introspection
+<i>(Is there a beef between the families that I don't know of?)</i>#player 
+#NewBackground #9
+<i>(But I shouldn't try to get mixed with all this.)</i>#player
 <i>(Let's focus on what matters now.)</i>#player
 <i>(Who's the killer, and why was he at Giovanni's place.)</i>#player
-<i>(There's still that shady last client, I shouldn't forget that.)</i>#player
+<i>(There's still that shady last client, I shouldn't forget that.)</i>#player #Introspection
 ->END
 
 =driver_alreadydone
@@ -1074,8 +1076,8 @@ TODO: Sheraton Background (ASK TONY)
 <i>(It takes quite a long time...)</i>#player
 <i>(...)</i>#player
 TODO: SFX elevator ring
-<i>(Finally!)</i>#player #NewBackground #23
-<i>(Nobody in the corridor.)</i>#player
+<i>(Finally!)</i>#player
+<i>(Nobody in the corridor.)</i>#player #NewBackground #23
 <i>(There never seems to be anybody on those fancy hotels.)</i>#player
 <i>(But wait for a door to open and you'll see where those rich bastards are hidding.)</i>#player
 <i>(So what was the room number again? I believe it's 738.)</i>#player
@@ -1083,13 +1085,13 @@ TODO: SFX elevator ring
 <i>(...)</i>#player
 <i>(Should be this one.)</i>#player
 #jump
-*   [Knock at the door] <i>(It he still in here?)</i>#player
+*   [Knock at the door] <i>(It he still in here?)</i>#player #SFXPlay #25
 -   <i>(...)</i>#player
     <i>(I can't here anything.)</i>#player
     <i>(At least nothing discernable.)</i>#player
     <i>(There's kind of hushered sounds.)</i>#player
 #jump
-*   [Knock again] <i>(Let's try something.)</i>#player
+*   [Knock again] <i>(Let's try something.)</i>#player #SFXPlay #25
     #jump
     **  [Room service!] Hello sir, it's the room service, you ordered something.#player #PlayerDBox #0
         <i>(At least some sounds! He getting close to the door.)</i>#player #PlayerDBox #1
@@ -1159,7 +1161,7 @@ TODO: SFX elevator ring
 *   [Lie to him] Hm... she was sent by the Condor Club to another client, like the man said.#player
     What can I say, she was popular.#player
     I can't argue with that.#otherCharacter
-    But that's not reaaly professionnal, the club will hear from me.#otherCharacter
+    But that's not realy professionnal, the club will hear from me.#otherCharacter
     If you say so...#player
     <i>(Let this man hope a little, maybe he'll forget her.)</i>#player #PlayerDBox #1
 -	{
@@ -1170,20 +1172,21 @@ TODO: SFX elevator ring
 	}
 =client_newinvestigation
 -   <i>(So our man went here, after taking the driver's car.)</i>#player #NewCharacterSprite #0 #NewBackground #23
--   <i>(But where's the driver now?)</i>#player #NewBackground #9 #Introspection
+-   <i>(But where's the driver now?)</i>#player 
+	#NewBackground #9
     <i>(Obviously killed.)</i>#player
     <i>(But you cannot kill a car.)</i>#player
     <i>(He must have got rid of it somewhere. Too recognizable.)</i>#player
-    <i>(A parking lot? No, most surely a auto wreck yard.)</i>#player
-    <i>(Where could I find one?)</i>#player
+    <i>(A parking lot? No, most surely a auto wreck yard.)</i>#player #NewNarrativeLog #36
+    <i>(Where could I find one?)</i>#player #Introspection
     #NewInvestigation
 ->END
 
 =client_introspection
 -   <i>(Who's that driver?)</i>#player #NewCharacterSprite #0 #NewBackground #23
     <i>(I didn't picture a freakin' cold blooded killer.)</i>#player
-    #NewBigBackground #9 #Introspection
-    <i>(I should check where he's living. But I guess that he'll not be there. Obviously.)</i>#player
+    #NewBigBackground #9
+    <i>(I should check where he's living. But I guess that he'll not be there. Obviously.)</i>#player #Introspection
 ->END
 
 =client_alreadydone
