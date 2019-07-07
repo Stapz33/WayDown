@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_ReloadAudio = null;
     [SerializeField] private AudioSource m_SearchingAudio = null;
     [SerializeField] private AudioSource m_ShotGunAudio = null;
-    
+
     [Header("Soldier Car")]
     [SerializeField] private AudioSource m_PassingCar01Audio = null;
     [SerializeField] private AudioSource m_PassingCar02Audio = null;
