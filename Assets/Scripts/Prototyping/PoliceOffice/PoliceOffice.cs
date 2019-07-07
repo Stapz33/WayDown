@@ -101,6 +101,12 @@ public class PoliceOffice : MonoBehaviour
         BlackBackgroundN.SetActive(false);
     }
 
+    public void GoodCSInput()
+    {
+        CsInput.SetActive(false);
+        BlackBackgroundCS.SetActive(false);
+    }
+
     #endregion
 
     #region CS_VERIFICATION

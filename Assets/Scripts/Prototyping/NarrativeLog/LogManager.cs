@@ -108,30 +108,36 @@ public class LogManager : MonoBehaviour
     {
         if (NText01.textInfo.pageCount == m_nbOfPages + 2)
         {
-            Debug.Log("1");
             NText02.pageToDisplay = NText01.textInfo.pageCount + 1;
             NText01.pageToDisplay = NText01.textInfo.pageCount;
             m_nbOfPages = NText01.textInfo.pageCount;
         }
         else if (NText01.textInfo.pageCount == m_nbOfPages + 1)
         {
-            Debug.Log("2");
             NText02.pageToDisplay = NText01.textInfo.pageCount;
             NText01.pageToDisplay = NText01.textInfo.pageCount - 1;
         }
         else if (NText01.textInfo.pageCount == 0)
         {
-            Debug.Log("3");
             NText02.pageToDisplay = 2;
             NText01.pageToDisplay = 1;
             m_nbOfPages = 1;
         }
         else
         {
-            Debug.Log("4");
-            NText02.pageToDisplay = NText01.textInfo.pageCount + 1;
-            NText01.pageToDisplay = NText01.textInfo.pageCount;
-            m_nbOfPages = NText01.textInfo.pageCount;
+            if (NText01.textInfo.pageCount %2 == 0)
+            {
+                NText02.pageToDisplay = NText01.textInfo.pageCount;
+                NText01.pageToDisplay = NText01.textInfo.pageCount -1;
+                m_nbOfPages = NText01.textInfo.pageCount -1;
+            }
+            else
+            {
+                NText02.pageToDisplay = NText01.textInfo.pageCount + 1;
+                NText01.pageToDisplay = NText01.textInfo.pageCount;
+                m_nbOfPages = NText01.textInfo.pageCount;
+            }
+            
         }
         m_ActualPage = m_nbOfPages;
         if (m_ActualPage > 2)

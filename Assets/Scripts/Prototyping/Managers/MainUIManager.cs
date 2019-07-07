@@ -1272,6 +1272,7 @@ public class MainUIManager : MonoBehaviour {
             {
                 PoliceOffice.Singleton.GoodName();
                 Invoke("AddNewCriminalRecord", 1.5f);
+                PoliceOfficeObject.GetComponent<PoliceOffice>().GoodCSInput();
             }
             else if (nb == ActualStoryDataBase.HintNeeded && ActualDatas.m_IsCriminalKnown)
             {
