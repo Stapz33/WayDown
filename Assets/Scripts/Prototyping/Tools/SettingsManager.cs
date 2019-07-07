@@ -20,7 +20,7 @@ public class SettingsManager : MonoBehaviour
     {
         if (Singleton != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
