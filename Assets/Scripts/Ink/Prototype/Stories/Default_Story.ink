@@ -1642,9 +1642,10 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
     What?#player
     Which day's records do you want?#otherCharacter
     We keep all the books since 1912.#otherCharacter
-    The couple last days should be enough.#player #NewDocument #10
-    So here's the first page.#otherCharacter #NewDocument #11
-    And here's the second.#otherCharacter
+    The couple last days should be enough.#player 
+    So here's the first page.#otherCharacter #NewDocument #10
+    Let me check a second... #otherCharacter
+    And here's the second.#otherCharacter #NewDocument #11
     Will bring them back quickly?#otherCharacter
     As soon as I find what I'm looking for.#player
     Which will take...#otherCharacter

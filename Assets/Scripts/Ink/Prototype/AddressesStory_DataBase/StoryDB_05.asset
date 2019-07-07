@@ -31,7 +31,7 @@ MonoBehaviour:
   CriminalBool: knowledge_prostitute_name
   m_LaunchNewInvestigation: 0
   CriminalRecordIdx: 4
-  AddressInfos01: Barton's Auto Wreck Yard 872 Bay St
+  AddressInfos01: 'Wreck Yard : Barton''s Auto 872 Bay St'
   AddressInfos02: 
   AddressIndexToDiscover: 05000000
   Corpulence: 1

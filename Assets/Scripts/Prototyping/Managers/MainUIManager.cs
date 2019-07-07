@@ -74,6 +74,7 @@ public class MainUIManager : MonoBehaviour {
 
     //Dialogue Validation
     public GameObject ValidationDialogue;
+    public Text ValidationDialogueText;
     public struct st_ValidationDialogue
     {
         public string s_BackValidation;
@@ -137,7 +138,7 @@ public class MainUIManager : MonoBehaviour {
         public int driverappseen = 0;
         public int drugstoreseen = 0;
         public int dockerseen = 0;
-
+        public int drugstorefirsttime = 0;
 
     }
 
@@ -697,6 +698,7 @@ public class MainUIManager : MonoBehaviour {
                     b_StoryStarted = false;
                     i_GoodIdxValidation = int.Parse(_inkStory.currentTags[f + 1]);
                     Dialogue.SetActive(false);
+                    ValidationDialogueText.text = "";
                     ValidationDialogue.SetActive(true);
                 }
                 else if (_inkStory.currentTags[f] == "Introspection")
@@ -1345,6 +1347,7 @@ public class MainUIManager : MonoBehaviour {
         ActualDatas.driverappseen = (int)_inkStory.variablesState["driverapp_seen"];
         ActualDatas.drugstoreseen = (int)_inkStory.variablesState["drugstore_seen"];
         ActualDatas.dockerseen = (int)_inkStory.variablesState["docker_seen"];
+        ActualDatas.drugstorefirsttime = (int)_inkStory.variablesState["drugstore_firsttime"]; 
     }
 
     public void LoadStoryVar()
@@ -1356,6 +1359,7 @@ public class MainUIManager : MonoBehaviour {
         _inkStory.variablesState["driverapp_seen"] = ActualDatas.driverappseen;
         _inkStory.variablesState["drugstore_seen"] = ActualDatas.drugstoreseen;
         _inkStory.variablesState["docker_seen"] = ActualDatas.dockerseen;
+        _inkStory.variablesState["drugstore_firsttime"] = ActualDatas.drugstorefirsttime;
     }
 
     public void SetNewActualAddressDocumentFolder(DocumentFolder documentFolder)

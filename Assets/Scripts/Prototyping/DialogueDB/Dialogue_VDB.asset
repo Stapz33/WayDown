@@ -20,4 +20,4 @@ MonoBehaviour:
   - BackValidation: drugstore.drugstore_validation_cancel
     GoodValidation: drugstore.drugstore_validation3_good
     BadValidation: drugstore.drugstore_validation_wrong
-    ValdationName: jacks cigarettes
+    ValdationName: jackscigarettes
