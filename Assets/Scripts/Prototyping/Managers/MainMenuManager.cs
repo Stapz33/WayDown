@@ -77,4 +77,15 @@ public class MainMenuManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void OpenSettings()
+    {
+        SettingsManager.Singleton.OpenSettings();
+    }
+
+    public void CloseSettings()
+    {
+        SettingsManager.Singleton.CloseSettings();
+    }
+
 }

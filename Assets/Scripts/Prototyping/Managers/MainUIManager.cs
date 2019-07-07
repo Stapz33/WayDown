@@ -1699,4 +1699,9 @@ public class MainUIManager : MonoBehaviour {
         Cigar.SetActive(false);
         cender.SetActive(true);
     }
+
+    public void OpenSettings()
+    {
+        SettingsManager.Singleton.OpenSettings();
+    }
 }

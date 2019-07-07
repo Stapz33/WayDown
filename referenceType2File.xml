@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTypeDate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TypeDate>
+    <guid>430cb8f71c23c438cb8b0ce85cc80fa6</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Compiler/InkCompiler.cs</fileName>
+    <timeStamp>2019-01-03T12:05:24+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>45a9c84618e20498993d11d2bb89946e</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Compiler/Auto Compiler/InkPostProcessor.cs</fileName>
+    <timeStamp>2019-04-08T10:01:30.7432634+02:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>38c650d4ee11f47559699f833d29d4b9</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Inspector/File Icons/InkBrowserIcons.cs</fileName>
+    <timeStamp>2019-01-03T12:05:22+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>fe3507ae5d970447197e131c39ac31b6</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Inspector/Ink Inspector/DefaultAssetEditor.cs</fileName>
+    <timeStamp>2019-01-03T12:05:50+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>7fa6f007190b6408c8aebb32050a3bbe</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Inspector/Ink Inspector/DefaultAssetInspector.cs</fileName>
+    <timeStamp>2019-01-03T12:05:30+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>6905e53703af64a70aa6eb42f98b047c</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Inspector/Ink Inspector/InkInspector.cs</fileName>
+    <timeStamp>2019-01-03T12:05:28+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>b497ccd4b61cb4fee8b8f0ce86302e83</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Library/InkFile.cs</fileName>
+    <timeStamp>2019-01-03T12:05:37+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>dc234ab28a32840f5adfb84a075bc023</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Library/InkLibrary.cs</fileName>
+    <timeStamp>2019-01-03T12:05:42+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>da7a0f8590db84a63b1bc2f26b706ed1</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Library/InkLibraryEditor.cs</fileName>
+    <timeStamp>2019-01-03T12:05:41+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>55271c8b592344dadb06d13898333e06</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Library/InkMetaFile.cs</fileName>
+    <timeStamp>2019-01-03T12:05:25+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>db8895787ed204ab68ec3b62a233cc18</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Library/InkMetaLibrary.cs</fileName>
+    <timeStamp>2019-01-03T12:05:42+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>983af1b6602bf416b9928d40b37a38bd</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Settings/InkSettings.cs</fileName>
+    <timeStamp>2019-01-03T12:05:35+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>4842c69e8d1f0443d8f4626c65ea356a</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Ink Settings/InkSettingsEditor.cs</fileName>
+    <timeStamp>2019-01-03T12:05:24+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>bf969d7f2c98e470c9797844e20b20ee</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Player Window/InkPlayerWindow.cs</fileName>
+    <timeStamp>2019-01-03T12:05:39+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>eeaeb991395be4e9e9ab83197c649ad8</guid>
+    <fileName>Assets/Plugins/Ink/Editor/Tools/InkEditorUtils.cs</fileName>
+    <timeStamp>2019-01-03T12:05:44+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>66e957d58a4584a8894329531ec0b096</guid>
+    <fileName>Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs</fileName>
+    <timeStamp>2019-01-03T12:05:28+01:00</timeStamp>
+    <typeFullName>
+      <string>BasicInkExample</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>152213b0affe5410c9b7ef8eac085a64</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/CallStack.cs</fileName>
+    <timeStamp>2019-01-03T12:05:19+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>8db545ff917fa46d7aa5f472a9fdbad8</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Choice.cs</fileName>
+    <timeStamp>2019-01-03T12:05:33+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>b790cb942d6b84ca28e93a2b46d8c48f</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/ChoicePoint.cs</fileName>
+    <timeStamp>2019-01-03T12:05:38+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>2739750c31df04462a8dedfa904e8760</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Container.cs</fileName>
+    <timeStamp>2019-01-03T12:05:21+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>41100189b7af04624a6c92ee13e18232</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/ControlCommand.cs</fileName>
+    <timeStamp>2019-01-03T12:05:23+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>c1ae8e933de9541df9d12af663906aaf</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/DebugMetadata.cs</fileName>
+    <timeStamp>2019-01-03T12:05:39+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>e98dd0cea4d0a4ddcbc9a1f135b486d4</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Divert.cs</fileName>
+    <timeStamp>2019-01-03T12:05:43+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>60dc9de8c1e834c6eade8d924a7afe45</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Glue.cs</fileName>
+    <timeStamp>2019-01-03T12:05:27+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>db1f7c668efd4422d8437ac965745242</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/INamedContent.cs</fileName>
+    <timeStamp>2019-01-03T12:05:41+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>3a56f188ddfd3452386a797f878ab7ed</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/InkList.cs</fileName>
+    <timeStamp>2019-01-03T12:05:22+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>1365b619ff45f4d12b7bf20cc52a4173</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/JsonSerialisation.cs</fileName>
+    <timeStamp>2019-01-03T12:05:18+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>efacbd9aad3e9480d9c82bbd58922944</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/ListDefinition.cs</fileName>
+    <timeStamp>2019-01-03T12:05:44+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>ec881a45ed342471fb87e412417b6343</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/ListDefinitionsOrigin.cs</fileName>
+    <timeStamp>2019-01-03T12:05:43+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>b713d1356fec8458380a308bdc2e8b8f</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/NativeFunctionCall.cs</fileName>
+    <timeStamp>2019-01-03T12:05:37+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>20b56f60ae0f44147bccbae6ef3d0054</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Object.cs</fileName>
+    <timeStamp>2019-01-03T12:05:20+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>62ce05aceee3c42cc90313aec848e171</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Path.cs</fileName>
+    <timeStamp>2019-01-03T12:05:27+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>802f84ed94f0e4f518e4be47877e9a33</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Pointer.cs</fileName>
+    <timeStamp>2019-01-03T12:05:30+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>8323a1136a1484abebab14150a06453a</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Profiler.cs</fileName>
+    <timeStamp>2019-01-03T12:05:31+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>b6f42c73ddbc24b8fadf5f6c84287fc0</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/PushPop.cs</fileName>
+    <timeStamp>2019-01-03T12:05:37+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>40f07931ec6ee409e97714e5567fd5c6</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/SearchResult.cs</fileName>
+    <timeStamp>2019-01-03T12:05:23+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>5f2b378ccb9e148929c90bae41bb2c9d</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/SimpleJson.cs</fileName>
+    <timeStamp>2019-01-03T12:05:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>9996ae35e3e4647e8b8ee0c5aeb61489</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Story.cs</fileName>
+    <timeStamp>2019-01-03T12:05:35+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>83b6443aded8c49e1960594d5f64e114</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/StoryException.cs</fileName>
+    <timeStamp>2019-01-03T12:05:31+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>69b5ba5009dea4a3d8f67fbe1ebbc902</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/StoryState.cs</fileName>
+    <timeStamp>2019-01-03T12:05:29+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>4c907c30d0b7c4e5aa2dfe477bba8a89</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/StringJoinExtension.cs</fileName>
+    <timeStamp>2019-01-03T12:05:25+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>b8a631dc795b748dfbe8f53304cd9675</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Tag.cs</fileName>
+    <timeStamp>2019-01-03T12:05:38+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>57357686b389f45c9ad0659798094c5d</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Value.cs</fileName>
+    <timeStamp>2019-01-03T12:05:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>fb2c978a16e604e18b1c0ca3ea64db84</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/VariableAssignment.cs</fileName>
+    <timeStamp>2019-01-03T12:05:45+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>3c9a8ec523da34a6196730896d7a2c1d</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/VariableReference.cs</fileName>
+    <timeStamp>2019-01-03T12:05:22+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>98a3826d0e499440992195956701397e</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/VariablesState.cs</fileName>
+    <timeStamp>2019-01-03T12:05:35+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>28e3cd581fd59451fb8dacea1b19f477</guid>
+    <fileName>Assets/Plugins/Ink/InkRuntime/Void.cs</fileName>
+    <timeStamp>2019-01-03T12:05:21+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>842f43ac94b4b4f72ac0898650ddcc44</guid>
+    <fileName>Assets/Cleaner/Editor/AssetCollector.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>805140a4856714e288ea84985d3023df</guid>
+    <fileName>Assets/Cleaner/Editor/AssetReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>202c278a17939b24c8b79c0ee1f94d8f</guid>
+    <fileName>Assets/Cleaner/Editor/ClassReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>0d05386265df34bac8d0b6df44aa494c</guid>
+    <fileName>Assets/Cleaner/Editor/CollectionData.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>74eec3bfba0594259ac2843353c082a3</guid>
+    <fileName>Assets/Cleaner/Editor/FindUnusedAssetsWindow.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>2c4f01a79a77a45a9a84004cc2b78098</guid>
+    <fileName>Assets/Cleaner/Editor/ShaderReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-09T19:51:26+01:00</timeStamp>
+    <typeFullName />
+  </TypeDate>
+  <TypeDate>
+    <guid>99fa8d70b877b6943b60c36bb76fb2b9</guid>
+    <fileName>Assets/RichTextHelper/RichTextHelper.cs</fileName>
+    <timeStamp>2019-06-17T14:26:36.4869419+02:00</timeStamp>
+    <typeFullName>
+      <string>RichTextSubstringHelper.StringExt</string>
+      <string>RichTextSubstringHelper.RichTextTag</string>
+      <string>RichTextSubstringHelper.RichTextSubStringMaker</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>14d2bf871881a0540b9cd9c85da6abcc</guid>
+    <fileName>Assets/Scripts/Prototyping/AddressBookData/AddressBookManager.cs</fileName>
+    <timeStamp>2019-06-21T15:28:55.9220497+02:00</timeStamp>
+    <typeFullName>
+      <string>AddressBookManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>14c7fad004c5cad4fb5ff8b5287a375a</guid>
+    <fileName>Assets/Scripts/Prototyping/AddressBookData/CSVImport.cs</fileName>
+    <timeStamp>2019-01-29T14:50:10.9828009+01:00</timeStamp>
+    <typeFullName>
+      <string>CSVImport</string>
+      <string>TextImportation</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ee8133f3cd273ca40976697fa2b89548</guid>
+    <fileName>Assets/Scripts/Prototyping/CameraPositions/CameraPosition.cs</fileName>
+    <timeStamp>2019-01-14T12:55:34.5352593+01:00</timeStamp>
+    <typeFullName>
+      <string>CameraPosition</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6ed43ce6e30ba174098a42ba2554ec5d</guid>
+    <fileName>Assets/Scripts/Prototyping/DialogueDB/DialogueScriptable.cs</fileName>
+    <timeStamp>2019-03-11T16:12:17.4496848+01:00</timeStamp>
+    <typeFullName>
+      <string>DialogueScriptable</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>65d01227083713f4aa217a8120c7214d</guid>
+    <fileName>Assets/Scripts/Prototyping/DialogueDB/DialogueValidationScriptable.cs</fileName>
+    <timeStamp>2019-06-17T11:57:06.1730331+02:00</timeStamp>
+    <typeFullName>
+      <string>DialogueValidationScriptable</string>
+      <string>DialogueValidationScriptable+st_ValidationDialogue</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>5746c132e75f7d74aa6c7f73319dfc42</guid>
+    <fileName>Assets/Scripts/Prototyping/DocumentsData/DocumentScriptable.cs</fileName>
+    <timeStamp>2019-02-12T09:39:19.1969331+01:00</timeStamp>
+    <typeFullName>
+      <string>DocumentScriptable</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>1ff669b3c1a0ac6438040f9cfc0a4744</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/AdressBookManager.cs</fileName>
+    <timeStamp>2019-01-24T20:33:28.6179734+01:00</timeStamp>
+    <typeFullName>
+      <string>AdressBookManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>eb6145b5c11777d4b9fecabd051d9d59</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/AudioManager.cs</fileName>
+    <timeStamp>2019-07-01T16:14:46.9981314+02:00</timeStamp>
+    <typeFullName>
+      <string>AudioType</string>
+      <string>AudioManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f07c69f7916365845890ce9586a0281f</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/BoardUIManager.cs</fileName>
+    <timeStamp>2019-02-05T11:01:57.6169262+01:00</timeStamp>
+    <typeFullName>
+      <string>BoardUIManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>be6082c2f07927d48a8e92353d5adb45</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/DocumentFolderManager.cs</fileName>
+    <timeStamp>2019-07-01T16:07:44.6326467+02:00</timeStamp>
+    <typeFullName>
+      <string>DocumentFolderManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a2d24eb65441ff344ada538d4d923fca</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/GameManager.cs</fileName>
+    <timeStamp>2019-04-08T10:03:31.9561051+02:00</timeStamp>
+    <typeFullName>
+      <string>GameManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c076c6e350c7a1e49a7674e67f72a6ab</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/LargeDocumentManager.cs</fileName>
+    <timeStamp>2019-07-05T15:02:44.6033976+02:00</timeStamp>
+    <typeFullName>
+      <string>LargeDocumentManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3e1bfa7484f0f124d9a24d1a0f514b34</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/LastSectionManager.cs</fileName>
+    <timeStamp>2019-06-26T12:01:15.7441448+02:00</timeStamp>
+    <typeFullName>
+      <string>LastSectionManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0fd84248d6a23864bbc2bc0abd4f95c0</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/MainMenuManager.cs</fileName>
+    <timeStamp>2019-07-03T11:57:28.5000883+02:00</timeStamp>
+    <typeFullName>
+      <string>MainMenuManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>63a5cc92d0cadb24c907f8b21c23cd44</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/MainUIManager.cs</fileName>
+    <timeStamp>2019-07-07T12:35:45.7186279+02:00</timeStamp>
+    <typeFullName>
+      <string>TabType</string>
+      <string>DocumentFolder</string>
+      <string>MainUIManager</string>
+      <string>MainUIManager+st_ValidationDialogue</string>
+      <string>MainUIManager+Data</string>
+      <string>MainUIManager+DocumentDatas</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6c35cd22af791e64dbe2f3e67cdcdc11</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/PlayerCameraManager.cs</fileName>
+    <timeStamp>2019-04-08T10:10:07.9011817+02:00</timeStamp>
+    <typeFullName>
+      <string>PlayerCameraManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f3414d7d7580ff94ab8da05ca687df41</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/PlayerPinManager.cs</fileName>
+    <timeStamp>2019-02-05T11:05:23.280278+01:00</timeStamp>
+    <typeFullName>
+      <string>PlayerPinManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bd0b39d9df80c0e4a844e245bdd117df</guid>
+    <fileName>Assets/Scripts/Prototyping/Managers/SaveManager.cs</fileName>
+    <timeStamp>2019-04-08T16:55:35.3941286+02:00</timeStamp>
+    <typeFullName>
+      <string>SaveManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fd87a5204a976c9499a812faae310c90</guid>
+    <fileName>Assets/Scripts/Prototyping/NarrativeLog/CSVNarrativeLog.cs</fileName>
+    <timeStamp>2019-05-06T10:57:24.661262+02:00</timeStamp>
+    <typeFullName>
+      <string>CSVNarrativeLog</string>
+      <string>TextImportationLog</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>d33f54f3c2ff8b648b8f1a53a5a60cfc</guid>
+    <fileName>Assets/Scripts/Prototyping/NarrativeLog/DemoManager.cs</fileName>
+    <timeStamp>2019-07-03T14:43:28.3251794+02:00</timeStamp>
+    <typeFullName>
+      <string>DemoManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>5081de2a700a6ea4298260d4116d9b98</guid>
+    <fileName>Assets/Scripts/Prototyping/NarrativeLog/LogManager.cs</fileName>
+    <timeStamp>2019-07-07T12:56:53.9454815+02:00</timeStamp>
+    <typeFullName>
+      <string>SaveLog</string>
+      <string>LogManager</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>4b888d432901a7f46a898f304b787edc</guid>
+    <fileName>Assets/Scripts/Prototyping/PoliceOffice/PoliceOffice.cs</fileName>
+    <timeStamp>2019-07-07T12:35:13.0916614+02:00</timeStamp>
+    <typeFullName>
+      <string>PoliceOffice</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>7022c6c09b7329748a6d9c9d1c3a1126</guid>
+    <fileName>Assets/Scripts/Prototyping/Tools/AlphaTool.cs</fileName>
+    <timeStamp>2019-06-19T10:46:06.9683505+02:00</timeStamp>
+    <typeFullName>
+      <string>AlphaTool</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f27e5c5b8e79a744da20c93d749b02a5</guid>
+    <fileName>Assets/Scripts/Prototyping/Tools/HierarchyWindowGroupHeader.cs</fileName>
+    <timeStamp>2019-06-19T09:43:38.9130254+02:00</timeStamp>
+    <typeFullName>
+      <string>HierarchyWindowGroupHeader</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0ccf2586a5fbc4d42b65db5c58dd6b83</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/Address_data.cs</fileName>
+    <timeStamp>2019-04-08T10:07:08.5654715+02:00</timeStamp>
+    <typeFullName>
+      <string>Address_data</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c796b16438499684c8c87525c8b7a9b0</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/CinematicText.cs</fileName>
+    <timeStamp>2019-07-03T17:00:01.4415759+02:00</timeStamp>
+    <typeFullName>
+      <string>CinematicText</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c194730a9abaef943b4b29a5d02466a5</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/Evenement_Interaction.cs</fileName>
+    <timeStamp>2019-01-24T14:26:53.3313226+01:00</timeStamp>
+    <typeFullName>
+      <string>Evenement_Interaction</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>125a50b5d9c89904eb0f7498075eba50</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/Loading.cs</fileName>
+    <timeStamp>2019-05-14T14:03:22.5601375+02:00</timeStamp>
+    <typeFullName>
+      <string>Loading</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>cb33fcf6e91a20742974fc5059bf40bf</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/StartLoading.cs</fileName>
+    <timeStamp>2019-07-01T17:02:46.0460009+02:00</timeStamp>
+    <typeFullName>
+      <string>StartLoading</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c82609356a517e44f8accd781265deba</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/StoryDataBase.cs</fileName>
+    <timeStamp>2019-06-26T15:23:35.3089534+02:00</timeStamp>
+    <typeFullName>
+      <string>StoryDataBaseEditor</string>
+      <string>InvestigationType</string>
+      <string>CriminalRecordType</string>
+      <string>Corpulence</string>
+      <string>Height</string>
+      <string>SexType</string>
+      <string>Ethnicity</string>
+      <string>HairType</string>
+      <string>HairColor</string>
+      <string>EyeColor</string>
+      <string>TattooPiercing</string>
+      <string>StoryDataBase</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3324dadbdb58fcf4daf487bf3e23a42d</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/TextWPW.cs</fileName>
+    <timeStamp>2019-05-20T10:36:40.7796132+02:00</timeStamp>
+    <typeFullName>
+      <string>TextWPW</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6b3a60bb208475941b19d0d2042bcab0</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/BottomBar/ButtonCall.cs</fileName>
+    <timeStamp>2019-07-05T16:59:43.4802622+02:00</timeStamp>
+    <typeFullName>
+      <string>ButtonCallEditor</string>
+      <string>ButtonType</string>
+      <string>ButtonCall</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>d28d8715c7bab6d4daa9c470209d42d8</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/Documents/DocumentInfo.cs</fileName>
+    <timeStamp>2019-06-26T11:39:15.9164247+02:00</timeStamp>
+    <typeFullName>
+      <string>DocumentInfo</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>55e97bdf912cd0d4eaa8f6b2ed43790a</guid>
+    <fileName>Assets/Scripts/Prototyping/UI/Interactions/Lamp/Lamp.cs</fileName>
+    <timeStamp>2019-04-30T15:26:53.5919807+02:00</timeStamp>
+    <typeFullName>
+      <string>Lamp</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+</ArrayOfTypeDate>
