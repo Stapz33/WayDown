@@ -2,6 +2,7 @@
 using System.IO;
 using UnityEngine;
 using static MainUIManager;
+using static SettingsManager;
 
 public class SaveManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SaveManager : MonoBehaviour
     string storypath;
     string docpath;
     string logpath;
+    string settingspath;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class SaveManager : MonoBehaviour
         storypath = Path.Combine(Application.persistentDataPath, "Story.txt");
         docpath = Path.Combine(Application.persistentDataPath, "Document.txt");
         logpath = Path.Combine(Application.persistentDataPath, "NarrativeLog.txt");
+        settingspath = Path.Combine(Application.persistentDataPath, "Settings.txt");
     }
 
     public void SaveStoryPath(Data idx)
@@ -53,6 +56,16 @@ public class SaveManager : MonoBehaviour
         string jsonString = JsonUtility.ToJson(idx);
 
         using (StreamWriter streamWriter = File.CreateText(logpath))
+        {
+            streamWriter.Write(jsonString);
+        }
+    }
+
+    public void SaveSettingPath(SSettings idx)
+    {
+        string jsonString = JsonUtility.ToJson(idx);
+
+        using (StreamWriter streamWriter = File.CreateText(settingspath))
         {
             streamWriter.Write(jsonString);
         }
@@ -94,6 +107,20 @@ public class SaveManager : MonoBehaviour
             {
                 string jsonString = streamReader.ReadToEnd();
                 return JsonUtility.FromJson<SaveLog>(jsonString);
+            }
+        }
+        return null;
+
+    }
+
+    public SSettings LoadSettingsPath()
+    {
+        if (File.Exists(settingspath))
+        {
+            using (StreamReader streamReader = File.OpenText(settingspath))
+            {
+                string jsonString = streamReader.ReadToEnd();
+                return JsonUtility.FromJson<SSettings>(jsonString);
             }
         }
         return null;
