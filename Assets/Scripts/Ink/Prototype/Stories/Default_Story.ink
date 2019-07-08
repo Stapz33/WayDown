@@ -497,7 +497,7 @@ I'm done here. # player #PlayerDBox #0
 <i>(I hate to go to a cop, but let's face it, it as much a good cop as <color=red>Lanza</color> is.)</i>#player
 <i>(He could even betray his own mother.)</i>#player
 <i>(But he's useful. Let's go check on him.)</i>#player
-#NewBackground #4
+#NewBackground #4 #NewCharacterSprite #16
 What do you want from me this time Mr. Rosenthal?#otherCharacter
 I couldn't find much on your wife, she's keeping a low profile right now.#otherCharacter
 I'm not here for that Gibbs, I work for <color=red>Lanza</color> for now.#player
@@ -776,7 +776,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
         #jump
         **  [You bet] Of course, he's my prime suspect for now. #player
                 Where can I find him? #player
-                He lives in the Lombard Condominiums. #otherCharacter
+                He lives in the Lombard Condominiums, apartment 375. #otherCharacter
                 I'll check on him then. #player #NewNarrativeLog #23
         **  [Should I?] Do you think that I should? #player
                 I don't know. Maybe. #otherCharacter
@@ -785,12 +785,12 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
                 I should try politics. #otherCharacter
                 It's nearly the same work, yes. #player
                 Where can I find your driver? #player
-                In the Lombard Condominiums, near the Piers. #otherCharacter
+                In the Lombard Condominiums, apartment 375, near the Piers. #otherCharacter
                 I'll give it a look then. #NewNarrativeLog #23
         --  ->clientdriver
 *   [Who's the client?] So who was she supposed to meet last night? #player #PlayerDBox #0
         Some regular, quite fond of her. #otherCharacter
-        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton. #otherCharacter
+        He usually waits for her in a hotel room near the Fisherman's Wharf. He's staying at the Sheraton, room 738. #otherCharacter
             #jump
             **  [Any problem with him?] Did she have any problem with him? #player
                     Not at all, he was quite lovely. #otherCharacter
@@ -1012,7 +1012,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 	- client_seen == 1: 
 		->driver_newinvestigation 
 	- else: 
-		->END
+		->driver_introspection
 }
 =driver_newinvestigation
 #PlayerDBox #1 #NewCharacterSprite #0
