@@ -3445,7 +3445,7 @@ MonoBehaviour:
   m_MainMenuMusic: {fileID: 8300000, guid: cbfa9210fccba004983a59af76f307ae, type: 3}
   m_StreetAmbiance: {fileID: 8300000, guid: 50d216b3c5906a94c98fead20f685db9, type: 3}
   m_BarAmbiance: {fileID: 8300000, guid: 8f8cd1773cd901740a475d2f8b8d0ae5, type: 3}
-  m_CarAmbiance: {fileID: 8300000, guid: 86c6693ed3f6d4741adae532beb7de21, type: 3}
+  m_CarAmbiance: {fileID: 8300000, guid: 805232f0471354c498df16f4633d3606, type: 3}
   m_DeskAmbiance: {fileID: 8300000, guid: 5796177398acdc94a995063976be1a3f, type: 3}
   m_AddressBookOpenAudio: {fileID: 883618702589661563}
   m_ChangePageAddressBookAudio: {fileID: 883618702028973963}

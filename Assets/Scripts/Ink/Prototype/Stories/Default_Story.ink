@@ -7,7 +7,7 @@ VAR drugstore_seen = 0
 VAR docker_seen = 0
 VAR drugstore_firsttime = 0
 // DEBUG mode adds a few shortcuts - remember to set to false in release!
-VAR DEBUG = true
+VAR DEBUG = false
 TODO: Remove Debug
 ->start_capo_apartment
 ===start_capo_apartment===
@@ -90,7 +90,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
     *   Ain't no Yid here kid[], get lost. # player 
         Ain't the time to joke Mr. Rosenthal. # otherCharacter
     *   Who's askin? # player
-- Mr. <color=red>Lanza</color> sent me to get you, could you please get in the car? # otherCharacter 
+- I'm <color=red>Rossini</color>. Mr. <color=red>Lanza</color> sent me to get you, could you please get in the car? # otherCharacter 
 # jump
     *   Alright, I'm coming[]. Couldn't he warn me that you were going to fetch me? # player
     *   Not so much of a choice[], am I right? # player
@@ -103,12 +103,12 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
         Came here 6 months ago from Sicily. # otherCharacter 
         # jump
         **  <color=red>Lanza</color> got you in here? # player #SFXPlay #40
-            Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter 
+            Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter #NewCharacterLog #0
             # jump
         **  More Italians?[] Is there any place left in North Beach? # player
             I'm not here to settle down, Mr. <color=red>Lanza</color> asked me to come to ensure his protection. # otherCharacter #SFXPlay #37
         -- 
-        **	What is he afraid of?[] He's not been linked to <color=red>Lima</color>, has he? # player #SFXPlay #38
+        **	What is he afraid of?[] He's not been linked to <color=red>Lima</color>, has he? # player #SFXPlay #38 #NewCharacterLog #1
         Not that I know of, the boss was smart enough to make sure that the organization would not be too much harmed. # otherCharacter
         So who's going after him? # player
         I can't say anything, but I'm sure Mr. <color=red>Lanza</color> will talk to you about it. # otherCharacter #NewNarrativeLog #1 #SFXPlay #37
@@ -142,7 +142,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
 <i>(<color=red>Giovanni</color> is dead. Poor kid. And more Italians flooding North Beach.)</i> # player
 <i>(Something's wrong. And I'm gettin' mixed in all that.)</i> # player
 <i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #36
-I let you go by yourself. Mr. <color=red>Lanza</color> is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #NewCharacterLog #0 #SFXPlay #42 #SFXPlay #44
+I let you go by yourself. Mr. <color=red>Lanza</color> is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #SFXPlay #42 #SFXPlay #44
 # jump
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #14
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0 #SFXPlay #14
@@ -206,9 +206,9 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 # jump # NewCharacterSprite #5
 *   What can you say about <color=red>Giovanni</color>? # player #PlayerDBox #0
     He was made capo some months ago. Poor kid... # otherCharacter # NewCharacterSprite #5
-    The Administration chose him to take the place of <color=red>Lima</color> during the trial. # otherCharacter
+    The Administration chose him to take the place of <color=red>Lima</color> during the trial. # otherCharacter 
     So he was the one that was going to take the blame? # player
-    It is what was agreed. #otherCharacter
+    It is what was agreed. #otherCharacter #NewCharacterLog #3
     # jump
     **  You mean that you decided to throw him under the bus. # player
         No, we'll take care of his family. What he was gonna do for us was essential. # otherCharacter
@@ -218,7 +218,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
         Stop insinuating that we wanted him killed. He was not made for this job. # otherCharacter
         # jump
         *** Is it your opinion? # player
-            It is mine, and Abati's too. Even <color=red>Morello</color> agreed. # otherCharacter
+            It is mine, and <color=red>Abati</color>'s too. Even <color=red>Morello</color> agreed. # otherCharacter
             And he's the fucking Consigliere, taking care of our soldiers and shit. # otherCharacter
             We agreed to tend for his family, at least for his mother. # otherCharacter
             We could not find anyone else. # otherCharacter
@@ -246,7 +246,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
     ->lanza_convo
 *   What is happening with the organization? # player #PlayerDBox #0
     As you should know now, <color=red>Lima</color> was sent to jail, with a trial coming. # otherCharacter
-    Abati took his place, and I second him now. # otherCharacter
+    <color=red>Abati</color> took his place, and I second him now. # otherCharacter #NewCharacterLog #9
     # jump
     **  Congratulations[!], Sotto-Capi. Is that your title now? # player
         That was meant to be temporary. We should have exonerated <color=red>Lima</color>. # otherCharacter
@@ -255,7 +255,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
         Again, stop your accusations. We were close to freeing the Boss. # otherCharacter
     --  Now <color=red>Lima</color> is taking full power, and I'll second him the best I can. # otherCharacter
     # jump
-    **  What about <color=red>Morello</color>? # player
+    **  What about <color=red>Morello</color>? # player #NewCharacterLog #8
         The Consigliere? He's advising us. # otherCharacter
         But to be honest, I think that he's trying to take some distance with the game. # otherCharacter
         What can we say about it? That poor bastard earned to rest now. # otherCharacter
@@ -339,7 +339,7 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 <i>(What a night...)</i> #player
 <i>(This freakin' mob is quite a mess.)</i> #player
 <i>(Let's check if I have all the hierarchy in order.)</i> #player
-<i>(So the boss <color=red>Lima</color> was emprisoned. His second, Abati, took his place.)</i> #player
+<i>(So the boss <color=red>Lima</color> was emprisoned. His second, <color=red>Abati</color>, took his place.)</i> #player
 <i>(<color=red>Abati</color> is now at the head of the entire family.)</i> #player
 <i>(<color=red>Jimmy Lanza</color> is just behind him. As the underboss, he overlooks all the capi.)</i> #player
 <i>(Couldn't they say captains like every american?)</i> #player
@@ -378,7 +378,7 @@ TODO: Create the hierarchy diagram
 <i>(I wouldn't stay here for a million bucks!)</i> # player
 <i>(But I have to go in now.)</i> # player
 # jump
-*   [Enter the motel] <i>(Let's go.)</i> # player #SFXPlay #17 #SFXPlay #9
+*   [Enter the motel] <i>(Let's go.)</i> # player #SFXPlay #17 #SFXPlay #21
     ->motel_lobby
 
 =motel_lobby
@@ -386,7 +386,7 @@ TODO: Create the hierarchy diagram
 #NewBackground #14
 <i>(That place could use some light.)</i> # player #MusicPlay #0
 <i>(The only client that come here exit the place immediately, only passing by.)</i> # player
-<i>(There's only this man. Seems to be the manager.)</i> # player #NewCharacterLog #4
+<i>(There's only this man. Seems to be the manager.)</i> # player
 # jump
 *   [Go to the desk] <i>(Let's talk to him, that's my only lead.)</i> # player
 //Interlocutor: Motel's manager
@@ -447,7 +447,7 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 	        <i>(Only a bible. What a joke...)</i> # player
 	        <i>(Is it a bookmark in it?)</i> # player
 	        # jump
-	        ****  [Open the bible] <i>(Let's see...)</i> # player #SFXPlay #4
+	        ****  [Open the bible] <i>(Let's see...)</i> # player #SFXPlay #4 #NewDocument #16
 	        <i>(Oh. 100 dollars. Big cuts only. Definitely a prostitute.)</i> # player
 	        <i>(But thanks for the money darling, you won't need it now.)</i> # player
 	        ->bedside_search
@@ -494,21 +494,21 @@ I'm done here. # player #PlayerDBox #0
 <i>(But I still don't know anything else about her, not even her name. Let's work on that.)</i> # player #NewNarrativeLog #13 //change SFX (Taxi)#NewBackground #9
 
 <i>(Maybe Gibbs could help me on that.)</i>#player
-<i>(I hate to go to a cop, but let's face it, it as much a good cop as Lanza is.)</i>#player
+<i>(I hate to go to a cop, but let's face it, it as much a good cop as <color=red>Lanza</color> is.)</i>#player
 <i>(He could even betray his own mother.)</i>#player
 <i>(But he's useful. Let's go check on him.)</i>#player
 #NewBackground #4
 What do you want from me this time Mr Rosenthal?#otherCharacter
 I couldn't find much on your wife, she's keeping a low profile right now.#otherCharacter
-I'm not here for that Gibbs, I work for Lanza for now.#player
-I need to find the name of a girl, she was found with one of Abati's men.#player
+I'm not here for that Gibbs, I work for <color=red>Lanza</color> for now.#player
+I need to find the name of a girl, she was found with one of <color=red>Abati</color>'s men.#player
 Could you give me anything on her?#player
 Jesus, those Italians are always all guns out.#player
 I could check on our records, but I'll need her full name.#otherCharacter
 Why didn't you call the police?#otherCharacter
 ...#player
 Gibbs, do you even think some times?#player
-Do you see Lanza calling cops?#player
+Do you see <color=red>Lanza</color> calling cops?#player
 Yeah you're right...#otherCharacter
 Anyway, I'll get you the name of that girl.#player
 I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
@@ -533,7 +533,7 @@ I'll help you with anybody Mr Rosenthal, feel free to come by.#otherCharacter
 <i>(And the men coming here should enjoy something different than their drinks.)</i> # player
 <i>(Let's check this joint.)</i> # player
 # jump
-*   [Enter the Condor Club] <i>(Let's go.)</i> # player #SFXPlay #9
+*   [Enter the Condor Club] <i>(Let's go.)</i> # player #SFXPlay #22
     ->condor_entrance
 
 =condor_entrance
@@ -625,17 +625,17 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	    Dean, throw this man out of here. # otherCharacter
 	    Don't bother, I'm leaving. # player
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9 #NewNarrativeLog #24
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #22 #NewNarrativeLog #24
 	    #NewCharacterSprite #0
 	    //Background: Condor Club's street
 	    #NewBackground #13 #MusicStop
 *   [Threaten her] I'm not getting out. Or if so, I'll come back with a bunch of cops. # player
 	    You're a pain in the ass but you're funny. # otherCharacter
-	    As if someone working with Abati so publicly could even go near a cop! # otherCharacter
+	    As if someone working with <color=red>Abati</color> so publicly could even go near a cop! # otherCharacter
 	    So now get the fuck out of here. # otherCharacter
 	    Dean, could you send this man out? # otherCharacter
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9 #NewNarrativeLog #25
+	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #22 #NewNarrativeLog #25
 	    #NewCharacterSprite #0
 	    #NewBigBackground #9 #MusicStop
 -   <i>(I'm lost. Nothing to link her to this place, except for a poor matchbox.)</i> # player
@@ -649,7 +649,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	What a jock... # otherCharacter
 	Dean, could you send this man out? # otherCharacter
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #22
     #NewCharacterSprite #0
     //Background: Condor Club's street
     #NewBigBackground #9 #MusicStop
@@ -665,7 +665,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
  	Now, you go man. # otherCharacter
 	Dean, could you send this man out? # otherCharacter
     <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
-    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #9
+    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #22
     #NewCharacterSprite #0
     #NewBigBackground #9 #MusicStop
 -   <i>(Did I miss something?)</i> # player
@@ -676,7 +676,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 
 = condor_good
 	{madam2 == true :  ->Condor_Good_2Time}
-	Cara, is that it? Of course it is. # player
+	<color=red>Cara</color>, is that it? Of course it is. # player
     ... # otherCharacter
     You're a customer? # otherCharacter
     No, first time here. # player
@@ -688,12 +688,12 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     # NewBackground #7 #MusicStop
     <i>(The brothel.)</i> # player
     # NewCharacterSprite #6
-    Do you know where's Cara? #otherCharacter
+    Do you know where's <color=red>Cara</color>? #otherCharacter
     I haven't seen her in two days. # otherCharacter
     ->condor_secondpart_madam
 
  = Condor_Good_2Time
-	Cara! Don't you dare put your hands on me! # player #PlayerDBox #0
+	<color=red>Cara</color>! Don't you dare put your hands on me! # player #PlayerDBox #0
     <i>(I see in his eyes that I found it.)</i> # player #PlayerDBox #1
     Wait here for me, sir. # otherCharacter
     <i>(He goes to a wall and knocks on it.)</i> # player #SFXPlay #25
@@ -706,7 +706,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
     <i>(I haven't been to a lot of brothel. But this one is beyond anything else.)</i> # player
     <i>(And this gal is waiting for me.)</i> # player
     #NewCharacterSprite #6
-    What happened to Cara? # otherCharacter 
+    What happened to <color=red>Cara</color>? # otherCharacter 
     ->condor_secondpart_madam
 
 =condor_madam2
@@ -716,7 +716,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 <i>({Now I'm sure. <color=red>Margaret</color> worked here!|Back at it. Let's try to avoid that gorilla-barman.})</i> # player #PlayerDBox #1
 <i>({Let's see what that woman has to say about it.|Let's see what that woman has to say about <color=red>Margaret</color>.})</i> # player
 # jump
-+   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #9
++   [Enter the Condor Club] <i>(Let's go back in here.)</i> # player #SFXPlay #22
 //Background: Condor Club's entrance
 # NewBackground #6 #MusicPlay #2
 -	<i>(I don't have time to cross the threshold, and that Dean is already on me.)</i> # player # NewCharacterSprite #3
@@ -729,10 +729,11 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 #PlayerDBox #1
 #NewCharacterSprite #6
 <i>(She can't be serious.)</i> #player
-<i>(No, she really seems to not know what happened to Cara.)</i> #player
+<i>(No, she really seems to not know what happened to <color=red>Cara</color>.)</i> #player
 So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
-- (whathappened) #jump
-*   [She's dead] We found her dead at one of Abati's man's apartment. With the said man also dead. #player #PlayerDBox #0
+- (whathappened) 
+#jump
+*   [She's dead] We found her dead at one of <color=red>Abati</color>'s man's apartment. With the said man also dead. #player #PlayerDBox #0
         Jesus Christ... Poor girl, that will be bad for business. #otherCharacter
         So she worked in your brothel! #player
         Of course she worked here. She was the jewel of this establishment. #otherCharacter
@@ -749,10 +750,10 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
         ->whathappened
 *	->
 -   Can I ask you something Mr Rosenthal? #otherCharacter
-    #jump
+#jump
     *   [Call me Bugsy] Please darling, call me Bugsy. #player
     *   Go ahead. #player
--   Did your Italian fellow kill Cara? #otherCharacter
+-   Did your Italian fellow kill <color=red>Cara</color>? #otherCharacter #NewCharacterLog #5
     I can't say for sure, but the bullet that he took in the head would have prevented that. #player
     So who killed them? #otherCharacter
     That's what I was hoping for you to help me with. #player
@@ -814,23 +815,23 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
             --  So anyway, no problem with him, but he would often do strange things when he couldn't have her. #otherCharacter #PlayerDBox #0
                 I see, a needy client. #player
                 Right, something like that. #otherCharacter #NewNarrativeLog #30
-                But Cara could handle it. She was good with that. #otherCharacter
+                But <color=red>Cara</color> could handle it. She was good with that. #otherCharacter
                 ->clientdriver
 *	->
 -   I don't think that I could give you anything else Mr Rosenthal. #otherCharacter
-    Cara was really dear to me. I'll have to announce it to the other girls. #otherCharacter
+    <color=red>Cara</color> was really dear to me. I'll have to announce it to the other girls. #otherCharacter
     Can I ask you a last thing? #player
     Of course. #otherCharacter
 #jump
 *   [Do you know <color=red>Giovanni</color>?] Do you know <color=red>Tommy Giovanni</color>? #player
         I've only seen him once or twice, isn't he one of your men? #otherCharacter
--   He's the one who was found with Cara, at his place. #player
+-   He's the one who was found with <color=red>Cara</color>, at his place. #player
 #jump
 *   [Do they knew each other?] Did he ever come here to see her? #player
         Not that I know. Only came here for the drinks. #otherCharacter #NewNarrativeLog #33
         I don't think he was really... "interested" in what we offer. #otherCharacter
 -   I'll leave you now Mr. Rosenthal. #otherCharacter
-    Please find what happened to Cara. #otherCharacter
+    Please find what happened to <color=red>Cara</color>. #otherCharacter
     She didn't deserve that. #otherCharacter
     ->condor_secondpart_morello
     
@@ -963,24 +964,27 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 *   [Which man?] Another man? Someone that used to come here often?#player
     No, first time that I've seen him.#otherCharacter
     Didn't look like the type of workers that live here.#otherCharacter
-    Not like Cooper, the man that lives in that apartment.#otherCharacter
+    Not like <color=red>Cooper</color>, the man that lives in that apartment.#otherCharacter
 *   {client_seen==false}[Stop joking around] What are you saying? It was the man that lived there that you saw, don't you?#player
     No, it was someone else. I know the man that lives here.#otherCharacter
-    Quite an handsome man.I think his name was Cooper. #otherCharacter
+    Quite an handsome man.I think his name was <color=red>Cooper</color>. #otherCharacter
 -   The man that came banged on the door.#otherCharacter
     Was not really trying to be discreet.#otherCharacter
-    Then Cooper opened the door, and started to yell.#otherCharacter
+    Then <color=red>Cooper</color> opened the door, and started to yell.#otherCharacter
     But he quickly stopped when the other man flashed a gun.#otherCharacter
+#jump
 *   [What did he look like?] Did you see his face?#player
 -   No, I couldn't. He had a hat deeply set on his head.#otherCharacter
     But I heard his voice. Sounded quite Russian, or Slavic.#otherCharacter
     Anyway, a fellow from the east.#otherCharacter
     I also saw a mark of his arm when he drew his gun.#otherCharacter
     Something like a tattoo I think.#otherCharacter
+#jump
 *   [What happened then?] So what happened after he drew his gun? #player
     And how didn't he see you?#player
     But let's back up a little... who the hell are you?#player
     I live here, down the hall.#otherCharacter
+    #jump
     **  [Strange place for a girl like you] What is a gorgeous girl like you doing here?#player
         Let's say that the other tenants don't mind the traffic in my apartment.#otherCharacter
         Even less when they are part of this traffic.#otherCharacter
@@ -995,11 +999,12 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
     Maybe go back to your apartment?#player
     Or I could hear what they were saying and help a handsome inspector passing by after that, don't you think?#otherCharacter
     So I stayed on my doorstep, and just took a peep sometimes.#otherCharacter
-    They exited the building and took Cooper's car, an old grey pick-up truck parked outside.#otherCharacter #NewNarrativeLog #17
+    They exited the building and took <color=red>Cooper</color>'s car, an old grey pick-up truck parked outside.#otherCharacter #NewNarrativeLog #17
     Anything else useful about them?#player
     Don't think so, but you should be careful.#otherCharacter
     I heard that those Russian guys are quite wild.#otherCharacter
     I wouldn't want you to be hurt darling.##otherCharacter
+    #jump
 *   How thoughtful[] from you, thank you miss.#player
 -   I should get on his tail now.#player
     Have a good day.#player
@@ -1035,13 +1040,13 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(Quite easy if you ask me.)</i>#player
 <i>(Strip Bugsy from his coat and a few bucks, and see if I attract as many women.)</i>#player
 <i>(Let's focus on what's important now.)</i>#player #NewBackground #24
-<i>(That Cooper was not the killer then.)</i>#player
+<i>(That <color=red>Cooper</color> was not the killer then.)</i>#player
 <i>(But why a Russian?)</i>#player
 <i>(Is there a beef between the families that I don't know of?)</i>#player 
 #NewBackground #9
 <i>(But I shouldn't try to get mixed with all this.)</i>#player
 <i>(Let's focus on what matters now.)</i>#player
-<i>(Who's the killer, and why was he at Giovanni's place.)</i>#player
+<i>(Who's the killer, and why was he at <color=red>Giovanni</color>'s place.)</i>#player
 <i>(There's still that shady last client, I shouldn't forget that.)</i>#player #Introspection
 ->END
 
@@ -1062,9 +1067,8 @@ So what happened to her Mr Rosenthal? #otherCharacter #NewNarrativeLog #28
  	- else: 
  		~ client_seen = 1
 }
-TODO: Sheraton Background (ASK TONY)
-#PlayerDBox #1
-<i>(So that's where Cara was supposed to come.)</i>#player
+#PlayerDBox #1 #NewNoBackground #34
+<i>(So that's where <color=red>Cara</color> was supposed to come.)</i>#player
 <i>(Let's see what her lover did to them.)</i>#player
 //Elevator Background
 <i>(So that woman told me that he stays at the 7th floor.)</i>#player #NewBackground #25
@@ -1075,8 +1079,7 @@ TODO: Sheraton Background (ASK TONY)
 <i>(...)</i>#player
 <i>(It takes quite a long time...)</i>#player
 <i>(...)</i>#player
-TODO: SFX elevator ring
-<i>(Finally!)</i>#player
+<i>(Finally!)</i>#player #SFXPlay #22
 <i>(Nobody in the corridor.)</i>#player #NewBackground #23
 <i>(There never seems to be anybody in those fancy hotels.)</i>#player
 <i>(But wait for a door to open and you'll see where those rich bastards are hiding.)</i>#player
@@ -1116,7 +1119,7 @@ TODO: SFX elevator ring
     And saw her being 'friendly' with another.#player
     So he decided to eliminate the competition.#player
     What are you talking about?? #otherCharacter
-    I haven't left the room since Cara left!#otherCharacter
+    I haven't left the room since <color=red>Cara</color> left!#otherCharacter
 #jump
 *   So she was here?[] You didn't follow her after? #player
 -   Not with a gun pointed at me, no!#otherCharacter
@@ -1149,10 +1152,12 @@ TODO: SFX elevator ring
     Then you'll see what man you are.#otherCharacter
 *   [The devil himself?] Ain't that the devil himself?#player
     Don't know if he's the devil, but for sure he's gonna join him in the end.#otherCharacter
--   Do you know what he did to Cara?#otherCharacter
+-   Do you know what he did to <color=red>Cara</color>?#otherCharacter
+#jump
 *   [Tell him the truth] She was killed with another man, most likely by the man that you saw last night.#player
     R-really?#otherCharacter
     Yes, fellow.#player
+    #jump
     **  [I'm sorry] Sorry for your loss.#player
         <i>(Let's leave this man alone, I cannot do anything else for him.)</i>#player #PlayerDBox #1
     **  [Stop whipping] Won't you stop weeping for a freakin' hooker? Jesus.#player
@@ -1216,7 +1221,7 @@ TODO: SFX elevator ring
     Yeah yeah, just wait a second.#otherCharacter
     Ok, I'll wait outside.#player
     ...#player
-    Morning mister, what do you want?#otherCharacter #NewCharacterSprite #15
+    Morning mister, what do you want?#otherCharacter #NewCharacterSprite #15 #NewNarrativeLog #37
 #jump
 *   [Looking for a car] Did someone drop a car here last night? Like an old grey pick up truck, or something like that.#player
     Indeed someone quite shady did that.#otherCharacter
@@ -1226,7 +1231,7 @@ TODO: SFX elevator ring
     Only saw him when he escaped the facility.#otherCharacter
     He was running pretty fast.#otherCharacter
     Any chance that you managed to take a look at his face.#player
-    Could only see his hair. Grey ones, with a kind of medium cut.#otherCharacter
+    Could only see his hair. Grey ones, with a kind of medium cut.#otherCharacter #NewNarrativeLog #16
 *   [Looking for someone] I'm looking for someone that could have come here last night, does it ring a bell?#player
     Indeed there was a man that came here.#otherCharacter
     He nearly banged the gate with a car, like a grey rusty pick up truck.#otherCharacter
@@ -1261,6 +1266,10 @@ TODO: SFX elevator ring
     <i>(So our killer wacked the driver, and put him in the trunk.)</i>#player #PlayerDBox #1
     <i>(That some Sicilian-level of savagery.)</i>#player
     <i>(Or Russian, I really need to find our man, before he causes more damage to the organization.)</i>#player
+*   [Check the corpse] <i>(What can I find on him ?)</i> #player
+-	<i>(Ok, it's more disgusting than expected !)</i> #player #NewDocument #21
+	<i>(It's just a dirty tissue.)</i> #player
+	<i>(There's nothing more on that poor guy.)</i> #player
     Officer?#otherCharacter #PlayerDBox #0
     Yes?#player
     Am I in trouble?#otherCharacter
@@ -1272,7 +1281,7 @@ TODO: SFX elevator ring
 -   <i>(...)</i>#player #PlayerDBox #1
     <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #9
     <i>(What's this?)</i>#player
-    <i>(Could have been left by the killer.)</i>#player
+    <i>(Could have been left by the killer.)</i>#player #NewNarrativeLog #38
     <i>(I need to get out of here, before real cops show up.)</i>#player
     Alright sir, my work here is done, I'll go back to the precinct.#player #PlayerDBox #0
     But what do I do with the body?#otherCharacter #NewCharacterSprite #15
@@ -1302,8 +1311,8 @@ TODO: SFX elevator ring
 
 ===killer_appartment===
 =killer_entrance
-#NewBackground #1 #PlayerDBox #1 #NewCharacterSprite #0
-<i>(Quite easy to enter Valery's apartment.)</i>#player
+#NewBackground #1 #PlayerDBox #1 #NewCharacterSprite #0 #NewCharacterLog #11
+<i>(Quite easy to enter <color=red>Valery</color>'s apartment.)</i>#player
 <i>(I'm even a little disappointed.)</i>#player
 <i>(What killer would keep his place so easily accessible?)</i>#player
 <i>(Anyway, it makes my job easier.)</i>#player
@@ -1316,6 +1325,8 @@ TODO: SFX elevator ring
 -   <i>(Books on everything: history, politics, comics...)</i>#player
 <i>(Most of them in Russian. How did he manage to get so much of them?)</i>#player
 <i>(I don't think that you can purchase them easily nowadays.)</i>#player
+<i>(And what we have here ?)</i> #player #NewDocument #20
+<i>(A colt ? He mut be a gun enthusiast...)</i> #player
 <i>(What else do we have...)</i>#player
 <i>(What are those?)</i>#player #NewDocument #8
 <i>(Dozens of receipts.))</i>#player
@@ -1327,16 +1338,16 @@ TODO: SFX elevator ring
     <i>(Quite weird.)</i>#player
     <i>(What's the meaning of all that?)</i>#player
     <i>(The rest of the apartment is quite clean.)</i>#player
-    <i>(And still no traces of Chtcherbina.)</i>#player
+    <i>(And still no traces of <color=red>Chtcherbina</color>.)</i>#player
     <i>(But again, not really surprising, this guy wouldn't come back after killing a guy.)</i>#player
     <i>(Especially after leaving so many clues.)</i>#player
-    <i>(Time to go back to the office.)</i>#player 
+    <i>(Time to go back to the office.)</i>#player #NewNarrativeLog #39
     #NewBackground #9
-    <i>(So basically, I have nothing on Chtcherbina.)</i>#player
+    <i>(So basically, I have nothing on <color=red>Chtcherbina</color>.)</i>#player
     <i>(I don't know where he is.)</i>#player
     <i>(Who did he spend time with, and where.)</i>#player
     <i>(I need to locate him.)</i>#player
-    <i>(Did I miss something?)</i>#player
+    <i>(Did I miss something?)</i>#player #NewNarrativeLog #40
 	#NewInvestigation #Introspection
 ->END
 
@@ -1353,13 +1364,13 @@ TODO: SFX elevator ring
     -drugstore_firsttime ==1:->drugstore_validation
 }
 <i>(So... a drugstore.)</i>#player
-<i>(Given the amount of receipts that I found at his apartment, Valery really spent a lot of time here.)</i>#player
+<i>(Given the amount of receipts that I found at his apartment, <color=red>Valery</color> really spent a lot of time here.)</i>#player
 <i>(But there's nothing really interesting in this shop.)</i>#player
 <i>(No client, only one man behind the counter....)</i>#player
 <i>(He said nothing when I entered, but he keeps a close eye on me.)</i>#player
 <i>(I can feel it...)</i>#player
 <i>(He isn't the type of fellow that blends well in a drugstore.)</i>#player
-<i>(That's odd...)</i>#player
+<i>(That's odd...)</i>#player #NewNarrativeLog #41
 #jump
 *   [Go to the counter] <i>(Let's see what this man is doing here.)</i>#player
 #NewCharacterSprite #2 #PlayerDBox #0
@@ -1369,16 +1380,16 @@ TODO: SFX elevator ring
 #jump
 *   [Yes please] Of course, what else would I want in a drugstore?#player
     ->drugstore_validation
-*   [Just want some information] Actually I was hoping to you somet...#player
+*   [Just want some information] Actually I was hoping to ask you somet...#player
     I'm afraid that I cannot help you sir, have a good day.#otherCharacter
     But I...#player
     Have a good day, sir.#otherCharacter #PlayerDBox #1
     <i>(But... He's chasing me out of the store!)</i>#player #NewCharacterSprite #0
-    #NewBackground #9 #Introspcetion
+    #NewBackground #9
     <i>(This place is strange...)</i>#player
     <i>(They're hiding something.)</i>#player
-    <i>(But what could that be? It must be linked to Chtcherbina's activities.)</i>#player
-    <i>(How can I make this clerk talk?)</i>#player
+    <i>(But what could that be? It must be linked to <color=red>Chtcherbina</color>'s activities.)</i>#player
+    <i>(How can I make this clerk talk?)</i>#player #NewNarrativeLog #42 #Introspection
 ->END
 
 =drugstore_validation
@@ -1389,8 +1400,8 @@ So what do you want to buy sir?#otherCharacter #Validation #1
 Sorry, but I don't think that we have that in store.#otherCharacter
 Have a good day.#otherCharacter #PlayerDBox #1
 <i>(Without even letting me say a word, he ushers me out of the store. What the hell...)</i>#player
-#NewBackground #9 #Introspection
-<i>(Did I miss something?)</i>#player
+#NewBackground #9
+<i>(Did I miss something?)</i>#player #Introspection
 ->END
 
 =drugstore_validation_cancel
@@ -1398,8 +1409,8 @@ I... I don't have anything specific in mind.#player
 Then I think that I will not be able to help you sir.#otherCharacter
 Have a good day.#otherCharacter #PlayerDBox #1
 <i>(Without even letting me say a word, he ushers me out of the store. What the hell is this place...)</i>#player
-#NewBackground #9 #Introspection
-<i>(Do I miss something?)</i>#player
+#NewBackground #9
+<i>(Do I miss something?)</i>#player #Introspection
 ->END
 
 =drugstore_validation1_good
@@ -1427,45 +1438,45 @@ Oh... yeah sure.#player
 #NewCharacterSprite #0 #PlayerDBox #1
 <i>(I knew that this guy was hiding something!)</i>#player #NewBackground #18
 <i>(A full ammunation.)</i>#player
-<i>(My guess is that it was Valery's first supplier.)</i>#player
+<i>(My guess is that it was <color=red>Valery</color>'s first supplier.)</i>#player
 #NewCharacterSprite #2
 Welcome to the Emporium sir.#otherCharacter #PlayerDBox #0
 I can't remember your face, although you know the password.#otherCharacter
-How did you came accross our store?#otherCharacter
+How did you come across our store?#otherCharacter
 #jump
-*   [Friend of mine, Valery] A good pal, Valery Chtcherbina, couldn't stop talking about you.#player
+*   [Friend of mine, <color=red>Valery</color>] A good pal, <color=red>Valery Chtcherbina</color>, couldn't stop talking about you.#player
     I had to see it with my own eyes.#player
-    This name doesn't ring a bell.#otherCharacter
+    This name doesn't ring a bell.#otherCharacter 
 *   [Ad in a magazine?] Aren't you advertised in magazines?#player
     I could swear that I could see a 'Two for one' coupon for your store!#player
     As you would understand, we like to keep a low profile.#otherCharacter
     Always in the interest of our clients, of course.#otherCharacter
-    Clients like Valery Chtcherbina?#player
+    Clients like <color=red>Valery Chtcherbina</color>?#player
     Can't tell you sir.#otherCharacter
 -   Really? You want to do this?#player
 #jump
-*   [Menace him] Aren't you on Abati's territory?#player
-    I suppose that Lanza would love to come and visit this shop...#player
+*   [Threaten him] Aren't you on <color=red>Abati</color>'s territory?#player
+    I suppose that <color=red>Lanza</color> would love to come and visit this shop...#player
     Cut the crap pal.#otherCharacter
-    I managed to put this business on his feet, without any problem.#otherCharacter
+    I managed to put this business on its feet, without any problem.#otherCharacter
     I want to keep it that way.#otherCharacter
-    Tell me what you know about Chtcherbina then.#player
+    Tell me what you know about <color=red>Chtcherbina</color> then.#player
     He's a regular customer.#otherCharacter
     I think that I'm his only supplier, given the amount of weapon that he buys.#otherCharacter
     When was the last time that he came here?#player
-    About two days ago. Wanted a simple handgun and ammos.#otherCharacter
+    About two days ago. Wanted a simple gun and ammo.#otherCharacter
     Not the most singular order.#otherCharacter
-    Did he came alone?#player
+    Did he come alone?#player
     Yes, always.#otherCharacter
     Came with his car, a really noticeable Chebrillet Deluxe.#otherCharacter #NewNarrativeLog #19
     Maybe a little too noticeable.#otherCharacter
-    That's how you find his track?#otherCharacter
-    Not really, he killed one of Abati's capi.#player
+    That's how you found his track?#otherCharacter
+    Not really, he killed one of <color=red>Abati</color>'s capi.#player
     For God's sake...#otherCharacter
     Can't say that it won't be good for business.#otherCharacter
     All those Italians and Russians shooting each other...#otherCharacter
     But now I'm afraid that I won't be of any help in your hunt.#otherCharacter
-    I don't want to take side in this.#otherCharacter
+    I don't want to take sides in this.#otherCharacter
     That's not what I asked. I'll leave your shop, and you won't hear about me again.#player
     Have a good day then.#otherCharacter
     ~drugstore_seen = 1
@@ -1480,19 +1491,19 @@ How did you came accross our store?#otherCharacter
 ->END
 
 =drugstore_alreadydone
-<i>(I will not find Chtcherbina here.)</i>#player
+<i>(I will not find <color=red>Chtcherbina</color> here.)</i>#player
 <i>(I need to dig somewhere else.)</i>#player
 ->END
 
 =drugstore_newinvestigation
 #NewCharacterSprite #0 #PlayerDBox #1
-<i>(Chtcherbina, you Russian bastard.)</i>#player
+<i>(<color=red>Chtcherbina</color>, you Russian bastard.)</i>#player
 <i>(They really seem to be behind this.)</i>#player 
 #NewBackground #9
 <i>(But... it doesn't really hold up.)</i>#player
 <i>(Why would they want to attack their allies?)</i>#player
-<i>(The two organization are really close since the war.)</i>#player
-<i>(Anyway, all the evidences point to Chtcherbina.)</i>#player
+<i>(The two organizations are really close since the war.)</i>#player
+<i>(Anyway, all the evidence point to <color=red>Chtcherbina</color>.)</i>#player
 <i>(But still, I can't find him.)</i>#player
 <i>(Where could he be?)</i>#player
 #NewInvestigation #Introspection
@@ -1501,10 +1512,11 @@ How did you came accross our store?#otherCharacter
 =drugstore_introspection
 #NewCharacterSprite #0 #PlayerDBox #1
 <i>(This really stinks.)</i>#player
-<i>(Those Russian seems to appear quite often in the picture.)</i>#player #NewBackground #9
-<i>(But that still will not give me the location of Chtcherbina.)</i>#player #Introspection
-<i>(Where could I find his track again?)</i>#player
-<i>(Time to go back to work.)</i>#player
+#NewBackground #9
+<i>(Those Russian seems to appear quite often in the picture.)</i>#player
+<i>(But that still will not give me the location of <color=red>Chtcherbina</color>.)</i>#player
+<i>(Where could I find his track again?)</i>#player #NewNarrativeLog #43
+<i>(Time to go back to work.)</i>#player #Introspection
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1515,7 +1527,7 @@ How did you came accross our store?#otherCharacter
 ===restaurant===
 =restaurant_entrance
 #NewBackground #30 #PlayerDbox #1 #NewCharacterSprite #0
-<i>(Given all junk that I found in his place, Chtcherbina seemed to be a regular customer of this place.)</i>#player
+<i>(Given all junk that I found in his place, <color=red>Chtcherbina</color> seemed to be a regular customer of this place.)</i>#player
 <i>(More Russian stuff. That stinks.)</i>#player
 <i>(Maybe he just liked the food here?)</i>#player
 <i>(Or it's a front for the mob...)</i>#player
@@ -1524,7 +1536,7 @@ How did you came accross our store?#otherCharacter
 *   [Enter the diner] <i>(Let's get a taste of this place.)</i>#player
 #NewBackground #8
 -   <i>(There's quite a lot of people in here.)</i>#player
-<i>(No sign of Chtcherbina, obviously.)</i>#player
+<i>(No sign of <color=red>Chtcherbina</color>, obviously.)</i>#player
 <i>(Would have been a strange time for a pie.)</i>#player
 #jump
 *   [Go to a table] <i>(Maybe I can ask something to a waitress...)</i>#player
@@ -1543,7 +1555,7 @@ Mind if I join you?#otherCharacter
     You're quite a straightforward person, Mr...#player
     You won't need my name.#otherCharacter
 -   If you say so...#player
-    So why are you going after Valery?#otherCharacter
+    So why are you going after <color=red>Valery</color>?#otherCharacter
 #jump
 *   I think you already know it[], sir.#player
     Actually I don't.#otherCharacter
@@ -1555,13 +1567,13 @@ Mind if I join you?#otherCharacter
     You even went to his apartment.#otherCharacter
     So don't try to make me angrier than I already am.#otherCharacter
 -  But why would I tell you what you already know?#player
-That you sent Chtcherbina to wack one of Abati's capi.#player
+That you sent <color=red>Chtcherbina</color> to wack one of <color=red>Abati</color>'s capi.#player
 ...#otherCharacter
 #jump
 *   [Nothing to say?] Ain't got nothing to say to that?#player
     Or will you just threaten me?#player
     What difference will it make?#otherCharacter
-    In either case, the war with Abati seems inevitable.#otherCharacter
+    In either case, the war with <color=red>Abati</color> seems inevitable.#otherCharacter
     You wouldn't believe me if I told you that we have nothing to do with it.#otherCharacter
     #jump
     **  [Why would I?]  Hard to believe in this.#player
@@ -1570,9 +1582,9 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
     And you're aware of that.#player
     Of course.#otherCharacter
     But for the moment, we don't really need to take over.#otherCharacter
-    What Valery did, if he really did so, was not under my orders.#otherCharacter
+    What <color=red>Valery</color> did, if he really did so, was not under my orders.#otherCharacter
     Or anyone else that I could know of.#otherCharacter
-    Valery did this on his own, he was used to do that.#otherCharacter
+    <color=red>Valery</color> did this on his own, he was used to do that.#otherCharacter
     Allows him to make an extra buck or two.#otherCharacter
     But the deal was that it would never impact us.#otherCharacter
     Which is clearly not the case here.#otherCharacter
@@ -1580,10 +1592,10 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
     As a matter of fact, he encountered someone here some days ago.#otherCharacter
 #jump
 *   [Who was it?] Did you see the man that came to see him?#player
--   As I said, I don't want to be involved, so I leave him alone.#otherCharacter
+-   As I said, I don't want to be involved, so I left him alone.#otherCharacter
     But that needs to change obviously.#otherCharacter
     I only know that he operated from the docks, near the The Embarcadero. 
-    As a gesture of good faith to you and Abati, I'll let you chase him.#otherCharacter #NewNarrativeLog #32
+    As a gesture of good faith to you and <color=red>Abati</color>, I'll let you chase him.#otherCharacter #NewNarrativeLog #32
     Under what condition?#player
     Don't kill him.#otherCharacter
     He's a brother, as everyone here.#otherCharacter
@@ -1593,10 +1605,12 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
     <i>(So the Russian mob is involved.)</i>#player
     <i>(Or is it?)</i>#player
     <i>(It was quite a peaceful time in San Francisco, why trying to jeopardize that?)</i>#player
-    <i>(Let's hope that I won't get caught in the middle of the fire.)</i>#player #NewBackground #9
-    <i>(If that man said the truth, Chtcherbina worked on his own.)</i>#player
+    #NewBackground #9
+    <i>(Let's hope that I won't get caught in the middle of the fire.)</i>#player
+    <i>(If that man said the truth, <color=red>Chtcherbina</color> worked on his own.)</i>#player
     <i>(But why? Or for who?)</i>#player
-    <i>(Maybe I will find his track again at the docks.)</i>#player #Introspection #NewInvestigation
+    <i>(Maybe I will find his track again at the docks.)</i>#player 
+    #Introspection #NewInvestigation
 ->END
 
 /*--------------------------------------------------------------------------------
@@ -1613,7 +1627,7 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
  	- else: 
  		~ docker_seen = 1
 }
-<i>(So that should be where Chtcherbina came.)</i>layer
+<i>(So that should be where <color=red>Chtcherbina</color> came.)</i>layer
 <i>(On one of the longest dock in the world...)</i>#player
 <i>(Everybody seems to want to give me a hard time.)</i>#player
 <i>(Let's try with the entrance first.)</i>#player
@@ -1631,8 +1645,8 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
 #jump
 *   Yes sir[], I'm asking for your cooperation on that investigation.#player
     Of course sir, right away.#otherCharacter
-*   [Only looking for a friend]No I'm not, I was looking for my pal Valery, he told me to met him here.#player
-    But he didn't gave me the pier, and I'm not gonna run across the entire 3 miles.#player
+*   [Only looking for a friend]No I'm not, I was looking for my pal <color=red>Valery</color>, he told me to met him here.#player
+    But he didn't give me the pier, and I'm not gonna run across the entire 3 miles.#player
     Strange place to meet someone...#otherCharacter
     He loves the sea.#player
     But it's the San Francisco's Bay.#otherCharacter
@@ -1642,15 +1656,15 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
     What?#player
     Which day's records do you want?#otherCharacter
     We keep all the books since 1912.#otherCharacter
-    The couple last days should be enough.#player 
+    The couple last days should be enough.#player
     So here's the first page.#otherCharacter #NewDocument #10
-    Let me check a second... #otherCharacter
+    Let me check a minute...#otherCharacter
     And here's the second.#otherCharacter #NewDocument #11
-    Will bring them back quickly?#otherCharacter
+    Will you bring them back quickly?#otherCharacter
     As soon as I find what I'm looking for.#player
     Which will take...#otherCharacter
     Goodbye sir, and thanks for your help.#player
-    <i>(What a good fellow.)</i>#player #NewCharacterSprite #0 #PlayerDBox #1
+    <i>(What a good fellow.)</i>#player #NewCharacterSprite #0 #PlayerDBox #1 #NewNarrativeLog #20
     <i>(Just dumb enough.)</i>#player
     {
     	- drugstore_seen == 1: 
@@ -1665,7 +1679,7 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
 ->END
 
 =dockers_newinvestigation
-<i>(So now I know that Chtcherbina came here not long ago.)</i>#player
+<i>(So now I know that <color=red>Chtcherbina</color> came here not long ago.)</i>#player
 <i>(But he could be anywhere in those piers...)</i>#player #NewBackground #9
 <i>(I need to think, and fast.)</i>#player #Introspection
 <i>(He could disappear anytime soon.)</i>#player
@@ -1673,7 +1687,7 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
 ->END
 
 =dockers_introspection
-<i>(So now I know that Chtcherbina came here not long ago.)</i>#player
+<i>(So now I know that <color=red>Chtcherbina</color> came here not long ago.)</i>#player
 <i>(But he could be anywhere in those piers...)</i>#player #NewBackground #9
 <i>(I need to think, and fast.)</i>#player #Introspection
 <i>(He could disappear anytime soon.)</i>#player
@@ -1688,83 +1702,81 @@ That you sent Chtcherbina to wack one of Abati's capi.#player
 ===pier35===
 =pier35_entrance
 #NewBackground #20 #NewCharacterSprite #0 #PlayerDBox #1
-<i>(If I read the records correctly, Chtcherbina's car is still here.)</i>#player
+<i>(If I read the records correctly, <color=red>Chtcherbina</color>'s car is still here.)</i>#player
 <i>(Finally, I think that I found him.)</i>#player
 <i>(Let's hope that it will end here.)</i>#player
 #jump
-*   [Search for the vehicule] <i>(Let's find Valer-...)</i>#player
-TODO: SFX gunshot
+*   [Search for the vehicule] <i>(Let's find Valer-...)</i>#player #SFXPlay #32
 -   <i>(What was that?)</i>#player
 <i>(Holy crap...)</i>#player
 #jump
-*   [Run toward the sound] <i>(Am I the only one after Chtcherbina?)</i>#player
+TODO: SFX Run
+*   [Run toward the sound] <i>(Am I the only one after <color=red>Chtcherbina</color>?)</i>#player
 -   #NewBackground #29
 <i>(What the...)</i>#player
-<i>(That's Valery.)</i>#player
+<i>(That's <color=red>Valery</color>.)</i>#player
 <i>(He won't be a threat now.)</i>#player
-<i>(But who did this?)</i>#player
-TODO: SFX Car speeding up
+<i>(But who did this?)</i>#player #SFXPlay #37
 <i>(He's escaping!)</i>#player
 <i>(I won't be able to pursue him... Crap!)</i>#player
-<i>(Better get his plate at least.)</i>#player #NewNarrativeLog #31
+<i>(Better get his plate at least.)</i>#player
 <i>(I'll try to run it by Gibbs, see if he can find something.)</i>#player
 <i>(What happened here?)</i>#player
 #jump
 *   [Look at the corpse] <i>(So at least he won't escape me this time.)</i>#player
 -   <i>(He took the bullet in the forehead.)</i>#player
 <i>(Dead right as it crushed his skull.)</i>#player
-<i>(What did he had on him?)</i>#player
+<i>(What did he have on him?)</i>#player
 #jump
-*   [Empty his pockets] <i>(Let's see...)</i>#player #NewDocument #12
--   <i>(So he was meeting someone here...)</i>#player
+*   [Empty his pockets] <i>(Let's see...)</i>#player #NewDocument #15 #SFXPlay #31
+-   <i>(Not really interesting...)</i> #player
+<i>(And...)</i>#player #NewDocument #12 
+<i>(So he was meeting someone here...)</i> #player
 <i>(His client?)</i>#player
 <i>(Then why killing him, with the job already done?)</i>#player
-<i>(That's odd...)</i>#player
-TODO:SFX gunshot (Russians)
-<i>(What the hell!!)</i>#player
+<i>(That's odd...)</i>#player #SFXPlay #32
+<i>(What the hell!!)</i>#player #SFXPlay #32
 <i>(They speak Russian... so that bastard sent someone to follow me after all.)</i>#player
-<i>(How am I going to get out of -...)</i>#player
-TODO: SFX gunshot (Soldier, closer)
+<i>(How am I going to get out of -...)</i>#player #SFXPlay #32
 <i>(...)</i>#player
-<i>(They're getting close.)</i>#player
+<i>(They're getting close.)</i>#player #SFXPlay #32
 #NewCharacterSprite #8
-Mr Rosenthal, take a cover, I handle it.#otherCharacter
+Mr Rosenthal, take cover, I'll handle it.#otherCharacter
 <i>(What the...)</i>#player
-<i>(That's Lanza's man/)</i>#player
-<i>(Everybody is following me it seems.)</i>#player
+<i>(That's <color=red>Lanza</color>'s man)</i>#player
+<i>(Everybody is following me it seems.)</i>#player #SFXPlay #32
 Alright, I think I got one, the other escaped. Freakin' russians.#otherCharacter
 Are you ok sir?#otherCharacter #PlayerDBox #0
 Y-yeah, it seems so...#player
 I'll get you back home. Who's this guy?#otherCharacter
-The man that killed Giovanni.#player
+The man that killed <color=red>Giovanni</color>.#player
 Russian too?#otherCharacter
 Yeah, I think they followed me.#player
 So they are after us...#otherCharacter
-I need to inform Lanza.#otherCharacter
+I need to inform <color=red>Lanza</color>.#otherCharacter
 But someone killed this guy!#player
 That could be the man that called the hit!#player
 I wouldn't give it a lot of thoughts.#otherCharacter
-That's what happen it this field.#otherCharacter
+That's what happens it this field.#otherCharacter
 I'll get you back right away.#otherCharacter
-We have a war to prepare.#otherCharacter
+We have a war to prepare.#otherCharacter 
 #NewBackground #10 #PlayerDBox #1
 <i>(Maybe he's right. Maybe the war is the only ending.)</i>#player
 <i>(But I can't shake off the feeling that it stinks.)</i>#player
-<i>(It's too simple.)</i>#player
+<i>(It's too simple.)</i>#player #NewNarrativeLog #21
 #NewBackground #9
 <i>(Now it's been like 3 days since the shooting.)</i>#player
-<i>(Given what I heard, Abati's and his men are on the path to war.)</i>#player
+<i>(Given what I heard, <color=red>Abati</color> and his men are on the path to war.)</i>#player
 <i>(Why does it bother me?)</i>#player
 <i>(They put me back in the closet. I'm not a fighter.)</i>#player
 <i>(And not an Italian.)</i>#player
-<i>(...)</i>#player
-TODO:SFX phone
+<i>(...)</i>#player #SFXPlay #8
 <i>(Please, make it only be a jealous husband...)</i>#player
 #jump #PlayerDBox #0
-*   [Answer the phone] Bugsy Rosenthal, private eye, what can I do for you?#player
--   Hello, it's Abati.#otherCharacter
-Oh hum, hello Mr Abati.#player
-I talked to Rossini, Lanza's man.#otherCharacter
+*   [Answer the phone] Bugsy Rosenthal, private eye, what can I do for you?#player #SFXStop #8 #SFXPlay #28
+-   Hello, it's <color=red>Abati</color>.#otherCharacter
+Oh hum, hello Mr <color=red>Abati</color>.#player
+I talked to <color=red>Rossini</color>, <color=red>Lanza</color>'s man.#otherCharacter
 He told me that you had some reservations about what we're about to do.#otherCharacter
 I don't know if I'm the best to advise you.#player
 I'm the one asking you to.#otherCharacter
@@ -1773,22 +1785,22 @@ Or at least not entirely.#player
 You're right.#otherCharacter
 I know for a fact that we have a traitor.#otherCharacter
 How can you be so sure about it?#player
-Only a few persons knew about the fact that Giovanni would take the blame for Lima.#otherCharacter
+Only a few people knew about the fact that <color=red>Giovanni</color> would take the blame for <color=red>Lima</color>.#otherCharacter
 I happen to be one of them.#otherCharacter
 Who were the others?#player
 Only two people.#otherCharacter
-First one is Lanza.#otherCharacter
+First one is <color=red>Lanza</color>.#otherCharacter
 What the...#player
-And the second one is Morello.#otherCharacter
+And the second one is <color=red>Morello</color>.#otherCharacter
 But... how can one of them betray the family?#player
 I really don't know. That's why I need you.#otherCharacter
 You'll need to find if one of them is linked with all this.#otherCharacter
 But don't tell anyone.#otherCharacter
 When you find something, come to The Little Door Restaurant. I'll meet you there.#otherCharacter #NewNarrativeLog #31
-But I'll ask for proofs.#otherCharacter
+But I'll ask for proof.#otherCharacter
 This war will cost us a lot, I cannot afford another mistake.#otherCharacter
 You'll still attack the Russians? It's madness!#player
-It's too late for second thought.#otherCharacter
+It's too late for second thoughts.#otherCharacter
 Let's hope that we'll at least eliminate one threat.#otherCharacter
 See you soon, Bugsy.#otherCharacter #PlayerDBox #1
 #NewCharacterSprite #0
@@ -1820,7 +1832,7 @@ Alright. Let's end this.#player
 Welcome Bugsy.#otherCharacter
 Sorry that I couldn't meet you sooner.#otherCharacter
 Please have a seat.#otherCharacter
-You can go now, Rossini. I'll call you if we need anything.#otherCharacter
+You can go now, <color=red>Rossini</color>. I'll call you if we need anything.#otherCharacter
 Here we are Bugsy. On the verge of war with the Russians.#otherCharacter
 But most important, we're at war with ourselves.#otherCharacter
 -   (choice_badguy) Who betrayed us?#otherCharacter
@@ -1837,35 +1849,35 @@ Let's try it one more time, but I swear, I'll kill you if you don't take it seri
 ->END
 
 =good_ending
-Jesus... Morello, really?#otherCharacter
+Jesus... <color=red>Morello</color>, really?#otherCharacter
 I'm positive, yes.#player
 But why?#otherCharacter
-So you see that letter that we found at Giovanni's apartment?#player
+So you see that letter that we found at <color=red>Giovanni</color>'s apartment?#player
 I first thought it was from a woman.#player
 Turns out it had the same handwriting as the note that we found on the killer's body.#player
-It makes sense that whoever wrote that letter, also saw the killer, and possibly asked him to kill Giovanni.#player
-But how is this connected to Morello?#otherCharacter
+It makes sense that whoever wrote that letter, also saw the killer, and possibly asked him to kill <color=red>Giovanni</color>.#player
+But how is this connected to <color=red>Morello</color>?#otherCharacter
 See the partial phone number, just under the tear on the tearing on the killer's note?#player
 It's the same on that business card...#player
 Castelbueno...#otherCharacter
-Yes, the company controlled by Morello and Giovanni.#player
+Yes, the company controlled by <color=red>Morello</color> and <color=red>Giovanni</color>.#player
 I think that they were lovers.#player
 ...#otherCharacter
 Does anyone else know this?#otherCharacter
 Not that I know of.#player
 I intend to keep it that way.#otherCharacter
-Mr. Abati...#player
+Mr. <color=red>Abati</color>...#player
 Yes Bugsy?#otherCharacter
 #jump
-*   [What will happen to him?] What will you do to Morello?#player
+*   [What will happen to him?] What will you do to <color=red>Morello</color>?#player
     I'm pretty sure that you have an idea about that.#otherCharacter
     He's dead to us.#otherCharacter
     We can't tolerate such a disgrace in our ranks.#otherCharacter
     Even if he's one of the founders of our family.#otherCharacter
 *   Can I talk to him[?] one last time?#player
-    I don't like to be taken for a schmuck, and it seems that Morello only saw me like that.#player
+    I don't like to be taken for a schmuck, and it seems that <color=red>Morello</color> only saw me like that.#player
     I think that I can give you that.#otherCharacter
-    Rossini, bring Morello.#otherCharacter
+    <color=red>Rossini</color>, bring <color=red>Morello</color>.#otherCharacter
     He's already here?#player
     I called a meeting of the administration.#otherCharacter
     Your two suspects were on another room, they came just after you.#otherCharacter
@@ -1891,14 +1903,13 @@ Goodbye Mr Rosenthal.#otherCharacter #PlayerDBox #1
 <i>(I'm not a winner in this.)</i>#player
 <i>(But I ain't dead either.)</i>#player
 <i>(So that's a win.)</i>#player
-TODO:SFX phone
-<i>(What's this...)</i>#player
+<i>(What's this...)</i>#player #SFXPlay #8
 #jump
-*   [Answer the phone] <i>(I didn't expected to find a new work so soon.)</i>#player
+*   [Answer the phone] <i>(I didn't expected to find a new work so soon.)</i>#player #SFXStop #8 #SFXPlay #28
 -   #PlayerDBox #0
 Bugsy Rosenthal, private eye, what can I do for you?#player #NewCharacterSprite #7
 Really professionnal Bugsy, that's surprising.#otherCharacter
-Jesus Lanza, not you again...#player
+Jesus <color=red>Lanza</color>, not you again...#player
 Don't say that, you'll miss me.#otherCharacter
 What do you want?#player
 Just wanted to thank you. You really pulled this off.#otherCharacter
@@ -1908,18 +1919,18 @@ I think those methods are better left in the past.#otherCharacter
 Anyway, I'll stop following you from now.#otherCharacter
 You can go back to sleep, I won't bother you at 3AM from now.
 #jump
-*   Fuck you Lanza[].#player
+*   Fuck you <color=red>Lanza</color>[].#player
 TODO: SFX hang up the phone
 -   #NewCharacterSprite #0 #Demo
 ->END
 
 =discussion_morello
 #NewBackgroundSprite #9 #PlayerDBox #1
-<i>(Abati leaves, without even looking at me.)</i>#player
+<i>(<color=red>Abati</color> leaves, without even looking at me.)</i>#player
 <i>(I'm already in the past for him.)</i>#player
 <i>(Can't blame him.)</i>#player
 <i>(He's replaced by an old man, pale, but still proud.)</i>#player
-<i>(Yet, only the shadow of who Morello was.)</i>#player #NewCharacterSprite #10
+<i>(Yet, only the shadow of who <color=red>Morello</color> was.)</i>#player #NewCharacterSprite #10
 So we meet one last time it seems, Bugsy.#otherCharacter #PlayerDBox #0
 Indeed. I got you.#player
 I know. And to be honest, I'm kinda relieved.#otherCharacter
@@ -1928,34 +1939,33 @@ Yes, without any doubt.#otherCharacter
 But it was quite a life.#otherCharacter
 Life of murder?#player
 No, it was the first time for me.#otherCharacter
-Why Giovanni then?#player
+Why <color=red>Giovanni</color> then?#player
 I think that you know it.#otherCharacter
 I loved him.#otherCharacter
 I still do.#otherCharacter
-He asked me to change the administration decision about sending him in prison to save Lima.#otherCharacter
+He asked me to change the administration decision about sending him in prison to save <color=red>Lima</color>.#otherCharacter
 But I couldn't, it would draw too much suspicion over us.#otherCharacter
 So he threatened to go public about our relation.#otherCharacter
 I couldn't let him do that.#otherCharacter
 How is this situation relieving then? You got caught.#player
 Because I had to hid. I felt like a prey, never able to live my life.#otherCharacter
 Now it doesn't matter.#otherCharacter
-I only hope that Giovanni will forgive me.#otherCharacter
+I only hope that <color=red>Giovanni</color> will forgive me.#otherCharacter
 #NewBackground #9 #NewCharacterSprite #0 #PlayerDBox #1
-<i>(I knew leaving that room that nobody would see Morello alive anymore.)</i>#player
+<i>(I knew leaving that room that nobody would see <color=red>Morello</color> alive anymore.)</i>#player
 <i>(In fact, I think that I heard a muffled gunshot when I left the place.)</i>#player
 <i>(Here we go again.)</i>#player
 <i>(Same office. Same files.)</i>#player
 <i>(I'm not a winner in this.)</i>#player
 <i>(But I ain't dead either.)</i>#player
 <i>(So that's a win.)</i>#player
-TODO:SFX phone
-<i>(What's this...)</i>#player
+<i>(What's this...)</i>#player #SFXPlay #8
 #jump
-*   [Answer the phone] <i>(I didn't expected to find a new work so soon.)</i>#player
+*   [Answer the phone] <i>(I didn't expected to find a new work so soon.)</i>#player #SFXStop #8 #SFXPlay #28
 -   #PlayerDBox #0
 Bugsy Rosenthal, private eye, what can I do for you?#player #NewCharacterSprite #7
 Really professionnal Bugsy, that's surprising.#otherCharacter
-Jesus Lanza, not you again...#player
+Jesus <color=red>Lanza</color>, not you again...#player
 Don't say that, you'll miss me.#otherCharacter
 What do you want?#player
 Just wanted to thank you. You really pulled this off.#otherCharacter
@@ -1965,7 +1975,7 @@ I think those methods are better left in the past.#otherCharacter
 Anyway, I'll stop following you from now.#otherCharacter
 You can go back to sleep, I won't bother you at 3AM from now.
 #jump
-*   Fuck you Lanza[].#player
+*   Fuck you <color=red>Lanza</color>[].#player
 TODO: SFX hang up the phone
 -   #NewCharacterSprite #0 #Demo
 ->END
@@ -1974,10 +1984,10 @@ TODO: SFX hang up the phone
 How disappointing...#otherCharacter
 You're just a drunk, tired, and useless man.#otherCharacter
 Get the hell out of here.#otherCharacter
-Rossini? Deal with him.#otherCharacter #PlayerDBox #1
+<color=red>Rossini</color>? Deal with him.#otherCharacter #PlayerDBox #1
 #NewCharacterSprite #0
 <i>(I never saw the shot coming.)</i>#player
-<i>(Only thing I saw was the face of Rossini.)</i>#player #NewCharacterSprite #8
+<i>(Only thing I saw was the face of <color=red>Rossini</color>.)</i>#player #NewCharacterSprite #8
 <i>(No anger in his eyes. No shame either.)</i>#player
 <i>(Only disappointement.)</i>#player
 <i>(I don't know if the death coming over me was blowing up my brain, but I could swear that he tried to tell me something.)</i>#player
@@ -1988,17 +1998,17 @@ Rossini? Deal with him.#otherCharacter #PlayerDBox #1
 ->END
 
 =lanza_ending
-So it was Jimmy...#otherCharacter
+So it was <color=red>Jimmy</color>...#otherCharacter
 It seems so.#player
 Alright, that's all I needed.#otherCharacter
 What a waste...#otherCharacter
 Go back home Bugsy. You won't have to see such a disgrace.#otherCharacter #PlayerDBox #1
-<i>(I could swear that what I saw in Abati's eyes was sadness.)</i>#player
+<i>(I could swear that what I saw in <color=red>Abati</color>'s eyes was sadness.)</i>#player
 <i>(And disappointment.)</i>#player
 #NewBackground #9
 <i>(Back to the beginning.)</i>#player
-<i>(Except that Abati and the others seem to avoid talking to me.)</i>#player
-<i>(Of course, nobody saw Lanza ever again.)</i>#player
+<i>(Except that <color=red>Abati</color> and the others seem to avoid talking to me.)</i>#player
+<i>(Of course, nobody saw <color=red>Lanza</color> ever again.)</i>#player
 <i>(It should be a victory. For me, for the family.)</i>#player
 <i>(But this victory tasted like shit.)</i>#player
 <i>(...)</i>#player
