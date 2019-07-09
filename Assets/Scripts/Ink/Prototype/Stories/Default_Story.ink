@@ -44,17 +44,24 @@ VAR lanza_stitch_first = 0
 // METTRE UN FOND NOIR?
 # DisableDiscussion
 #PlayerDBox #1
-<i>(Fucking city.)</i> # player
+//<i>(Fucking city.)</i> # player
+//<i>("Come to San Francisco" they said. "It's like a Gold Rush for private detectives".)</i> # player
+//<i>(And I fell for it.)</i> # player
+//<i>(Ain't nobody like Bugsy Rosenthal to look like a damn fool.)</i> # player 
+//<i>(Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.)</i> # player
+//<i>(But everybody has to do something for a living.)</i> # player 
+//<i>(And this mob is paying quite well.)</i> # player
+//<i>(But they're fucking savages, killing each other and all.)</i> # player 
+<i>(Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.)</i> # player #SFXPlay #23
+<i>(Freakin' city.)</i> # player
 <i>("Come to San Francisco" they said. "It's like a Gold Rush for private detectives".)</i> # player
-<i>(And I fell for it.)</i> # player
 <i>(Ain't nobody like Bugsy Rosenthal to look like a damn fool.)</i> # player 
 <i>(Next thing I know, my wife leaves me, and I'm nearly all out of legit businesses.)</i> # player
 <i>(But everybody has to do something for a living.)</i> # player 
 <i>(And this mob is paying quite well.)</i> # player
-<i>(But they're fucking savages, killing each other and all.)</i> # player 
-<i>(Can't sleep tonight. Cars, gun shots, everybody in town wants to drive me crazy.)</i> # player #SFXPlay #23
-<i>(And now the fuckin' phone is ringing.)</i> # player #SFXPlay #8
-<i>(Don't even want to answer, fuck it.)</i> # player 
+<i>(But they're savages, killing each other and all.)</i> # player
+<i>(And now this stupid phone is ringing.)</i> # player #SFXPlay #8
+<i>(Don't even want to answer, the hell with it.)</i> # player 
 - (phone) {<i>(The phone rings.)</i>|<i>(The phone doesn't stop.)</i>|<i>(It continues to ring.)</i>} # player 
 # jump
 	*	[Answer] <i>(This damn phone ain't gonna stop itself.)</i> # player
@@ -62,21 +69,21 @@ VAR lanza_stitch_first = 0
 		->phone
 - <i>(I decide to get up and finally answer it.)</i> # player #SFXStop #8 #SFXPlay #28
 # jump
-	*	Are you out of your mind?[] Did you fucking see the time ? # player #PlayerDBox #0
+	*	Are you out of your mind?[] Can't you see it's the middle of the night ? # player #PlayerDBox #0
 - It's <color=red>James Lanza</color>. We had a problem with <color=red>Giovanni</color>. #otherCharacter #NewCharacterSprite #7 #NewCharacterLog #2
 You need to come here immediately. # otherCharacter 
 # jump
-	*	What time is it[?] for fuck's sake? # player 
+	*	[What time is it ?] God's sake, what time is it?? # player 
 - 3AM, but we pay you to come even when you're shitting. #otherCharacter 
 You understand me Rosenthal? Come here right now. # otherCharacter 
 # jump
     *	What's the address[?] <color=red>Lanza</color>? # player 
-- 98 Francisco Street . Hurry up, fucking stinks here. # otherCharacter 
+- 98 Francisco Street . Hurry up, it stinks here. # otherCharacter 
 # jump
     *   [Hang up] <> # player #NewCharacterSprite #0
     *   Don't tell me to hurry[] boy, it's the middle of the fucking night. # player
 - <i>(I hung up and got out of bed.)</i> # player #PlayerDBox #1  #NewCharacterSprite #0 #SFXPlay #23
-<i>(For fuck's sake, what did they do again?)</i> # player
+<i>(For God's sake, what did they do again?)</i> # player
 # jump
     *   [Go to Francisco Street] <> # player # NewBigBackground #15 #SFXPlay #33
     #MusicPlay #1
@@ -125,7 +132,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
         --  I don't get it, your boss <color=red>Lima</color> is judged, couldn't you find someone to take the blame? # player
             I don't know, that's not something that I was told. # otherCharacter #SFXPlay #37
         # jump
-        **  Are you throwing me under the bus?[] I'll not go down easily motherfucker. # player #SFXPlay #38
+        **  Are you throwing me under the bus?[] I'll not go down easily boy. # player #SFXPlay #38
             Don't be stupid, Mr. <color=red>Lima</color> cannot be saved by you. # otherCharacter
             So what am I doing here? # player #SFXPlay #40
         **  <color=red>Lima</color> didn't request my help for the trial[], what could I possibly do? # player
@@ -133,7 +140,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
             So where do I fit in your plan now? # player
         --  <color=red>Giovanni</color> is dead. # otherCharacter #SFXPlay #35
         # jump
-        **  Fuck... What happened to him? # player #SFXPlay #37
+        **  Jesus... What happened to him? # player #SFXPlay #37
         //à changer
             You will discover it soon enough. # otherCharacter #NewNarrativeLog #2
             ->car_convo
@@ -147,18 +154,18 @@ I let you go by yourself. Mr. <color=red>Lanza</color> is waiting for you inside
     *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #14
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0 #SFXPlay #14
         Go ahead. # otherCharacter
-        Am I being set up? Are they trying to fuck me over to save their heads? # player
+        Am I being set up? Are they trying to ditch me to save their asses? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
         <i>(And the young prick leaves.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #SFXPlay #37
 - <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0 #SFXStop #42
 
 # NewBigBackground #12
 <i>(<color=red>Jimmy Lanza</color> is waiting for me, near to the door.)</i> # player # NewCharacterSprite #5
-For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter 
+It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter 
 # jump #PlayerDBox #0
 *   Never when there are [Italians]greaseballs like you waiting for me at a crime scene. # player
     I'm not here to joke around, not with two bodies waiting two feet away. # otherCharacter
-*   Fuck you <color=red>Lanza</color>[], I don't have to come like a dog whenever you fuck things up! # player
+*   Fuck you <color=red>Lanza</color>[], I don't have to come like a dog whenever you botch everything! # player
     You think I'm happy with this shit? I could have done without two more bodies. # otherCharacter
 *   Calm down[], we have more important to do. Where is he? # player
     He? You mean them. We found a girl in the bathroom. # otherCharacter
@@ -167,9 +174,9 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
 -   You guessed wrong. # otherCharacter
     We found a dead girl in the bathroom. # otherCharacter 
     # jump
-*   For fuck's sake[...], you people really can't keep it in your pants. # player
-    Show some respect, Rosenthal. We're not gonna always feed you. # otherCharacter
-*   [The fuck was that good?] The fuck was so good that they both died? # player
+*   Those Italians[...], you people really can't keep it in your pants. # player
+    Show some respect, Rosenthal. We're not always gonna feed you. # otherCharacter
+*   [Giovanni the killer-lover!] I heard Giovanni was a killer in bed, but ain't that exaggerated? # player
     Stop jokin' around. # otherCharacter
 - Someone killed them both, or they killed each other, but I don't think so. # otherCharacter
  But you're the expert here! So what you gonna do? # otherCharacter #NewNarrativeLog #3
@@ -219,12 +226,12 @@ For fuck's sake, ain't all Jew boys supposed to arrive on time? # otherCharacter
         # jump
         *** Is it your opinion? # player
             It is mine, and <color=red>Abati</color>'s too. Even <color=red>Morello</color> agreed. # otherCharacter
-            And he's the fucking Consigliere, taking care of our soldiers and shit. # otherCharacter
+            And he's the freakin' Consigliere, taking care of our soldiers and shit. # otherCharacter
             We agreed to tend for his family, at least for his mother. # otherCharacter
             We could not find anyone else. # otherCharacter
             # jump
             ****    Where does she live? # player
-                    She's in Sicily. The boy came here on his own. Fuckin' American dream. # otherCharacter #NewNarrativeLog #5
+                    She's in Sicily. The boy came here on his own. Bloody American dream. # otherCharacter #NewNarrativeLog #5
                     ->lanza_convo
 *   Who could want to harm him? # player #PlayerDBox #0
     Nobody that I would know of. # otherCharacter
@@ -621,7 +628,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 *   [Calm the situation] I'm not here to make any accusation. # player
 	    I just want to know what happened here. # player
 	    Nothing happened, it's a freakin' bar! # otherCharacter
-	    I'll ask you to get the fuck out of here. #otherCharacter
+	    I'll ask you to get the hell out of here. #otherCharacter
 	    Dean, throw this man out of here. # otherCharacter
 	    Don't bother, I'm leaving. # player
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
@@ -632,7 +639,7 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 *   [Threaten her] I'm not getting out. Or if so, I'll come back with a bunch of cops. # player
 	    You're a pain in the ass but you're funny. # otherCharacter
 	    As if someone working with <color=red>Abati</color> so publicly could even go near a cop! # otherCharacter
-	    So now get the fuck out of here. # otherCharacter
+	    So now get the hell out of here. # otherCharacter
 	    Dean, could you send this man out? # otherCharacter
 	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
 	    <i>(With the madam still looking at me, I exit the joint.)</i> # player #SFXPlay #22 #NewNarrativeLog #25
