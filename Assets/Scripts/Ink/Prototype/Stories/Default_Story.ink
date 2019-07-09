@@ -110,7 +110,7 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
         Came here 6 months ago from Sicily. # otherCharacter 
         # jump
         **  <color=red>Lanza</color> got you in here? # player #SFXPlay #40
-            Let's say that he needed the skills that I'm able to provide for his protection. # otherCharacter #NewCharacterLog #0
+            Let's say that I tend to his protection. # otherCharacter #NewCharacterLog #0
             # jump
         **  More Italians?[] Is there any place left in North Beach? # player
             I'm not here to settle down, Mr. <color=red>Lanza</color> asked me to come to ensure his protection. # otherCharacter #SFXPlay #37
@@ -121,14 +121,11 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
         I can't say anything, but I'm sure Mr. <color=red>Lanza</color> will talk to you about it. # otherCharacter #NewNarrativeLog #1 #SFXPlay #37
         ->car_convo
     *   Can't you go directly to the apartment? # player #PlayerDBox #0 #SFXPlay #34
-        Must make sure that we're not tailed sir # otherCharacter # NewCharacterSprite #8 #SFXPlay #40
+        Must make sure that we're not tailed sir. # otherCharacter # NewCharacterSprite #8 #SFXPlay #40
         # jump
-        **  Who would follow me?[] Am I a Jewish Marilyn? # player #SFXPlay #37
-        //revoir 
-            Let's say that we caught a lot of heat from the trial. # otherCharacter #SFXPlay #41
-            # jump
-        **  I ain't mixed with all that[] kid, <color=red>Jimmy</color> should have told you so. I'm a simple detective that helps some friends in need. # player
-            Not you personally, but we must stay on our guard with the trial. # otherCharacter #SFXPlay #41
+        **  I ain't mixed with all that[] kid, <color=red>Jimmy</color> should have told you so. #player
+        	I'm a simple detective that helps some friends in need. # player
+            Not you personally, but we must stay on our guard. # otherCharacter #SFXPlay #41
         --  I don't get it, your boss <color=red>Lima</color> is judged, couldn't you find someone to take the blame? # player
             I don't know, that's not something that I was told. # otherCharacter #SFXPlay #37
         # jump
@@ -138,10 +135,10 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
         **  <color=red>Lima</color> didn't request my help for the trial[], what could I possibly do? # player
             You're not here to help on that matter. The Administration is working on it. # otherCharacter #SFXPlay #41
             So where do I fit in your plan now? # player
-        --  <color=red>Giovanni</color> is dead. # otherCharacter #SFXPlay #35
+        --  ... #otherCharacter
+        <color=red>Giovanni</color> is dead. # otherCharacter #SFXPlay #35
         # jump
         **  Jesus... What happened to him? # player #SFXPlay #37
-        //à changer
             You will discover it soon enough. # otherCharacter #NewNarrativeLog #2
             ->car_convo
     *->
@@ -151,13 +148,14 @@ Mr. Rosenthal? # otherCharacter # NewCharacterSprite #8 #SFXPlay #42
 <i>(We finally park in Francisco Street.)</i> # player #MusicPlay #1 #SFXPlay #36
 I let you go by yourself. Mr. <color=red>Lanza</color> is waiting for you inside. # otherCharacter # NewCharacterSprite #8 #SFXPlay #42 #SFXPlay #44
 # jump
-    *   Thank you kid # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #14
+    *   Thank you kid. # player #PlayerDBox #0 # NewCharacterSprite #8 #SFXPlay #14
     *   [Just a question...] Before I leave kid, can I ask you something? # player #PlayerDBox #0 #SFXPlay #14
         Go ahead. # otherCharacter
         Am I being set up? Are they trying to ditch me to save their asses? # player
         Mr. Rosenthal, you're not important enough to worry yourself. # otherCharacter
         <i>(And the young prick leaves.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #SFXPlay #37
-- <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 #MusicPlay #0 #SFXStop #42
+- <i>(I cross the threshold of the building and go to the second floor. Apartment 237.)</i> # player #PlayerDBox #1 # NewCharacterSprite #0 
+<i>(The night doesn't seem to be over yet.)</i>#player #MusicPlay #0 #SFXStop #42
 
 # NewBigBackground #12
 <i>(<color=red>Jimmy Lanza</color> is waiting for me, near to the door.)</i> # player # NewCharacterSprite #5
@@ -218,38 +216,38 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
     It is what was agreed. #otherCharacter #NewCharacterLog #3
     # jump
     **  You mean that you decided to throw him under the bus. # player
-        No, we'll take care of his family. What he was gonna do for us was essential. # otherCharacter
+        No, we'll take care of his family. # otherCharacter
         Now we're in deep shit... # otherCharacter #NewNarrativeLog #4
         ->lanza_convo
     **  What did he do to deserve it? # player
-        Stop insinuating that we wanted him killed. He was not made for this job. # otherCharacter
+        Stop insinuating that we wanted him killed. # otherCharacter
         # jump
-        *** Is it your opinion? # player
-            It is mine, and <color=red>Abati</color>'s too. Even <color=red>Morello</color> agreed. # otherCharacter
-            And he's the freakin' Consigliere, taking care of our soldiers and shit. # otherCharacter
+        *** But here we are[...], and I don't see Giovanni around. # player
+        	It was not supposed to happen.#otherCharacter
+        	We decided that together, with <color=red>Abati</color>, even with <color=red>Morello</color>.#otherCharacter
+            And he's the freakin' Consigliere. # otherCharacter
             We agreed to tend for his family, at least for his mother. # otherCharacter
             We could not find anyone else. # otherCharacter
             # jump
             ****    Where does she live? # player
                     She's in Sicily. The boy came here on his own. Bloody American dream. # otherCharacter #NewNarrativeLog #5
                     ->lanza_convo
-*   Who could want to harm him? # player #PlayerDBox #0
-    Nobody that I would know of. # otherCharacter
-    # jump
-    **  Not even the girl's boyfriend? # player
-        How can you say that she had a boyfriend? # otherCharacter
-        <color=red>Giovanni</color> is Italian. You people really can't keep it in your pants. # player
-        Even more when you can get in trouble by doing so. # player
-        You knew <color=red>Tommy</color> a little. A good-looking boy. # otherCharacter
-        They would fall in his arms in a flash. #otherCharacter
-        But always a gentleman with the ladies.  #NewNarrativeLog #6
-    ->lanza_convo
 *   So who's that girl? # player #PlayerDBox #0
     Can't say for sure, that's your job now. Nobody ever saw <color=red>Tommy</color> with her. # otherCharacter
     But we were not following him day and night. # otherCharacter
     # jump
     **  You mean you tailed him sometimes? # player
-        Don't be stupid. I keep a close watch on everyone. # otherCharacter #NewNarrativeLog #7
+    --  Don't be stupid. I keep a close watch on everyone. # otherCharacter #NewNarrativeLog #7
+    #jump
+    **	Who could want to harm him? # player #PlayerDBox #0
+    	Nobody that I would know of. # otherCharacter
+    	# jump
+    	***  Not even the girl's boyfriend? # player
+        How can you say that she had a boyfriend? # otherCharacter
+        <color=red>Giovanni</color> is Italian. You always look for trouble. # player
+        You knew <color=red>Tommy</color> a little. A good-looking boy. # otherCharacter
+        They would fall in his arms in a flash. #otherCharacter
+        But always a gentleman with the ladies.  #NewNarrativeLog #6
     ->lanza_convo
 *   What is happening with the organization? # player #PlayerDBox #0
     As you should know now, <color=red>Lima</color> was sent to jail, with a trial coming. # otherCharacter
@@ -264,9 +262,7 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
     # jump
     **  What about <color=red>Morello</color>? # player #NewCharacterLog #8
         The Consigliere? He's advising us. # otherCharacter
-        But to be honest, I think that he's trying to take some distance with the game. # otherCharacter
-        What can we say about it? That poor bastard earned to rest now. # otherCharacter
-        We're putting the Family back on its feet, so we're focusing on greater matters. #otherCharacter
+        But the old man now tries to stay out of it. He earned it. # otherCharacter
     ->lanza_convo
 *   ->
 ~lanza_stitch_first = 1
