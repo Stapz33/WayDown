@@ -184,9 +184,15 @@ public class MainUIManager : MonoBehaviour {
     [SerializeField] private GameObject DocumentInfo = null;
     private bool b_isAddDocNavigation = false;
 
+    public CRDatas crDatas;
+    bool lanzaDiscovered = false;
+    bool giovanniDiscovered = false;
+    bool abatiDiscovered = false;
+    int actualCR = -1;
+
     #endregion
 
-    
+
     private bool b_isGoodAddress = false;
     private bool b_DisablePlayer = false;
     private string stockedAdress = "";
@@ -1139,6 +1145,48 @@ public class MainUIManager : MonoBehaviour {
             }
             else 
             {
+                foreach (CRDatas.st_CR st_CR in crDatas.CRData)
+                {
+                    if (st_CR.goodName == name.ToLower().Replace("'", "").Replace(" ", string.Empty))
+                    {
+
+                        actualCR = st_CR.CRIdx;
+
+                        switch (actualCR)
+                        {
+                            case 13:
+                                if (lanzaDiscovered)
+                                {
+                                    PoliceOffice.Singleton.AlreadyGood();
+                                    return;
+                                }
+                                lanzaDiscovered = true;
+                                break;
+                            case 22:
+                                if (giovanniDiscovered)
+                                {
+                                    PoliceOffice.Singleton.AlreadyGood();
+                                    return;
+                                }
+                                giovanniDiscovered = true;
+                                break;
+                            case 23:
+                                if (abatiDiscovered)
+                                {
+                                    PoliceOffice.Singleton.AlreadyGood();
+                                    return;
+                                }
+                                abatiDiscovered = true;
+                                break;
+                            default:
+                                break;
+                        }
+                        PoliceOffice.Singleton.GoodName();
+                        Invoke("AddNewSCriminalRecord", 2f);
+                        PoliceOfficeObject.GetComponent<PoliceOffice>().GoodNameInput();
+                        return;
+                    }
+                }
                 PoliceOffice.Singleton.WrongName();
             }
         }
@@ -1162,6 +1210,12 @@ public class MainUIManager : MonoBehaviour {
             SaveGame();
         }
         
+    }
+
+    public void AddNewSCriminalRecord()
+    {
+        AddNewDocumentAndShowIt(actualCR, DocumentFolder.CriminalRecord, true);
+        SaveGame();
     }
 
     /// Police Record

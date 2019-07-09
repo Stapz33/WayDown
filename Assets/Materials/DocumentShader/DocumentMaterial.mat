@@ -87,7 +87,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Text_01:
-        m_Texture: {fileID: 2800000, guid: f9e0819bb45ee074c98f635c65a133f2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1786971790f3a264a80623ea2979fe70, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UnlitColorMap:

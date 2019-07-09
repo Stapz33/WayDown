@@ -1192,6 +1192,12 @@ PrefabInstance:
       propertyPath: ValidationDialogueText
       value: 
       objectReference: {fileID: 1982966128629935728}
+    - target: {fileID: 4711738336229313632, guid: 7e30d4add22b7f1438f20fef1cb40309,
+        type: 3}
+      propertyPath: crDatas
+      value: 
+      objectReference: {fileID: 11400000, guid: 7062e5b19c26d1d45868ae1261b02b7c,
+        type: 2}
     - target: {fileID: 4040833753092622756, guid: 7e30d4add22b7f1438f20fef1cb40309,
         type: 3}
       propertyPath: m_IsActive
@@ -1284,6 +1290,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 638865850, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 38.6104
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e30d4add22b7f1438f20fef1cb40309, type: 3}
