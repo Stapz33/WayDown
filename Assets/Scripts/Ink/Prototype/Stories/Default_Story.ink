@@ -1733,10 +1733,10 @@ TODO: SFX Run
 <i>(Dead right as it crushed his skull.)</i>#player
 <i>(What did he have on him?)</i>#player
 #jump
-*   [Empty his pockets] <i>(Let's see...)</i>#player #NewDocument #15 #SFXPlay #31
--   <i>(Not really interesting...)</i> #player
-<i>(And...)</i>#player #NewDocument #12 
-<i>(So he was meeting someone here...)</i> #player
+*   [Empty his pockets] <i>(Let's see...)</i>#player #SFXPlay #31
+-   <i>(Not really interesting...)</i> #player #NewDocument #15
+<i>(And...)</i>#player
+<i>(So he was meeting someone here...)</i> #player #NewDocument #12 
 <i>(His client?)</i>#player
 <i>(Then why killing him, with the job already done?)</i>#player
 <i>(That's odd...)</i>#player #SFXPlay #32
@@ -1765,7 +1765,7 @@ I wouldn't give it a lot of thoughts.#otherCharacter
 That's what happens in this field.#otherCharacter
 I'll get you back right away.#otherCharacter
 We have a war to prepare.#otherCharacter 
-#NewBackground #10 #PlayerDBox #1
+#NewBackground #10 #NewCharacterSprite #0 #PlayerDBox #1
 <i>(Maybe he's right. Maybe the war is the only ending.)</i>#player
 <i>(But I can't shake off the feeling that it stinks.)</i>#player
 <i>(It's too simple.)</i>#player #NewNarrativeLog #21
@@ -1779,7 +1779,7 @@ We have a war to prepare.#otherCharacter
 <i>(Please, make it only be a jealous husband...)</i>#player
 #jump #PlayerDBox #0
 *   [Answer the phone] Bugsy Rosenthal, private eye, what can I do for you?#player #SFXStop #8 #SFXPlay #28
--   Hello, it's <color=red>Abati</color>.#otherCharacter
+-   Hello, it's <color=red>Abati</color>.#otherCharacter #NewCharacterSprite #9
 Oh hum, hello Mr. <color=red>Abati</color>.#player
 I talked to <color=red>Rossini</color>, <color=red>Lanza</color>'s man.#otherCharacter
 He told me that you had some reservations about what we're about to do.#otherCharacter
