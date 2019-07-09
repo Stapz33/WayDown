@@ -293,15 +293,16 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
 - <i>(So now, where would I search for clues?)</i> # player
 - (clues_apartment)
 # jump
-*	[Check the bathroom] <i>(Maybe there could be something in the bathroom.)</i> # player #SFXPlay #17
+*	[Check the bathroom] <i>(Let's see the woman now.)</i> # player #SFXPlay #17
 	# NewBackground #11
-	<i>(Oh that's right. The second body.)</i> # player
+	<i>(What the...)</i> # player
+	<i>(What happened here? It's a bloody slaughterhouse)</i> # player
 	<i>(The entire floor is covered in blood. Hers, obviously.)</i> # player 
 	# jump
-	**	[Look at the body] <i>(Who do we have here?)</i> # player
-		<i>(She really seems to be a prostitute.)</i> # player
+	**	[Look at the body] <i>(Let's have a look at the body.)</i> # player
+		<i>(She must have looked pretty.)</i> # player
 		<i>(The way she's dressed, her make-up...)</i> # player
-		<i>(But not a lot of prostitutes have a deep cut across their throats.)</i> # player
+		<i>(But not a lot of pretty girls have a deep cut across their throats.)</i> # player
 		<i>(She didn't come with a lot of stuff. Except for a small lady bag.)</i> # player
 	    # jump
 		***	[Open the purse] <i>(Maybe I'll find out more about her here.)</i> # player #SFXPlay #19
@@ -310,11 +311,11 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
 		->clues_apartment
 *	[Check the bedroom] <i>(Did they have enough time to use the bedroom?)</i> # player #SFXPlay #17
 	#NewBackground #21
-	<i>(It's tidy, with not a lot of furniture.)</i> # player
+	<i>(It's tidy, without a lot of furniture.)</i> # player
 	<i>(Only a bed, an empty desk with only one paper on it, and a closet.)</i> # player
 	<i>(A love letter ?)</i> # player #NewDocument #14 #NewNarrativeLog #34 #SFXPlay #27
 	<i>(The bed is still made. <color=red>Giovanni</color> didn't sleep here so much, or at least not yesterday.)</i> # player
-	<i>(There's the closet then.)</i> # player
+	<i>(Maybe something is in the closet?)</i> # player
 	# jump
 	**	[Open the closet] <i>(What a freakin' creaking door!)</i> # player #SFXPlay #16 //change
 		<i>(But I know seems logical, the closet being nearly empty.)</i> # player
