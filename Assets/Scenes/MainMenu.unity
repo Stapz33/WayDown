@@ -4078,6 +4078,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 883618701728028802, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_CarAmbiance
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d9620fc7fe81e747a729974c770bb04, type: 3}
+    - target: {fileID: 7975792944544799829, guid: f5ca66fb234f6ee40b8d6c7df2127660,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5ca66fb234f6ee40b8d6c7df2127660, type: 3}
 --- !u!224 &989917888257756940

@@ -308,7 +308,7 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
 		<i>(But not a lot of prostitutes have a deep cut across their throats.)</i> # player
 		<i>(She didn't come with a lot of stuff. Except for a small lady bag.)</i> # player
 	    # jump
-		***	[Open the purse] <i>(Maybe I'll find out more about her here.)</i> # player
+		***	[Open the purse] <i>(Maybe I'll find out more about her here.)</i> # player #SFXPlay #19
 			<i>(No papers, only a key for a hotel room.)</i> # player #NewNarrativeLog #9
 		# jump # NewDocument #0
 		->clues_apartment
@@ -316,7 +316,7 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
 	#NewBackground #21
 	<i>(It's tidy, with not a lot of furniture.)</i> # player
 	<i>(Only a bed, an empty desk with only one paper on it, and a closet.)</i> # player
-	<i>(A love letter ?)</i> # player #NewDocument #14 #NewNarrativeLog #34
+	<i>(A love letter ?)</i> # player #NewDocument #14 #NewNarrativeLog #34 #SFXPlay #27
 	<i>(The bed is still made. <color=red>Giovanni</color> didn't sleep here so much, or at least not yesterday.)</i> # player
 	<i>(There's the closet then.)</i> # player
 	# jump
@@ -328,7 +328,7 @@ It's about time, ain't all Jew boys supposed to arrive on time? # otherCharacter
 	->clues_apartment
 	# jump
 *->
-<i>(Nothing more for me in that apartment.)</i> # player #NewCharacterSprite #0 #SFXPlay #20
+<i>(Nothing more for me in that apartment.)</i> # player #NewCharacterSprite #0 #SFXPlay #17
 # NewBackground #12 # DisablePlayer
 ~lanza_stitch_first = 0
 ->lobby_apartment
@@ -467,9 +467,9 @@ No problem, just let me search for a few things # player #PlayerDBox #0
 	**	->
 		->motel_search
 *	[Check the desk] <i>(She seems to often use that desk given the number of papers.)</i> # player # NewCharacterSprite #0
-    <i>(What are those? Seems to be letters from a relative.)</i> # player
+    <i>(What are those? Seems to be letters from a relative.)</i> # player # NewDocument #3
     <i>(I'll check that at the office.)</i> # player
-    # jump # NewDocument #3
+    # jump
     ->motel_search
 // *   [Go in the kitchen] <i>No space</i> # player
 //     <i>Nothing interesting in the kitchen, but it is small. You return in the room.</i> # player
@@ -504,8 +504,8 @@ I'm done here. # player #PlayerDBox #0
 <i>(I hate to go to a cop, but let's face it, it as much a good cop as <color=red>Lanza</color> is.)</i>#player
 <i>(He could even betray his own mother.)</i>#player
 <i>(But he's useful. Let's go check on him.)</i>#player
-#NewBackground #4 #NewCharacterSprite #16
-What do you want from me this time Mr. Rosenthal?#otherCharacter
+#NewBigBackground #4
+What do you want from me this time Mr. Rosenthal?#otherCharacter #NewCharacterSprite #16
 I couldn't find much on your wife, she's keeping a low profile right now.#otherCharacter
 I'm not here for that Gibbs, I work for <color=red>Lanza</color> for now.#player
 I need to find the name of a girl, she was found with one of <color=red>Abati</color>'s men.#player
@@ -1228,7 +1228,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
     Yeah yeah, just wait a second.#otherCharacter
     Ok, I'll wait outside.#player
     ...#player
-    Morning sir, what do you want?#otherCharacter #NewCharacterSprite #15 #NewNarrativeLog #37
+    Morning sir, what do you want?#otherCharacter #NewCharacterSprite #13 #NewNarrativeLog #37
 #jump
 *   [Looking for a car] Did someone drop a car here last night? Like an old grey pick-up truck, or something like that.#player
     Indeed someone quite shady did that.#otherCharacter
@@ -1273,9 +1273,9 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
     <i>(So our killer whacked the driver, and put him in the trunk.)</i>#player #PlayerDBox #1
     <i>(That some Sicilian-level of savagery.)</i>#player
     <i>(Or Russian, I really need to find our man, before he causes more damage to the organization.)</i>#player
+    #jump
 *   [Check the corpse] <i>(What can I find on him ?)</i> #player
--	<i>(Ok, it's more disgusting than expected !)</i> #player #NewDocument #21
-	<i>(It's just a dirty tissue.)</i> #player
+-	<i>(It's just a dirty tissue.)</i> #player #NewDocument #21
 	<i>(There's nothing more on that poor guy.)</i> #player
     Officer?#otherCharacter #PlayerDBox #0
     Yes?#player
@@ -1284,6 +1284,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
     Don't worry, I'll send someone to get rid of the body.#player
     Ok...#otherCharacter
 #jump
+#NewBackground #27
 *   [Look in the car] I'll take a look inside, see if our man dropped something.#player #NewCharacterSprite #0
 -   <i>(...)</i>#player #PlayerDBox #1
     <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #9
@@ -1291,7 +1292,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
     <i>(Could have been left by the killer.)</i>#player #NewNarrativeLog #38
     <i>(I need to get out of here, before real cops show up.)</i>#player
     Alright sir, my work here is done, I'll go back to the precinct.#player #PlayerDBox #0
-    But what do I do with the body?#otherCharacter #NewCharacterSprite #15
+    But what do I do with the body?#otherCharacter #NewCharacterSprite #13
     I'll send someone, I told you.#player
     Stay by it please.#player
     O-ok officer...#otherCharacter
@@ -1333,7 +1334,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(Most of them in Russian. How did he manage to get so much of them?)</i>#player
 <i>(I don't think that you can purchase them easily nowadays.)</i>#player
 <i>(And what we have here ?)</i> #player #NewDocument #20
-<i>(A colt ? He must be a gun enthusiast...)</i> #player
+<i>(A colt' manual ? He must be a gun enthusiast...)</i> #player 
 <i>(What else do we have...)</i>#player
 <i>(What are those?)</i>#player #NewDocument #8
 <i>(Dozens of receipts.))</i>#player
