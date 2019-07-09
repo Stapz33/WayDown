@@ -1550,7 +1550,7 @@ How did you come across our store?#otherCharacter
 <i>(Nobody seems to be interested in taking my order.)</i>#player
 I'm happy to finally meet you, Mr Rosenthal.#otherCharacter
 <i>(Who's talk...)</i>#player
-#NewCahracterSprite #15 #PlayerDBox #0
+#NewCharacterSprite #15 #PlayerDBox #0
 Mind if I join you?#otherCharacter
 #jump
 *   [Please, be my guest] Of course, but I really enjoy knowing who sits at my table.#player
