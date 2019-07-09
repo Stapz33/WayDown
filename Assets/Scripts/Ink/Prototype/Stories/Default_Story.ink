@@ -1779,7 +1779,7 @@ We have a war to prepare.#otherCharacter
 <i>(Please, make it only be a jealous husband...)</i>#player
 #jump #PlayerDBox #0
 *   [Answer the phone] Bugsy Rosenthal, private eye, what can I do for you?#player #SFXStop #8 #SFXPlay #28
--   Hello, it's <color=red>Abati</color>.#otherCharacter #NewCharacterSprite #9
+-   Hello, it's <color=red>Abati</color>.#otherCharacter #NewCharacterSprite #14
 Oh hum, hello Mr. <color=red>Abati</color>.#player
 I talked to <color=red>Rossini</color>, <color=red>Lanza</color>'s man.#otherCharacter
 He told me that you had some reservations about what we're about to do.#otherCharacter
@@ -1826,7 +1826,7 @@ See you soon, Bugsy.#otherCharacter #PlayerDBox #1
 
 ===ending===
 =start_ending
-#NewBackground #31 #PlayerDBox #1
+#NewBackground #31 #PlayerDBox #1 #NewCharacterSprite #8
 <i>(That's where it all should end.)</i>#player
 <i>(In a freakin' Italian restaurant.)</i>#player
 <i>(Why do I end up in this?)</i>#player
