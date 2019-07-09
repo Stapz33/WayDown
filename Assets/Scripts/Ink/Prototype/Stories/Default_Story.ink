@@ -1826,7 +1826,7 @@ See you soon, Bugsy.#otherCharacter #PlayerDBox #1
 
 ===ending===
 =start_ending
-#NewBackground #31 #PlayerDBox #1 #NewCharacterSprite #8
+#NewBackground #31 #PlayerDBox #1 #NewCharacterSprite #8 #MusicPlay #0
 <i>(That's where it all should end.)</i>#player
 <i>(In a freakin' Italian restaurant.)</i>#player
 <i>(Why do I end up in this?)</i>#player
@@ -1842,7 +1842,7 @@ Here we are Bugsy. On the verge of war with the Russians.#otherCharacter
 But most important, we're at war with ourselves.#otherCharacter
 -   (choice_badguy) Who betrayed us?#otherCharacter
 And why?#otherCharacter
-What did you find?#otherCharacter
+What did you find?#otherCharacter #MusicStop #0
 #jump #endgame
 ->END
 
