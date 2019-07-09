@@ -130,6 +130,10 @@ public class MainUIManager : MonoBehaviour {
         public bool b_IsInspectorDiscorvered = false;
         public bool b_IsCSDiscorvered = false;
 
+        public bool lanzaDiscovered = false;
+        public bool giovanniDiscovered = false;
+        public bool abatiDiscovered = false;
+
         //variables
         public int knowledgeSpaghetty = 0;
         public int prostituteknown = 0;
@@ -185,9 +189,10 @@ public class MainUIManager : MonoBehaviour {
     private bool b_isAddDocNavigation = false;
 
     public CRDatas crDatas;
-    bool lanzaDiscovered = false;
-    bool giovanniDiscovered = false;
-    bool abatiDiscovered = false;
+    
+    public GameObject Lanza;
+    public GameObject Giovanni;
+    public GameObject abati;
     int actualCR = -1;
 
     #endregion
@@ -1155,28 +1160,28 @@ public class MainUIManager : MonoBehaviour {
                         switch (actualCR)
                         {
                             case 13:
-                                if (lanzaDiscovered)
+                                if (ActualDatas.lanzaDiscovered)
                                 {
                                     PoliceOffice.Singleton.AlreadyGood();
                                     return;
                                 }
-                                lanzaDiscovered = true;
+                                ActualDatas.lanzaDiscovered = true;
                                 break;
                             case 22:
-                                if (giovanniDiscovered)
+                                if (ActualDatas.giovanniDiscovered)
                                 {
                                     PoliceOffice.Singleton.AlreadyGood();
                                     return;
                                 }
-                                giovanniDiscovered = true;
+                                ActualDatas.giovanniDiscovered = true;
                                 break;
                             case 23:
-                                if (abatiDiscovered)
+                                if (ActualDatas.abatiDiscovered)
                                 {
                                     PoliceOffice.Singleton.AlreadyGood();
                                     return;
                                 }
-                                abatiDiscovered = true;
+                                ActualDatas.abatiDiscovered = true;
                                 break;
                             default:
                                 break;
@@ -1370,6 +1375,7 @@ public class MainUIManager : MonoBehaviour {
         _inkStory.state.LoadJson(ActualDatas.s_Story);
         LoadStoryVar();
         LoadInvestigation();
+        
     }
 
     public void UpdateDocumentState()
@@ -1722,6 +1728,18 @@ public class MainUIManager : MonoBehaviour {
         m_CharacterVinyle.SetActive(false);
         m_OtherCharacterVinyle.SetActive(false);
         LastSection.SetActive(true);
+        if (ActualDatas.lanzaDiscovered)
+        {
+            Lanza.SetActive(true);
+        }
+        if (ActualDatas.giovanniDiscovered)
+        {
+            Giovanni.SetActive(true);
+        }
+        if (ActualDatas.abatiDiscovered)
+        {
+            abati.SetActive(true);
+        }
     }
 
     public void SetLanzaChoosed(bool b)
