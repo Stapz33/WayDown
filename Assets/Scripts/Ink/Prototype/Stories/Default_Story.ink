@@ -1284,7 +1284,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 #NewBackground #27
 *   [Look in the car] I'll take a look inside, see if our man dropped something.#player #NewCharacterSprite #0
 -   <i>(...)</i>#player #PlayerDBox #1
-    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #6
+    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #9
     <i>(What's this?)</i>#player
     <i>(Could have been left by the killer.)</i>#player #NewNarrativeLog #38
     <i>(I need to get out of here, before real cops show up.)</i>#player
@@ -1331,15 +1331,15 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(Most of them in Russian. How did he manage to get so much of them?)</i>#player
 <i>(I don't think that you can purchase them easily nowadays.)</i>#player
 <i>(And what we have here ?)</i> #player #NewDocument #20
-<i>(A colt' manual ? He must be a gun enthusiast...)</i> #player 
+<i>(A colt's manual ? He must be a gun enthusiast...)</i> #player 
 <i>(What else do we have...)</i>#player
 <i>(What are those?)</i>#player #NewDocument #8
 <i>(Dozens of receipts.))</i>#player
 <i>(With the same order every time...)</i>#player
 <i>(What else...)</i>#player
 #jump
-*   [Look below the couch] <i>(What do we have here?)</i>#player #NewDocument #9
--   <i>(Again, dozens of what looks like... restaurant menus?)</i>#player
+*   [Look below the couch] <i>(What do we have here?)</i>#player #NewDocument #6
+-   <i>(Again, dozens of what looks like... restaurant napkin ?)</i>#player
     <i>(Quite weird.)</i>#player
     <i>(What's the meaning of all that?)</i>#player
     <i>(The rest of the apartment is quite clean.)</i>#player
