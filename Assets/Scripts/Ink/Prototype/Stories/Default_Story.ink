@@ -1284,7 +1284,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 #NewBackground #27
 *   [Look in the car] I'll take a look inside, see if our man dropped something.#player #NewCharacterSprite #0
 -   <i>(...)</i>#player #PlayerDBox #1
-    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #9
+    <i>(Pretty neat interior for a wrecked car. That man is right, it was faked.)</i>#player #NewDocument #6
     <i>(What's this?)</i>#player
     <i>(Could have been left by the killer.)</i>#player #NewNarrativeLog #38
     <i>(I need to get out of here, before real cops show up.)</i>#player
@@ -1293,8 +1293,8 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
     I'll send someone, I told you.#player
     Stay by it please.#player
     O-ok officer...#otherCharacter
-    #NewBackground #28 #PlayerDBox #1 #NewCharacterSprite #0
-    <i>(What a fool.)</i>#player
+    #NewBackground #28 #PlayerDBox #1
+    <i>(What a fool.)</i>#player #NewCharacterSprite #0
     <i>(Those people these days. That listen too much to the radio.)</i>#player
     <i>(They think that they can do police work.)</i>#player
     <i>(I'm curious to know how long that dumb man will stay near the body.)</i>#player
@@ -1338,7 +1338,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(With the same order every time...)</i>#player
 <i>(What else...)</i>#player
 #jump
-*   [Look below the couch] <i>(What do we have here?)</i>#player #NewDocument #6
+*   [Look below the couch] <i>(What do we have here?)</i>#player #NewDocument #9
 -   <i>(Again, dozens of what looks like... restaurant menus?)</i>#player
     <i>(Quite weird.)</i>#player
     <i>(What's the meaning of all that?)</i>#player
