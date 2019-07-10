@@ -1437,7 +1437,6 @@ public class MainUIManager : MonoBehaviour {
     public void ReturnToMenu()
     {
         ExitMenu.SetActive(false);
-        m_LogManager.GetComponent<LogManager>().SaveLog();
         a_LoadingScreenAnimator.SetTrigger("LoadBlack");
         Invoke("async", 1.2f);
     }

@@ -727,6 +727,23 @@ What do you want, sir? # otherCharacter #NewCharacterSprite #3
 	<i>(With a freakin' baseball bat.)</i> # player
 # jump
 +   [The girl worked here under the name of...] #Validation #0
++   [Calm the situation] I'm not here to make any accusation. # player
+	    I just want to know what happened here. # player
+	    Nothing happened, it's a freakin' bar! # otherCharacter
+	    Get the hell out of here. #otherCharacter
+	    Don't bother, I'm leaving. # player
+	    <i>(I don't even let that Dean put his hands on me.)</i> # player #PlayerDBox #1
+	    <i>(With the bartender still looking at me, I exit the joint.)</i> # player #SFXPlay #22 #NewNarrativeLog #24
+	    #NewCharacterSprite #0
+	    //Background: Condor Club's street
+	    #NewBackground #13 #MusicStop
+-   <i>(I'm lost. Nothing to link her to this place, except for a poor matchbox.)</i> # player
+    <i>(I really need to dig more stuff on her.)</i> # player
+    <i>(What could I find now?)</i> # player
+    #Introspection
+
+
+
 -> END
 
 =condor_secondpart_madam
@@ -1032,7 +1049,7 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
 <i>(I cannot go on every corner of the city, so the car is the better lead to follow now.)</i>#player
 <i>(But where would it be?)</i>#player
 <i>(If I was the killer, I would get rid of it.)</i>#player
-<i>(Maybe in an auto wreck yard, or a parking lot?)</i>#player #NewNarrativeLog #36
+<i>(Maybe in a parking lot? Or Somewhere else ?)</i>#player #NewNarrativeLog #36
 <i>(Time to do some boring investigator work.)</i>#player #Introspection
 #NewInvestigation
 ->END
@@ -1186,8 +1203,8 @@ So what happened to her Mr. Rosenthal? #otherCharacter #NewNarrativeLog #28
     <i>(Obviously killed.)</i>#player
     <i>(But you cannot kill a car.)</i>#player
     <i>(He must have gotten rid of it somewhere. Too recognizable.)</i>#player
-    <i>(A parking lot? No, most surely an auto wreck yard.)</i>#player #NewNarrativeLog #36
-    <i>(Where could I find one?)</i>#player #Introspection
+    <i>(A parking lot? No, it must be something else.)</i>#player #NewNarrativeLog #36
+    <i>(Where could this?)</i>#player #Introspection
     #NewInvestigation
 ->END
 
@@ -1802,7 +1819,7 @@ I really don't know. That's why I need you.#otherCharacter
 You'll need to find out if one of them is linked with all this.#otherCharacter
 But don't tell anyone.#otherCharacter
 When you find something, come to The Little Door Restaurant. I'll meet you there.#otherCharacter #NewNarrativeLog #31
-But I'll ask for proof.#otherCharacter
+But I'll ask for proof, and a mobile.#otherCharacter
 This war will cost us a lot, I cannot afford another mistake.#otherCharacter
 You'll still attack the Russians? It's madness!#player
 It's too late for second thoughts.#otherCharacter
